@@ -1,0 +1,12 @@
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\bin\Debug\ProjetoOdontoPOO.exe.config
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\bin\Debug\ProjetoOdontoPOO.exe
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\bin\Debug\ProjetoOdontoPOO.pdb
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.csproj.AssemblyReference.cache
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.Properties.Resources.resources
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.Views.frmAgendarConsulta.resources
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.Views.frmCadPaciente.resources
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.Views.frmPrincipal.resources
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.csproj.GenerateResource.cache
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.csproj.CoreCompileInputs.cache
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.exe
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.pdb
