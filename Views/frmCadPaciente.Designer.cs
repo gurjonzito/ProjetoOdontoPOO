@@ -249,6 +249,7 @@
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
             this.txtNumeroEndereco.Size = new System.Drawing.Size(159, 20);
             this.txtNumeroEndereco.TabIndex = 8;
+            this.txtNumeroEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroEndereco_KeyPress);
             // 
             // label12
             // 
@@ -395,6 +396,7 @@
             this.txtIdadePaciente.Name = "txtIdadePaciente";
             this.txtIdadePaciente.Size = new System.Drawing.Size(54, 20);
             this.txtIdadePaciente.TabIndex = 32;
+            this.txtIdadePaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdadePaciente_KeyPress);
             // 
             // label18
             // 

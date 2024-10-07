@@ -12,6 +12,7 @@ namespace ProjetoOdontoPOO.Models
         public string Sexo { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
+        public int Ativo_Inativo { get; set; }
         public Convenio Convenio { get; set; }
         public Responsavel Responsavel { get; set; }
     }

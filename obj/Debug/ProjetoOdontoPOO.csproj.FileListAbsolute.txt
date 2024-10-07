@@ -13,3 +13,4 @@ C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPO
 C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.Views.frmViewCadastros.resources
 C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.Views.frmCadConvenio.resources
 C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.Views.frmCadDentista.resources
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.Views.frmEditarPaciente.resources

@@ -9,11 +9,12 @@ namespace ProjetoOdontoPOO.Views
     public partial class frmCadConvenio : Form
     {
         private ConvenioController _convenioController = new ConvenioController();
-        private ConvenioService _convenioService = new ConvenioService();
 
         public frmCadConvenio()
         {
             InitializeComponent();
+
+            _convenioController = new ConvenioController();
         }
 
         private void btnSalvarConvenio_Click(object sender, EventArgs e)

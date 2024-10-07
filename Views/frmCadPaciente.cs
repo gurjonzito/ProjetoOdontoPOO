@@ -10,21 +10,27 @@ namespace ProjetoOdontoPOO.Views
     {
         private PacienteController _pacienteController = new PacienteController();
         private PacienteCollection _pacienteCollection = new PacienteCollection();
-        private ConvenioService _convenioService = new ConvenioService();
-        private ResponsavelService _responsavelService = new ResponsavelService();
+        private ConvenioController _convenioController = new ConvenioController();
+        private ResponsavelController _responsavelController = new ResponsavelController();
 
         public frmCadPaciente()
         {
             InitializeComponent();
+
+            _pacienteController = new PacienteController();
+            _pacienteCollection = new PacienteCollection();
+            _convenioController = new ConvenioController();
+            _responsavelController = new ResponsavelController();
         }
 
         private void frmCadPaciente_Load(object sender, EventArgs e)
         {
-            cbConvenioPaciente.DataSource = _convenioService.ObterConvenios();
+            cbConvenioPaciente.DataSource = _convenioController.ObterConvenios();
+            cbConvenioPaciente.SelectedIndex = -1;
             cbConvenioPaciente.DisplayMember = "Nome";
             cbConvenioPaciente.ValueMember = "Id";
 
-            cbResponsavelPaciente.DataSource = _responsavelService.ObterResponsaveis();
+            cbResponsavelPaciente.DataSource = _responsavelController.ObterResponsaveis();
             cbResponsavelPaciente.DisplayMember = "Nome";
             cbResponsavelPaciente.ValueMember = "Id";
         }
@@ -95,6 +101,40 @@ namespace ProjetoOdontoPOO.Views
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true; // Cancela a entrada de caractere
+            }
+        }
+
+        private void txtIdadePaciente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!char.IsDigit(ch) &&
+                ch != 8 &&
+                ch != 13)
+            {
+                e.Handled = true;
+                MessageBox.Show(
+                    "Este campo aceita apenas números",
+                    "Informação",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void txtNumeroEndereco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!char.IsDigit(ch) &&
+                ch != 8 &&
+                ch != 13)
+            {
+                e.Handled = true;
+                MessageBox.Show(
+                    "Este campo aceita apenas números",
+                    "Informação",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
             }
         }
 

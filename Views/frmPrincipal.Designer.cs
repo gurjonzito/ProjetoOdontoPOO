@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.btnHistorico = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,8 +47,6 @@
             this.btnPaciente = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnAlterar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,6 +94,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(251, 715);
             this.panel2.TabIndex = 1;
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
+            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterar.Location = new System.Drawing.Point(12, 607);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(224, 40);
+            this.btnAlterar.TabIndex = 12;
+            this.btnAlterar.Text = "Alterar Cadastros";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAlterar.UseVisualStyleBackColor = true;
             // 
             // btnHistorico
             // 
@@ -279,7 +293,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(487, 179);
+            this.pictureBox1.Location = new System.Drawing.Point(487, 223);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(544, 382);
             this.pictureBox1.TabIndex = 2;
@@ -287,49 +301,20 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(684, 106);
+            this.label2.Location = new System.Drawing.Point(638, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 75);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "The";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.label3.Location = new System.Drawing.Point(619, 560);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(285, 111);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Unity";
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
-            this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlterar.Location = new System.Drawing.Point(12, 607);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(224, 40);
-            this.btnAlterar.TabIndex = 12;
-            this.btnAlterar.Text = "Alterar Cadastros";
-            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.label2.Size = new System.Drawing.Size(263, 55);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "MediTooth";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 757);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
@@ -362,12 +347,11 @@
         private System.Windows.Forms.Button btnPagamento;
         private System.Windows.Forms.Button btnReceitaAtestado;
         private System.Windows.Forms.Button btnVisualizar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnResponsavel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnHistorico;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Label label2;
     }
 }

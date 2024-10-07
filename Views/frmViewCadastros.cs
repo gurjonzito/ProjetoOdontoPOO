@@ -9,12 +9,14 @@ namespace ProjetoOdontoPOO.Views
     public partial class frmViewCadastros : Form
     {
         private readonly DataBaseSqlServerService _dbService;
+        private readonly PacienteService _pacienteService;
 
         public frmViewCadastros()
         {
             InitializeComponent();
 
             _dbService = new DataBaseSqlServerService();
+            _pacienteService = new PacienteService();
             CarregarDadosPaciente();
             CarregarDadosResponsavel();
             CarregarDadosConvenio();
@@ -102,32 +104,9 @@ namespace ProjetoOdontoPOO.Views
         {
             try
             {
-                using (SqlConnection conexao = _dbService.CriarConexao())
-                {
-                    // Consulta SQL para obter os dados
-                    string query = @"
-                                SELECT Pac.Pac_ID AS ID,
-                                       Pac.Pac_Nome AS Nome,
-                                       Pac.Pac_DataNascimento AS [Data de Nascimento],
-                                       Pac.Pac_Idade as Idade,
-                                       Pac.Pac_CPF as CPF,
-                                       Pac.Pac_Sexo as Sexo,
-                                       Pac.Pac_Telefone AS Telefone,
-                                       Pac.Pac_Email AS [E-mail],
-                                       COALESCE(Conv.Conv_Nome, 'Sem Convênio') AS Convênio,
-                                       COALESCE(Resp.Res_Nome, 'Sem Responsável') AS Responsável
-                                FROM Paciente AS Pac
-                                LEFT JOIN Convenio AS Conv ON Pac.Pac_ConvenioID_FK = Conv.Conv_ID
-                                LEFT JOIN Responsavel AS Resp ON Pac.Pac_ResponsavelID_FK = Resp.Res_ID";
+                DataTable tabela = _pacienteService.ObterDadosPacientes();
 
-                    // Adaptador para executar a consulta e preencher o DataTable
-                    SqlDataAdapter adaptador = new SqlDataAdapter(query, conexao);
-                    DataTable tabela = new DataTable();
-                    adaptador.Fill(tabela);
-
-                    // Define o DataTable como fonte de dados para o DataGridView
-                    dgvPaciente.DataSource = tabela;
-                }
+                dgvPaciente.DataSource = tabela;
             }
             catch (Exception ex)
             {
@@ -198,6 +177,23 @@ namespace ProjetoOdontoPOO.Views
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+            }
+        }
+
+        private void dgvPaciente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica se a linha clicada é válida
+            if (e.RowIndex >= 0)
+            {
+                // Captura os dados da linha selecionada no DataGridView
+                int pacienteId = Convert.ToInt32(dgvPaciente.Rows[e.RowIndex].Cells["ID"].Value); // ou o nome da coluna correspondente
+
+                // Cria uma nova instância do formulário de edição
+                frmEditarPaciente frm = new frmEditarPaciente(pacienteId);
+                frm.ShowDialog();
+
+                // Opcional: atualizar o DataGridView após a edição
+                CarregarDadosPaciente();
             }
         }
     }

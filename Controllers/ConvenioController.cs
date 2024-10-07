@@ -1,5 +1,6 @@
 ﻿using ProjetoOdontoPOO.Models;
 using ProjetoOdontoPOO.Services;
+using System.Collections.Generic;
 
 namespace ProjetoOdontoPOO.Controllers
 {
@@ -10,6 +11,11 @@ namespace ProjetoOdontoPOO.Controllers
         public ConvenioController()
         {
             _convenioService = new ConvenioService();
+        }
+
+        public List<Convenio> ObterConvenios()
+        {
+            return _convenioService.ObterConvenios();
         }
 
         public void InserirConvenio(Convenio convenio)
