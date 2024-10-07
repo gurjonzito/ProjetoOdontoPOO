@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ConvenioController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -74,6 +75,18 @@
     <Compile Include="Views\frmAgendarConsulta.Designer.cs">
       <DependentUpon>frmAgendarConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmCadConvenio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmCadConvenio.Designer.cs">
+      <DependentUpon>frmCadConvenio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmCadDentista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmCadDentista.Designer.cs">
+      <DependentUpon>frmCadDentista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmCadPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +98,12 @@
     </Compile>
     <Compile Include="Views\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmViewCadastros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmViewCadastros.Designer.cs">
+      <DependentUpon>frmViewCadastros.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,11 +117,20 @@
     <EmbeddedResource Include="Views\frmAgendarConsulta.resx">
       <DependentUpon>frmAgendarConsulta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmCadConvenio.resx">
+      <DependentUpon>frmCadConvenio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmCadDentista.resx">
+      <DependentUpon>frmCadDentista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmCadPaciente.resx">
       <DependentUpon>frmCadPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmViewCadastros.resx">
+      <DependentUpon>frmViewCadastros.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

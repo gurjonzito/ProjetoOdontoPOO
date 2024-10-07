@@ -39,5 +39,37 @@ namespace ProjetoOdontoPOO.Services
             }
             return convenios;
         }
+
+        public void InserirConvenio(Convenio convenio)
+        {
+            using (SqlConnection conexao = _dbService.CriarConexao())
+            {
+                SqlTransaction transacao = conexao.BeginTransaction();
+
+                try
+                {
+                    string queryConvenio = "INSERT INTO Convenio (Conv_Nome, Conv_CNPJ, Conv_Telefone, Conv_Endereco, Conv_Email, Conv_DataCriacao) " +
+                                            "VALUES (@Nome, @CNPJ, @Telefone, @Endereco, @Email, @DataCriacao)";
+                    using (SqlCommand cmd = new SqlCommand(queryConvenio, conexao, transacao))
+                    {
+                        cmd.Parameters.AddWithValue("@Nome", convenio.Nome);
+                        cmd.Parameters.AddWithValue("@CNPJ", convenio.CNPJ);
+                        cmd.Parameters.AddWithValue("@Telefone", convenio.Telefone);
+                        cmd.Parameters.AddWithValue("@Endereco", convenio.Endereco);
+                        cmd.Parameters.AddWithValue("@Email", convenio.Email);
+                        cmd.Parameters.AddWithValue("@DataCriacao", convenio.DataCriacao);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    transacao.Commit();
+                }
+                catch
+                {
+                    transacao.Rollback();
+                    throw;
+                }
+            }
+        }
     }
 }

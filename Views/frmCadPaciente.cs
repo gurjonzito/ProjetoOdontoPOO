@@ -2,13 +2,6 @@
 using ProjetoOdontoPOO.Models;
 using ProjetoOdontoPOO.Services;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoOdontoPOO.Views
@@ -38,10 +31,25 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarPaciente_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtNomePaciente.Text))
+            {
+                MessageBox.Show("Nome é obrigatório e não pode estar vazio.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Interrompe o fluxo, impedindo o cadastro
+            }
+
+            if (txtEmailPaciente.Text.Contains(" "))
+            {
+                MessageBox.Show("E-mail não pode conter espaços em branco.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var paciente = new Paciente
             {
                 Nome = txtNomePaciente.Text,
                 DataNascimento = dtpDataPaciente.Value,
+                Idade = int.TryParse(txtIdadePaciente.Text, out int idade) ? idade : 0,
+                CPF = txtCPFPaciente.Text,
+                Sexo = txtSexoPaciente.Text,
                 Telefone = txtTelefonePaciente.Text,
                 Email = txtEmailPaciente.Text,
                 Convenio = cbConvenioPaciente.SelectedValue != null
@@ -82,10 +90,21 @@ namespace ProjetoOdontoPOO.Views
             LimparCampos();
         }
 
+        private void txtTelefonePaciente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Cancela a entrada de caractere
+            }
+        }
+
         private void LimparCampos()
         {
             // Limpar campos de texto
             txtNomePaciente.Clear();
+            txtIdadePaciente.Clear();
+            txtCPFPaciente.Clear();
+            txtSexoPaciente.Clear();
             txtTelefonePaciente.Clear();
             txtEmailPaciente.Clear();
             txtLogradouro.Clear();

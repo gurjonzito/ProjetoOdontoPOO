@@ -21,9 +21,11 @@ namespace ProjetoOdontoPOO.Views
             btnConvenio.FlatAppearance.BorderSize = 0;
             btnConsulta.FlatAppearance.BorderSize = 0;
             btnPagamento.FlatAppearance.BorderSize = 0;
-            btnReceita.FlatAppearance.BorderSize = 0;
-            btnAtestado.FlatAppearance.BorderSize = 0;
+            btnReceitaAtestado.FlatAppearance.BorderSize = 0;
+            btnHistorico.FlatAppearance.BorderSize = 0;
+            btnResponsavel.FlatAppearance.BorderSize = 0;
             btnVisualizar.FlatAppearance.BorderSize = 0;
+            btnAlterar.FlatAppearance.BorderSize = 0;
             btnSair.FlatAppearance.BorderSize = 0;
         }
 
@@ -33,9 +35,21 @@ namespace ProjetoOdontoPOO.Views
             frm.ShowDialog();
         }
 
+        private void btnConvenio_Click(object sender, EventArgs e)
+        {
+            frmCadConvenio frm = new frmCadConvenio();
+            frm.ShowDialog();
+        }
+
         private void btnConsulta_Click(object sender, EventArgs e)
         {
             frmAgendarConsulta frm = new frmAgendarConsulta();
+            frm.ShowDialog();
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            frmViewCadastros frm = new frmViewCadastros();
             frm.ShowDialog();
         }
 

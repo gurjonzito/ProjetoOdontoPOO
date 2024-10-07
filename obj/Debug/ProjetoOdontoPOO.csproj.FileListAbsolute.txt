@@ -10,3 +10,6 @@ C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPO
 C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.csproj.CoreCompileInputs.cache
 C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.exe
 C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.pdb
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.Views.frmViewCadastros.resources
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.Views.frmCadConvenio.resources
+C:\Users\Alan\Documents\Faculdade\POO\ProjetoOdontoPOO\obj\Debug\ProjetoOdontoPOO.Views.frmCadDentista.resources

@@ -22,12 +22,15 @@ public class PacienteService
             try
             {
                 // Insere o paciente e captura o ID gerado
-                string queryPaciente = "INSERT INTO Paciente (Pac_Nome, Pac_DataNascimento, Pac_Telefone, Pac_Email, Pac_ConvenioID_FK, Pac_ResponsavelID_FK) " +
-                                        "OUTPUT INSERTED.Pac_Id VALUES (@Nome, @DataNascimento, @Telefone, @Email, @ConvenioID, @ResponsavelID)";
+                string queryPaciente = "INSERT INTO Paciente (Pac_Nome, Pac_DataNascimento, Pac_Idade, Pac_CPF, Pac_Sexo, Pac_Telefone, Pac_Email, Pac_ConvenioID_FK, Pac_ResponsavelID_FK) " +
+                                        "OUTPUT INSERTED.Pac_Id VALUES (@Nome, @DataNascimento, @Idade, @CPF, @Sexo, @Telefone, @Email, @ConvenioID, @ResponsavelID)";
                 using (SqlCommand cmdPaciente = new SqlCommand(queryPaciente, conexao, transacao))
                 {
                     cmdPaciente.Parameters.AddWithValue("@Nome", paciente.Nome);
                     cmdPaciente.Parameters.AddWithValue("@DataNascimento", paciente.DataNascimento);
+                    cmdPaciente.Parameters.AddWithValue("@Idade", paciente.Idade);
+                    cmdPaciente.Parameters.AddWithValue("@CPF", paciente.CPF);
+                    cmdPaciente.Parameters.AddWithValue("@Sexo", paciente.Sexo);
                     cmdPaciente.Parameters.AddWithValue("@Telefone", paciente.Telefone);
                     cmdPaciente.Parameters.AddWithValue("@Email", paciente.Email);
                     // Se Convenio for null, usa DBNull.Value, caso contrário, pega o Id
