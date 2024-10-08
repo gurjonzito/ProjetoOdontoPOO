@@ -25,7 +25,6 @@ namespace ProjetoOdontoPOO.Views
             btnHistorico.FlatAppearance.BorderSize = 0;
             btnResponsavel.FlatAppearance.BorderSize = 0;
             btnVisualizar.FlatAppearance.BorderSize = 0;
-            btnAlterar.FlatAppearance.BorderSize = 0;
             btnSair.FlatAppearance.BorderSize = 0;
         }
 

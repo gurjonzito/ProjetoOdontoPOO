@@ -254,7 +254,10 @@
             this.ClientSize = new System.Drawing.Size(992, 595);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmViewCadastros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmViewCadastros";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

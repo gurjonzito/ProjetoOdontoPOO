@@ -36,23 +36,8 @@ public class PacienteController
         }
     }
 
-    public void AtualizarPaciente(int pacienteId, string nome, DateTime dataNascimento, string cpf, string telefone, string email)
+    public bool AtualizarPacienteComEndereco(int pacienteId, string nome, DateTime dataNascimento, int idade, string cpf, string sexo, string telefone, string email, int? convenioId, int? responsavelId, Endereco endereco)
     {
-        try
-        {
-            bool sucesso = _pacienteService.AtualizarPaciente(pacienteId, nome, dataNascimento, cpf, telefone, email);
-            if (sucesso)
-            {
-                MessageBox.Show("Paciente atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Nenhum registro foi atualizado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show($"Erro ao atualizar paciente: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+        return _pacienteService.AtualizarPacienteComEndereco(pacienteId, nome, dataNascimento, idade, cpf, sexo, telefone, email, convenioId, responsavelId, endereco);
     }
 }

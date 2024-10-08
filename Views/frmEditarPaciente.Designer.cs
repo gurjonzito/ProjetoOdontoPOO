@@ -152,6 +152,7 @@
             this.btnSalvarPaciente.TabIndex = 56;
             this.btnSalvarPaciente.Text = "Salvar";
             this.btnSalvarPaciente.UseVisualStyleBackColor = false;
+            this.btnSalvarPaciente.Click += new System.EventHandler(this.btnSalvarPaciente_Click);
             // 
             // btnLimparPaciente
             // 
@@ -164,6 +165,7 @@
             this.btnLimparPaciente.TabIndex = 55;
             this.btnLimparPaciente.Text = "Limpar";
             this.btnLimparPaciente.UseVisualStyleBackColor = false;
+            this.btnLimparPaciente.Click += new System.EventHandler(this.btnLimparPaciente_Click);
             // 
             // label15
             // 

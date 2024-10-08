@@ -3,24 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmcadpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmcadpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmviewcadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmviewcadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|c:\\users\\alan\\documents\\faculdade\\poo\\projetoodontopoo\\services\\enderecoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:services\\enderecoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmeditarpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmeditarpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|c:\\users\\alan\\documents\\faculdade\\poo\\projetoodontopoo\\controllers\\enderecocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:controllers\\enderecocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\services\\pacienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:services\\pacienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmeditarpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmeditarpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\controllers\\pacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:controllers\\pacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\services\\pacienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:services\\pacienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|c:\\users\\alan\\documents\\faculdade\\poo\\projetoodontopoo\\services\\databasesqlserverservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:services\\databasesqlserverservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmcadpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmcadpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmcadpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmcadpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\services\\enderecoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:services\\enderecoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\controllers\\enderecocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:controllers\\enderecocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\services\\responsavelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,31 +67,15 @@
       "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:models\\paciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmviewcadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmviewcadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|c:\\users\\alan\\documents\\faculdade\\poo\\projetoodontopoo\\views\\frmeditarpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmeditarpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmcadconvenio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmcadconvenio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\services\\databasesqlserverservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:services\\databasesqlserverservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmcadpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmcadpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|c:\\users\\alan\\documents\\faculdade\\poo\\projetoodontopoo\\controllers\\responsavelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\controllers\\responsavelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:controllers\\responsavelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -67,20 +83,8 @@
       "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:controllers\\conveniocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|c:\\users\\alan\\documents\\faculdade\\poo\\projetoodontopoo\\views\\frmeditarpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmeditarpaciente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmviewcadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmviewcadastros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\models\\pacientecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:models\\pacientecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\models\\convenio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -91,12 +95,8 @@
       "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmcaddentista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|c:\\users\\alan\\documents\\faculdade\\poo\\projetoodontopoo\\views\\frmcadconvenio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmcadconvenio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmcadconvenio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|solutionrelative:views\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4F17CF3-7874-4FF2-8D7D-E730FC5ED02A}|ProjetoOdontoPOO.csproj|C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\views\\frmcaddentista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -142,7 +142,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -158,15 +158,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "frmEditarPaciente.cs",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmEditarPaciente.cs",
-              "RelativeDocumentMoniker": "Views\\frmEditarPaciente.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmEditarPaciente.cs",
-              "RelativeToolTip": "Views\\frmEditarPaciente.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwDEAAABZAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "frmPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmPrincipal.cs",
+              "RelativeDocumentMoniker": "Views\\frmPrincipal.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmPrincipal.cs",
+              "RelativeToolTip": "Views\\frmPrincipal.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAqwBoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T15:17:58.052Z",
+              "WhenOpened": "2024-10-05T18:59:41.743Z",
               "EditorCaption": ""
             },
             {
@@ -177,27 +177,51 @@
               "RelativeDocumentMoniker": "Services\\PacienteService.cs",
               "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\PacienteService.cs",
               "RelativeToolTip": "Services\\PacienteService.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAIwC4AAABsAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwJUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-06T02:11:30.1Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EnderecoService.cs",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\EnderecoService.cs",
-              "RelativeDocumentMoniker": "Services\\EnderecoService.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\EnderecoService.cs",
-              "RelativeToolTip": "Services\\EnderecoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA/AAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "PacienteController.cs",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Controllers\\PacienteController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PacienteController.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Controllers\\PacienteController.cs",
+              "RelativeToolTip": "Controllers\\PacienteController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAtwCsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T16:32:53.271Z",
+              "WhenOpened": "2024-10-06T02:27:51.338Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
+              "Title": "frmPrincipal.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmPrincipal.cs",
+              "RelativeDocumentMoniker": "Views\\frmPrincipal.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmPrincipal.cs [Design]",
+              "RelativeToolTip": "Views\\frmPrincipal.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T14:54:40.297Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmCadPaciente.cs",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadPaciente.cs",
+              "RelativeDocumentMoniker": "Views\\frmCadPaciente.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadPaciente.cs",
+              "RelativeToolTip": "Views\\frmCadPaciente.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAuwKEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T02:30:35.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Endereco.cs",
               "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Models\\Endereco.cs",
               "RelativeDocumentMoniker": "Models\\Endereco.cs",
@@ -210,68 +234,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ConvenioService.cs",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\ConvenioService.cs",
-              "RelativeDocumentMoniker": "Services\\ConvenioService.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\ConvenioService.cs",
-              "RelativeToolTip": "Services\\ConvenioService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAD4vxMAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "frmEditarPaciente.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmEditarPaciente.cs",
+              "RelativeDocumentMoniker": "Views\\frmEditarPaciente.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmEditarPaciente.cs [Design]",
+              "RelativeToolTip": "Views\\frmEditarPaciente.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T02:54:41.041Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ResponsavelService.cs",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\ResponsavelService.cs",
-              "RelativeDocumentMoniker": "Services\\ResponsavelService.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\ResponsavelService.cs",
-              "RelativeToolTip": "Services\\ResponsavelService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T02:59:23.888Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EnderecoController.cs",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Controllers\\EnderecoController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EnderecoController.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Controllers\\EnderecoController.cs",
-              "RelativeToolTip": "Controllers\\EnderecoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T17:30:05.135Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PacienteController.cs",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Controllers\\PacienteController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PacienteController.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Controllers\\PacienteController.cs",
-              "RelativeToolTip": "Controllers\\PacienteController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAB9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T02:27:51.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T15:13:45.707Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmCadPaciente.cs",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadPaciente.cs",
-              "RelativeDocumentMoniker": "Views\\frmCadPaciente.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadPaciente.cs",
-              "RelativeToolTip": "Views\\frmCadPaciente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA7AAAAAAAAAA==",
+              "Title": "frmViewCadastros.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmViewCadastros.cs",
+              "RelativeDocumentMoniker": "Views\\frmViewCadastros.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmViewCadastros.cs [Design]",
+              "RelativeToolTip": "Views\\frmViewCadastros.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T02:30:35.331Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T00:26:30.477Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Bookmark",
@@ -279,7 +262,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
+              "Title": "frmEditarPaciente.cs",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmEditarPaciente.cs",
+              "RelativeDocumentMoniker": "Views\\frmEditarPaciente.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmEditarPaciente.cs",
+              "RelativeToolTip": "Views\\frmEditarPaciente.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAjwHUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T15:17:58.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmCadPaciente.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadPaciente.cs",
+              "RelativeDocumentMoniker": "Views\\frmCadPaciente.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadPaciente.cs [Design]",
+              "RelativeToolTip": "Views\\frmCadPaciente.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T18:03:31.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DataBaseSqlServerService.cs",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\DataBaseSqlServerService.cs",
+              "RelativeDocumentMoniker": "Services\\DataBaseSqlServerService.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\DataBaseSqlServerService.cs",
+              "RelativeToolTip": "Services\\DataBaseSqlServerService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwBQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T01:00:05.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "frmCadConvenio.cs",
               "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadConvenio.cs",
               "RelativeDocumentMoniker": "Views\\frmCadConvenio.cs",
@@ -287,25 +307,59 @@
               "RelativeToolTip": "Views\\frmCadConvenio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T01:11:32.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T01:11:32.472Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "DataBaseSqlServerService.cs",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\DataBaseSqlServerService.cs",
-              "RelativeDocumentMoniker": "Services\\DataBaseSqlServerService.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\DataBaseSqlServerService.cs",
-              "RelativeToolTip": "Services\\DataBaseSqlServerService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAbAAAAAAAAAA==",
+              "Title": "EnderecoController.cs",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Controllers\\EnderecoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EnderecoController.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Controllers\\EnderecoController.cs",
+              "RelativeToolTip": "Controllers\\EnderecoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T01:00:05.116Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T17:30:05.135Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
+              "Title": "ResponsavelService.cs",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\ResponsavelService.cs",
+              "RelativeDocumentMoniker": "Services\\ResponsavelService.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\ResponsavelService.cs",
+              "RelativeToolTip": "Services\\ResponsavelService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T02:59:23.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ConvenioService.cs",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\ConvenioService.cs",
+              "RelativeDocumentMoniker": "Services\\ConvenioService.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\ConvenioService.cs",
+              "RelativeToolTip": "Services\\ConvenioService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAD4vxMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-06T02:54:41.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EnderecoService.cs",
+              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\EnderecoService.cs",
+              "RelativeDocumentMoniker": "Services\\EnderecoService.cs",
+              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Services\\EnderecoService.cs",
+              "RelativeToolTip": "Services\\EnderecoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T16:32:53.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Paciente.cs",
               "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Models\\Paciente.cs",
               "RelativeDocumentMoniker": "Models\\Paciente.cs",
@@ -313,24 +367,11 @@
               "RelativeToolTip": "Models\\Paciente.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T18:16:37.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T18:16:37.461Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "frmCadPaciente.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadPaciente.cs",
-              "RelativeDocumentMoniker": "Views\\frmCadPaciente.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadPaciente.cs [Design]",
-              "RelativeToolTip": "Views\\frmCadPaciente.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T18:03:31.244Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "frmViewCadastros.cs",
               "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmViewCadastros.cs",
               "RelativeDocumentMoniker": "Views\\frmViewCadastros.cs",
@@ -343,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "ConvenioController.cs",
               "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Controllers\\ConvenioController.cs",
               "RelativeDocumentMoniker": "Controllers\\ConvenioController.cs",
@@ -351,12 +392,11 @@
               "RelativeToolTip": "Controllers\\ConvenioController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T01:15:15.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T01:15:15.849Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "ResponsavelController.cs",
               "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Controllers\\ResponsavelController.cs",
               "RelativeDocumentMoniker": "Controllers\\ResponsavelController.cs",
@@ -364,48 +404,11 @@
               "RelativeToolTip": "Controllers\\ResponsavelController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T17:38:59.106Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T17:38:59.106Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "frmEditarPaciente.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmEditarPaciente.cs",
-              "RelativeDocumentMoniker": "Views\\frmEditarPaciente.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmEditarPaciente.cs [Design]",
-              "RelativeToolTip": "Views\\frmEditarPaciente.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T15:13:45.707Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "frmPrincipal.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmPrincipal.cs",
-              "RelativeDocumentMoniker": "Views\\frmPrincipal.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmPrincipal.cs [Design]",
-              "RelativeToolTip": "Views\\frmPrincipal.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T14:54:40.297Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "frmViewCadastros.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmViewCadastros.cs",
-              "RelativeDocumentMoniker": "Views\\frmViewCadastros.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmViewCadastros.cs [Design]",
-              "RelativeToolTip": "Views\\frmViewCadastros.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T00:26:30.477Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "PacienteCollection.cs",
               "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Models\\PacienteCollection.cs",
               "RelativeDocumentMoniker": "Models\\PacienteCollection.cs",
@@ -413,12 +416,11 @@
               "RelativeToolTip": "Models\\PacienteCollection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T18:20:05.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T18:20:05.897Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Convenio.cs",
               "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Models\\Convenio.cs",
               "RelativeDocumentMoniker": "Models\\Convenio.cs",
@@ -426,45 +428,29 @@
               "RelativeToolTip": "Models\\Convenio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T18:17:34.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T18:17:34.972Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "frmCadDentista.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadDentista.cs",
               "RelativeDocumentMoniker": "Views\\frmCadDentista.cs",
               "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadDentista.cs [Design]",
               "RelativeToolTip": "Views\\frmCadDentista.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T01:02:49.526Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-07T01:02:49.526Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "frmCadConvenio.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadConvenio.cs",
               "RelativeDocumentMoniker": "Views\\frmCadConvenio.cs",
               "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmCadConvenio.cs [Design]",
               "RelativeToolTip": "Views\\frmCadConvenio.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T01:06:56.787Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "frmPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmPrincipal.cs",
-              "RelativeDocumentMoniker": "Views\\frmPrincipal.cs",
-              "ToolTip": "C:\\Users\\Alan\\Documents\\Faculdade\\POO\\ProjetoOdontoPOO\\Views\\frmPrincipal.cs",
-              "RelativeToolTip": "Views\\frmPrincipal.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T18:59:41.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T01:06:56.787Z"
             },
             {
               "$type": "Document",
@@ -476,8 +462,7 @@
               "RelativeToolTip": "Views\\frmCadDentista.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T01:06:36.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T01:06:36.052Z"
             },
             {
               "$type": "Document",

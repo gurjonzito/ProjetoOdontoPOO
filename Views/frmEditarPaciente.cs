@@ -1,6 +1,7 @@
 ﻿using ProjetoOdontoPOO.Controllers;
 using ProjetoOdontoPOO.Models;
 using ProjetoOdontoPOO.Services;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -43,7 +44,6 @@ namespace ProjetoOdontoPOO.Views
             cbResponsavelPaciente.ValueMember = "Id";
         }
 
-
         private void CarregarDadosPaciente()
         {
             Paciente paciente = _pacienteController.ObterDadosPacientePorId(_pacienteId);
@@ -81,6 +81,85 @@ namespace ProjetoOdontoPOO.Views
             {
                 MessageBox.Show($"Paciente com ID {_pacienteId} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnSalvarPaciente_Click(object sender, EventArgs e)
+        {
+            // Coleta os dados do paciente
+            string nome = txtNomePaciente.Text;
+            DateTime dataNascimento = dtpDataPaciente.Value;
+            int idade = int.Parse(txtIdadePaciente.Text);
+            string cpf = txtCPFPaciente.Text;
+            string sexo = txtSexoPaciente.Text;
+            string telefone = txtTelefonePaciente.Text;
+            string email = txtEmailPaciente.Text;
+
+            // Convênio e responsável podem ser nulos
+            int? convenioId = cbConvenioPaciente.SelectedIndex > -1 ? (int?)cbConvenioPaciente.SelectedValue : null;
+            int? responsavelId = cbResponsavelPaciente.SelectedIndex > -1 ? (int?)cbResponsavelPaciente.SelectedValue : null;
+
+            // Coleta os dados de endereço
+            string logradouro = txtLogradouro.Text;
+            string numero = txtNumeroEndereco.Text;
+            string cidade = txtCidadeEndereco.Text;
+            string estado = txtUFEndereco.Text;
+            string cep = txtCEPEndereco.Text;
+            string complemento = txtComplementoEndereco.Text;
+
+            // Cria o objeto de endereço
+            Endereco endereco = new Endereco
+            {
+                Logradouro = logradouro,
+                Numero = numero,
+                Cidade = cidade,
+                Estado = estado,
+                CEP = cep,
+                Complemento = complemento
+            };
+
+            // Chama o método de atualização com o objeto de endereço
+            bool atualizado = _pacienteController.AtualizarPacienteComEndereco(_pacienteId, nome, dataNascimento, idade, cpf, sexo, telefone, email, convenioId, responsavelId, endereco);
+
+            // Exibe o resultado
+            if (atualizado)
+            {
+                MessageBox.Show("Paciente atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Erro ao atualizar o paciente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void btnLimparPaciente_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void LimparCampos()
+        {
+            // Limpar campos de texto
+            txtNomePaciente.Clear();
+            txtIdadePaciente.Clear();
+            txtCPFPaciente.Clear();
+            txtSexoPaciente.Clear();
+            txtTelefonePaciente.Clear();
+            txtEmailPaciente.Clear();
+            txtLogradouro.Clear();
+            txtNumeroEndereco.Clear();
+            txtCidadeEndereco.Clear();
+            txtUFEndereco.Clear();
+            txtCEPEndereco.Clear();
+            txtComplementoEndereco.Clear();
+
+            // Resetar ComboBoxes
+            cbConvenioPaciente.SelectedIndex = -1;
+            cbResponsavelPaciente.SelectedIndex = -1;
+
+            // Resetar DateTimePicker
+            dtpDataPaciente.Value = DateTime.Now;
         }
     }
 }
