@@ -152,7 +152,7 @@
             this.txtEmailPaciente.Location = new System.Drawing.Point(236, 239);
             this.txtEmailPaciente.Name = "txtEmailPaciente";
             this.txtEmailPaciente.Size = new System.Drawing.Size(286, 20);
-            this.txtEmailPaciente.TabIndex = 4;
+            this.txtEmailPaciente.TabIndex = 7;
             // 
             // label6
             // 
@@ -171,7 +171,7 @@
             this.cbConvenioPaciente.Location = new System.Drawing.Point(44, 288);
             this.cbConvenioPaciente.Name = "cbConvenioPaciente";
             this.cbConvenioPaciente.Size = new System.Drawing.Size(236, 21);
-            this.cbConvenioPaciente.TabIndex = 5;
+            this.cbConvenioPaciente.TabIndex = 8;
             // 
             // cbResponsavelPaciente
             // 
@@ -179,7 +179,7 @@
             this.cbResponsavelPaciente.Location = new System.Drawing.Point(286, 288);
             this.cbResponsavelPaciente.Name = "cbResponsavelPaciente";
             this.cbResponsavelPaciente.Size = new System.Drawing.Size(236, 21);
-            this.cbResponsavelPaciente.TabIndex = 6;
+            this.cbResponsavelPaciente.TabIndex = 9;
             // 
             // label5
             // 
@@ -230,7 +230,7 @@
             this.txtLogradouro.Location = new System.Drawing.Point(44, 408);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(313, 20);
-            this.txtLogradouro.TabIndex = 7;
+            this.txtLogradouro.TabIndex = 10;
             // 
             // label11
             // 
@@ -248,7 +248,7 @@
             this.txtNumeroEndereco.Location = new System.Drawing.Point(363, 408);
             this.txtNumeroEndereco.Name = "txtNumeroEndereco";
             this.txtNumeroEndereco.Size = new System.Drawing.Size(159, 20);
-            this.txtNumeroEndereco.TabIndex = 8;
+            this.txtNumeroEndereco.TabIndex = 11;
             this.txtNumeroEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroEndereco_KeyPress);
             // 
             // label12
@@ -267,7 +267,7 @@
             this.txtCidadeEndereco.Location = new System.Drawing.Point(44, 456);
             this.txtCidadeEndereco.Name = "txtCidadeEndereco";
             this.txtCidadeEndereco.Size = new System.Drawing.Size(228, 20);
-            this.txtCidadeEndereco.TabIndex = 9;
+            this.txtCidadeEndereco.TabIndex = 12;
             // 
             // label13
             // 
@@ -286,7 +286,7 @@
             this.txtUFEndereco.MaxLength = 2;
             this.txtUFEndereco.Name = "txtUFEndereco";
             this.txtUFEndereco.Size = new System.Drawing.Size(79, 20);
-            this.txtUFEndereco.TabIndex = 10;
+            this.txtUFEndereco.TabIndex = 13;
             // 
             // label14
             // 
@@ -315,7 +315,7 @@
             this.txtComplementoEndereco.Location = new System.Drawing.Point(44, 504);
             this.txtComplementoEndereco.Name = "txtComplementoEndereco";
             this.txtComplementoEndereco.Size = new System.Drawing.Size(478, 20);
-            this.txtComplementoEndereco.TabIndex = 12;
+            this.txtComplementoEndereco.TabIndex = 15;
             // 
             // btnLimparPaciente
             // 
@@ -325,7 +325,7 @@
             this.btnLimparPaciente.Location = new System.Drawing.Point(44, 562);
             this.btnLimparPaciente.Name = "btnLimparPaciente";
             this.btnLimparPaciente.Size = new System.Drawing.Size(113, 35);
-            this.btnLimparPaciente.TabIndex = 13;
+            this.btnLimparPaciente.TabIndex = 16;
             this.btnLimparPaciente.Text = "Limpar";
             this.btnLimparPaciente.UseVisualStyleBackColor = false;
             this.btnLimparPaciente.Click += new System.EventHandler(this.btnLimparPaciente_Click);
@@ -338,7 +338,7 @@
             this.btnSalvarPaciente.Location = new System.Drawing.Point(409, 562);
             this.btnSalvarPaciente.Name = "btnSalvarPaciente";
             this.btnSalvarPaciente.Size = new System.Drawing.Size(113, 35);
-            this.btnSalvarPaciente.TabIndex = 14;
+            this.btnSalvarPaciente.TabIndex = 17;
             this.btnSalvarPaciente.Text = "Salvar";
             this.btnSalvarPaciente.UseVisualStyleBackColor = false;
             this.btnSalvarPaciente.Click += new System.EventHandler(this.btnSalvarPaciente_Click);
@@ -349,7 +349,7 @@
             this.txtTelefonePaciente.Mask = "(00) 00000-0000";
             this.txtTelefonePaciente.Name = "txtTelefonePaciente";
             this.txtTelefonePaciente.Size = new System.Drawing.Size(186, 20);
-            this.txtTelefonePaciente.TabIndex = 3;
+            this.txtTelefonePaciente.TabIndex = 6;
             this.txtTelefonePaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonePaciente_KeyPress);
             // 
             // txtCEPEndereco
@@ -358,7 +358,7 @@
             this.txtCEPEndereco.Mask = "00000-000";
             this.txtCEPEndereco.Name = "txtCEPEndereco";
             this.txtCEPEndereco.Size = new System.Drawing.Size(159, 20);
-            this.txtCEPEndereco.TabIndex = 11;
+            this.txtCEPEndereco.TabIndex = 14;
             // 
             // txtCPFPaciente
             // 
@@ -366,7 +366,7 @@
             this.txtCPFPaciente.Mask = "000.000.000-00";
             this.txtCPFPaciente.Name = "txtCPFPaciente";
             this.txtCPFPaciente.Size = new System.Drawing.Size(186, 20);
-            this.txtCPFPaciente.TabIndex = 30;
+            this.txtCPFPaciente.TabIndex = 4;
             // 
             // label16
             // 
@@ -394,9 +394,9 @@
             // 
             this.txtIdadePaciente.Location = new System.Drawing.Point(44, 192);
             this.txtIdadePaciente.Name = "txtIdadePaciente";
+            this.txtIdadePaciente.ReadOnly = true;
             this.txtIdadePaciente.Size = new System.Drawing.Size(54, 20);
-            this.txtIdadePaciente.TabIndex = 32;
-            this.txtIdadePaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdadePaciente_KeyPress);
+            this.txtIdadePaciente.TabIndex = 3;
             // 
             // label18
             // 
@@ -414,7 +414,7 @@
             this.txtSexoPaciente.Location = new System.Drawing.Point(296, 192);
             this.txtSexoPaciente.Name = "txtSexoPaciente";
             this.txtSexoPaciente.Size = new System.Drawing.Size(226, 20);
-            this.txtSexoPaciente.TabIndex = 34;
+            this.txtSexoPaciente.TabIndex = 5;
             // 
             // frmCadPaciente
             // 
@@ -457,6 +457,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNomePaciente);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmCadPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadPaciente";

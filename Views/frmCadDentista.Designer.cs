@@ -51,7 +51,7 @@
             this.btnSalvarPaciente.Location = new System.Drawing.Point(407, 215);
             this.btnSalvarPaciente.Name = "btnSalvarPaciente";
             this.btnSalvarPaciente.Size = new System.Drawing.Size(113, 35);
-            this.btnSalvarPaciente.TabIndex = 56;
+            this.btnSalvarPaciente.TabIndex = 6;
             this.btnSalvarPaciente.Text = "Salvar";
             this.btnSalvarPaciente.UseVisualStyleBackColor = false;
             // 
@@ -63,7 +63,7 @@
             this.btnLimparPaciente.Location = new System.Drawing.Point(42, 215);
             this.btnLimparPaciente.Name = "btnLimparPaciente";
             this.btnLimparPaciente.Size = new System.Drawing.Size(113, 35);
-            this.btnLimparPaciente.TabIndex = 55;
+            this.btnLimparPaciente.TabIndex = 5;
             this.btnLimparPaciente.Text = "Limpar";
             this.btnLimparPaciente.UseVisualStyleBackColor = false;
             // 
@@ -94,7 +94,7 @@
             this.txtNomePaciente.Location = new System.Drawing.Point(42, 103);
             this.txtNomePaciente.Name = "txtNomePaciente";
             this.txtNomePaciente.Size = new System.Drawing.Size(313, 20);
-            this.txtNomePaciente.TabIndex = 37;
+            this.txtNomePaciente.TabIndex = 1;
             // 
             // panel1
             // 
@@ -122,14 +122,14 @@
             this.textBox1.Location = new System.Drawing.Point(361, 103);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(159, 20);
-            this.textBox1.TabIndex = 71;
+            this.textBox1.TabIndex = 2;
             // 
             // txtEmailPaciente
             // 
             this.txtEmailPaciente.Location = new System.Drawing.Point(42, 151);
             this.txtEmailPaciente.Name = "txtEmailPaciente";
             this.txtEmailPaciente.Size = new System.Drawing.Size(286, 20);
-            this.txtEmailPaciente.TabIndex = 43;
+            this.txtEmailPaciente.TabIndex = 3;
             // 
             // txtTelefonePaciente
             // 
@@ -137,7 +137,7 @@
             this.txtTelefonePaciente.Mask = "(00) 00000-0000";
             this.txtTelefonePaciente.Name = "txtTelefonePaciente";
             this.txtTelefonePaciente.Size = new System.Drawing.Size(186, 20);
-            this.txtTelefonePaciente.TabIndex = 41;
+            this.txtTelefonePaciente.TabIndex = 4;
             // 
             // label3
             // 

@@ -103,7 +103,7 @@
             this.btnHistorico.Location = new System.Drawing.Point(12, 438);
             this.btnHistorico.Name = "btnHistorico";
             this.btnHistorico.Size = new System.Drawing.Size(224, 40);
-            this.btnHistorico.TabIndex = 11;
+            this.btnHistorico.TabIndex = 7;
             this.btnHistorico.Text = "Histórico Paciente";
             this.btnHistorico.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHistorico.UseVisualStyleBackColor = true;
@@ -140,7 +140,7 @@
             this.btnResponsavel.Location = new System.Drawing.Point(12, 223);
             this.btnResponsavel.Name = "btnResponsavel";
             this.btnResponsavel.Size = new System.Drawing.Size(224, 40);
-            this.btnResponsavel.TabIndex = 9;
+            this.btnResponsavel.TabIndex = 4;
             this.btnResponsavel.Text = "Responsável";
             this.btnResponsavel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnResponsavel.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             this.btnVisualizar.Location = new System.Drawing.Point(12, 550);
             this.btnVisualizar.Name = "btnVisualizar";
             this.btnVisualizar.Size = new System.Drawing.Size(224, 40);
-            this.btnVisualizar.TabIndex = 7;
+            this.btnVisualizar.TabIndex = 9;
             this.btnVisualizar.Text = "Visualizar Cadastros";
             this.btnVisualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVisualizar.UseVisualStyleBackColor = true;
@@ -172,7 +172,7 @@
             this.btnSair.Location = new System.Drawing.Point(12, 663);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(224, 40);
-            this.btnSair.TabIndex = 6;
+            this.btnSair.TabIndex = 10;
             this.btnSair.Text = "Sair";
             this.btnSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSair.UseVisualStyleBackColor = true;
@@ -188,7 +188,7 @@
             this.btnPagamento.Location = new System.Drawing.Point(12, 494);
             this.btnPagamento.Name = "btnPagamento";
             this.btnPagamento.Size = new System.Drawing.Size(224, 40);
-            this.btnPagamento.TabIndex = 5;
+            this.btnPagamento.TabIndex = 8;
             this.btnPagamento.Text = "Pagamento";
             this.btnPagamento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPagamento.UseVisualStyleBackColor = true;
@@ -203,7 +203,7 @@
             this.btnReceitaAtestado.Location = new System.Drawing.Point(12, 382);
             this.btnReceitaAtestado.Name = "btnReceitaAtestado";
             this.btnReceitaAtestado.Size = new System.Drawing.Size(224, 40);
-            this.btnReceitaAtestado.TabIndex = 4;
+            this.btnReceitaAtestado.TabIndex = 6;
             this.btnReceitaAtestado.Text = "Gerar Receita/Atestado";
             this.btnReceitaAtestado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReceitaAtestado.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             this.btnConsulta.Location = new System.Drawing.Point(12, 327);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(224, 40);
-            this.btnConsulta.TabIndex = 3;
+            this.btnConsulta.TabIndex = 5;
             this.btnConsulta.Text = "Agendar Consulta";
             this.btnConsulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConsulta.UseVisualStyleBackColor = true;
@@ -234,7 +234,7 @@
             this.btnDentista.Location = new System.Drawing.Point(12, 168);
             this.btnDentista.Name = "btnDentista";
             this.btnDentista.Size = new System.Drawing.Size(224, 40);
-            this.btnDentista.TabIndex = 2;
+            this.btnDentista.TabIndex = 3;
             this.btnDentista.Text = "Dentista";
             this.btnDentista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDentista.UseVisualStyleBackColor = true;
@@ -249,7 +249,7 @@
             this.btnConvenio.Location = new System.Drawing.Point(12, 112);
             this.btnConvenio.Name = "btnConvenio";
             this.btnConvenio.Size = new System.Drawing.Size(224, 40);
-            this.btnConvenio.TabIndex = 1;
+            this.btnConvenio.TabIndex = 2;
             this.btnConvenio.Text = "Convênio";
             this.btnConvenio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnConvenio.UseVisualStyleBackColor = true;

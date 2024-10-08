@@ -103,23 +103,6 @@ namespace ProjetoOdontoPOO.Views
             }
         }
 
-        private void txtIdadePaciente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-
-            if (!char.IsDigit(ch) &&
-                ch != 8 &&
-                ch != 13)
-            {
-                e.Handled = true;
-                MessageBox.Show(
-                    "Este campo aceita apenas números",
-                    "Informação",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-            }
-        }
-
         private void txtNumeroEndereco_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;

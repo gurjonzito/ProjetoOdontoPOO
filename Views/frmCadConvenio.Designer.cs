@@ -53,7 +53,7 @@
             this.txtTelefoneConvenio.Mask = "(00) 00000-0000";
             this.txtTelefoneConvenio.Name = "txtTelefoneConvenio";
             this.txtTelefoneConvenio.Size = new System.Drawing.Size(186, 20);
-            this.txtTelefoneConvenio.TabIndex = 75;
+            this.txtTelefoneConvenio.TabIndex = 3;
             this.txtTelefoneConvenio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefoneConvenio_KeyPress);
             // 
             // btnSalvarConvenio
@@ -64,7 +64,7 @@
             this.btnSalvarConvenio.Location = new System.Drawing.Point(404, 244);
             this.btnSalvarConvenio.Name = "btnSalvarConvenio";
             this.btnSalvarConvenio.Size = new System.Drawing.Size(113, 35);
-            this.btnSalvarConvenio.TabIndex = 81;
+            this.btnSalvarConvenio.TabIndex = 8;
             this.btnSalvarConvenio.Text = "Salvar";
             this.btnSalvarConvenio.UseVisualStyleBackColor = false;
             this.btnSalvarConvenio.Click += new System.EventHandler(this.btnSalvarConvenio_Click);
@@ -77,7 +77,7 @@
             this.btnLimparConvenio.Location = new System.Drawing.Point(39, 244);
             this.btnLimparConvenio.Name = "btnLimparConvenio";
             this.btnLimparConvenio.Size = new System.Drawing.Size(113, 35);
-            this.btnLimparConvenio.TabIndex = 80;
+            this.btnLimparConvenio.TabIndex = 7;
             this.btnLimparConvenio.Text = "Limpar";
             this.btnLimparConvenio.UseVisualStyleBackColor = false;
             this.btnLimparConvenio.Click += new System.EventHandler(this.btnLimparConvenio_Click);
@@ -98,7 +98,7 @@
             this.txtEmailConvenio.Location = new System.Drawing.Point(231, 143);
             this.txtEmailConvenio.Name = "txtEmailConvenio";
             this.txtEmailConvenio.Size = new System.Drawing.Size(286, 20);
-            this.txtEmailConvenio.TabIndex = 77;
+            this.txtEmailConvenio.TabIndex = 4;
             // 
             // label3
             // 
@@ -138,7 +138,7 @@
             this.txtNomeConvenio.Location = new System.Drawing.Point(39, 96);
             this.txtNomeConvenio.Name = "txtNomeConvenio";
             this.txtNomeConvenio.Size = new System.Drawing.Size(313, 20);
-            this.txtNomeConvenio.TabIndex = 73;
+            this.txtNomeConvenio.TabIndex = 1;
             // 
             // panel1
             // 
@@ -177,7 +177,7 @@
             this.txtEnderecoConvenio.Location = new System.Drawing.Point(39, 191);
             this.txtEnderecoConvenio.Name = "txtEnderecoConvenio";
             this.txtEnderecoConvenio.Size = new System.Drawing.Size(313, 20);
-            this.txtEnderecoConvenio.TabIndex = 83;
+            this.txtEnderecoConvenio.TabIndex = 5;
             // 
             // dtpDataConvenio
             // 
@@ -185,7 +185,7 @@
             this.dtpDataConvenio.Location = new System.Drawing.Point(358, 191);
             this.dtpDataConvenio.Name = "dtpDataConvenio";
             this.dtpDataConvenio.Size = new System.Drawing.Size(159, 20);
-            this.dtpDataConvenio.TabIndex = 85;
+            this.dtpDataConvenio.TabIndex = 6;
             // 
             // label6
             // 
@@ -204,7 +204,7 @@
             this.txtCNPJConvenio.Mask = "00.000.000/0000-00";
             this.txtCNPJConvenio.Name = "txtCNPJConvenio";
             this.txtCNPJConvenio.Size = new System.Drawing.Size(158, 20);
-            this.txtCNPJConvenio.TabIndex = 87;
+            this.txtCNPJConvenio.TabIndex = 2;
             // 
             // frmCadConvenio
             // 
