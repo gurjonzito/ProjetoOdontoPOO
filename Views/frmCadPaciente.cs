@@ -80,7 +80,7 @@ namespace ProjetoOdontoPOO.Views
                 Logradouro = txtLogradouro.Text,
                 Numero = txtNumeroEndereco.Text,
                 Cidade = txtCidadeEndereco.Text,
-                Estado = txtUFEndereco.Text,
+                Estado = cbUFEndereco.Text,
                 CEP = txtCEPEndereco.Text,
                 Complemento = txtComplementoEndereco.Text
             };
@@ -152,7 +152,6 @@ namespace ProjetoOdontoPOO.Views
             txtLogradouro.Clear();
             txtNumeroEndereco.Clear();
             txtCidadeEndereco.Clear();
-            txtUFEndereco.Clear();
             txtCEPEndereco.Clear();
             txtComplementoEndereco.Clear();
 
@@ -160,6 +159,7 @@ namespace ProjetoOdontoPOO.Views
             cbConvenioPaciente.SelectedIndex = -1;
             cbSexoPaciente.SelectedIndex = -1;
             cbResponsavelPaciente.SelectedIndex = -1;
+            cbUFEndereco.SelectedIndex = -1;
 
             // Resetar DateTimePicker
             dtpDataPaciente.Value = DateTime.Now;

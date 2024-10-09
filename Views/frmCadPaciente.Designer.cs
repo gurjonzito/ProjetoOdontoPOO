@@ -50,7 +50,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtCidadeEndereco = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtUFEndereco = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtComplementoEndereco = new System.Windows.Forms.TextBox();
@@ -64,6 +63,7 @@
             this.txtIdadePaciente = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.cbSexoPaciente = new System.Windows.Forms.ComboBox();
+            this.cbUFEndereco = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -281,14 +281,6 @@
             this.label13.TabIndex = 25;
             this.label13.Text = "UF";
             // 
-            // txtUFEndereco
-            // 
-            this.txtUFEndereco.Location = new System.Drawing.Point(278, 456);
-            this.txtUFEndereco.MaxLength = 2;
-            this.txtUFEndereco.Name = "txtUFEndereco";
-            this.txtUFEndereco.Size = new System.Drawing.Size(79, 20);
-            this.txtUFEndereco.TabIndex = 13;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -423,12 +415,54 @@
             this.cbSexoPaciente.Size = new System.Drawing.Size(226, 21);
             this.cbSexoPaciente.TabIndex = 5;
             // 
+            // cbUFEndereco
+            // 
+            this.cbUFEndereco.DropDownHeight = 80;
+            this.cbUFEndereco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUFEndereco.DropDownWidth = 79;
+            this.cbUFEndereco.FormattingEnabled = true;
+            this.cbUFEndereco.IntegralHeight = false;
+            this.cbUFEndereco.ItemHeight = 13;
+            this.cbUFEndereco.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.cbUFEndereco.Location = new System.Drawing.Point(278, 456);
+            this.cbUFEndereco.Name = "cbUFEndereco";
+            this.cbUFEndereco.Size = new System.Drawing.Size(79, 21);
+            this.cbUFEndereco.TabIndex = 13;
+            // 
             // frmCadPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(566, 642);
+            this.Controls.Add(this.cbUFEndereco);
             this.Controls.Add(this.cbSexoPaciente);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
@@ -443,7 +477,6 @@
             this.Controls.Add(this.txtComplementoEndereco);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtUFEndereco);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtCidadeEndereco);
             this.Controls.Add(this.label11);
@@ -500,7 +533,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtCidadeEndereco;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtUFEndereco;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtComplementoEndereco;
@@ -514,5 +546,6 @@
         private System.Windows.Forms.TextBox txtIdadePaciente;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cbSexoPaciente;
+        private System.Windows.Forms.ComboBox cbUFEndereco;
     }
 }
