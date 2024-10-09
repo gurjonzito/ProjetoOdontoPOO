@@ -25,13 +25,14 @@ namespace ProjetoOdontoPOO.Views
         private void frmCadPaciente_Load(object sender, EventArgs e)
         {
             cbConvenioPaciente.DataSource = _convenioController.ObterConvenios();
-            cbConvenioPaciente.SelectedIndex = -1;
             cbConvenioPaciente.DisplayMember = "Nome";
             cbConvenioPaciente.ValueMember = "Id";
+            cbConvenioPaciente.SelectedIndex = -1;
 
             cbResponsavelPaciente.DataSource = _responsavelController.ObterResponsaveis();
             cbResponsavelPaciente.DisplayMember = "Nome";
             cbResponsavelPaciente.ValueMember = "Id";
+            cbResponsavelPaciente.SelectedIndex = -1; 
         }
 
         private void btnSalvarPaciente_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace ProjetoOdontoPOO.Views
                 DataNascimento = dtpDataPaciente.Value,
                 Idade = int.TryParse(txtIdadePaciente.Text, out int idade) ? idade : 0,
                 CPF = txtCPFPaciente.Text,
-                Sexo = txtSexoPaciente.Text,
+                Sexo = cbSexoPaciente.Text,
                 Telefone = txtTelefonePaciente.Text,
                 Email = txtEmailPaciente.Text,
                 Convenio = cbConvenioPaciente.SelectedValue != null
@@ -90,6 +91,26 @@ namespace ProjetoOdontoPOO.Views
             LimparCampos();
         }
 
+        private void dtpDataPaciente_Leave(object sender, EventArgs e)
+        {
+            if (DateTime.TryParse(dtpDataPaciente.Text, out DateTime dataNascimento))
+            {
+                DateTime hoje = DateTime.Now;
+                int idade = hoje.Year - dataNascimento.Year;
+
+                // Ajusta se o aniversário ainda não aconteceu este ano
+                if (hoje < dataNascimento.AddYears(idade))
+                {
+                    idade--;
+                }
+
+                txtIdadePaciente.Text = idade.ToString();
+            }
+            else
+            {
+                txtIdadePaciente.Text = string.Empty; // Limpa a idade se a data for inválida
+            }
+        }
         private void btnLimparPaciente_Click(object sender, EventArgs e)
         {
             LimparCampos();
@@ -126,7 +147,6 @@ namespace ProjetoOdontoPOO.Views
             txtNomePaciente.Clear();
             txtIdadePaciente.Clear();
             txtCPFPaciente.Clear();
-            txtSexoPaciente.Clear();
             txtTelefonePaciente.Clear();
             txtEmailPaciente.Clear();
             txtLogradouro.Clear();
@@ -138,6 +158,7 @@ namespace ProjetoOdontoPOO.Views
 
             // Resetar ComboBoxes
             cbConvenioPaciente.SelectedIndex = -1;
+            cbSexoPaciente.SelectedIndex = -1;
             cbResponsavelPaciente.SelectedIndex = -1;
 
             // Resetar DateTimePicker
