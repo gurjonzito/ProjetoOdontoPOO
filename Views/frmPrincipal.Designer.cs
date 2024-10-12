@@ -144,6 +144,7 @@
             this.btnResponsavel.Text = "Responsável";
             this.btnResponsavel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnResponsavel.UseVisualStyleBackColor = true;
+            this.btnResponsavel.Click += new System.EventHandler(this.btnResponsavel_Click);
             // 
             // btnVisualizar
             // 
@@ -238,6 +239,7 @@
             this.btnDentista.Text = "Dentista";
             this.btnDentista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDentista.UseVisualStyleBackColor = true;
+            this.btnDentista.Click += new System.EventHandler(this.btnDentista_Click);
             // 
             // btnConvenio
             // 

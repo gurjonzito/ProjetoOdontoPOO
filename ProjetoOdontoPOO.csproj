@@ -56,11 +56,15 @@
     <Compile Include="Models\DentistaCollection.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\EnderecoCollection.cs" />
+    <Compile Include="Models\OperationResult.cs" />
     <Compile Include="Models\Paciente.cs" />
     <Compile Include="Models\PacienteCollection.cs" />
     <Compile Include="Models\Responsavel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ConvenioRepository.cs" />
+    <Compile Include="Repositories\PacienteRepository.cs" />
+    <Compile Include="Repositories\ResponsavelRepository.cs" />
     <Compile Include="Services\ConvenioService.cs" />
     <Compile Include="Services\DataBaseSqlServerService.cs" />
     <Compile Include="Services\EnderecoService.cs" />
@@ -89,6 +93,12 @@
     </Compile>
     <Compile Include="Views\frmCadPaciente.Designer.cs">
       <DependentUpon>frmCadPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmCadResponsavel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmCadResponsavel.Designer.cs">
+      <DependentUpon>frmCadResponsavel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmEditarPaciente.cs">
       <SubType>Form</SubType>
@@ -128,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmCadPaciente.resx">
       <DependentUpon>frmCadPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmCadResponsavel.resx">
+      <DependentUpon>frmCadResponsavel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmEditarPaciente.resx">
       <DependentUpon>frmEditarPaciente.cs</DependentUpon>

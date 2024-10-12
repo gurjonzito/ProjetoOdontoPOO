@@ -1,219 +1,111 @@
 ﻿using ProjetoOdontoPOO.Models;
-using ProjetoOdontoPOO.Services;
+using ProjetoOdontoPOO.Repositories;
 using System;
 using System.Data;
-using System.Data.SqlClient;
-using System.Windows.Forms;
 
 public class PacienteService
 {
-    private readonly DataBaseSqlServerService _dbService;
+    private readonly PacienteRepository _pacienteRepository;
 
     public PacienteService()
     {
-        _dbService = new DataBaseSqlServerService();
+        _pacienteRepository = new PacienteRepository();
     }
 
     public Paciente ObterDadosPacientePorId(int pacienteId)
     {
-        Paciente paciente = null;
+        if (pacienteId <= 0)
+            throw new ArgumentException("ID do paciente inválido.");
 
-        using (SqlConnection conexao = _dbService.CriarConexao())
-        {
-            string query = @"SELECT Pac_ID, Pac_Nome, Pac_DataNascimento, Pac_Idade, Pac_CPF, Pac_Sexo, Pac_Telefone, Pac_Email, Ativo_Inativo, Pac_ConvenioID_FK, Pac_ResponsavelID_FK
-                                 FROM Paciente
-                                 WHERE Pac_ID = @Id";
-
-            using (SqlCommand cmd = new SqlCommand(query, conexao))
-            {
-                cmd.Parameters.AddWithValue("@Id", pacienteId);
-
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        paciente = new Paciente
-                        {
-                            Id = reader.GetInt32(reader.GetOrdinal("Pac_ID")),
-                            Nome = reader.GetString(reader.GetOrdinal("Pac_Nome")),
-                            DataNascimento = reader.GetDateTime(reader.GetOrdinal("Pac_DataNascimento")),
-                            Idade = reader.GetInt32(reader.GetOrdinal("Pac_Idade")),
-                            CPF = reader.GetString(reader.GetOrdinal("Pac_CPF")),
-                            Sexo = reader.GetString(reader.GetOrdinal("Pac_Sexo")),
-                            Telefone = reader.GetString(reader.GetOrdinal("Pac_Telefone")),
-                            Email = reader.GetString(reader.GetOrdinal("Pac_Email")),
-                            Convenio = reader.IsDBNull(reader.GetOrdinal("Pac_ConvenioID_FK"))
-                            ? null
-                            : new Convenio { Id = reader.GetInt32(reader.GetOrdinal("Pac_ConvenioID_FK")) },
-                            Responsavel = reader.IsDBNull(reader.GetOrdinal("Pac_ResponsavelID_FK"))
-                            ? null
-                            : new Responsavel { Id = reader.GetInt32(reader.GetOrdinal("Pac_ResponsavelID_FK")) }
-                        };
-                    }
-                }
-            }
-        }
-
-        return paciente;
+        return _pacienteRepository.ObterDadosPacientePorId(pacienteId);
     }
 
-    public DataTable ObterDadosPacientes()
+    public DataTable ObterTodosPacientes()
     {
-        DataTable tabela = new DataTable();
-
-        using (SqlConnection conexao = _dbService.CriarConexao())
-        {
-            string query = @"
-            SELECT Pac.Pac_ID AS ID,
-                   Pac.Pac_Nome AS Nome,
-                   Pac.Pac_DataNascimento AS [Data de Nascimento],
-                   Pac.Pac_Idade AS Idade,
-                   Pac.Pac_CPF AS CPF,
-                   Pac.Pac_Sexo AS Sexo,
-                   Pac.Pac_Telefone AS Telefone,
-                   Pac.Pac_Email AS [E-mail],
-                   Pac.Ativo_Inativo AS Ativo_Inativo,
-                   COALESCE(Conv.Conv_Nome, 'Sem Convênio') AS Convênio,
-                   COALESCE(Resp.Res_Nome, 'Sem Responsável') AS Responsável
-            FROM Paciente AS Pac
-            LEFT JOIN Convenio AS Conv ON Pac.Pac_ConvenioID_FK = Conv.Conv_ID
-            LEFT JOIN Responsavel AS Resp ON Pac.Pac_ResponsavelID_FK = Resp.Res_ID";
-
-            SqlDataAdapter adaptador = new SqlDataAdapter(query, conexao);
-            adaptador.Fill(tabela);
-        }
-
-        return tabela;
+        return _pacienteRepository.ObterDadosPacientes();
     }
 
-    public void InserirPacienteComEndereco(Paciente paciente, Endereco endereco)
+    public OperationResult InserirPacienteComEndereco(Paciente paciente, Endereco endereco)
     {
-        using (SqlConnection conexao = _dbService.CriarConexao())
-        {
-            // Inicia a transação
-            SqlTransaction transacao = conexao.BeginTransaction();
+        var resultadoValidacao = ValidarCadastroPaciente(paciente, endereco);
+        if (!resultadoValidacao.Sucesso)
+            return resultadoValidacao;
 
-            try
-            {
-                // Insere o paciente e captura o ID gerado
-                string queryPaciente = "INSERT INTO Paciente (Pac_Nome, Pac_DataNascimento, Pac_Idade, Pac_CPF, Pac_Sexo, Pac_Telefone, Pac_Email, Pac_ConvenioID_FK, Pac_ResponsavelID_FK) " +
-                                        "OUTPUT INSERTED.Pac_Id VALUES (@Nome, @DataNascimento, @Idade, @CPF, @Sexo, @Telefone, @Email, @ConvenioID, @ResponsavelID)";
-                using (SqlCommand cmdPaciente = new SqlCommand(queryPaciente, conexao, transacao))
-                {
-                    cmdPaciente.Parameters.AddWithValue("@Nome", paciente.Nome);
-                    cmdPaciente.Parameters.AddWithValue("@DataNascimento", paciente.DataNascimento);
-                    cmdPaciente.Parameters.AddWithValue("@Idade", paciente.Idade);
-                    cmdPaciente.Parameters.AddWithValue("@CPF", paciente.CPF);
-                    cmdPaciente.Parameters.AddWithValue("@Sexo", paciente.Sexo);
-                    cmdPaciente.Parameters.AddWithValue("@Telefone", paciente.Telefone);
-                    cmdPaciente.Parameters.AddWithValue("@Email", paciente.Email);
-                    // Se Convenio for null, usa DBNull.Value, caso contrário, pega o Id
-                    cmdPaciente.Parameters.AddWithValue("@ConvenioID", paciente.Convenio != null ? (object)paciente.Convenio.Id : DBNull.Value);
-                    // Se Responsavel for null, usa DBNull.Value, caso contrário, pega o Id
-                    cmdPaciente.Parameters.AddWithValue("@ResponsavelID", paciente.Responsavel != null ? (object)paciente.Responsavel.Id : DBNull.Value);
-
-                    int pacienteId = (int)cmdPaciente.ExecuteScalar();
-
-                    // Insere o endereço usando o ID do paciente
-                    string queryEndereco = "INSERT INTO Endereco (End_Logradouro, End_Numero, End_Cidade, End_Estado, End_CEP, End_Complemento, End_PacienteID_FK) " +
-                                            "VALUES (@Logradouro, @Numero, @Cidade, @Estado, @CEP, @Complemento, @PacienteID)";
-                    using (SqlCommand cmdEndereco = new SqlCommand(queryEndereco, conexao, transacao))
-                    {
-                        cmdEndereco.Parameters.AddWithValue("@Logradouro", endereco.Logradouro);
-                        cmdEndereco.Parameters.AddWithValue("@Numero", endereco.Numero);
-                        cmdEndereco.Parameters.AddWithValue("@Cidade", endereco.Cidade);
-                        cmdEndereco.Parameters.AddWithValue("@Estado", endereco.Estado);
-                        cmdEndereco.Parameters.AddWithValue("@CEP", endereco.CEP);
-                        cmdEndereco.Parameters.AddWithValue("@Complemento", endereco.Complemento);
-                        cmdEndereco.Parameters.AddWithValue("@PacienteID", pacienteId);
-
-                        cmdEndereco.ExecuteNonQuery();
-                    }
-                }
-
-                // Confirma a transação
-                transacao.Commit();
-            }
-            catch
-            {
-                // Reverte a transação em caso de erro
-                transacao.Rollback();
-                throw;
-            }
-        }
+        _pacienteRepository.InserirPacienteComEndereco(paciente, endereco);
+        return new OperationResult(true, "Paciente cadastrado com sucesso!");
     }
 
-    public bool AtualizarPacienteComEndereco(int pacienteId, string nome, DateTime dataNascimento, int idade, string cpf, string sexo, string telefone, string email, int? convenioId, int? responsavelId, Endereco endereco)
+    public bool AtualizarPacienteComEndereco(int pacienteId, Paciente paciente, Endereco endereco)
     {
-        using (SqlConnection conexao = _dbService.CriarConexao())
-        {
+        var resultadoValidacao = ValidarCadastroPaciente(paciente, endereco);
+        if (!resultadoValidacao.Sucesso)
+            throw new ArgumentException(resultadoValidacao.Mensagem);
 
-            SqlTransaction transacao = conexao.BeginTransaction();
+        return _pacienteRepository.AtualizarPacienteComEndereco(pacienteId, paciente, endereco);
+    }
 
-            try
-            {
-                // Atualiza os dados do paciente
-                string queryPaciente = @"UPDATE Paciente
-                                     SET Pac_Nome = @Nome,
-                                         Pac_DataNascimento = @DataNascimento,
-                                         Pac_Idade = @Idade,
-                                         Pac_CPF = @CPF,
-                                         Pac_Sexo = @Sexo,
-                                         Pac_Telefone = @Telefone,
-                                         Pac_Email = @Email,
-                                         Pac_ConvenioID_FK = @ConvenioID,
-                                         Pac_ResponsavelID_FK = @ResponsavelID
-                                     WHERE Pac_ID = @ID";
+    private OperationResult ValidarCadastroPaciente(Paciente paciente, Endereco endereco)
+    {
+        var resultadoPaciente = ValidarPaciente(paciente);
+        if (!resultadoPaciente.Sucesso) return resultadoPaciente;
 
-                using (SqlCommand cmdPaciente = new SqlCommand(queryPaciente, conexao, transacao))
-                {
-                    cmdPaciente.Parameters.AddWithValue("@ID", pacienteId);
-                    cmdPaciente.Parameters.AddWithValue("@Nome", nome);
-                    cmdPaciente.Parameters.AddWithValue("@DataNascimento", dataNascimento);
-                    cmdPaciente.Parameters.AddWithValue("@Idade", idade);
-                    cmdPaciente.Parameters.AddWithValue("@CPF", cpf);
-                    cmdPaciente.Parameters.AddWithValue("@Sexo", sexo);
-                    cmdPaciente.Parameters.AddWithValue("@Telefone", telefone);
-                    cmdPaciente.Parameters.AddWithValue("@Email", email);
-                    cmdPaciente.Parameters.AddWithValue("@ConvenioID", convenioId.HasValue ? (object)convenioId.Value : DBNull.Value);
-                    cmdPaciente.Parameters.AddWithValue("@ResponsavelID", responsavelId.HasValue ? (object)responsavelId.Value : DBNull.Value);
+        return ValidarEndereco(endereco);
+    }
 
-                    cmdPaciente.ExecuteNonQuery();
-                }
+    private OperationResult ValidarPaciente(Paciente paciente)
+    {
+        string cpfLimpo = paciente.CPF.Replace(".", "").Replace("-", "").Replace(" ", "").Replace(",", "");
+        Console.WriteLine($"CPF Limpo: {cpfLimpo}");
 
-                // Atualiza os dados do endereço
-                string queryEndereco = @"UPDATE Endereco
-                                     SET End_Logradouro = @Logradouro,
-                                         End_Numero = @Numero,
-                                         End_Cidade = @Cidade,
-                                         End_Estado = @Estado,
-                                         End_CEP = @CEP,
-                                         End_Complemento = @Complemento
-                                     WHERE End_PacienteID_FK = @PacienteID";
+        string telefoneLimpo = paciente.Telefone.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
+        Console.WriteLine($"Telefone Limpo: {telefoneLimpo}");
 
-                using (SqlCommand cmdEndereco = new SqlCommand(queryEndereco, conexao, transacao))
-                {
-                    cmdEndereco.Parameters.AddWithValue("@PacienteID", pacienteId);
-                    cmdEndereco.Parameters.AddWithValue("@Logradouro", endereco.Logradouro);
-                    cmdEndereco.Parameters.AddWithValue("@Numero", endereco.Numero);
-                    cmdEndereco.Parameters.AddWithValue("@Cidade", endereco.Cidade);
-                    cmdEndereco.Parameters.AddWithValue("@Estado", endereco.Estado);
-                    cmdEndereco.Parameters.AddWithValue("@CEP", endereco.CEP);
-                    cmdEndereco.Parameters.AddWithValue("@Complemento", endereco.Complemento);
+        if (string.IsNullOrWhiteSpace(paciente.Nome))
+            return new OperationResult(false, "O nome do paciente é obrigatório.");
 
-                    cmdEndereco.ExecuteNonQuery();
-                }
+        if (paciente.DataNascimento == DateTime.MinValue)
+            return new OperationResult(false, "Data de nascimento inválida.");
 
-                // Confirma a transação
-                transacao.Commit();
-                return true;
-            }
-            catch
-            {
-                // Reverte a transação em caso de erro
-                transacao.Rollback();
-                throw;
-            }
-        }
+        if (paciente.Idade <= 0)
+            return new OperationResult(false, "Idade inválida.");
+
+        if (string.IsNullOrWhiteSpace(cpfLimpo))
+            return new OperationResult(false, "O CPF do paciente é obrigatório.");
+
+        if (cpfLimpo.Length != 11)
+            return new OperationResult(false, "O CPF do paciente deve conter 11 dígitos.");
+
+        if (string.IsNullOrWhiteSpace(paciente.Sexo))
+            return new OperationResult(false, "O sexo do paciente é obrigatório.");
+
+        if (string.IsNullOrWhiteSpace(telefoneLimpo))
+            return new OperationResult(false, "O telefone do paciente é obrigatório.");
+
+        if (!string.IsNullOrWhiteSpace(paciente.Email) && (paciente.Email.Contains(" ") || !paciente.Email.Contains("@")))
+            return new OperationResult(false, "E-mail inválido.");
+
+        return new OperationResult(true, "Validação bem-sucedida!");
+    }
+
+    private OperationResult ValidarEndereco(Endereco endereco)
+    {
+        string cepLimpo = endereco.CEP.Replace("-", "");
+
+        if (string.IsNullOrWhiteSpace(endereco.Logradouro))
+            return new OperationResult(false, "O logradouro do endereço é obrigatório.");
+
+        if (string.IsNullOrWhiteSpace(endereco.Cidade))
+            return new OperationResult(false, "A cidade do endereço é obrigatória.");
+
+        if (string.IsNullOrWhiteSpace(endereco.Estado) || endereco.Estado.Length != 2)
+            return new OperationResult(false, "O estado do endereço é obrigatório e deve conter 2 caracteres.");
+
+        if (string.IsNullOrWhiteSpace(cepLimpo))
+            return new OperationResult(false, "O CEP do endereço é obrigatório.");
+
+        if (cepLimpo.Length != 8)
+            return new OperationResult(false, "O CEP do endereço deve conter 8 dígitos.");
+
+        return new OperationResult(true, "Validação bem-sucedida!");
     }
 }

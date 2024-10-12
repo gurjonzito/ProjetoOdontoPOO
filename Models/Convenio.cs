@@ -15,5 +15,6 @@ namespace ProjetoOdontoPOO.Models
         public string Endereco { get; set; }
         public string Email { get; set; }
         public DateTime DataCriacao { get; set; }
+        public int Ativo_Inativo { get; set; }
     }
 }

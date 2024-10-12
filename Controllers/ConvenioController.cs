@@ -1,6 +1,8 @@
 ﻿using ProjetoOdontoPOO.Models;
 using ProjetoOdontoPOO.Services;
+using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProjetoOdontoPOO.Controllers
 {
@@ -13,14 +15,37 @@ namespace ProjetoOdontoPOO.Controllers
             _convenioService = new ConvenioService();
         }
 
-        public List<Convenio> ObterConvenios()
+        public Convenio ObterConvenioPorId(int convenioId)
         {
-            return _convenioService.ObterConvenios();
+            try
+            {
+                return _convenioService.ObterDadosConvenioPorId(convenioId);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao obter convênio: {ex.Message}");
+                throw;
+            }
         }
 
-        public void InserirConvenio(Convenio convenio)
+        public DataTable ObterTodosConvenios()
         {
-            _convenioService.InserirConvenio(convenio);
+            try
+            {
+                return _convenioService.ObterTodosConvenios();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao obter lista de convênios: {ex.Message}");
+                throw;
+            }
+        }
+
+        public string InserirConvenio(Convenio convenio)
+        {
+            var resultado = _convenioService.InserirConvenio(convenio);
+
+            return resultado.Mensagem;
         }
     }
 }

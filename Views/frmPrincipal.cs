@@ -40,6 +40,18 @@ namespace ProjetoOdontoPOO.Views
             frm.ShowDialog();
         }
 
+        private void btnDentista_Click(object sender, EventArgs e)
+        {
+            frmCadDentista frm = new frmCadDentista();
+            frm.ShowDialog();
+        }
+
+        private void btnResponsavel_Click(object sender, EventArgs e)
+        {
+            frmCadResponsavel frm = new frmCadResponsavel();
+            frm.ShowDialog();
+        }
+
         private void btnConsulta_Click(object sender, EventArgs e)
         {
             frmAgendarConsulta frm = new frmAgendarConsulta();

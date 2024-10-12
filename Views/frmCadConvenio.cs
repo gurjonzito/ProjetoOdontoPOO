@@ -19,32 +19,28 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarConvenio_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNomeConvenio.Text))
-            {
-                MessageBox.Show("Nome é obrigatório e não pode estar vazio.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            var convenio = CriarConvenio();
 
-            if (txtEmailConvenio.Text.Contains(" "))
-            {
-                MessageBox.Show("E-mail não pode conter espaços em branco.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            string mensagem = _convenioController.InserirConvenio(convenio);
+            MessageBox.Show(mensagem);
 
-            var convenio = new Convenio
+            if (mensagem.Contains("Convênio cadastrado com sucesso!"))
+            {
+                LimparCampos();
+            }
+        }
+
+        private Convenio CriarConvenio()
+        {
+            return new Convenio
             {
                 Nome = txtNomeConvenio.Text,
-                CNPJ = txtCNPJConvenio.Text,
+                CNPJ = txtCNPJConvenio.Text.Replace(".", "").Replace("-", "").Replace("/", "").Replace(",", ""),
                 Telefone = txtTelefoneConvenio.Text,
                 Endereco = txtEnderecoConvenio.Text,
                 Email = txtEmailConvenio.Text,
-                DataCriacao = dtpDataConvenio.Value
+                DataCriacao = dtpDataConvenio.Value,
             };
-
-            _convenioController.InserirConvenio(convenio);
-            MessageBox.Show("Convênio cadastrado com sucesso!");
-
-            LimparCampos();
         }
 
         private void btnLimparConvenio_Click(object sender, EventArgs e)
@@ -52,24 +48,28 @@ namespace ProjetoOdontoPOO.Views
             LimparCampos();
         }
 
-        private void txtTelefoneConvenio_KeyPress(object sender, KeyPressEventArgs e)
+        private void ValidarEntradaNumerica(KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+                MessageBox.Show("Este campo aceita apenas números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void txtTelefoneConvenio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarEntradaNumerica(e);
         }
 
         private void LimparCampos()
         {
-            // Limpar campos de texto
             txtNomeConvenio.Clear();
-            txtTelefoneConvenio.Clear();
-            txtEmailConvenio.Clear();
             txtCNPJConvenio.Clear();
+            txtTelefoneConvenio.Clear();
             txtEnderecoConvenio.Clear();
+            txtEmailConvenio.Clear();
 
-            // Resetar DateTimePicker
             dtpDataConvenio.Value = DateTime.Now;
         }
     }

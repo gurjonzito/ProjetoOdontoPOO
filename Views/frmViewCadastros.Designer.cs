@@ -28,60 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.tabControlVisualizar = new System.Windows.Forms.TabControl();
+            this.tpPaciente = new System.Windows.Forms.TabPage();
             this.txtBuscarCPFPac = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscarCPFPaciente = new System.Windows.Forms.Button();
             this.dgvPaciente = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Convênio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Responsável = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo_Inativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tpResponsavel = new System.Windows.Forms.TabPage();
             this.txtBuscarCPFRes = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBuscarCPFResponsavel = new System.Windows.Forms.Button();
             this.dgvResponsavel = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.IDRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdadeRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPFRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SexoRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo_InativoRes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tpConvenio = new System.Windows.Forms.TabPage();
             this.txtBuscarCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBuscarCNPJ = new System.Windows.Forms.Button();
             this.dgvConvenio = new System.Windows.Forms.DataGridView();
+            this.IDConv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeConv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo_InativoConv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabControlVisualizar.SuspendLayout();
+            this.tpPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tpResponsavel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsavel)).BeginInit();
-            this.tabPage3.SuspendLayout();
+            this.tpConvenio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvenio)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabControlVisualizar
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(1, 52);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(991, 544);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.Click += new System.EventHandler(this.btnBuscarCPFPaciente_Click);
+            this.tabControlVisualizar.Controls.Add(this.tpPaciente);
+            this.tabControlVisualizar.Controls.Add(this.tpResponsavel);
+            this.tabControlVisualizar.Controls.Add(this.tpConvenio);
+            this.tabControlVisualizar.Location = new System.Drawing.Point(1, 52);
+            this.tabControlVisualizar.Name = "tabControlVisualizar";
+            this.tabControlVisualizar.SelectedIndex = 0;
+            this.tabControlVisualizar.Size = new System.Drawing.Size(991, 544);
+            this.tabControlVisualizar.TabIndex = 0;
+            this.tabControlVisualizar.SelectedIndexChanged += new System.EventHandler(this.tabControlVisualizar_SelectedIndexChanged);
+            this.tabControlVisualizar.Click += new System.EventHandler(this.btnBuscarCPFPaciente_Click);
             // 
-            // tabPage1
+            // tpPaciente
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.tabPage1.Controls.Add(this.txtBuscarCPFPac);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.btnBuscarCPFPaciente);
-            this.tabPage1.Controls.Add(this.dgvPaciente);
-            this.tabPage1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(983, 518);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Paciente";
+            this.tpPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.tpPaciente.Controls.Add(this.txtBuscarCPFPac);
+            this.tpPaciente.Controls.Add(this.label2);
+            this.tpPaciente.Controls.Add(this.btnBuscarCPFPaciente);
+            this.tpPaciente.Controls.Add(this.dgvPaciente);
+            this.tpPaciente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpPaciente.Location = new System.Drawing.Point(4, 22);
+            this.tpPaciente.Name = "tpPaciente";
+            this.tpPaciente.Padding = new System.Windows.Forms.Padding(3);
+            this.tpPaciente.Size = new System.Drawing.Size(983, 518);
+            this.tpPaciente.TabIndex = 0;
+            this.tpPaciente.Text = "Paciente";
             // 
             // txtBuscarCPFPac
             // 
@@ -114,27 +135,109 @@
             // 
             // dgvPaciente
             // 
+            this.dgvPaciente.AllowUserToAddRows = false;
+            this.dgvPaciente.AllowUserToDeleteRows = false;
+            this.dgvPaciente.AllowUserToResizeColumns = false;
+            this.dgvPaciente.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aquamarine;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Yellow;
+            this.dgvPaciente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPaciente.BackgroundColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Magenta;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaciente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPaciente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Nome,
+            this.Idade,
+            this.CPF,
+            this.Sexo,
+            this.Convênio,
+            this.Responsável,
+            this.Ativo_Inativo});
             this.dgvPaciente.Location = new System.Drawing.Point(46, 124);
             this.dgvPaciente.Name = "dgvPaciente";
+            this.dgvPaciente.RowHeadersVisible = false;
             this.dgvPaciente.Size = new System.Drawing.Size(889, 353);
             this.dgvPaciente.TabIndex = 0;
             this.dgvPaciente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaciente_CellDoubleClick);
             // 
-            // tabPage2
+            // ID
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.tabPage2.Controls.Add(this.txtBuscarCPFRes);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.btnBuscarCPFResponsavel);
-            this.tabPage2.Controls.Add(this.dgvResponsavel);
-            this.tabPage2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(983, 518);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Responsável";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 250;
+            // 
+            // Idade
+            // 
+            this.Idade.HeaderText = "Idade";
+            this.Idade.Name = "Idade";
+            this.Idade.ReadOnly = true;
+            // 
+            // CPF
+            // 
+            this.CPF.HeaderText = "CPF";
+            this.CPF.Name = "CPF";
+            this.CPF.ReadOnly = true;
+            this.CPF.Width = 170;
+            // 
+            // Sexo
+            // 
+            this.Sexo.HeaderText = "Sexo";
+            this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
+            this.Sexo.Width = 200;
+            // 
+            // Convênio
+            // 
+            this.Convênio.HeaderText = "Convênio";
+            this.Convênio.Name = "Convênio";
+            this.Convênio.ReadOnly = true;
+            this.Convênio.Width = 250;
+            // 
+            // Responsável
+            // 
+            this.Responsável.HeaderText = "Responsável";
+            this.Responsável.Name = "Responsável";
+            this.Responsável.ReadOnly = true;
+            this.Responsável.Width = 250;
+            // 
+            // Ativo_Inativo
+            // 
+            this.Ativo_Inativo.HeaderText = "Ativo_Inativo";
+            this.Ativo_Inativo.Name = "Ativo_Inativo";
+            this.Ativo_Inativo.ReadOnly = true;
+            // 
+            // tpResponsavel
+            // 
+            this.tpResponsavel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.tpResponsavel.Controls.Add(this.txtBuscarCPFRes);
+            this.tpResponsavel.Controls.Add(this.label3);
+            this.tpResponsavel.Controls.Add(this.btnBuscarCPFResponsavel);
+            this.tpResponsavel.Controls.Add(this.dgvResponsavel);
+            this.tpResponsavel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpResponsavel.Location = new System.Drawing.Point(4, 22);
+            this.tpResponsavel.Name = "tpResponsavel";
+            this.tpResponsavel.Padding = new System.Windows.Forms.Padding(3);
+            this.tpResponsavel.Size = new System.Drawing.Size(983, 518);
+            this.tpResponsavel.TabIndex = 1;
+            this.tpResponsavel.Text = "Responsável";
             // 
             // txtBuscarCPFRes
             // 
@@ -168,26 +271,75 @@
             // 
             // dgvResponsavel
             // 
+            this.dgvResponsavel.AllowUserToAddRows = false;
+            this.dgvResponsavel.AllowUserToDeleteRows = false;
             this.dgvResponsavel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResponsavel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDRes,
+            this.NomeRes,
+            this.IdadeRes,
+            this.CPFRes,
+            this.SexoRes,
+            this.Ativo_InativoRes});
             this.dgvResponsavel.Location = new System.Drawing.Point(46, 120);
             this.dgvResponsavel.Name = "dgvResponsavel";
+            this.dgvResponsavel.RowHeadersVisible = false;
             this.dgvResponsavel.Size = new System.Drawing.Size(889, 355);
             this.dgvResponsavel.TabIndex = 1;
             // 
-            // tabPage3
+            // IDRes
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.tabPage3.Controls.Add(this.txtBuscarCNPJ);
-            this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Controls.Add(this.btnBuscarCNPJ);
-            this.tabPage3.Controls.Add(this.dgvConvenio);
-            this.tabPage3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(983, 518);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Convênio";
+            this.IDRes.HeaderText = "ID";
+            this.IDRes.Name = "IDRes";
+            this.IDRes.ReadOnly = true;
+            // 
+            // NomeRes
+            // 
+            this.NomeRes.HeaderText = "Nome";
+            this.NomeRes.Name = "NomeRes";
+            this.NomeRes.ReadOnly = true;
+            this.NomeRes.Width = 250;
+            // 
+            // IdadeRes
+            // 
+            this.IdadeRes.HeaderText = "Idade";
+            this.IdadeRes.Name = "IdadeRes";
+            this.IdadeRes.ReadOnly = true;
+            // 
+            // CPFRes
+            // 
+            this.CPFRes.HeaderText = "CPF";
+            this.CPFRes.Name = "CPFRes";
+            this.CPFRes.ReadOnly = true;
+            this.CPFRes.Width = 170;
+            // 
+            // SexoRes
+            // 
+            this.SexoRes.HeaderText = "Sexo";
+            this.SexoRes.Name = "SexoRes";
+            this.SexoRes.ReadOnly = true;
+            this.SexoRes.Width = 200;
+            // 
+            // Ativo_InativoRes
+            // 
+            this.Ativo_InativoRes.HeaderText = "Ativo_Inativo";
+            this.Ativo_InativoRes.Name = "Ativo_InativoRes";
+            this.Ativo_InativoRes.ReadOnly = true;
+            // 
+            // tpConvenio
+            // 
+            this.tpConvenio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.tpConvenio.Controls.Add(this.txtBuscarCNPJ);
+            this.tpConvenio.Controls.Add(this.label4);
+            this.tpConvenio.Controls.Add(this.btnBuscarCNPJ);
+            this.tpConvenio.Controls.Add(this.dgvConvenio);
+            this.tpConvenio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpConvenio.Location = new System.Drawing.Point(4, 22);
+            this.tpConvenio.Name = "tpConvenio";
+            this.tpConvenio.Padding = new System.Windows.Forms.Padding(3);
+            this.tpConvenio.Size = new System.Drawing.Size(983, 518);
+            this.tpConvenio.TabIndex = 2;
+            this.tpConvenio.Text = "Convênio";
             // 
             // txtBuscarCNPJ
             // 
@@ -221,11 +373,45 @@
             // 
             // dgvConvenio
             // 
+            this.dgvConvenio.AllowUserToAddRows = false;
+            this.dgvConvenio.AllowUserToDeleteRows = false;
             this.dgvConvenio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConvenio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDConv,
+            this.NomeConv,
+            this.CNPJ,
+            this.Ativo_InativoConv});
             this.dgvConvenio.Location = new System.Drawing.Point(49, 124);
             this.dgvConvenio.Name = "dgvConvenio";
+            this.dgvConvenio.RowHeadersVisible = false;
             this.dgvConvenio.Size = new System.Drawing.Size(889, 355);
             this.dgvConvenio.TabIndex = 8;
+            // 
+            // IDConv
+            // 
+            this.IDConv.HeaderText = "ID";
+            this.IDConv.Name = "IDConv";
+            this.IDConv.ReadOnly = true;
+            // 
+            // NomeConv
+            // 
+            this.NomeConv.HeaderText = "Nome";
+            this.NomeConv.Name = "NomeConv";
+            this.NomeConv.ReadOnly = true;
+            this.NomeConv.Width = 250;
+            // 
+            // CNPJ
+            // 
+            this.CNPJ.HeaderText = "CNPJ";
+            this.CNPJ.Name = "CNPJ";
+            this.CNPJ.ReadOnly = true;
+            this.CNPJ.Width = 170;
+            // 
+            // Ativo_InativoConv
+            // 
+            this.Ativo_InativoConv.HeaderText = "Ativo_Inativo";
+            this.Ativo_InativoConv.Name = "Ativo_InativoConv";
+            this.Ativo_InativoConv.ReadOnly = true;
             // 
             // panel1
             // 
@@ -253,21 +439,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 595);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControlVisualizar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmViewCadastros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmViewCadastros";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabControlVisualizar.ResumeLayout(false);
+            this.tpPaciente.ResumeLayout(false);
+            this.tpPaciente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tpResponsavel.ResumeLayout(false);
+            this.tpResponsavel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsavel)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
+            this.tpConvenio.ResumeLayout(false);
+            this.tpConvenio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvenio)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -277,16 +463,16 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl tabControlVisualizar;
+        private System.Windows.Forms.TabPage tpPaciente;
+        private System.Windows.Forms.TabPage tpResponsavel;
         private System.Windows.Forms.DataGridView dgvPaciente;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBuscarCPFPaciente;
         private System.Windows.Forms.DataGridView dgvResponsavel;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tpConvenio;
         private System.Windows.Forms.MaskedTextBox txtBuscarCPFPac;
         private System.Windows.Forms.MaskedTextBox txtBuscarCPFRes;
         private System.Windows.Forms.Label label3;
@@ -295,5 +481,23 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBuscarCNPJ;
         private System.Windows.Forms.DataGridView dgvConvenio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Idade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Convênio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Responsável;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ativo_Inativo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDRes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeRes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdadeRes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPFRes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SexoRes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ativo_InativoRes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDConv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeConv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ativo_InativoConv;
     }
 }

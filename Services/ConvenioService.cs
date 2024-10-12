@@ -1,75 +1,84 @@
 ﻿using ProjetoOdontoPOO.Models;
+using ProjetoOdontoPOO.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data;
 
 namespace ProjetoOdontoPOO.Services
 {
     public class ConvenioService
     {
-        private readonly DataBaseSqlServerService _dbService;
+        private readonly ConvenioRepository _convenioRepository;
 
         public ConvenioService()
         {
-            _dbService = new DataBaseSqlServerService();
+            _convenioRepository = new ConvenioRepository();
         }
 
-        public List<Convenio> ObterConvenios()
+        public Convenio ObterDadosConvenioPorId(int convenioId)
         {
-            var convenios = new List<Convenio>();
+            if (convenioId <= 0)
+                throw new ArgumentException("ID do convênio inválido.");
 
-            using (SqlConnection conexao = _dbService.CriarConexao())
-            {
-                string query = "SELECT Conv_Id, Conv_Nome FROM Convenio";
-                using (SqlCommand cmd = new SqlCommand(query, conexao))
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        convenios.Add(new Convenio
-                        {
-                            Id = reader.GetInt32(0),
-                            Nome = reader.GetString(1)
-                        });
-                    }
-                }
-            }
-            return convenios;
+            return _convenioRepository.ObterDadosConvenioPorId(convenioId);
         }
 
-        public void InserirConvenio(Convenio convenio)
+        public DataTable ObterTodosConvenios()
         {
-            using (SqlConnection conexao = _dbService.CriarConexao())
+            return _convenioRepository.ObterDadosConvenios();
+        }
+
+        public OperationResult InserirConvenio(Convenio convenio)
+        {
+            try
             {
-                SqlTransaction transacao = conexao.BeginTransaction();
+                var resultadoValidacao = ValidarCadastroConvenio(convenio);
+                if (!resultadoValidacao.Sucesso)
+                    return resultadoValidacao;
 
-                try
-                {
-                    string queryConvenio = "INSERT INTO Convenio (Conv_Nome, Conv_CNPJ, Conv_Telefone, Conv_Endereco, Conv_Email, Conv_DataCriacao) " +
-                                            "VALUES (@Nome, @CNPJ, @Telefone, @Endereco, @Email, @DataCriacao)";
-                    using (SqlCommand cmd = new SqlCommand(queryConvenio, conexao, transacao))
-                    {
-                        cmd.Parameters.AddWithValue("@Nome", convenio.Nome);
-                        cmd.Parameters.AddWithValue("@CNPJ", convenio.CNPJ);
-                        cmd.Parameters.AddWithValue("@Telefone", convenio.Telefone);
-                        cmd.Parameters.AddWithValue("@Endereco", convenio.Endereco);
-                        cmd.Parameters.AddWithValue("@Email", convenio.Email);
-                        cmd.Parameters.AddWithValue("@DataCriacao", convenio.DataCriacao);
-
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    transacao.Commit();
-                }
-                catch
-                {
-                    transacao.Rollback();
-                    throw;
-                }
+                _convenioRepository.InserirConvenio(convenio);
+                return new OperationResult(true, "Convênio cadastrado com sucesso!");
             }
+            catch (Exception ex)
+            {
+                return new OperationResult(false, $"Erro ao cadastrar convênio: {ex.Message}");
+            }
+        }
+
+        private OperationResult ValidarCadastroConvenio(Convenio convenio)
+        {
+            return ValidarConvenio(convenio);
+        }
+
+        private OperationResult ValidarConvenio(Convenio convenio)
+        {
+            string cnpjLimpo = convenio.CNPJ.Replace(".", "").Replace("-", "").Replace(" ", "").Replace(",", "");
+            Console.WriteLine($"CNPJ Limpo: {cnpjLimpo}");
+
+            string telefoneLimpo = convenio.Telefone.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
+            Console.WriteLine($"Telefone Limpo: {telefoneLimpo}");
+
+            if (string.IsNullOrWhiteSpace(convenio.Nome))
+                return new OperationResult(false, "O nome do convênio é obrigatório.");
+
+            if (string.IsNullOrWhiteSpace(cnpjLimpo))
+                return new OperationResult(false, "O CNPJ do convênio é obrigatório.");
+
+            if (cnpjLimpo.Length != 14)
+                return new OperationResult(false, "O CNPJ do convênio deve conter 14 dígitos.");
+
+            if (string.IsNullOrWhiteSpace(telefoneLimpo))
+                return new OperationResult(false, "O telefone do convênio é obrigatório.");
+
+            if (string.IsNullOrWhiteSpace(convenio.Endereco))
+                return new OperationResult(false, "O endereço do convênio é obrigatório.");
+
+            if (string.IsNullOrWhiteSpace(convenio.Email) && (convenio.Email.Contains(" ") || !convenio.Email.Contains("@")))
+                return new OperationResult(false, "E-mail inválido.");
+
+            if (convenio.DataCriacao == DateTime.MinValue)
+                return new OperationResult(false, "Data de criação inválida.");
+
+            return new OperationResult(true, "Validação bem-sucedida!");
         }
     }
 }

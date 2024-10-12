@@ -356,7 +356,7 @@
             // txtCPFPaciente
             // 
             this.txtCPFPaciente.Location = new System.Drawing.Point(104, 192);
-            this.txtCPFPaciente.Mask = "000.000.000-00";
+            this.txtCPFPaciente.Mask = "999.999.999-99";
             this.txtCPFPaciente.Name = "txtCPFPaciente";
             this.txtCPFPaciente.Size = new System.Drawing.Size(186, 20);
             this.txtCPFPaciente.TabIndex = 4;

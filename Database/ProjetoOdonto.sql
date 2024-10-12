@@ -101,8 +101,8 @@ GO
 CREATE TABLE Fatura(
 	Fat_ID INT NOT NULL IDENTITY(1,1),
 	Fat_ValorTotal DECIMAL(10,2) NOT NULL,
-	Fat_DataEmissao DATETIME NOT NULL,
-	Fat_DataVencimento DATETIME NOT NULL,
+	Fat_DataEmissao DATE NOT NULL,
+	Fat_DataVencimento DATE NOT NULL,
 	Fat_Status VARCHAR(20) NOT NULL,
 	Fat_ConsultaID_FK INT NOT NULL,
 	CONSTRAINT PK_Fatura PRIMARY KEY (Fat_ID),
@@ -130,8 +130,8 @@ GO
 
 CREATE TABLE HistoricoTratamento(
 	His_ID INT NOT NULL IDENTITY(1,1),
-	His_DataInicio DATETIME NOT NULL,
-	His_DataConclusao DATETIME NOT NULL,
+	His_DataInicio DATE NOT NULL,
+	His_DataConclusao DATE NOT NULL,
 	His_Status VARCHAR(20) NOT NULL,
 	His_PacienteID_FK INT NOT NULL,
 	His_TratamentoID_FK INT NOT NULL,
@@ -140,7 +140,7 @@ CREATE TABLE HistoricoTratamento(
 	REFERENCES Paciente(Pac_ID),
 	CONSTRAINT FK_Historico_Tratamento FOREIGN KEY (His_TratamentoID_FK)
 	REFERENCES Tratamento(Tra_ID),
-	CONSTRAINT CK_Historico_Status CHECK(His_Status IN('Em andamento', 'Concluído'))
+	CONSTRAINT CK_Historico_Status CHECK(His_Status IN('Em andamento', 'Conclu do'))
 );
 GO
 
@@ -170,13 +170,13 @@ GO
 
 CREATE TABLE Pagamento(
 	Pag_ID INT NOT NULL IDENTITY(1,1),
-	Pag_DataPagamento DATETIME NOT NULL,
+	Pag_DataPagamento DATE NOT NULL,
 	Pag_ValorPago DECIMAL(10,2) NOT NULL,
 	Pag_MetodoPagamento VARCHAR(50) NOT NULL,
 	Pag_FaturaID_FK INT NOT NULL,
 	CONSTRAINT PK_Pagamento PRIMARY KEY (Pag_ID),
 	CONSTRAINT FK_Pagamento_Fatura FOREIGN KEY (Pag_FaturaID_FK)
 	REFERENCES Fatura(Fat_ID),
-	CONSTRAINT CK_Pagamento_Metodo CHECK(Pag_MetodoPagamento IN('Débito', 'Crédito', 'Dinheiro', 'Pix', 'Transferência'))
+	CONSTRAINT CK_Pagamento_Metodo CHECK(Pag_MetodoPagamento IN('D bito', 'Cr dito', 'Dinheiro', 'Pix', 'Transfer ncia'))
 );
 GO

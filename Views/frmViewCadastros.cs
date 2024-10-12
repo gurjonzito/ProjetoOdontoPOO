@@ -3,28 +3,60 @@ using System.Data.SqlClient;
 using System.Data;
 using System;
 using System.Windows.Forms;
+using ProjetoOdontoPOO.Controllers;
 
 namespace ProjetoOdontoPOO.Views
 {
     public partial class frmViewCadastros : Form
     {
         private readonly DataBaseSqlServerService _dbService;
-        private readonly PacienteService _pacienteService;
+        private readonly PacienteController _pacienteController;
+        private readonly ResponsavelController _responsavelController;
+        private readonly ConvenioController _convenioController;
 
         public frmViewCadastros()
         {
             InitializeComponent();
 
             _dbService = new DataBaseSqlServerService();
-            _pacienteService = new PacienteService();
+            _pacienteController = new PacienteController();
+            _responsavelController = new ResponsavelController();
+            _convenioController = new ConvenioController();
             CarregarDadosPaciente();
             CarregarDadosResponsavel();
             CarregarDadosConvenio();
         }
 
+        private void tabControlVisualizar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verifica qual aba está ativa e carrega os dados correspondentes
+            if (tabControlVisualizar.SelectedTab == tpPaciente)
+            {
+                dgvResponsavel.Rows.Clear();
+                dgvConvenio.Rows.Clear();
+                CarregarDadosPaciente();
+            }
+            else if (tabControlVisualizar.SelectedTab == tpResponsavel)
+            {
+                dgvPaciente.Rows.Clear();
+                dgvConvenio.Rows.Clear();
+                CarregarDadosResponsavel();
+            }
+            else if (tabControlVisualizar.SelectedTab == tpConvenio)
+            {
+                dgvPaciente.Rows.Clear();
+                dgvResponsavel.Rows.Clear();
+                CarregarDadosConvenio();
+            }
+        }
+
+
         private void btnBuscarCPFPaciente_Click(object sender, EventArgs e)
         {
-            string cpfProcurado = txtBuscarCPFPac.Text;
+            if (!btnBuscarCPFPaciente.Focused) return;
+
+            // Remove a formatação do CPF de busca inserido pelo usuário
+            string cpfProcurado = txtBuscarCPFPac.Text.Replace(".", "").Replace("-", "").Replace(" ", "").Replace(",", "");
 
             if (string.IsNullOrWhiteSpace(cpfProcurado))
             {
@@ -35,12 +67,17 @@ namespace ProjetoOdontoPOO.Views
             // Itera pelas linhas do DataGridView para encontrar o CPF
             foreach (DataGridViewRow row in dgvPaciente.Rows)
             {
-                // Verifica se o valor da célula de CPF corresponde ao CPF procurado
-                if (row.Cells["CPF"].Value != null && row.Cells["CPF"].Value.ToString() == cpfProcurado)
+                // Remove a formatação do CPF exibido no DataGridView para compará-lo
+                if (row.Cells["CPF"].Value != null)
                 {
-                    row.Selected = true;
-                    dgvPaciente.FirstDisplayedScrollingRowIndex = row.Index;
-                    return;
+                    string cpfDataGrid = row.Cells["CPF"].Value.ToString().Replace(".", "").Replace("-", "").Replace(" ", "").Replace(",", "");
+
+                    if (cpfDataGrid == cpfProcurado)
+                    {
+                        row.Selected = true;
+                        dgvPaciente.FirstDisplayedScrollingRowIndex = row.Index;
+                        return;
+                    }
                 }
             }
 
@@ -50,7 +87,9 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnBuscarCPFResponsavel_Click(object sender, EventArgs e)
         {
-            string cpfProcurado = txtBuscarCPFRes.Text;
+            if (!btnBuscarCPFResponsavel.Focused) return;
+
+            string cpfProcurado = txtBuscarCPFRes.Text.Replace(".", "").Replace("-", "").Replace(" ", "").Replace(",", "");
 
             if (string.IsNullOrWhiteSpace(cpfProcurado))
             {
@@ -58,25 +97,29 @@ namespace ProjetoOdontoPOO.Views
                 return;
             }
 
-            // Itera pelas linhas do DataGridView para encontrar o CPF
             foreach (DataGridViewRow row in dgvResponsavel.Rows)
             {
-                // Verifica se o valor da célula de CPF corresponde ao CPF procurado
-                if (row.Cells["CPF"].Value != null && row.Cells["CPF"].Value.ToString() == cpfProcurado)
+                if (row.Cells["CPF"].Value != null)
                 {
-                    row.Selected = true;
-                    dgvResponsavel.FirstDisplayedScrollingRowIndex = row.Index;
-                    return;
+                    string cpfDataGrid = row.Cells["CPF"].Value.ToString().Replace(".", "").Replace("-", "").Replace(" ", "").Replace(",", "");
+
+                    if (cpfDataGrid == cpfProcurado)
+                    {
+                        row.Selected = true;
+                        dgvResponsavel.FirstDisplayedScrollingRowIndex = row.Index;
+                        return;
+                    }
                 }
             }
 
-            // Exibe mensagem se não encontrar o CPF
             MessageBox.Show("CPF não encontrado.", "Resultado da Busca", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnBuscarCNPJ_Click(object sender, EventArgs e)
         {
-            string cnpjProcurado = txtBuscarCNPJ.Text;
+            if (!btnBuscarCNPJ.Focused) return;
+
+            string cnpjProcurado = txtBuscarCNPJ.Text.Replace(".", "").Replace("-", "").Replace("/", "").Replace(",", "");
 
             if (string.IsNullOrWhiteSpace(cnpjProcurado))
             {
@@ -104,13 +147,33 @@ namespace ProjetoOdontoPOO.Views
         {
             try
             {
-                DataTable tabela = _pacienteService.ObterDadosPacientes();
+                // Obtém os dados da tabela
+                DataTable tabela = _pacienteController.ObterTodosPacientes();
 
-                dgvPaciente.DataSource = tabela;
+                // Desativa a geração automática de colunas
+                dgvPaciente.AutoGenerateColumns = false;
+
+                // Limpa as linhas atuais do DataGridView
+                dgvPaciente.Rows.Clear();
+
+                // Adiciona os dados linha por linha no DataGridView
+                foreach (DataRow row in tabela.Rows)
+                {
+                    dgvPaciente.Rows.Add(
+                        row["ID"],
+                        row["Nome"],
+                        row["Idade"],
+                        row["CPF"],
+                        row["Sexo"],
+                        row["Convênio"],
+                        row["Responsável"],
+                        row["Ativo_Inativo"]
+                    );
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+                MessageBox.Show("Erro ao carregar dados do paciente: " + ex.Message);
             }
         }
 
@@ -118,32 +181,27 @@ namespace ProjetoOdontoPOO.Views
         {
             try
             {
-                using (SqlConnection conexao = _dbService.CriarConexao())
+                DataTable tabela = _responsavelController.ObterTodosResponsaveis();
+
+                dgvResponsavel.AutoGenerateColumns = false;
+
+                dgvResponsavel.Rows.Clear();
+
+                foreach (DataRow row in tabela.Rows)
                 {
-                    // Consulta SQL para obter os dados
-                    string query = @"
-                                SELECT Res_ID AS ID,
-                                       Res_Nome AS Nome,
-                                       Res_DataNascimento AS [Data de Nascimento],
-                                       Res_Idade as Idade,
-                                       Res_CPF as CPF,
-                                       Res_Sexo as Sexo,
-                                       Res_Telefone AS Telefone,
-                                       Res_Parentesco AS Parentesco
-                                FROM Responsavel";
-
-                    // Adaptador para executar a consulta e preencher o DataTable
-                    SqlDataAdapter adaptador = new SqlDataAdapter(query, conexao);
-                    DataTable tabela = new DataTable();
-                    adaptador.Fill(tabela);
-
-                    // Define o DataTable como fonte de dados para o DataGridView
-                    dgvResponsavel.DataSource = tabela;
+                    dgvResponsavel.Rows.Add(
+                        row["ID"],
+                        row["Nome"],
+                        row["Idade"],
+                        row["CPF"],
+                        row["Sexo"],
+                        row["Ativo_Inativo"]
+                    );
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+                MessageBox.Show("Erro ao carregar dados do responsável: " + ex.Message);
             }
         }
 
@@ -151,32 +209,25 @@ namespace ProjetoOdontoPOO.Views
         {
             try
             {
-                using (SqlConnection conexao = _dbService.CriarConexao())
+                DataTable tabela = _convenioController.ObterTodosConvenios();
+
+                dgvConvenio.AutoGenerateColumns = false;
+
+                dgvConvenio.Rows.Clear();
+
+                foreach (DataRow row in tabela.Rows)
                 {
-                    // Consulta SQL para obter os dados
-                    string query = @"
-                                SELECT Conv_ID AS ID,
-                                       Conv_Nome AS Nome,
-                                       Conv_CNPJ AS CNPJ,
-                                       Conv_Telefone AS Telefone,
-                                       Conv_Endereco AS Endereço,
-                                       Conv_Email AS [E-mail],
-                                       Conv_DataCriacao AS [Data de Criação],
-                                       Ativo_Inativo AS Ativo_Inativo
-                                FROM Convenio";
-
-                    // Adaptador para executar a consulta e preencher o DataTable
-                    SqlDataAdapter adaptador = new SqlDataAdapter(query, conexao);
-                    DataTable tabela = new DataTable();
-                    adaptador.Fill(tabela);
-
-                    // Define o DataTable como fonte de dados para o DataGridView
-                    dgvConvenio.DataSource = tabela;
+                    dgvConvenio.Rows.Add(
+                        row["ID"],
+                        row["Nome"],
+                        row["CNPJ"],
+                        row["Ativo_Inativo"]
+                    );
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar dados: " + ex.Message);
+                MessageBox.Show("Erro ao carregar dados do convênio: " + ex.Message);
             }
         }
 

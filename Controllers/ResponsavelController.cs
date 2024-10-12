@@ -1,6 +1,8 @@
 ﻿using ProjetoOdontoPOO.Models;
 using ProjetoOdontoPOO.Services;
+using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProjetoOdontoPOO.Controllers
 {
@@ -13,14 +15,37 @@ namespace ProjetoOdontoPOO.Controllers
             _responsavelService = new ResponsavelService();
         }
 
-        public List<Responsavel> ObterResponsaveis()
+        public Responsavel ObterResponsavelPorId(int responsavelId)
         {
-            return _responsavelService.ObterResponsaveis();
+            try
+            {
+                return _responsavelService.ObterDadosResponsavelPorId(responsavelId);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao obter responsável: {ex.Message}");
+                throw;
+            }
         }
 
-        //public void InserirResponsavel(Responsavel responsavel)
-        //{
-        //    _responsavelService.InserirResponsavel(responsavel);
-        //}
+        public DataTable ObterTodosResponsaveis()
+        {
+            try
+            {
+                return _responsavelService.ObterTodosResponsaveis();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao obter lista de responsáveis: {ex.Message}");
+                throw;
+            }
+        }
+
+        public string InserirResponsavel(Responsavel responsavel)
+        {
+            var resultado = _responsavelService.InserirResponsavel(responsavel);
+
+            return resultado.Mensagem;
+        }
     }
 }
