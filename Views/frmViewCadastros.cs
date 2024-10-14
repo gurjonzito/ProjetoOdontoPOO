@@ -9,19 +9,21 @@ namespace ProjetoOdontoPOO.Views
 {
     public partial class frmViewCadastros : Form
     {
-        private readonly DataBaseSqlServerService _dbService;
+        //private readonly DataBaseSqlServerService _dbService;
         private readonly PacienteController _pacienteController;
         private readonly ResponsavelController _responsavelController;
         private readonly ConvenioController _convenioController;
+        private readonly DentistaController _dentistaController;
 
         public frmViewCadastros()
         {
             InitializeComponent();
 
-            _dbService = new DataBaseSqlServerService();
+            //_dbService = new DataBaseSqlServerService();
             _pacienteController = new PacienteController();
             _responsavelController = new ResponsavelController();
             _convenioController = new ConvenioController();
+            _dentistaController = new DentistaController();
             CarregarDadosPaciente();
             CarregarDadosResponsavel();
             CarregarDadosConvenio();
@@ -34,22 +36,31 @@ namespace ProjetoOdontoPOO.Views
             {
                 dgvResponsavel.Rows.Clear();
                 dgvConvenio.Rows.Clear();
+                dgvDentista.Rows.Clear();
                 CarregarDadosPaciente();
             }
             else if (tabControlVisualizar.SelectedTab == tpResponsavel)
             {
                 dgvPaciente.Rows.Clear();
                 dgvConvenio.Rows.Clear();
+                dgvDentista.Rows.Clear();
                 CarregarDadosResponsavel();
             }
             else if (tabControlVisualizar.SelectedTab == tpConvenio)
             {
                 dgvPaciente.Rows.Clear();
                 dgvResponsavel.Rows.Clear();
+                dgvConvenio.Rows.Clear();
                 CarregarDadosConvenio();
             }
+            else if (tabControlVisualizar.SelectedTab == tpDentista)
+            {
+                dgvPaciente.Rows.Clear();
+                dgvResponsavel.Rows.Clear();
+                dgvConvenio.Rows.Clear();
+                CarregarDadosDentista();
+            }
         }
-
 
         private void btnBuscarCPFPaciente_Click(object sender, EventArgs e)
         {
@@ -228,6 +239,32 @@ namespace ProjetoOdontoPOO.Views
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar dados do convênio: " + ex.Message);
+            }
+        }
+
+        private void CarregarDadosDentista()
+        {
+            try
+            {
+                DataTable tabela = _dentistaController.ObterTodosDentistas();
+
+                dgvDentista.AutoGenerateColumns = false;
+
+                dgvDentista.Rows.Clear();
+
+                foreach (DataRow row in tabela.Rows)
+                {
+                    dgvDentista.Rows.Add(
+                        row["ID"],
+                        row["Nome"],
+                        row["CRM"],
+                        row["Ativo_Inativo"]
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar dados do dentista: " + ex.Message);
             }
         }
 

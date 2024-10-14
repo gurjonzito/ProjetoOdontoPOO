@@ -30,6 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlVisualizar = new System.Windows.Forms.TabControl();
             this.tpPaciente = new System.Windows.Forms.TabPage();
             this.txtBuscarCPFPac = new System.Windows.Forms.MaskedTextBox();
@@ -64,6 +70,16 @@
             this.NomeConv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CNPJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo_InativoConv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tpDentista = new System.Windows.Forms.TabPage();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvDentista = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControlVisualizar.SuspendLayout();
@@ -73,6 +89,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsavel)).BeginInit();
             this.tpConvenio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvenio)).BeginInit();
+            this.tpDentista.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDentista)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +99,8 @@
             this.tabControlVisualizar.Controls.Add(this.tpPaciente);
             this.tabControlVisualizar.Controls.Add(this.tpResponsavel);
             this.tabControlVisualizar.Controls.Add(this.tpConvenio);
+            this.tabControlVisualizar.Controls.Add(this.tpDentista);
+            this.tabControlVisualizar.Controls.Add(this.tabPage2);
             this.tabControlVisualizar.Location = new System.Drawing.Point(1, 52);
             this.tabControlVisualizar.Name = "tabControlVisualizar";
             this.tabControlVisualizar.SelectedIndex = 0;
@@ -139,21 +159,13 @@
             this.dgvPaciente.AllowUserToDeleteRows = false;
             this.dgvPaciente.AllowUserToResizeColumns = false;
             this.dgvPaciente.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aquamarine;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.dgvPaciente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPaciente.BackgroundColor = System.Drawing.Color.DarkTurquoise;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Magenta;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPaciente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPaciente.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPaciente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -164,6 +176,14 @@
             this.Convênio,
             this.Responsável,
             this.Ativo_Inativo});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaciente.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPaciente.Location = new System.Drawing.Point(46, 124);
             this.dgvPaciente.Name = "dgvPaciente";
             this.dgvPaciente.RowHeadersVisible = false;
@@ -273,6 +293,12 @@
             // 
             this.dgvResponsavel.AllowUserToAddRows = false;
             this.dgvResponsavel.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvResponsavel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvResponsavel.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvResponsavel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResponsavel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDRes,
@@ -281,6 +307,14 @@
             this.CPFRes,
             this.SexoRes,
             this.Ativo_InativoRes});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResponsavel.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvResponsavel.Location = new System.Drawing.Point(46, 120);
             this.dgvResponsavel.Name = "dgvResponsavel";
             this.dgvResponsavel.RowHeadersVisible = false;
@@ -375,12 +409,26 @@
             // 
             this.dgvConvenio.AllowUserToAddRows = false;
             this.dgvConvenio.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvConvenio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvConvenio.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvConvenio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConvenio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDConv,
             this.NomeConv,
             this.CNPJ,
             this.Ativo_InativoConv});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvConvenio.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvConvenio.Location = new System.Drawing.Point(49, 124);
             this.dgvConvenio.Name = "dgvConvenio";
             this.dgvConvenio.RowHeadersVisible = false;
@@ -412,6 +460,115 @@
             this.Ativo_InativoConv.HeaderText = "Ativo_Inativo";
             this.Ativo_InativoConv.Name = "Ativo_InativoConv";
             this.Ativo_InativoConv.ReadOnly = true;
+            // 
+            // tpDentista
+            // 
+            this.tpDentista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.tpDentista.Controls.Add(this.maskedTextBox1);
+            this.tpDentista.Controls.Add(this.label5);
+            this.tpDentista.Controls.Add(this.button1);
+            this.tpDentista.Controls.Add(this.dgvDentista);
+            this.tpDentista.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpDentista.Location = new System.Drawing.Point(4, 22);
+            this.tpDentista.Name = "tpDentista";
+            this.tpDentista.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDentista.Size = new System.Drawing.Size(983, 518);
+            this.tpDentista.TabIndex = 3;
+            this.tpDentista.Text = "Dentista";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.Location = new System.Drawing.Point(49, 76);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(265, 26);
+            this.maskedTextBox1.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(45, 39);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(147, 23);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Busca por CRM";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(320, 76);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 26);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dgvDentista
+            // 
+            this.dgvDentista.AllowUserToAddRows = false;
+            this.dgvDentista.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvDentista.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvDentista.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.dgvDentista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDentista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDentista.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvDentista.Location = new System.Drawing.Point(49, 124);
+            this.dgvDentista.Name = "dgvDentista";
+            this.dgvDentista.RowHeadersVisible = false;
+            this.dgvDentista.Size = new System.Drawing.Size(889, 355);
+            this.dgvDentista.TabIndex = 12;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "CRM";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Ativo_Inativo";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(983, 518);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Consultas";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -455,6 +612,9 @@
             this.tpConvenio.ResumeLayout(false);
             this.tpConvenio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvenio)).EndInit();
+            this.tpDentista.ResumeLayout(false);
+            this.tpDentista.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDentista)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -499,5 +659,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeConv;
         private System.Windows.Forms.DataGridViewTextBoxColumn CNPJ;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ativo_InativoConv;
+        private System.Windows.Forms.TabPage tpDentista;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvDentista;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

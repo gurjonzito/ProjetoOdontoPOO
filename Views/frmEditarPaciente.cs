@@ -66,7 +66,7 @@ namespace ProjetoOdontoPOO.Views
                     txtLogradouro.Text = endereco.Logradouro;
                     txtNumeroEndereco.Text = endereco.Numero;
                     txtCidadeEndereco.Text = endereco.Cidade;
-                    txtUFEndereco.Text = endereco.Estado;
+                    cbUFPaciente.Text = endereco.Estado;
                     txtCEPEndereco.Text = endereco.CEP;
                     txtComplementoEndereco.Text = endereco.Complemento;
                 }
@@ -87,7 +87,7 @@ namespace ProjetoOdontoPOO.Views
             string nome = txtNomePaciente.Text;
             DateTime dataNascimento = dtpDataPaciente.Value;
             int idade = int.Parse(txtIdadePaciente.Text);
-            string cpf = txtCPFPaciente.Text;
+            string cpf = txtCPFPaciente.Text.Replace(".", "").Replace("-", "").Replace(",", "");
             string sexo = txtSexoPaciente.Text;
             string telefone = txtTelefonePaciente.Text;
             string email = txtEmailPaciente.Text;
@@ -114,8 +114,8 @@ namespace ProjetoOdontoPOO.Views
             string logradouro = txtLogradouro.Text;
             string numero = txtNumeroEndereco.Text;
             string cidade = txtCidadeEndereco.Text;
-            string estado = txtUFEndereco.Text;
-            string cep = txtCEPEndereco.Text;
+            string estado = cbUFPaciente.Text;
+            string cep = txtCEPEndereco.Text.Replace("-", "");
             string complemento = txtComplementoEndereco.Text;
 
             // Cria o objeto de Endereço
@@ -161,13 +161,13 @@ namespace ProjetoOdontoPOO.Views
             txtLogradouro.Clear();
             txtNumeroEndereco.Clear();
             txtCidadeEndereco.Clear();
-            txtUFEndereco.Clear();
             txtCEPEndereco.Clear();
             txtComplementoEndereco.Clear();
 
             // Resetar ComboBoxes
             cbConvenioPaciente.SelectedIndex = -1;
             cbResponsavelPaciente.SelectedIndex = -1;
+            cbUFPaciente.SelectedIndex = -1;
 
             // Resetar DateTimePicker
             dtpDataPaciente.Value = DateTime.Now;

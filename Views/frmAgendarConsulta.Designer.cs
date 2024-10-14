@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataConsulta = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtObsConsulta = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbPacienteConsulta = new System.Windows.Forms.ComboBox();
+            this.cbDentistaConsulta = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSalvarConsulta = new System.Windows.Forms.Button();
+            this.btnLimparConsulta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -48,12 +50,12 @@
             this.panel1.Size = new System.Drawing.Size(517, 39);
             this.panel1.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // dtpDataConsulta
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(57, 98);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(404, 20);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dtpDataConsulta.Location = new System.Drawing.Point(57, 98);
+            this.dtpDataConsulta.Name = "dtpDataConsulta";
+            this.dtpDataConsulta.Size = new System.Drawing.Size(404, 20);
+            this.dtpDataConsulta.TabIndex = 1;
             // 
             // label1
             // 
@@ -66,13 +68,13 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Data";
             // 
-            // richTextBox1
+            // txtObsConsulta
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(57, 151);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(404, 96);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
+            this.txtObsConsulta.Location = new System.Drawing.Point(57, 151);
+            this.txtObsConsulta.Name = "txtObsConsulta";
+            this.txtObsConsulta.Size = new System.Drawing.Size(404, 96);
+            this.txtObsConsulta.TabIndex = 3;
+            this.txtObsConsulta.Text = "";
             // 
             // label2
             // 
@@ -85,21 +87,21 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Observações";
             // 
-            // comboBox1
+            // cbPacienteConsulta
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(57, 282);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(217, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cbPacienteConsulta.FormattingEnabled = true;
+            this.cbPacienteConsulta.Location = new System.Drawing.Point(57, 282);
+            this.cbPacienteConsulta.Name = "cbPacienteConsulta";
+            this.cbPacienteConsulta.Size = new System.Drawing.Size(217, 21);
+            this.cbPacienteConsulta.TabIndex = 5;
             // 
-            // comboBox2
+            // cbDentistaConsulta
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(280, 282);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(181, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cbDentistaConsulta.FormattingEnabled = true;
+            this.cbDentistaConsulta.Location = new System.Drawing.Point(280, 282);
+            this.cbDentistaConsulta.Name = "cbDentistaConsulta";
+            this.cbDentistaConsulta.Size = new System.Drawing.Size(181, 21);
+            this.cbDentistaConsulta.TabIndex = 6;
             // 
             // label3
             // 
@@ -123,24 +125,53 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Dentista";
             // 
+            // btnSalvarConsulta
+            // 
+            this.btnSalvarConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSalvarConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalvarConsulta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarConsulta.Location = new System.Drawing.Point(348, 352);
+            this.btnSalvarConsulta.Name = "btnSalvarConsulta";
+            this.btnSalvarConsulta.Size = new System.Drawing.Size(113, 35);
+            this.btnSalvarConsulta.TabIndex = 10;
+            this.btnSalvarConsulta.Text = "Salvar";
+            this.btnSalvarConsulta.UseVisualStyleBackColor = false;
+            this.btnSalvarConsulta.Click += new System.EventHandler(this.btnSalvarConsulta_Click);
+            // 
+            // btnLimparConsulta
+            // 
+            this.btnLimparConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLimparConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimparConsulta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimparConsulta.Location = new System.Drawing.Point(57, 352);
+            this.btnLimparConsulta.Name = "btnLimparConsulta";
+            this.btnLimparConsulta.Size = new System.Drawing.Size(113, 35);
+            this.btnLimparConsulta.TabIndex = 9;
+            this.btnLimparConsulta.Text = "Limpar";
+            this.btnLimparConsulta.UseVisualStyleBackColor = false;
+            this.btnLimparConsulta.Click += new System.EventHandler(this.btnLimparConsulta_Click);
+            // 
             // frmAgendarConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(517, 359);
+            this.ClientSize = new System.Drawing.Size(517, 431);
+            this.Controls.Add(this.btnSalvarConsulta);
+            this.Controls.Add(this.btnLimparConsulta);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbDentistaConsulta);
+            this.Controls.Add(this.cbPacienteConsulta);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtObsConsulta);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpDataConsulta);
             this.Controls.Add(this.panel1);
             this.Name = "frmAgendarConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgendarConsulta";
+            this.Load += new System.EventHandler(this.frmAgendarConsulta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,13 +180,15 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDataConsulta;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtObsConsulta;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbPacienteConsulta;
+        private System.Windows.Forms.ComboBox cbDentistaConsulta;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSalvarConsulta;
+        private System.Windows.Forms.Button btnLimparConsulta;
     }
 }

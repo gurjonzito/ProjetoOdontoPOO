@@ -42,7 +42,6 @@
             this.txtComplementoEndereco = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtUFEndereco = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtCidadeEndereco = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -67,6 +66,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.cbAtivoInativo = new System.Windows.Forms.ComboBox();
+            this.cbUFPaciente = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,14 +206,6 @@
             this.label13.Size = new System.Drawing.Size(24, 16);
             this.label13.TabIndex = 62;
             this.label13.Text = "UF";
-            // 
-            // txtUFEndereco
-            // 
-            this.txtUFEndereco.Location = new System.Drawing.Point(278, 454);
-            this.txtUFEndereco.MaxLength = 2;
-            this.txtUFEndereco.Name = "txtUFEndereco";
-            this.txtUFEndereco.Size = new System.Drawing.Size(79, 20);
-            this.txtUFEndereco.TabIndex = 51;
             // 
             // label12
             // 
@@ -446,12 +438,21 @@
             this.cbAtivoInativo.Size = new System.Drawing.Size(264, 21);
             this.cbAtivoInativo.TabIndex = 74;
             // 
+            // cbUFPaciente
+            // 
+            this.cbUFPaciente.FormattingEnabled = true;
+            this.cbUFPaciente.Location = new System.Drawing.Point(278, 453);
+            this.cbUFPaciente.Name = "cbUFPaciente";
+            this.cbUFPaciente.Size = new System.Drawing.Size(79, 21);
+            this.cbUFPaciente.TabIndex = 75;
+            // 
             // frmEditarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(570, 768);
+            this.Controls.Add(this.cbUFPaciente);
             this.Controls.Add(this.cbAtivoInativo);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
@@ -469,7 +470,6 @@
             this.Controls.Add(this.txtComplementoEndereco);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtUFEndereco);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtCidadeEndereco);
             this.Controls.Add(this.label11);
@@ -518,7 +518,6 @@
         private System.Windows.Forms.TextBox txtComplementoEndereco;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtUFEndereco;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtCidadeEndereco;
         private System.Windows.Forms.Label label11;
@@ -543,5 +542,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cbAtivoInativo;
+        private System.Windows.Forms.ComboBox cbUFPaciente;
     }
 }

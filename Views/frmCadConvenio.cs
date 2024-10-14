@@ -8,7 +8,7 @@ namespace ProjetoOdontoPOO.Views
 {
     public partial class frmCadConvenio : Form
     {
-        private ConvenioController _convenioController = new ConvenioController();
+        private readonly ConvenioController _convenioController;
 
         public frmCadConvenio()
         {

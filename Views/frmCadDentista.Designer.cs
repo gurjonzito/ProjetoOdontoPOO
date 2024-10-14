@@ -30,18 +30,18 @@
         {
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLimparPaciente = new System.Windows.Forms.Button();
-            this.btnSalvarPaciente = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnLimparDentista = new System.Windows.Forms.Button();
+            this.btnSalvarDentista = new System.Windows.Forms.Button();
+            this.cbEstadoDentista = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtTelefonePaciente = new System.Windows.Forms.MaskedTextBox();
+            this.txtTelefoneDentista = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEmailPaciente = new System.Windows.Forms.TextBox();
+            this.txtEspDentista = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNomePaciente = new System.Windows.Forms.TextBox();
+            this.txtNomeDentista = new System.Windows.Forms.TextBox();
+            this.txtCRMDentista = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,66 +66,90 @@
             this.panel1.Size = new System.Drawing.Size(568, 47);
             this.panel1.TabIndex = 36;
             // 
-            // btnLimparPaciente
+            // btnLimparDentista
             // 
-            this.btnLimparPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnLimparPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimparPaciente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimparPaciente.Location = new System.Drawing.Point(47, 266);
-            this.btnLimparPaciente.Name = "btnLimparPaciente";
-            this.btnLimparPaciente.Size = new System.Drawing.Size(113, 35);
-            this.btnLimparPaciente.TabIndex = 5;
-            this.btnLimparPaciente.Text = "Limpar";
-            this.btnLimparPaciente.UseVisualStyleBackColor = false;
+            this.btnLimparDentista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLimparDentista.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLimparDentista.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimparDentista.Location = new System.Drawing.Point(47, 227);
+            this.btnLimparDentista.Name = "btnLimparDentista";
+            this.btnLimparDentista.Size = new System.Drawing.Size(113, 35);
+            this.btnLimparDentista.TabIndex = 5;
+            this.btnLimparDentista.Text = "Limpar";
+            this.btnLimparDentista.UseVisualStyleBackColor = false;
+            this.btnLimparDentista.Click += new System.EventHandler(this.btnLimparDentista_Click);
             // 
-            // btnSalvarPaciente
+            // btnSalvarDentista
             // 
-            this.btnSalvarPaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSalvarPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSalvarPaciente.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarPaciente.Location = new System.Drawing.Point(412, 266);
-            this.btnSalvarPaciente.Name = "btnSalvarPaciente";
-            this.btnSalvarPaciente.Size = new System.Drawing.Size(113, 35);
-            this.btnSalvarPaciente.TabIndex = 6;
-            this.btnSalvarPaciente.Text = "Salvar";
-            this.btnSalvarPaciente.UseVisualStyleBackColor = false;
+            this.btnSalvarDentista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSalvarDentista.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalvarDentista.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvarDentista.Location = new System.Drawing.Point(412, 227);
+            this.btnSalvarDentista.Name = "btnSalvarDentista";
+            this.btnSalvarDentista.Size = new System.Drawing.Size(113, 35);
+            this.btnSalvarDentista.TabIndex = 6;
+            this.btnSalvarDentista.Text = "Salvar";
+            this.btnSalvarDentista.UseVisualStyleBackColor = false;
+            this.btnSalvarDentista.Click += new System.EventHandler(this.btnSalvarDentista_Click);
             // 
-            // comboBox1
+            // cbEstadoDentista
             // 
-            this.comboBox1.DropDownHeight = 80;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.IntegralHeight = false;
-            this.comboBox1.Location = new System.Drawing.Point(466, 111);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(59, 21);
-            this.comboBox1.TabIndex = 74;
+            this.cbEstadoDentista.DropDownHeight = 80;
+            this.cbEstadoDentista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstadoDentista.FormattingEnabled = true;
+            this.cbEstadoDentista.IntegralHeight = false;
+            this.cbEstadoDentista.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.cbEstadoDentista.Location = new System.Drawing.Point(449, 111);
+            this.cbEstadoDentista.Name = "cbEstadoDentista";
+            this.cbEstadoDentista.Size = new System.Drawing.Size(76, 21);
+            this.cbEstadoDentista.TabIndex = 74;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(463, 92);
+            this.label5.Location = new System.Drawing.Point(446, 92);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 16);
+            this.label5.Size = new System.Drawing.Size(48, 16);
             this.label5.TabIndex = 73;
-            this.label5.Text = "CRM";
+            this.label5.Text = "Estado";
             // 
-            // textBox1
+            // txtTelefoneDentista
             // 
-            this.textBox1.Location = new System.Drawing.Point(322, 111);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 66;
-            // 
-            // txtTelefonePaciente
-            // 
-            this.txtTelefonePaciente.Location = new System.Drawing.Point(339, 159);
-            this.txtTelefonePaciente.Mask = "(00) 00000-0000";
-            this.txtTelefonePaciente.Name = "txtTelefonePaciente";
-            this.txtTelefonePaciente.Size = new System.Drawing.Size(186, 20);
-            this.txtTelefonePaciente.TabIndex = 68;
+            this.txtTelefoneDentista.Location = new System.Drawing.Point(339, 159);
+            this.txtTelefoneDentista.Mask = "(00) 00000-0000";
+            this.txtTelefoneDentista.Name = "txtTelefoneDentista";
+            this.txtTelefoneDentista.Size = new System.Drawing.Size(186, 20);
+            this.txtTelefoneDentista.TabIndex = 68;
+            this.txtTelefoneDentista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefoneDentista_KeyPress);
             // 
             // label4
             // 
@@ -138,12 +162,12 @@
             this.label4.TabIndex = 72;
             this.label4.Text = "Especialidade";
             // 
-            // txtEmailPaciente
+            // txtEspDentista
             // 
-            this.txtEmailPaciente.Location = new System.Drawing.Point(47, 159);
-            this.txtEmailPaciente.Name = "txtEmailPaciente";
-            this.txtEmailPaciente.Size = new System.Drawing.Size(286, 20);
-            this.txtEmailPaciente.TabIndex = 67;
+            this.txtEspDentista.Location = new System.Drawing.Point(47, 159);
+            this.txtEspDentista.Name = "txtEspDentista";
+            this.txtEspDentista.Size = new System.Drawing.Size(286, 20);
+            this.txtEspDentista.TabIndex = 67;
             // 
             // label3
             // 
@@ -178,33 +202,44 @@
             this.label1.TabIndex = 69;
             this.label1.Text = "Nome Completo";
             // 
-            // txtNomePaciente
+            // txtNomeDentista
             // 
-            this.txtNomePaciente.Location = new System.Drawing.Point(47, 111);
-            this.txtNomePaciente.Name = "txtNomePaciente";
-            this.txtNomePaciente.Size = new System.Drawing.Size(269, 20);
-            this.txtNomePaciente.TabIndex = 65;
+            this.txtNomeDentista.Location = new System.Drawing.Point(47, 111);
+            this.txtNomeDentista.Name = "txtNomeDentista";
+            this.txtNomeDentista.Size = new System.Drawing.Size(269, 20);
+            this.txtNomeDentista.TabIndex = 65;
+            // 
+            // txtCRMDentista
+            // 
+            this.txtCRMDentista.Location = new System.Drawing.Point(323, 111);
+            this.txtCRMDentista.Mask = "000000";
+            this.txtCRMDentista.Name = "txtCRMDentista";
+            this.txtCRMDentista.Size = new System.Drawing.Size(120, 20);
+            this.txtCRMDentista.TabIndex = 75;
             // 
             // frmCadDentista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(568, 351);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(568, 309);
+            this.Controls.Add(this.txtCRMDentista);
+            this.Controls.Add(this.cbEstadoDentista);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtTelefonePaciente);
+            this.Controls.Add(this.txtTelefoneDentista);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtEmailPaciente);
+            this.Controls.Add(this.txtEspDentista);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtNomePaciente);
-            this.Controls.Add(this.btnSalvarPaciente);
-            this.Controls.Add(this.btnLimparPaciente);
+            this.Controls.Add(this.txtNomeDentista);
+            this.Controls.Add(this.btnSalvarDentista);
+            this.Controls.Add(this.btnLimparDentista);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmCadDentista";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadDentista";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -217,17 +252,17 @@
 
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnLimparPaciente;
-        private System.Windows.Forms.Button btnSalvarPaciente;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnLimparDentista;
+        private System.Windows.Forms.Button btnSalvarDentista;
+        private System.Windows.Forms.ComboBox cbEstadoDentista;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox txtTelefonePaciente;
+        private System.Windows.Forms.MaskedTextBox txtTelefoneDentista;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEmailPaciente;
+        private System.Windows.Forms.TextBox txtEspDentista;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNomePaciente;
+        private System.Windows.Forms.TextBox txtNomeDentista;
+        private System.Windows.Forms.MaskedTextBox txtCRMDentista;
     }
 }

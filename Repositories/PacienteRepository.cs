@@ -1,12 +1,8 @@
 ﻿using ProjetoOdontoPOO.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ProjetoOdontoPOO.Services;
+using System;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace ProjetoOdontoPOO.Repositories
 {
@@ -103,13 +99,14 @@ namespace ProjetoOdontoPOO.Repositories
                                             "OUTPUT INSERTED.Pac_Id VALUES (@Nome, @DataNascimento, @Idade, @CPF, @Sexo, @Telefone, @Email, @ConvenioID, @ResponsavelID)";
                     using (SqlCommand cmdPaciente = new SqlCommand(queryPaciente, conexao, transacao))
                     {
+                        string cpfLimpo = paciente.CPF.Replace(".", "").Replace("-", "").Replace(",", "");
+                        string telefoneLimpo = paciente.Telefone.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
+
                         cmdPaciente.Parameters.AddWithValue("@Nome", paciente.Nome);
                         cmdPaciente.Parameters.AddWithValue("@DataNascimento", paciente.DataNascimento);
                         cmdPaciente.Parameters.AddWithValue("@Idade", paciente.Idade);
-                        string cpfLimpo = paciente.CPF.Replace(".", "").Replace("-", "").Replace(",", "");
                         cmdPaciente.Parameters.AddWithValue("@CPF", cpfLimpo);
                         cmdPaciente.Parameters.AddWithValue("@Sexo", paciente.Sexo);
-                        string telefoneLimpo = paciente.Telefone.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
                         cmdPaciente.Parameters.AddWithValue("@Telefone", telefoneLimpo);
                         cmdPaciente.Parameters.AddWithValue("@Email", paciente.Email);
                         cmdPaciente.Parameters.AddWithValue("@ConvenioID", paciente.Convenio != null ? (object)paciente.Convenio.Id : DBNull.Value);
@@ -121,11 +118,12 @@ namespace ProjetoOdontoPOO.Repositories
                                                 "VALUES (@Logradouro, @Numero, @Cidade, @Estado, @CEP, @Complemento, @PacienteID)";
                         using (SqlCommand cmdEndereco = new SqlCommand(queryEndereco, conexao, transacao))
                         {
+                            string cepLimpo = endereco.CEP.Replace("-", "");
+
                             cmdEndereco.Parameters.AddWithValue("@Logradouro", endereco.Logradouro);
                             cmdEndereco.Parameters.AddWithValue("@Numero", endereco.Numero);
                             cmdEndereco.Parameters.AddWithValue("@Cidade", endereco.Cidade);
                             cmdEndereco.Parameters.AddWithValue("@Estado", endereco.Estado);
-                            string cepLimpo = endereco.CEP.Replace("-", "");
                             cmdEndereco.Parameters.AddWithValue("@CEP", cepLimpo);
                             cmdEndereco.Parameters.AddWithValue("@Complemento", endereco.Complemento);
                             cmdEndereco.Parameters.AddWithValue("@PacienteID", pacienteId);
@@ -166,13 +164,16 @@ namespace ProjetoOdontoPOO.Repositories
 
                     using (SqlCommand cmdPaciente = new SqlCommand(queryPaciente, conexao, transacao))
                     {
+                        string cpfLimpo = paciente.CPF.Replace(".", "").Replace("-", "").Replace(",", "");
+                        string telefoneLimpo = paciente.Telefone.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
+
                         cmdPaciente.Parameters.AddWithValue("@ID", pacienteId);
                         cmdPaciente.Parameters.AddWithValue("@Nome", paciente.Nome);
                         cmdPaciente.Parameters.AddWithValue("@DataNascimento", paciente.DataNascimento);
                         cmdPaciente.Parameters.AddWithValue("@Idade", paciente.Idade);
-                        cmdPaciente.Parameters.AddWithValue("@CPF", paciente.CPF);
+                        cmdPaciente.Parameters.AddWithValue("@CPF", cpfLimpo);
                         cmdPaciente.Parameters.AddWithValue("@Sexo", paciente.Sexo);
-                        cmdPaciente.Parameters.AddWithValue("@Telefone", paciente.Telefone);
+                        cmdPaciente.Parameters.AddWithValue("@Telefone", telefoneLimpo);
                         cmdPaciente.Parameters.AddWithValue("@Email", paciente.Email);
                         cmdPaciente.Parameters.AddWithValue("@ConvenioID", paciente.Convenio?.Id ?? (object)DBNull.Value);
                         cmdPaciente.Parameters.AddWithValue("@ResponsavelID", paciente.Responsavel?.Id ?? (object)DBNull.Value);
@@ -191,12 +192,14 @@ namespace ProjetoOdontoPOO.Repositories
 
                     using (SqlCommand cmdEndereco = new SqlCommand(queryEndereco, conexao, transacao))
                     {
+                        string cepLimpo = endereco.CEP.Replace("-", "");
+
                         cmdEndereco.Parameters.AddWithValue("@PacienteID", pacienteId);
                         cmdEndereco.Parameters.AddWithValue("@Logradouro", endereco.Logradouro);
                         cmdEndereco.Parameters.AddWithValue("@Numero", endereco.Numero);
                         cmdEndereco.Parameters.AddWithValue("@Cidade", endereco.Cidade);
                         cmdEndereco.Parameters.AddWithValue("@Estado", endereco.Estado);
-                        cmdEndereco.Parameters.AddWithValue("@CEP", endereco.CEP);
+                        cmdEndereco.Parameters.AddWithValue("@CEP", cepLimpo);
                         cmdEndereco.Parameters.AddWithValue("@Complemento", endereco.Complemento);
 
                         cmdEndereco.ExecuteNonQuery();
