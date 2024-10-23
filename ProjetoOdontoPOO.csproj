@@ -107,6 +107,12 @@
     <Compile Include="Views\frmCadResponsavel.Designer.cs">
       <DependentUpon>frmCadResponsavel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmEditarConvenio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmEditarConvenio.Designer.cs">
+      <DependentUpon>frmEditarConvenio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmEditarDentista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmCadResponsavel.resx">
       <DependentUpon>frmCadResponsavel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmEditarConvenio.resx">
+      <DependentUpon>frmEditarConvenio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmEditarDentista.resx">
       <DependentUpon>frmEditarDentista.cs</DependentUpon>

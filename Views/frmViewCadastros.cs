@@ -351,5 +351,18 @@ namespace ProjetoOdontoPOO.Views
                 CarregarDadosDentista();
             }
         }
+
+        private void dgvConvenio_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int convenioId = Convert.ToInt32(dgvConvenio.Rows[e.RowIndex].Cells["IDConv"].Value);
+
+                frmEditarConvenio frm = new frmEditarConvenio(convenioId);
+                frm.ShowDialog();
+
+                CarregarDadosConvenio();
+            }
+        }
     }
 }

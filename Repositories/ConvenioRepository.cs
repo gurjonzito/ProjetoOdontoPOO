@@ -113,5 +113,49 @@ namespace ProjetoOdontoPOO.Repositories
                 }
             }
         }
+
+        public bool AtualizarConvenio(int convenioId, Convenio convenio)
+        {
+            using (SqlConnection conexao = _dbService.CriarConexao())
+            {
+                SqlTransaction transacao = conexao.BeginTransaction();
+
+                try
+                {
+                    string query = @"UPDATE Convenio
+                             SET Conv_Nome = @Nome,
+                                 Conv_CNPJ = @CNPJ,
+                                 Conv_Telefone = @Telefone,
+                                 Conv_Endereco = @Endereco,
+                                 Conv_Email = @Email,
+                                 Conv_DataCriacao = @DataCriacao
+                             WHERE Conv_ID = @ID";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao, transacao))
+                    {
+                        string cnpjLimpo = convenio.CNPJ.Replace(".", "").Replace("-", "").Replace(",", "").Replace("/", "");
+                        string telefoneLimpo = convenio.Telefone.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
+
+                        cmd.Parameters.AddWithValue("@ID", convenioId);
+                        cmd.Parameters.AddWithValue("@Nome", convenio.Nome);
+                        cmd.Parameters.AddWithValue("@CNPJ", cnpjLimpo);
+                        cmd.Parameters.AddWithValue("@Telefone", telefoneLimpo);
+                        cmd.Parameters.AddWithValue("@Endereco", convenio.Endereco);
+                        cmd.Parameters.AddWithValue("@Email", convenio.Email);
+                        cmd.Parameters.AddWithValue("@DataCriacao", convenio.DataCriacao);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    transacao.Commit();
+                    return true;
+                }
+                catch
+                {
+                    transacao.Rollback();
+                    throw;
+                }
+            }
+        }
     }
 }

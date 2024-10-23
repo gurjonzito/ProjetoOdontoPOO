@@ -47,5 +47,18 @@ namespace ProjetoOdontoPOO.Controllers
 
             return resultado.Mensagem;
         }
+
+        public bool AtualizarConvenio(int convenioId, Convenio convenio)
+        {
+            try
+            {
+                return _convenioService.AtualizarConvenio(convenioId, convenio);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao atualizar convênio: {ex.Message}");
+                throw;
+            }
+        }
     }
 }

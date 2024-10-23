@@ -63,10 +63,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.cbAtivoInativo = new System.Windows.Forms.ComboBox();
             this.cbUFPaciente = new System.Windows.Forms.ComboBox();
             this.cbSexoPaciente = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cbAtivoInativo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -412,25 +412,6 @@
             this.label19.TabIndex = 71;
             this.label19.Text = "Desligamento";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.Window;
-            this.label20.Location = new System.Drawing.Point(44, 609);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(89, 16);
-            this.label20.TabIndex = 73;
-            this.label20.Text = "Paciente Ativo";
-            // 
-            // cbAtivoInativo
-            // 
-            this.cbAtivoInativo.FormattingEnabled = true;
-            this.cbAtivoInativo.Location = new System.Drawing.Point(44, 628);
-            this.cbAtivoInativo.Name = "cbAtivoInativo";
-            this.cbAtivoInativo.Size = new System.Drawing.Size(264, 21);
-            this.cbAtivoInativo.TabIndex = 74;
-            // 
             // cbUFPaciente
             // 
             this.cbUFPaciente.FormattingEnabled = true;
@@ -450,6 +431,25 @@
             this.cbSexoPaciente.Name = "cbSexoPaciente";
             this.cbSexoPaciente.Size = new System.Drawing.Size(226, 21);
             this.cbSexoPaciente.TabIndex = 76;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.Window;
+            this.label20.Location = new System.Drawing.Point(44, 609);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(89, 16);
+            this.label20.TabIndex = 73;
+            this.label20.Text = "Paciente Ativo";
+            // 
+            // cbAtivoInativo
+            // 
+            this.cbAtivoInativo.FormattingEnabled = true;
+            this.cbAtivoInativo.Location = new System.Drawing.Point(44, 628);
+            this.cbAtivoInativo.Name = "cbAtivoInativo";
+            this.cbAtivoInativo.Size = new System.Drawing.Size(264, 21);
+            this.cbAtivoInativo.TabIndex = 74;
             // 
             // frmEditarPaciente
             // 
@@ -544,9 +544,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox cbAtivoInativo;
         private System.Windows.Forms.ComboBox cbUFPaciente;
         private System.Windows.Forms.ComboBox cbSexoPaciente;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox cbAtivoInativo;
     }
 }

@@ -27,6 +27,15 @@ namespace ProjetoOdontoPOO.Services
             return _convenioRepository.ObterDadosConvenios();
         }
 
+        public bool AtualizarConvenio(int convenioId, Convenio convenio)
+        {
+            var resultadoValidacao = ValidarCadastroConvenio(convenio);
+            if (!resultadoValidacao.Sucesso)
+                throw new ArgumentException(resultadoValidacao.Mensagem);
+
+            return _convenioRepository.AtualizarConvenio(convenioId, convenio);
+        }
+
         public OperationResult InserirConvenio(Convenio convenio)
         {
             try
