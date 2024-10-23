@@ -49,6 +49,15 @@ namespace ProjetoOdontoPOO.Services
             }
         }
 
+        public bool AtualizarResponsavel(int responsavelId, Responsavel responsavel)
+        {
+            var resultadoValidacao = ValidarCadastroResponsavel(responsavel);
+            if (!resultadoValidacao.Sucesso)
+                throw new ArgumentException(resultadoValidacao.Mensagem);
+
+            return _responsavelRepository.AtualizarResponsavel(responsavelId, responsavel);
+        }
+
         private OperationResult ValidarCadastroResponsavel(Responsavel responsavel)
         {
             return ValidarResponsavel(responsavel);

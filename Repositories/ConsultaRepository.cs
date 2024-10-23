@@ -66,15 +66,12 @@ namespace ProjetoOdontoPOO.Repositories
             using (SqlConnection conexao = _dbService.CriarConexao())
             {
                 string query = @"
-            SELECT Conv_ID AS ID,
-                   Conv_Nome AS Nome,
-                   Conv_CNPJ AS CNPJ,
-                   Conv_Telefone AS Telefone,
-                   Conv_Endereco AS [Endereço],
-                   Conv_Email AS [E-mail],
-                   Conv_DataCriacao AS [Data de Criação],
-                   Ativo_Inativo AS Ativo_Inativo
-            FROM Convenio";
+            SELECT Cons_ID AS ID,
+                   Cons_DataConsulta AS Data,
+                   Cons_Observacoes AS [Observações],
+                   Cons_PacienteID_FK AS Paciente,
+                   Cons_DentistaID_FK AS Dentista
+            FROM Consulta";
 
                 SqlDataAdapter adaptador = new SqlDataAdapter(query, conexao);
                 adaptador.Fill(tabela);
@@ -97,8 +94,8 @@ namespace ProjetoOdontoPOO.Repositories
                     {
                         cmd.Parameters.AddWithValue("@DataConsulta", consulta.DataConsulta);
                         cmd.Parameters.AddWithValue("@Observacoes", consulta.Observacoes);
-                        cmd.Parameters.AddWithValue("@PacienteId", consulta.Paciente);
-                        cmd.Parameters.AddWithValue("@DentistaId", consulta.Dentista);
+                        cmd.Parameters.AddWithValue("@PacienteId", consulta.Paciente.Id);
+                        cmd.Parameters.AddWithValue("@DentistaId", consulta.Dentista.Id);
 
                         cmd.ExecuteNonQuery();
                     }

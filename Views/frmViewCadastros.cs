@@ -14,6 +14,7 @@ namespace ProjetoOdontoPOO.Views
         private readonly ResponsavelController _responsavelController;
         private readonly ConvenioController _convenioController;
         private readonly DentistaController _dentistaController;
+        private readonly ConsultaController _consultaController;
 
         public frmViewCadastros()
         {
@@ -24,9 +25,11 @@ namespace ProjetoOdontoPOO.Views
             _responsavelController = new ResponsavelController();
             _convenioController = new ConvenioController();
             _dentistaController = new DentistaController();
+            _consultaController = new ConsultaController();
             CarregarDadosPaciente();
             CarregarDadosResponsavel();
             CarregarDadosConvenio();
+            CarregarDadosConsulta();
         }
 
         private void tabControlVisualizar_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,6 +40,7 @@ namespace ProjetoOdontoPOO.Views
                 dgvResponsavel.Rows.Clear();
                 dgvConvenio.Rows.Clear();
                 dgvDentista.Rows.Clear();
+                dgvConsulta.Rows.Clear();
                 CarregarDadosPaciente();
             }
             else if (tabControlVisualizar.SelectedTab == tpResponsavel)
@@ -44,6 +48,7 @@ namespace ProjetoOdontoPOO.Views
                 dgvPaciente.Rows.Clear();
                 dgvConvenio.Rows.Clear();
                 dgvDentista.Rows.Clear();
+                dgvConsulta.Rows.Clear();
                 CarregarDadosResponsavel();
             }
             else if (tabControlVisualizar.SelectedTab == tpConvenio)
@@ -51,6 +56,7 @@ namespace ProjetoOdontoPOO.Views
                 dgvPaciente.Rows.Clear();
                 dgvResponsavel.Rows.Clear();
                 dgvConvenio.Rows.Clear();
+                dgvConsulta.Rows.Clear();
                 CarregarDadosConvenio();
             }
             else if (tabControlVisualizar.SelectedTab == tpDentista)
@@ -58,7 +64,16 @@ namespace ProjetoOdontoPOO.Views
                 dgvPaciente.Rows.Clear();
                 dgvResponsavel.Rows.Clear();
                 dgvConvenio.Rows.Clear();
+                dgvConsulta.Rows.Clear();
                 CarregarDadosDentista();
+            }
+            else if (tabControlVisualizar.SelectedTab == tpConsulta)
+            {
+                dgvPaciente.Rows.Clear();
+                dgvResponsavel.Rows.Clear();
+                dgvConvenio.Rows.Clear();
+                dgvDentista.Rows.Clear();
+                CarregarDadosConsulta();
             }
         }
 
@@ -268,6 +283,32 @@ namespace ProjetoOdontoPOO.Views
             }
         }
 
+        private void CarregarDadosConsulta()
+        {
+            try
+            {
+                DataTable tabela = _consultaController.ObterTodasConsultas();
+
+                dgvConsulta.AutoGenerateColumns = false;
+
+                dgvConsulta.Rows.Clear();
+
+                foreach (DataRow row in tabela.Rows)
+                {
+                    dgvConsulta.Rows.Add(
+                        row["ID"],
+                        row["Data"],
+                        row["Paciente"],
+                        row["Dentista"]
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar dados da consulta: " + ex.Message);
+            }
+        }
+
         private void dgvPaciente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // Verifica se a linha clicada é válida
@@ -282,6 +323,32 @@ namespace ProjetoOdontoPOO.Views
 
                 // Opcional: atualizar o DataGridView após a edição
                 CarregarDadosPaciente();
+            }
+        }
+
+        private void dgvResponsavel_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int responsavelId = Convert.ToInt32(dgvResponsavel.Rows[e.RowIndex].Cells["IDRes"].Value);
+
+                frmEditarResponsavel frm = new frmEditarResponsavel(responsavelId);
+                frm.ShowDialog();
+
+                CarregarDadosResponsavel();
+            }
+        }
+
+        private void dgvDentista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int dentistaId = Convert.ToInt32(dgvDentista.Rows[e.RowIndex].Cells["IDDen"].Value);
+
+                frmEditarDentista frm = new frmEditarDentista(dentistaId);
+                frm.ShowDialog();
+
+                CarregarDadosDentista();
             }
         }
     }

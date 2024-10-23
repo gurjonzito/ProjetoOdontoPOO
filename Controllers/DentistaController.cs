@@ -18,19 +18,6 @@ namespace ProjetoOdontoPOO.Controllers
             _dentistaService = new DentistaService();
         }
 
-        public List<string> ObterEstados()
-        {
-            try
-            {
-                return _dentistaService.ObterEstados();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro ao obter estados: {ex.Message}");
-                throw;
-            }
-        }
-
         public Dentista ObterDentistaPorId(int dentistaId)
         {
             try
@@ -62,6 +49,19 @@ namespace ProjetoOdontoPOO.Controllers
             var resultado = _dentistaService.InserirDentista(dentista);
 
             return resultado.Mensagem;
+        }
+
+        public bool AtualizarDentista(int dentistaId, Dentista dentista)
+        {
+            try
+            {
+                return _dentistaService.AtualizarDentista(dentistaId, dentista);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao atualizar dentista: {ex.Message}");
+                throw;
+            }
         }
     }
 }

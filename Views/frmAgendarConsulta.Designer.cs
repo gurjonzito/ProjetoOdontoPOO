@@ -52,6 +52,7 @@
             // 
             // dtpDataConsulta
             // 
+            this.dtpDataConsulta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataConsulta.Location = new System.Drawing.Point(57, 98);
             this.dtpDataConsulta.Name = "dtpDataConsulta";
             this.dtpDataConsulta.Size = new System.Drawing.Size(404, 20);

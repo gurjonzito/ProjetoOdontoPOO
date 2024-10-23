@@ -53,7 +53,7 @@ namespace ProjetoOdontoPOO.Views
                 dtpDataPaciente.Value = paciente.DataNascimento;
                 txtIdadePaciente.Text = paciente.Idade.ToString();
                 txtCPFPaciente.Text = paciente.CPF;
-                txtSexoPaciente.Text = paciente.Sexo;
+                cbSexoPaciente.Text = paciente.Sexo;
                 txtTelefonePaciente.Text = paciente.Telefone;
                 txtEmailPaciente.Text = paciente.Email;
 
@@ -88,7 +88,7 @@ namespace ProjetoOdontoPOO.Views
             DateTime dataNascimento = dtpDataPaciente.Value;
             int idade = int.Parse(txtIdadePaciente.Text);
             string cpf = txtCPFPaciente.Text.Replace(".", "").Replace("-", "").Replace(",", "");
-            string sexo = txtSexoPaciente.Text;
+            string sexo = cbSexoPaciente.Text;
             string telefone = txtTelefonePaciente.Text;
             string email = txtEmailPaciente.Text;
 
@@ -155,7 +155,6 @@ namespace ProjetoOdontoPOO.Views
             txtNomePaciente.Clear();
             txtIdadePaciente.Clear();
             txtCPFPaciente.Clear();
-            txtSexoPaciente.Clear();
             txtTelefonePaciente.Clear();
             txtEmailPaciente.Clear();
             txtLogradouro.Clear();
@@ -165,6 +164,7 @@ namespace ProjetoOdontoPOO.Views
             txtComplementoEndereco.Clear();
 
             // Resetar ComboBoxes
+            cbSexoPaciente.SelectedIndex = -1;
             cbConvenioPaciente.SelectedIndex = -1;
             cbResponsavelPaciente.SelectedIndex = -1;
             cbUFPaciente.SelectedIndex = -1;

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label18 = new System.Windows.Forms.Label();
-            this.txtSexoPaciente = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtIdadePaciente = new System.Windows.Forms.TextBox();
             this.txtCPFPaciente = new System.Windows.Forms.MaskedTextBox();
@@ -67,6 +66,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.cbAtivoInativo = new System.Windows.Forms.ComboBox();
             this.cbUFPaciente = new System.Windows.Forms.ComboBox();
+            this.cbSexoPaciente = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,13 +80,6 @@
             this.label18.Size = new System.Drawing.Size(37, 16);
             this.label18.TabIndex = 70;
             this.label18.Text = "Sexo";
-            // 
-            // txtSexoPaciente
-            // 
-            this.txtSexoPaciente.Location = new System.Drawing.Point(296, 190);
-            this.txtSexoPaciente.Name = "txtSexoPaciente";
-            this.txtSexoPaciente.Size = new System.Drawing.Size(226, 20);
-            this.txtSexoPaciente.TabIndex = 69;
             // 
             // label17
             // 
@@ -446,18 +439,30 @@
             this.cbUFPaciente.Size = new System.Drawing.Size(79, 21);
             this.cbUFPaciente.TabIndex = 75;
             // 
+            // cbSexoPaciente
+            // 
+            this.cbSexoPaciente.FormattingEnabled = true;
+            this.cbSexoPaciente.Items.AddRange(new object[] {
+            "Masculino",
+            "Feminino",
+            "Outro"});
+            this.cbSexoPaciente.Location = new System.Drawing.Point(296, 190);
+            this.cbSexoPaciente.Name = "cbSexoPaciente";
+            this.cbSexoPaciente.Size = new System.Drawing.Size(226, 21);
+            this.cbSexoPaciente.TabIndex = 76;
+            // 
             // frmEditarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(570, 768);
+            this.Controls.Add(this.cbSexoPaciente);
             this.Controls.Add(this.cbUFPaciente);
             this.Controls.Add(this.cbAtivoInativo);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.txtSexoPaciente);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.txtIdadePaciente);
             this.Controls.Add(this.txtCPFPaciente);
@@ -505,7 +510,6 @@
         #endregion
 
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtSexoPaciente;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtIdadePaciente;
         private System.Windows.Forms.MaskedTextBox txtCPFPaciente;
@@ -543,5 +547,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cbAtivoInativo;
         private System.Windows.Forms.ComboBox cbUFPaciente;
+        private System.Windows.Forms.ComboBox cbSexoPaciente;
     }
 }

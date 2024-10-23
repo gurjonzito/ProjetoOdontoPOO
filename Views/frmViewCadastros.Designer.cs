@@ -36,6 +36,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControlVisualizar = new System.Windows.Forms.TabControl();
             this.tpPaciente = new System.Windows.Forms.TabPage();
             this.txtBuscarCPFPac = new System.Windows.Forms.MaskedTextBox();
@@ -75,13 +77,21 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvDentista = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tpConsulta = new System.Windows.Forms.TabPage();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dgvConsulta = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dentista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.IDDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControlVisualizar.SuspendLayout();
             this.tpPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).BeginInit();
@@ -91,6 +101,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvenio)).BeginInit();
             this.tpDentista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDentista)).BeginInit();
+            this.tpConsulta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +112,7 @@
             this.tabControlVisualizar.Controls.Add(this.tpResponsavel);
             this.tabControlVisualizar.Controls.Add(this.tpConvenio);
             this.tabControlVisualizar.Controls.Add(this.tpDentista);
-            this.tabControlVisualizar.Controls.Add(this.tabPage2);
+            this.tabControlVisualizar.Controls.Add(this.tpConsulta);
             this.tabControlVisualizar.Location = new System.Drawing.Point(1, 52);
             this.tabControlVisualizar.Name = "tabControlVisualizar";
             this.tabControlVisualizar.SelectedIndex = 0;
@@ -320,6 +332,7 @@
             this.dgvResponsavel.RowHeadersVisible = false;
             this.dgvResponsavel.Size = new System.Drawing.Size(889, 355);
             this.dgvResponsavel.TabIndex = 1;
+            this.dgvResponsavel.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavel_CellDoubleClick);
             // 
             // IDRes
             // 
@@ -516,7 +529,7 @@
             this.dgvDentista.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvDentista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDentista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.IDDen,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
@@ -533,42 +546,109 @@
             this.dgvDentista.RowHeadersVisible = false;
             this.dgvDentista.Size = new System.Drawing.Size(889, 355);
             this.dgvDentista.TabIndex = 12;
+            this.dgvDentista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDentista_CellDoubleClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // tpConsulta
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.tpConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.tpConsulta.Controls.Add(this.maskedTextBox2);
+            this.tpConsulta.Controls.Add(this.label6);
+            this.tpConsulta.Controls.Add(this.button2);
+            this.tpConsulta.Controls.Add(this.dgvConsulta);
+            this.tpConsulta.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpConsulta.Location = new System.Drawing.Point(4, 22);
+            this.tpConsulta.Name = "tpConsulta";
+            this.tpConsulta.Padding = new System.Windows.Forms.Padding(3);
+            this.tpConsulta.Size = new System.Drawing.Size(983, 518);
+            this.tpConsulta.TabIndex = 4;
+            this.tpConsulta.Text = "Consulta";
             // 
-            // dataGridViewTextBoxColumn2
+            // maskedTextBox2
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 250;
+            this.maskedTextBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox2.Location = new System.Drawing.Point(49, 76);
+            this.maskedTextBox2.Mask = "000.000.000-00";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(265, 26);
+            this.maskedTextBox2.TabIndex = 19;
             // 
-            // dataGridViewTextBoxColumn3
+            // label6
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "CRM";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 170;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.Window;
+            this.label6.Location = new System.Drawing.Point(45, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(251, 23);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Busca por CPF do Paciente";
             // 
-            // dataGridViewTextBoxColumn4
+            // button2
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Ativo_Inativo";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(320, 76);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(111, 26);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // dgvConsulta
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(983, 518);
-            this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "Consultas";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.dgvConsulta.AllowUserToAddRows = false;
+            this.dgvConsulta.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvConsulta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvConsulta.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.dgvConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.Dentista});
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvConsulta.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvConsulta.Location = new System.Drawing.Point(49, 124);
+            this.dgvConsulta.Name = "dgvConsulta";
+            this.dgvConsulta.RowHeadersVisible = false;
+            this.dgvConsulta.Size = new System.Drawing.Size(889, 355);
+            this.dgvConsulta.TabIndex = 16;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Data";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Paciente";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 250;
+            // 
+            // Dentista
+            // 
+            this.Dentista.HeaderText = "Dentista";
+            this.Dentista.Name = "Dentista";
+            this.Dentista.ReadOnly = true;
+            this.Dentista.Width = 250;
             // 
             // panel1
             // 
@@ -589,6 +669,32 @@
             this.label1.Size = new System.Drawing.Size(191, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Visualizar Cadastros";
+            // 
+            // IDDen
+            // 
+            this.IDDen.HeaderText = "ID";
+            this.IDDen.Name = "IDDen";
+            this.IDDen.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "CRM";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 170;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Ativo_Inativo";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // frmViewCadastros
             // 
@@ -615,6 +721,9 @@
             this.tpDentista.ResumeLayout(false);
             this.tpDentista.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDentista)).EndInit();
+            this.tpConsulta.ResumeLayout(false);
+            this.tpConsulta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -664,8 +773,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvDentista;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TabPage tpConsulta;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dgvConsulta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dentista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDDen;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;

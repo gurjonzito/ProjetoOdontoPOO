@@ -18,11 +18,6 @@ namespace ProjetoOdontoPOO.Services
             _dentistaRepository = new DentistaRepository();
         }
 
-        public List<string> ObterEstados()
-        {
-            return _dentistaRepository.ObterEstados();
-        }
-
         public Dentista ObterDadosDentistaPorId(int dentistaId)
         {
             if (dentistaId <= 0)
@@ -51,6 +46,15 @@ namespace ProjetoOdontoPOO.Services
             {
                 return new OperationResult(false, $"Erro ao cadastrar dentista: {ex.Message}");
             }
+        }
+
+        public bool AtualizarDentista(int dentistaId, Dentista dentista)
+        {
+            var resultadoValidacao = ValidarCadastroDentista(dentista);
+            if (!resultadoValidacao.Sucesso)
+                throw new ArgumentException(resultadoValidacao.Mensagem);
+
+            return _dentistaRepository.AtualizarDentista(dentistaId, dentista);
         }
 
         private OperationResult ValidarCadastroDentista(Dentista dentista)

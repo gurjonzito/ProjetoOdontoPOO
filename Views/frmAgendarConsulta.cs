@@ -31,6 +31,7 @@ namespace ProjetoOdontoPOO.Views
         {
             ConfigurarComboBoxPaciente();
             ConfigurarComboBoxDentista();
+            DefinirDataHora();
         }
 
         private void ConfigurarComboBoxPaciente()
@@ -51,8 +52,26 @@ namespace ProjetoOdontoPOO.Views
             cbDentistaConsulta.SelectedIndex = -1; // Nenhum item selecionado inicialmente
         }
 
+        private void DefinirDataHora()
+        {
+            dtpDataConsulta.Format = DateTimePickerFormat.Custom;
+            dtpDataConsulta.CustomFormat = "dd/MM/yyyy HH:mm";
+        }
+
         private void btnSalvarConsulta_Click(object sender, EventArgs e)
         {
+            if (cbPacienteConsulta.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione um paciente.");
+                return;
+            }
+
+            if (cbDentistaConsulta.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione um dentista.");
+                return;
+            }
+
             try
             {
                 var consulta = CriarConsulta();

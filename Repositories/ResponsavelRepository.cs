@@ -115,5 +115,51 @@ namespace ProjetoOdontoPOO.Repositories
                 }
             }
         }
+
+        public bool AtualizarResponsavel(int responsavelId, Responsavel responsavel)
+        {
+            using (SqlConnection conexao = _dbService.CriarConexao())
+            {
+                SqlTransaction transacao = conexao.BeginTransaction();
+
+                try
+                {
+                    string query = @"UPDATE Responsavel
+                             SET Res_Nome = @Nome,
+                                 Res_DataNascimento = @DataNascimento,
+                                 Res_Idade = @Idade,
+                                 Res_CPF = @CPF,
+                                 Res_Sexo = @Sexo,
+                                 Res_Telefone = @Telefone,
+                                 Res_Parentesco = @Parentesco
+                             WHERE Res_ID = @ID";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao, transacao))
+                    {
+                        string cpfLimpo = responsavel.CPF.Replace(".", "").Replace("-", "").Replace(",", "");
+                        string telefoneLimpo = responsavel.Telefone.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
+
+                        cmd.Parameters.AddWithValue("@ID", responsavelId);
+                        cmd.Parameters.AddWithValue("@Nome", responsavel.Nome);
+                        cmd.Parameters.AddWithValue("@DataNascimento", responsavel.DataNascimento);
+                        cmd.Parameters.AddWithValue("@Idade", responsavel.Idade);
+                        cmd.Parameters.AddWithValue("@CPF", cpfLimpo);
+                        cmd.Parameters.AddWithValue("@Sexo", responsavel.Sexo);
+                        cmd.Parameters.AddWithValue("@Telefone", telefoneLimpo);
+                        cmd.Parameters.AddWithValue("@Parentesco", responsavel.Parentesco);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    transacao.Commit();
+                    return true;
+                }
+                catch
+                {
+                    transacao.Rollback();
+                    throw;
+                }
+            }
+        }
     }
 }

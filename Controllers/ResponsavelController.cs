@@ -47,5 +47,18 @@ namespace ProjetoOdontoPOO.Controllers
 
             return resultado.Mensagem;
         }
+
+        public bool AtualizarResponsavel(int responsavelId, Responsavel responsavel)
+        {
+            try
+            {
+                return _responsavelService.AtualizarResponsavel(responsavelId, responsavel);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao atualizar responsável: {ex.Message}");
+                throw;
+            }
+        }
     }
 }

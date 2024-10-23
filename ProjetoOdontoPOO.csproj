@@ -107,11 +107,23 @@
     <Compile Include="Views\frmCadResponsavel.Designer.cs">
       <DependentUpon>frmCadResponsavel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmEditarDentista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmEditarDentista.Designer.cs">
+      <DependentUpon>frmEditarDentista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmEditarPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\frmEditarPaciente.Designer.cs">
       <DependentUpon>frmEditarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmEditarResponsavel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmEditarResponsavel.Designer.cs">
+      <DependentUpon>frmEditarResponsavel.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -149,8 +161,14 @@
     <EmbeddedResource Include="Views\frmCadResponsavel.resx">
       <DependentUpon>frmCadResponsavel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmEditarDentista.resx">
+      <DependentUpon>frmEditarDentista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmEditarPaciente.resx">
       <DependentUpon>frmEditarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmEditarResponsavel.resx">
+      <DependentUpon>frmEditarResponsavel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

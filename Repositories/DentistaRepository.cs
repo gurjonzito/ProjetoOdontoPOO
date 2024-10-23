@@ -15,26 +15,6 @@ namespace ProjetoOdontoPOO.Repositories
             _dbService = new DataBaseSqlServerService();
         }
 
-        public List<string> ObterEstados()
-        {
-            List<string> estados = new List<string>();
-
-            using (SqlConnection conexao = _dbService.CriarConexao())
-            {
-                string query = "SELECT DISTINCT Den_Estado FROM Dentista";
-
-                using (SqlCommand cmd = new SqlCommand(query, conexao))
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        estados.Add(reader.GetString(0));
-                    }
-                }
-            }
-            return estados;
-        }
-
         public Dentista ObterDadosDentistaPorId(int dentistaId)
         {
             Dentista dentista = null;
@@ -117,6 +97,47 @@ namespace ProjetoOdontoPOO.Repositories
                     }
 
                     transacao.Commit();
+                }
+                catch
+                {
+                    transacao.Rollback();
+                    throw;
+                }
+            }
+        }
+
+        public bool AtualizarDentista(int dentistaId, Dentista dentista)
+        {
+            using (SqlConnection conexao = _dbService.CriarConexao())
+            {
+                SqlTransaction transacao = conexao.BeginTransaction();
+
+                try
+                {
+                    string query = @"UPDATE Dentista
+                             SET Den_Nome = @Nome,
+                                 Den_CRM = @CRM,
+                                 Den_Estado = @Estado,
+                                 Den_Especialidade = @Especialidade,
+                                 Den_Telefone = @Telefone
+                             WHERE Den_ID = @ID";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao, transacao))
+                    {
+                        string telefoneLimpo = dentista.Telefone.Replace("(", "").Replace(")", "").Replace("-", "").Replace(" ", "");
+
+                        cmd.Parameters.AddWithValue("@ID", dentistaId);
+                        cmd.Parameters.AddWithValue("@Nome", dentista.Nome);
+                        cmd.Parameters.AddWithValue("@CRM", dentista.CRM);
+                        cmd.Parameters.AddWithValue("@Estado", dentista.Estado);
+                        cmd.Parameters.AddWithValue("@Especialidade", dentista.Especialidade);
+                        cmd.Parameters.AddWithValue("@Telefone", telefoneLimpo);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    transacao.Commit();
+                    return true;
                 }
                 catch
                 {
