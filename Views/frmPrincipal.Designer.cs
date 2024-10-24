@@ -208,6 +208,7 @@
             this.btnReceitaAtestado.Text = "Gerar Receita/Atestado";
             this.btnReceitaAtestado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReceitaAtestado.UseVisualStyleBackColor = true;
+            this.btnReceitaAtestado.Click += new System.EventHandler(this.btnReceitaAtestado_Click);
             // 
             // btnConsulta
             // 

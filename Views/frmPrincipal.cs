@@ -58,6 +58,12 @@ namespace ProjetoOdontoPOO.Views
             frm.ShowDialog();
         }
 
+        private void btnReceitaAtestado_Click(object sender, EventArgs e)
+        {
+            frmGerarReceitaAtestado frm = new frmGerarReceitaAtestado();
+            frm.ShowDialog();
+        }
+
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
             frmViewCadastros frm = new frmViewCadastros();
