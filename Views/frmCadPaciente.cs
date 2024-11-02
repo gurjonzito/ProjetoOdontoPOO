@@ -1,6 +1,7 @@
 ﻿using ProjetoOdontoPOO.Controllers;
 using ProjetoOdontoPOO.Models;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ProjetoOdontoPOO.Views
@@ -157,6 +158,21 @@ namespace ProjetoOdontoPOO.Views
             cbUFEndereco.SelectedIndex = -1;
 
             dtpDataPaciente.Value = DateTime.Now;
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox1.BackColor = Color.Black;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.BackColor = Color.Red;
         }
     }
 }
