@@ -238,6 +238,9 @@
             // cbAtivoInativo
             // 
             this.cbAtivoInativo.FormattingEnabled = true;
+            this.cbAtivoInativo.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
             this.cbAtivoInativo.Location = new System.Drawing.Point(46, 326);
             this.cbAtivoInativo.Name = "cbAtivoInativo";
             this.cbAtivoInativo.Size = new System.Drawing.Size(264, 21);
