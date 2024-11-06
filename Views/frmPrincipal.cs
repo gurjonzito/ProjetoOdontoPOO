@@ -81,5 +81,10 @@ namespace ProjetoOdontoPOO.Views
                 Close();
             }
         }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            this.Text = "Meditooth - Versão: " + Application.ProductVersion.ToString();
+        }
     }
 }
