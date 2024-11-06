@@ -43,6 +43,7 @@ namespace ProjetoOdontoPOO.Repositories
                                 Sexo = reader.GetString(reader.GetOrdinal("Pac_Sexo")),
                                 Telefone = reader.GetString(reader.GetOrdinal("Pac_Telefone")),
                                 Email = reader.GetString(reader.GetOrdinal("Pac_Email")),
+                                Ativo_Inativo = reader.GetInt32(reader.GetOrdinal("Ativo_Inativo")),
                                 Convenio = reader.IsDBNull(reader.GetOrdinal("Pac_ConvenioID_FK"))
                                 ? null
                                 : new Convenio { Id = reader.GetInt32(reader.GetOrdinal("Pac_ConvenioID_FK")) },
@@ -159,7 +160,8 @@ namespace ProjetoOdontoPOO.Repositories
                                  Pac_Telefone = @Telefone,
                                  Pac_Email = @Email,
                                  Pac_ConvenioID_FK = @ConvenioID,
-                                 Pac_ResponsavelID_FK = @ResponsavelID
+                                 Pac_ResponsavelID_FK = @ResponsavelID,
+                                 Ativo_Inativo = @AtivoInativo
                              WHERE Pac_ID = @ID";
 
                     using (SqlCommand cmdPaciente = new SqlCommand(queryPaciente, conexao, transacao))
@@ -177,6 +179,7 @@ namespace ProjetoOdontoPOO.Repositories
                         cmdPaciente.Parameters.AddWithValue("@Email", paciente.Email);
                         cmdPaciente.Parameters.AddWithValue("@ConvenioID", paciente.Convenio?.Id ?? (object)DBNull.Value);
                         cmdPaciente.Parameters.AddWithValue("@ResponsavelID", paciente.Responsavel?.Id ?? (object)DBNull.Value);
+                        cmdPaciente.Parameters.AddWithValue("@AtivoInativo", paciente.Ativo_Inativo);
 
                         cmdPaciente.ExecuteNonQuery();
                     }

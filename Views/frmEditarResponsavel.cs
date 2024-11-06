@@ -25,9 +25,17 @@ namespace ProjetoOdontoPOO.Views
 
             _responsavelController = new ResponsavelController();
 
+            CarregarComboBoxes();
             CarregarDadosResponsavel();
+
         }
 
+        private void CarregarComboBoxes()
+        {
+            cbAtivoInativo.Items.Clear();
+            cbAtivoInativo.Items.Add("Ativo");
+            cbAtivoInativo.Items.Add("Inativo");
+        }
         private void CarregarDadosResponsavel()
         {
             Responsavel responsavel = _responsavelController.ObterResponsavelPorId(_responsavelId);
@@ -41,11 +49,27 @@ namespace ProjetoOdontoPOO.Views
                 cbSexoRes.Text = responsavel.Sexo;
                 txtTelefoneRes.Text = responsavel.Telefone;
                 txtParentescoRes.Text = responsavel.Parentesco;
+
+                // Aqui está a verificação para "Ativo" e "Inativo"
+                if (responsavel.Ativo_Inativo == 1)
+                {
+                    cbAtivoInativo.SelectedItem = "Ativo";  // Seleciona "Ativo"
+                }
+                else if (responsavel.Ativo_Inativo == 0)
+                {
+                    cbAtivoInativo.SelectedItem = "Inativo"; // Seleciona "Inativo"
+                }
+                else
+                {
+                    // Caso o valor de Ativo_Inativo não seja 0 nem 1, podemos adicionar uma verificação de erro ou atribuir um valor padrão.
+                    cbAtivoInativo.SelectedItem = null;
+                }
             }
             else
             {
                 MessageBox.Show($"Responsável com ID {_responsavelId} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void btnSalvarResponsavel_Click(object sender, EventArgs e)
@@ -59,6 +83,11 @@ namespace ProjetoOdontoPOO.Views
             string telefone = txtTelefoneRes.Text;
             string parentesco = txtParentescoRes.Text;
 
+            // Coleta o status Ativo/Inativo
+            string status = cbAtivoInativo.SelectedItem.ToString();
+            int ativoInativo = status == "Ativo" ? 1 : 0;
+
+
             // Cria o objeto de Paciente
             Responsavel responsavel = new Responsavel
             {
@@ -69,6 +98,7 @@ namespace ProjetoOdontoPOO.Views
                 Sexo = sexo,
                 Telefone = telefone,
                 Parentesco = parentesco,
+                Ativo_Inativo = ativoInativo
             };
 
             // Chama o método de atualização com os objetos Paciente e Endereço

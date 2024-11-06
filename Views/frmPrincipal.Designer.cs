@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHistorico = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnResponsavel = new System.Windows.Forms.Button();
@@ -45,7 +44,7 @@
             this.btnConvenio = new System.Windows.Forms.Button();
             this.btnPaciente = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnSobre = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,7 +74,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.panel2.Controls.Add(this.btnHistorico);
+            this.panel2.Controls.Add(this.btnSobre);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.btnResponsavel);
@@ -92,21 +91,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(251, 707);
             this.panel2.TabIndex = 1;
-            // 
-            // btnHistorico
-            // 
-            this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorico.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorico.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnHistorico.Image = ((System.Drawing.Image)(resources.GetObject("btnHistorico.Image")));
-            this.btnHistorico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistorico.Location = new System.Drawing.Point(12, 438);
-            this.btnHistorico.Name = "btnHistorico";
-            this.btnHistorico.Size = new System.Drawing.Size(224, 40);
-            this.btnHistorico.TabIndex = 7;
-            this.btnHistorico.Text = "Histórico Paciente";
-            this.btnHistorico.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHistorico.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -153,7 +137,7 @@
             this.btnVisualizar.ForeColor = System.Drawing.SystemColors.Window;
             this.btnVisualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnVisualizar.Image")));
             this.btnVisualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVisualizar.Location = new System.Drawing.Point(12, 550);
+            this.btnVisualizar.Location = new System.Drawing.Point(12, 494);
             this.btnVisualizar.Name = "btnVisualizar";
             this.btnVisualizar.Size = new System.Drawing.Size(224, 40);
             this.btnVisualizar.TabIndex = 9;
@@ -186,13 +170,14 @@
             this.btnPagamento.ForeColor = System.Drawing.SystemColors.Window;
             this.btnPagamento.Image = ((System.Drawing.Image)(resources.GetObject("btnPagamento.Image")));
             this.btnPagamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagamento.Location = new System.Drawing.Point(12, 494);
+            this.btnPagamento.Location = new System.Drawing.Point(12, 438);
             this.btnPagamento.Name = "btnPagamento";
             this.btnPagamento.Size = new System.Drawing.Size(224, 40);
             this.btnPagamento.TabIndex = 8;
             this.btnPagamento.Text = "Pagamento";
             this.btnPagamento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPagamento.UseVisualStyleBackColor = true;
+            this.btnPagamento.Click += new System.EventHandler(this.btnPagamento_Click);
             // 
             // btnReceitaAtestado
             // 
@@ -285,23 +270,27 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // btnSobre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(638, 165);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(263, 55);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "MediTooth";
+            this.btnSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSobre.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSobre.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSobre.Image = ((System.Drawing.Image)(resources.GetObject("btnSobre.Image")));
+            this.btnSobre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSobre.Location = new System.Drawing.Point(12, 550);
+            this.btnSobre.Name = "btnSobre";
+            this.btnSobre.Size = new System.Drawing.Size(224, 40);
+            this.btnSobre.TabIndex = 7;
+            this.btnSobre.Text = "Sobre";
+            this.btnSobre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSobre.UseVisualStyleBackColor = true;
+            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 749);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -317,7 +306,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -338,7 +326,6 @@
         private System.Windows.Forms.Button btnResponsavel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnHistorico;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSobre;
     }
 }

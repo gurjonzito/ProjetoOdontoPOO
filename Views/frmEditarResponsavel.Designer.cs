@@ -240,6 +240,7 @@
             // 
             // cbAtivoInativo
             // 
+            this.cbAtivoInativo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAtivoInativo.FormattingEnabled = true;
             this.cbAtivoInativo.Items.AddRange(new object[] {
             "Ativo",

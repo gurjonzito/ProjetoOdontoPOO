@@ -22,7 +22,7 @@ namespace ProjetoOdontoPOO.Views
             btnConsulta.FlatAppearance.BorderSize = 0;
             btnPagamento.FlatAppearance.BorderSize = 0;
             btnReceitaAtestado.FlatAppearance.BorderSize = 0;
-            btnHistorico.FlatAppearance.BorderSize = 0;
+            btnSobre.FlatAppearance.BorderSize = 0;
             btnResponsavel.FlatAppearance.BorderSize = 0;
             btnVisualizar.FlatAppearance.BorderSize = 0;
             btnSair.FlatAppearance.BorderSize = 0;
@@ -70,6 +70,17 @@ namespace ProjetoOdontoPOO.Views
             frm.ShowDialog();
         }
 
+        private void btnPagamento_Click(object sender, EventArgs e)
+        {
+            frmCadPagamento frm = new frmCadPagamento();
+            frm.ShowDialog();
+        }
+
+        private void btnSobre_Click(object sender, EventArgs e)
+        {
+            frmSobre frm = new frmSobre();
+            frm.ShowDialog();
+        }
         private void btnSair_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente fechar o programa?",
@@ -86,5 +97,7 @@ namespace ProjetoOdontoPOO.Views
         {
             this.Text = "Meditooth - Versão: " + Application.ProductVersion.ToString();
         }
+
+
     }
 }

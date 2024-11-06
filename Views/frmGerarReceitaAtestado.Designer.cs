@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbSelecionarArquivo = new System.Windows.Forms.ComboBox();
             this.cbPacienteArquivo = new System.Windows.Forms.ComboBox();
@@ -43,7 +44,8 @@
             this.btnGerarArquivo = new System.Windows.Forms.Button();
             this.btnLimparArquivo = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnResponsavel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +59,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(938, 53);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(695, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // label7
             // 
@@ -85,15 +103,15 @@
             this.cbPacienteArquivo.FormattingEnabled = true;
             this.cbPacienteArquivo.Location = new System.Drawing.Point(52, 223);
             this.cbPacienteArquivo.Name = "cbPacienteArquivo";
-            this.cbPacienteArquivo.Size = new System.Drawing.Size(315, 21);
+            this.cbPacienteArquivo.Size = new System.Drawing.Size(201, 21);
             this.cbPacienteArquivo.TabIndex = 3;
             // 
             // cbDentistaArquivo
             // 
             this.cbDentistaArquivo.FormattingEnabled = true;
-            this.cbDentistaArquivo.Location = new System.Drawing.Point(373, 223);
+            this.cbDentistaArquivo.Location = new System.Drawing.Point(487, 223);
             this.cbDentistaArquivo.Name = "cbDentistaArquivo";
-            this.cbDentistaArquivo.Size = new System.Drawing.Size(307, 21);
+            this.cbDentistaArquivo.Size = new System.Drawing.Size(158, 21);
             this.cbDentistaArquivo.TabIndex = 4;
             // 
             // txtObsArquivo
@@ -150,7 +168,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(371, 204);
+            this.label5.Location = new System.Drawing.Point(485, 204);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 16);
             this.label5.TabIndex = 12;
@@ -196,21 +214,23 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // pictureBox1
+            // btnResponsavel
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(695, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.TabIndex = 59;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            this.btnResponsavel.Location = new System.Drawing.Point(259, 223);
+            this.btnResponsavel.Name = "btnResponsavel";
+            this.btnResponsavel.Size = new System.Drawing.Size(29, 23);
+            this.btnResponsavel.TabIndex = 59;
+            this.btnResponsavel.Text = "...";
+            this.btnResponsavel.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(651, 221);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 23);
+            this.button1.TabIndex = 60;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmGerarReceitaAtestado
             // 
@@ -218,6 +238,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(739, 574);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnResponsavel);
             this.Controls.Add(this.btnGerarArquivo);
             this.Controls.Add(this.btnLimparArquivo);
             this.Controls.Add(this.label6);
@@ -263,5 +285,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnResponsavel;
+        private System.Windows.Forms.Button button1;
     }
 }

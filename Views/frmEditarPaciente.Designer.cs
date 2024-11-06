@@ -61,13 +61,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNomePaciente = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.cbUFPaciente = new System.Windows.Forms.ComboBox();
             this.cbSexoPaciente = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.cbAtivoInativo = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnConvenio = new System.Windows.Forms.Button();
+            this.btnResponsavel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -283,7 +285,7 @@
             this.cbResponsavelPaciente.FormattingEnabled = true;
             this.cbResponsavelPaciente.Location = new System.Drawing.Point(286, 286);
             this.cbResponsavelPaciente.Name = "cbResponsavelPaciente";
-            this.cbResponsavelPaciente.Size = new System.Drawing.Size(236, 21);
+            this.cbResponsavelPaciente.Size = new System.Drawing.Size(201, 21);
             this.cbResponsavelPaciente.TabIndex = 45;
             // 
             // label5
@@ -302,7 +304,7 @@
             this.cbConvenioPaciente.FormattingEnabled = true;
             this.cbConvenioPaciente.Location = new System.Drawing.Point(44, 286);
             this.cbConvenioPaciente.Name = "cbConvenioPaciente";
-            this.cbConvenioPaciente.Size = new System.Drawing.Size(236, 21);
+            this.cbConvenioPaciente.Size = new System.Drawing.Size(186, 21);
             this.cbConvenioPaciente.TabIndex = 44;
             // 
             // label6
@@ -393,6 +395,22 @@
             this.panel1.Size = new System.Drawing.Size(570, 47);
             this.panel1.TabIndex = 36;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(525, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 77;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -448,27 +466,33 @@
             // 
             // cbAtivoInativo
             // 
+            this.cbAtivoInativo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbAtivoInativo.FormattingEnabled = true;
+            this.cbAtivoInativo.Items.AddRange(new object[] {
+            "Ativo",
+            "Inativo"});
             this.cbAtivoInativo.Location = new System.Drawing.Point(44, 628);
             this.cbAtivoInativo.Name = "cbAtivoInativo";
             this.cbAtivoInativo.Size = new System.Drawing.Size(264, 21);
             this.cbAtivoInativo.TabIndex = 74;
             // 
-            // pictureBox1
+            // btnConvenio
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(525, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.TabIndex = 77;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            this.btnConvenio.Location = new System.Drawing.Point(236, 286);
+            this.btnConvenio.Name = "btnConvenio";
+            this.btnConvenio.Size = new System.Drawing.Size(29, 23);
+            this.btnConvenio.TabIndex = 80;
+            this.btnConvenio.Text = "...";
+            this.btnConvenio.UseVisualStyleBackColor = true;
+            // 
+            // btnResponsavel
+            // 
+            this.btnResponsavel.Location = new System.Drawing.Point(493, 286);
+            this.btnResponsavel.Name = "btnResponsavel";
+            this.btnResponsavel.Size = new System.Drawing.Size(29, 23);
+            this.btnResponsavel.TabIndex = 79;
+            this.btnResponsavel.Text = "...";
+            this.btnResponsavel.UseVisualStyleBackColor = true;
             // 
             // frmEditarPaciente
             // 
@@ -476,6 +500,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(570, 749);
+            this.Controls.Add(this.btnConvenio);
+            this.Controls.Add(this.btnResponsavel);
             this.Controls.Add(this.cbSexoPaciente);
             this.Controls.Add(this.cbUFPaciente);
             this.Controls.Add(this.cbAtivoInativo);
@@ -569,5 +595,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox cbAtivoInativo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnConvenio;
+        private System.Windows.Forms.Button btnResponsavel;
     }
 }

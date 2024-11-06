@@ -126,6 +126,12 @@
     <Compile Include="Views\frmCadPaciente.Designer.cs">
       <DependentUpon>frmCadPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmCadPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmCadPagamento.Designer.cs">
+      <DependentUpon>frmCadPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmCadResponsavel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,36 @@
     <Compile Include="Views\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\frmSelecionarConvenio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmSelecionarConvenio.Designer.cs">
+      <DependentUpon>frmSelecionarConvenio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmSelecionarDentista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmSelecionarDentista.Designer.cs">
+      <DependentUpon>frmSelecionarDentista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmSelecionarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmSelecionarPaciente.Designer.cs">
+      <DependentUpon>frmSelecionarPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmSelecionarResponsavel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmSelecionarResponsavel.Designer.cs">
+      <DependentUpon>frmSelecionarResponsavel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmSobre.Designer.cs">
+      <DependentUpon>frmSobre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\frmViewCadastros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +232,9 @@
     <EmbeddedResource Include="Views\frmCadPaciente.resx">
       <DependentUpon>frmCadPaciente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmCadPagamento.resx">
+      <DependentUpon>frmCadPagamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmCadResponsavel.resx">
       <DependentUpon>frmCadResponsavel.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +255,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmSelecionarConvenio.resx">
+      <DependentUpon>frmSelecionarConvenio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmSelecionarDentista.resx">
+      <DependentUpon>frmSelecionarDentista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmSelecionarPaciente.resx">
+      <DependentUpon>frmSelecionarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmSelecionarResponsavel.resx">
+      <DependentUpon>frmSelecionarResponsavel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmSobre.resx">
+      <DependentUpon>frmSobre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmViewCadastros.resx">
       <DependentUpon>frmViewCadastros.cs</DependentUpon>
