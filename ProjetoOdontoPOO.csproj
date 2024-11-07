@@ -76,6 +76,7 @@
     <Compile Include="Controllers\DentistaController.cs" />
     <Compile Include="Controllers\EnderecoController.cs" />
     <Compile Include="Controllers\PacienteController.cs" />
+    <Compile Include="Controllers\PagamentoController.cs" />
     <Compile Include="Controllers\ResponsavelController.cs" />
     <Compile Include="Models\Consulta.cs" />
     <Compile Include="Models\Convenio.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Models\OperationResult.cs" />
     <Compile Include="Models\Paciente.cs" />
     <Compile Include="Models\PacienteCollection.cs" />
+    <Compile Include="Models\Pagamento.cs" />
     <Compile Include="Models\Responsavel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +96,7 @@
     <Compile Include="Repositories\ConvenioRepository.cs" />
     <Compile Include="Repositories\DentistaRepository.cs" />
     <Compile Include="Repositories\PacienteRepository.cs" />
+    <Compile Include="Repositories\PagamentoRepository.cs" />
     <Compile Include="Repositories\ResponsavelRepository.cs" />
     <Compile Include="Services\ConsultaService.cs" />
     <Compile Include="Services\ConvenioService.cs" />
@@ -101,6 +104,7 @@
     <Compile Include="Services\DentistaService.cs" />
     <Compile Include="Services\EnderecoService.cs" />
     <Compile Include="Services\PacienteService.cs" />
+    <Compile Include="Services\PagamentoService.cs" />
     <Compile Include="Services\ResponsavelService.cs" />
     <Compile Include="Views\frmAgendarConsulta.cs">
       <SubType>Form</SubType>

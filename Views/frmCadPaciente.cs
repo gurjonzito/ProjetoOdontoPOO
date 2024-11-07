@@ -50,9 +50,10 @@ namespace ProjetoOdontoPOO.Views
             string mensagem = _pacienteController.InserirPacienteComEndereco(paciente, endereco);
             MessageBox.Show(mensagem);
 
-            if (mensagem.Contains("Paciente adicionado com sucesso!"))
+            if (mensagem.Contains("Paciente cadastrado com sucesso!"))
             {
                 LimparCampos();
+                txtNomePaciente.Focus();
             }
         }
 
@@ -118,6 +119,7 @@ namespace ProjetoOdontoPOO.Views
         private void btnLimparPaciente_Click(object sender, EventArgs e)
         {
             LimparCampos();
+            txtNomePaciente.Focus();
         }
 
         private void ValidarEntradaNumerica(KeyPressEventArgs e)

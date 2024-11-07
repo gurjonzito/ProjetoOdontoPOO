@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSobre = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnResponsavel = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.btnConvenio = new System.Windows.Forms.Button();
             this.btnPaciente = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSobre = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -91,6 +91,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(251, 707);
             this.panel2.TabIndex = 1;
+            // 
+            // btnSobre
+            // 
+            this.btnSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSobre.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSobre.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnSobre.Image = ((System.Drawing.Image)(resources.GetObject("btnSobre.Image")));
+            this.btnSobre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSobre.Location = new System.Drawing.Point(12, 550);
+            this.btnSobre.Name = "btnSobre";
+            this.btnSobre.Size = new System.Drawing.Size(224, 40);
+            this.btnSobre.TabIndex = 7;
+            this.btnSobre.Text = "Sobre";
+            this.btnSobre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSobre.UseVisualStyleBackColor = true;
+            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
             // 
             // label5
             // 
@@ -270,22 +286,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // btnSobre
-            // 
-            this.btnSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSobre.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSobre.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnSobre.Image = ((System.Drawing.Image)(resources.GetObject("btnSobre.Image")));
-            this.btnSobre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSobre.Location = new System.Drawing.Point(12, 550);
-            this.btnSobre.Name = "btnSobre";
-            this.btnSobre.Size = new System.Drawing.Size(224, 40);
-            this.btnSobre.TabIndex = 7;
-            this.btnSobre.Text = "Sobre";
-            this.btnSobre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSobre.UseVisualStyleBackColor = true;
-            this.btnSobre.Click += new System.EventHandler(this.btnSobre_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +299,7 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

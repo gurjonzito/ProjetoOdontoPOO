@@ -27,6 +27,7 @@ namespace ProjetoOdontoPOO.Views
             if (mensagem.Contains("Convênio cadastrado com sucesso!"))
             {
                 LimparCampos();
+                txtNomeConvenio.Focus();
             }
         }
 
@@ -46,6 +47,7 @@ namespace ProjetoOdontoPOO.Views
         private void btnLimparConvenio_Click(object sender, EventArgs e)
         {
             LimparCampos();
+            txtNomeConvenio.Focus();
         }
 
         private void ValidarEntradaNumerica(KeyPressEventArgs e)

@@ -33,6 +33,7 @@ namespace ProjetoOdontoPOO.Views
             if (mensagem.Contains("Dentista cadastrado com sucesso!"))
             {
                 LimparCampos();
+                txtNomeDentista.Focus();
             }
         }
 
@@ -51,6 +52,7 @@ namespace ProjetoOdontoPOO.Views
         private void btnLimparDentista_Click(object sender, EventArgs e)
         {
             LimparCampos();
+            txtNomeDentista.Focus();
         }
 
         private void ValidarEntradaNumerica(KeyPressEventArgs e)

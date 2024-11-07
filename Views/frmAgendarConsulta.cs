@@ -82,6 +82,7 @@ namespace ProjetoOdontoPOO.Views
                 if (mensagem.Contains("Consulta agendada com sucesso!"))
                 {
                     LimparCampos();
+                    dtpDataConsulta.Focus();
                 }
             }
             catch (Exception ex)
@@ -123,6 +124,8 @@ namespace ProjetoOdontoPOO.Views
             cbDentistaConsulta.SelectedIndex = -1;
 
             dtpDataConsulta.Value = DateTime.Now;
+
+            dtpDataConsulta.Focus();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

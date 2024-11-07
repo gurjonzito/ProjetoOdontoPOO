@@ -15,6 +15,7 @@ namespace ProjetoOdontoPOO.Views
         private readonly ConvenioController _convenioController;
         private readonly DentistaController _dentistaController;
         private readonly ConsultaController _consultaController;
+        private readonly PagamentoController _pagamentoController;
 
         public frmViewCadastros()
         {
@@ -26,10 +27,13 @@ namespace ProjetoOdontoPOO.Views
             _convenioController = new ConvenioController();
             _dentistaController = new DentistaController();
             _consultaController = new ConsultaController();
+            _pagamentoController = new PagamentoController();
+
             CarregarDadosPaciente();
             CarregarDadosResponsavel();
             CarregarDadosConvenio();
             CarregarDadosConsulta();
+            CarregarDadosPagamentos();
         }
 
         private void tabControlVisualizar_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,6 +45,7 @@ namespace ProjetoOdontoPOO.Views
                 dgvConvenio.Rows.Clear();
                 dgvDentista.Rows.Clear();
                 dgvConsulta.Rows.Clear();
+                dgvPagamento.Rows.Clear();
                 CarregarDadosPaciente();
             }
             else if (tabControlVisualizar.SelectedTab == tpResponsavel)
@@ -49,6 +54,7 @@ namespace ProjetoOdontoPOO.Views
                 dgvConvenio.Rows.Clear();
                 dgvDentista.Rows.Clear();
                 dgvConsulta.Rows.Clear();
+                dgvPagamento.Rows.Clear();
                 CarregarDadosResponsavel();
             }
             else if (tabControlVisualizar.SelectedTab == tpConvenio)
@@ -57,6 +63,7 @@ namespace ProjetoOdontoPOO.Views
                 dgvResponsavel.Rows.Clear();
                 dgvConvenio.Rows.Clear();
                 dgvConsulta.Rows.Clear();
+                dgvPagamento.Rows.Clear();
                 CarregarDadosConvenio();
             }
             else if (tabControlVisualizar.SelectedTab == tpDentista)
@@ -65,6 +72,7 @@ namespace ProjetoOdontoPOO.Views
                 dgvResponsavel.Rows.Clear();
                 dgvConvenio.Rows.Clear();
                 dgvConsulta.Rows.Clear();
+                dgvPagamento.Rows.Clear();
                 CarregarDadosDentista();
             }
             else if (tabControlVisualizar.SelectedTab == tpConsulta)
@@ -73,7 +81,16 @@ namespace ProjetoOdontoPOO.Views
                 dgvResponsavel.Rows.Clear();
                 dgvConvenio.Rows.Clear();
                 dgvDentista.Rows.Clear();
+                dgvPagamento.Rows.Clear();
                 CarregarDadosConsulta();
+            }
+            else if (tabControlVisualizar.SelectedTab == tpPagamento)
+            {
+                dgvPaciente.Rows.Clear();
+                dgvResponsavel.Rows.Clear();
+                dgvConvenio.Rows.Clear();
+                dgvDentista.Rows.Clear();
+                CarregarDadosPagamentos();
             }
         }
 
@@ -306,6 +323,34 @@ namespace ProjetoOdontoPOO.Views
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao carregar dados da consulta: " + ex.Message);
+            }
+        }
+
+        private void CarregarDadosPagamentos()
+        {
+            try
+            {
+                DataTable tabela = _pagamentoController.ObterTodosPagamentos();
+
+                dgvPagamento.AutoGenerateColumns = false;
+
+                dgvPagamento.Rows.Clear();
+
+                foreach (DataRow row in tabela.Rows)
+                {
+                    dgvPagamento.Rows.Add(
+                        row["ID"],
+                        row["Data"],
+                        row["Paciente"],
+                        row["Valor Pago"],
+                        row["Método de Pagamento"],
+                        row["Status"]
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar dados do pagamento: " + ex.Message);
             }
         }
 

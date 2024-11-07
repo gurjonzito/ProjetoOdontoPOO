@@ -42,10 +42,9 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(36, 427);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(27, 347);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 37);
+            this.button2.Size = new System.Drawing.Size(113, 30);
             this.button2.TabIndex = 66;
             this.button2.Text = "Selecionar";
             this.button2.UseVisualStyleBackColor = false;
@@ -55,10 +54,9 @@
             this.btnGerarArquivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnGerarArquivo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGerarArquivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGerarArquivo.Location = new System.Drawing.Point(720, 427);
-            this.btnGerarArquivo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGerarArquivo.Location = new System.Drawing.Point(540, 347);
             this.btnGerarArquivo.Name = "btnGerarArquivo";
-            this.btnGerarArquivo.Size = new System.Drawing.Size(151, 37);
+            this.btnGerarArquivo.Size = new System.Drawing.Size(113, 30);
             this.btnGerarArquivo.TabIndex = 65;
             this.btnGerarArquivo.Text = "Visualizar";
             this.btnGerarArquivo.UseVisualStyleBackColor = false;
@@ -66,27 +64,30 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 94);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 76);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(835, 321);
+            this.dataGridView1.Size = new System.Drawing.Size(626, 261);
             this.dataGridView1.TabIndex = 64;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(772, 48);
+            this.button1.Location = new System.Drawing.Point(579, 39);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 23);
+            this.button1.Size = new System.Drawing.Size(74, 19);
             this.button1.TabIndex = 63;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 49);
+            this.textBox1.Location = new System.Drawing.Point(27, 40);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(730, 22);
+            this.textBox1.Size = new System.Drawing.Size(548, 20);
             this.textBox1.TabIndex = 62;
             // 
             // label1
@@ -94,25 +95,26 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(33, 29);
+            this.label1.Location = new System.Drawing.Point(25, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 17);
+            this.label1.Size = new System.Drawing.Size(71, 15);
             this.label1.TabIndex = 61;
             this.label1.Text = "Nome/CRM";
             // 
             // frmSelecionarDentista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(907, 505);
+            this.ClientSize = new System.Drawing.Size(680, 410);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnGerarArquivo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmSelecionarDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selecionar Dentista";
