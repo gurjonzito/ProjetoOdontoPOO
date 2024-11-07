@@ -47,6 +47,7 @@ namespace ProjetoOdontoPOO.Repositories
                                 Sexo = reader.GetString(reader.GetOrdinal("Res_Sexo")),
                                 Telefone = reader.GetString(reader.GetOrdinal("Res_Telefone")),
                                 Parentesco = reader.GetString(reader.GetOrdinal("Res_Parentesco")),
+                                Ativo_Inativo = reader.GetInt32(reader.GetOrdinal("Ativo_Inativo"))
                             };
                         }
                     }
@@ -131,7 +132,8 @@ namespace ProjetoOdontoPOO.Repositories
                                  Res_CPF = @CPF,
                                  Res_Sexo = @Sexo,
                                  Res_Telefone = @Telefone,
-                                 Res_Parentesco = @Parentesco
+                                 Res_Parentesco = @Parentesco,
+                                 Ativo_Inativo = @AtivoInativo
                              WHERE Res_ID = @ID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao, transacao))
@@ -147,6 +149,7 @@ namespace ProjetoOdontoPOO.Repositories
                         cmd.Parameters.AddWithValue("@Sexo", responsavel.Sexo);
                         cmd.Parameters.AddWithValue("@Telefone", telefoneLimpo);
                         cmd.Parameters.AddWithValue("@Parentesco", responsavel.Parentesco);
+                        cmd.Parameters.AddWithValue("@AtivoInativo", responsavel.Ativo_Inativo);
 
                         cmd.ExecuteNonQuery();
                     }

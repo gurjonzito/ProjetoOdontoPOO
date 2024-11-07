@@ -40,6 +40,10 @@ namespace ProjetoOdontoPOO.Views
             cbResponsavelPaciente.DataSource = _responsavelController.ObterTodosResponsaveis();
             cbResponsavelPaciente.DisplayMember = "Nome";
             cbResponsavelPaciente.ValueMember = "Id";
+
+            cbAtivoInativo.Items.Clear();
+            cbAtivoInativo.Items.Add("Ativo");
+            cbAtivoInativo.Items.Add("Inativo");
         }
 
         private void CarregarDadosPaciente()
@@ -56,9 +60,25 @@ namespace ProjetoOdontoPOO.Views
                 cbSexoPaciente.Text = paciente.Sexo;
                 txtTelefonePaciente.Text = paciente.Telefone;
                 txtEmailPaciente.Text = paciente.Email;
+                cbAtivoInativo.Text = paciente.Ativo_Inativo.ToString();
 
                 cbConvenioPaciente.SelectedValue = paciente.Convenio?.Id ?? -1;
                 cbResponsavelPaciente.SelectedValue = paciente.Responsavel?.Id ?? -1;
+
+                // Aqui está a verificação para "Ativo" e "Inativo"
+                if (paciente.Ativo_Inativo == 1)
+                {
+                    cbAtivoInativo.SelectedItem = "Ativo";  // Seleciona "Ativo"
+                }
+                else if (paciente.Ativo_Inativo == 0)
+                {
+                    cbAtivoInativo.SelectedItem = "Inativo"; // Seleciona "Inativo"
+                }
+                else
+                {
+                    // Caso o valor de Ativo_Inativo não seja 0 nem 1, podemos adicionar uma verificação de erro ou atribuir um valor padrão.
+                    cbAtivoInativo.SelectedItem = null;
+                }
 
                 // Verificação se o endereço foi encontrado
                 if (endereco != null)
@@ -96,6 +116,10 @@ namespace ProjetoOdontoPOO.Views
             int? convenioId = cbConvenioPaciente.SelectedIndex > -1 ? (int?)cbConvenioPaciente.SelectedValue : null;
             int? responsavelId = cbResponsavelPaciente.SelectedIndex > -1 ? (int?)cbResponsavelPaciente.SelectedValue : null;
 
+            // Coleta o status Ativo/Inativo
+            string status = cbAtivoInativo.SelectedItem.ToString();
+            int ativoInativo = status == "Ativo" ? 1 : 0;
+
             // Cria o objeto de Paciente
             Paciente paciente = new Paciente
             {
@@ -107,8 +131,10 @@ namespace ProjetoOdontoPOO.Views
                 Telefone = telefone,
                 Email = email,
                 Convenio = convenioId.HasValue ? new Convenio { Id = convenioId.Value } : null,
-                Responsavel = responsavelId.HasValue ? new Responsavel { Id = responsavelId.Value } : null
+                Responsavel = responsavelId.HasValue ? new Responsavel { Id = responsavelId.Value } : null,
+                Ativo_Inativo = ativoInativo
             };
+
 
             // Coleta os dados de endereço
             string logradouro = txtLogradouro.Text;
@@ -171,6 +197,21 @@ namespace ProjetoOdontoPOO.Views
 
             // Resetar DateTimePicker
             dtpDataPaciente.Value = DateTime.Now;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.icons8_fechar_janela_32;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.icons8_close_window_32_outro;
         }
     }
 }

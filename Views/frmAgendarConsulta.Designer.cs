@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.dtpDataConsulta = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txtObsConsulta = new System.Windows.Forms.RichTextBox();
@@ -39,16 +41,49 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSalvarConsulta = new System.Windows.Forms.Button();
             this.btnLimparConsulta = new System.Windows.Forms.Button();
+            this.btnPaciente = new System.Windows.Forms.Button();
+            this.btnDentista = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(517, 39);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(475, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label7.Location = new System.Drawing.Point(165, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(167, 23);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "Agendar Consulta";
             // 
             // dtpDataConsulta
             // 
@@ -90,18 +125,20 @@
             // 
             // cbPacienteConsulta
             // 
+            this.cbPacienteConsulta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPacienteConsulta.FormattingEnabled = true;
             this.cbPacienteConsulta.Location = new System.Drawing.Point(57, 282);
             this.cbPacienteConsulta.Name = "cbPacienteConsulta";
-            this.cbPacienteConsulta.Size = new System.Drawing.Size(217, 21);
+            this.cbPacienteConsulta.Size = new System.Drawing.Size(150, 21);
             this.cbPacienteConsulta.TabIndex = 5;
             // 
             // cbDentistaConsulta
             // 
+            this.cbDentistaConsulta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDentistaConsulta.FormattingEnabled = true;
             this.cbDentistaConsulta.Location = new System.Drawing.Point(280, 282);
             this.cbDentistaConsulta.Name = "cbDentistaConsulta";
-            this.cbDentistaConsulta.Size = new System.Drawing.Size(181, 21);
+            this.cbDentistaConsulta.Size = new System.Drawing.Size(146, 21);
             this.cbDentistaConsulta.TabIndex = 6;
             // 
             // label3
@@ -152,12 +189,32 @@
             this.btnLimparConsulta.UseVisualStyleBackColor = false;
             this.btnLimparConsulta.Click += new System.EventHandler(this.btnLimparConsulta_Click);
             // 
+            // btnPaciente
+            // 
+            this.btnPaciente.Location = new System.Drawing.Point(213, 280);
+            this.btnPaciente.Name = "btnPaciente";
+            this.btnPaciente.Size = new System.Drawing.Size(29, 23);
+            this.btnPaciente.TabIndex = 38;
+            this.btnPaciente.Text = "...";
+            this.btnPaciente.UseVisualStyleBackColor = true;
+            // 
+            // btnDentista
+            // 
+            this.btnDentista.Location = new System.Drawing.Point(432, 280);
+            this.btnDentista.Name = "btnDentista";
+            this.btnDentista.Size = new System.Drawing.Size(29, 23);
+            this.btnDentista.TabIndex = 39;
+            this.btnDentista.Text = "...";
+            this.btnDentista.UseVisualStyleBackColor = true;
+            // 
             // frmAgendarConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(517, 431);
+            this.Controls.Add(this.btnDentista);
+            this.Controls.Add(this.btnPaciente);
             this.Controls.Add(this.btnSalvarConsulta);
             this.Controls.Add(this.btnLimparConsulta);
             this.Controls.Add(this.label4);
@@ -169,10 +226,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpDataConsulta);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAgendarConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAgendarConsulta";
+            this.Text = "Agendar Consulta";
             this.Load += new System.EventHandler(this.frmAgendarConsulta_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +252,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSalvarConsulta;
         private System.Windows.Forms.Button btnLimparConsulta;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnPaciente;
+        private System.Windows.Forms.Button btnDentista;
     }
 }

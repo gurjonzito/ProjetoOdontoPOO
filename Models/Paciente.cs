@@ -15,5 +15,21 @@ namespace ProjetoOdontoPOO.Models
         public int Ativo_Inativo { get; set; }
         public Convenio Convenio { get; set; }
         public Responsavel Responsavel { get; set; }
+
+        public string CPFFormatado
+        {
+            get
+            {
+                return CPF.Insert(3, ".").Insert(7, ".").Insert(11, "-");
+            }
+        }
+
+        public string CPFReplace
+        {
+            set
+            {
+                CPF = value.Replace(".", string.Empty).Replace("-", string.Empty);
+            }
+        }
     }
 }
