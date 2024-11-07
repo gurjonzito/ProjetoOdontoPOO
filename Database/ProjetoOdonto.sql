@@ -37,17 +37,6 @@ CREATE TABLE Dentista(
 );
 GO
 
-CREATE TABLE Tratamento(
-	Tra_ID INT NOT NULL IDENTITY(1,1),
-	Tra_Nome VARCHAR(100) NOT NULL,
-	Tra_Descricao TEXT,
-	Tra_Custo DECIMAL(10,2) NOT NULL,
-	Tra_Duracao INT NOT NULL, -- Em dias
-	Ativo_Inativo INT NOT NULL DEFAULT 1,
-	CONSTRAINT PK_Tratamento PRIMARY KEY (Tra_ID)
-);
-GO
-
 CREATE TABLE Responsavel(
 	Res_ID INT NOT NULL IDENTITY(1,1),
 	Res_Nome VARCHAR(100) NOT NULL,
@@ -98,20 +87,6 @@ CREATE TABLE Consulta(
 );
 GO
 
-CREATE TABLE Fatura(
-	Fat_ID INT NOT NULL IDENTITY(1,1),
-	Fat_ValorTotal DECIMAL(10,2) NOT NULL,
-	Fat_DataEmissao DATE NOT NULL,
-	Fat_DataVencimento DATE NOT NULL,
-	Fat_Status VARCHAR(20) NOT NULL,
-	Fat_ConsultaID_FK INT NOT NULL,
-	CONSTRAINT PK_Fatura PRIMARY KEY (Fat_ID),
-	CONSTRAINT FK_Fatura_Consulta FOREIGN KEY (Fat_ConsultaID_FK)
-	REFERENCES Consulta(Cons_ID),
-	CONSTRAINT CK_Fatura_Status CHECK(Fat_Status IN('Em aberto', 'Pendente', 'Paga', 'Fechada'))
-);
-GO
-
 CREATE TABLE Endereco(
 	End_ID INT NOT NULL IDENTITY(1,1),
 	End_Logradouro VARCHAR(100) NOT NULL,
@@ -128,22 +103,6 @@ CREATE TABLE Endereco(
 );
 GO
 
-CREATE TABLE HistoricoTratamento(
-	His_ID INT NOT NULL IDENTITY(1,1),
-	His_DataInicio DATE NOT NULL,
-	His_DataConclusao DATE NOT NULL,
-	His_Status VARCHAR(20) NOT NULL,
-	His_PacienteID_FK INT NOT NULL,
-	His_TratamentoID_FK INT NOT NULL,
-	CONSTRAINT PK_Historico PRIMARY KEY (His_ID),
-	CONSTRAINT FK_Historico_Paciente FOREIGN KEY (His_PacienteID_FK)
-	REFERENCES Paciente(Pac_ID),
-	CONSTRAINT FK_Historico_Tratamento FOREIGN KEY (His_TratamentoID_FK)
-	REFERENCES Tratamento(Tra_ID),
-	CONSTRAINT CK_Historico_Status CHECK(His_Status IN('Em andamento', 'Conclu do'))
-);
-GO
-
 CREATE TABLE Agendamento(
 	Age_ID INT NOT NULL IDENTITY(1,1),
 	Age_DataAgendamento DATETIME NOT NULL,
@@ -156,27 +115,14 @@ CREATE TABLE Agendamento(
 );
 GO
 
-CREATE TABLE Receita(
-	Rec_ID INT NOT NULL IDENTITY(1,1),
-	Rec_Medicamento VARCHAR(100) NOT NULL,
-	Rec_Dosagem VARCHAR(50) NOT NULL,
-	Rec_Instrucoes TEXT NOT NULL,
-	Rec_ConsultaID_FK INT NOT NULL,
-	CONSTRAINT PK_Receita PRIMARY KEY (Rec_ID),
-	CONSTRAINT FK_Receita_Consulta FOREIGN KEY (Rec_ConsultaID_FK)
-	REFERENCES Consulta(Cons_ID)
-);
-GO
-
 CREATE TABLE Pagamento(
-	Pag_ID INT NOT NULL IDENTITY(1,1),
-	Pag_DataPagamento DATE NOT NULL,
-	Pag_ValorPago DECIMAL(10,2) NOT NULL,
-	Pag_MetodoPagamento VARCHAR(50) NOT NULL,
-	Pag_FaturaID_FK INT NOT NULL,
-	CONSTRAINT PK_Pagamento PRIMARY KEY (Pag_ID),
-	CONSTRAINT FK_Pagamento_Fatura FOREIGN KEY (Pag_FaturaID_FK)
-	REFERENCES Fatura(Fat_ID),
-	CONSTRAINT CK_Pagamento_Metodo CHECK(Pag_MetodoPagamento IN('D bito', 'Cr dito', 'Dinheiro', 'Pix', 'Transfer ncia'))
+    Pag_ID INT NOT NULL IDENTITY(1,1),
+    Pag_DataPagamento DATE NOT NULL,
+    Pag_ValorPago DECIMAL(10,2) NOT NULL,
+    Pag_MetodoPagamento VARCHAR(50) NOT NULL,
+    Pag_Status VARCHAR(20) NOT NULL DEFAULT 'Em Aberto', 
+    CONSTRAINT PK_Pagamento PRIMARY KEY (Pag_ID),
+    CONSTRAINT CK_Pagamento_Metodo CHECK(Pag_MetodoPagamento IN ('D bito', 'Cr dito', 'Dinheiro', 'Pix', 'Transfer ncia')),
+    CONSTRAINT CK_Pagamento_Status CHECK(Pag_Status IN ('Em Aberto', 'Pendente', 'Pago')) 
 );
 GO
