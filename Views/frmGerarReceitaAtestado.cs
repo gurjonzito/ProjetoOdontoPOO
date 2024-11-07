@@ -76,7 +76,6 @@ namespace ProjetoOdontoPOO.Views
 
                     doc.Add(new Paragraph($"Paciente: {cbPacienteArquivo.Text}"));
                     doc.Add(new Paragraph($"Médico: {cbDentistaArquivo.Text}"));
-                    doc.Add(new Paragraph("\n"));
                     doc.Add(new Paragraph(txtObsArquivo.Text)); 
                     doc.Add(new Paragraph("\n"));
 
