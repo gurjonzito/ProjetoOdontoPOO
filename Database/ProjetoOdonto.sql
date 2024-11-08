@@ -1,13 +1,13 @@
 USE master;
 GO
 
-DROP DATABASE IF EXISTS ProjetoOdonto;
+DROP DATABASE IF EXISTS ProjetoOdontov2;
 GO
 
-CREATE DATABASE ProjetoOdonto;
+CREATE DATABASE ProjetoOdontov2;
 GO
 
-USE ProjetoOdonto;
+USE ProjetoOdontov2;
 GO
 
 CREATE TABLE Convenio(
