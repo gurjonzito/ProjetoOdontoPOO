@@ -15,6 +15,7 @@ namespace ProjetoOdontoPOO.Views
         public frmPrincipal()
         {
             InitializeComponent();
+            AtualizaDataHora();
 
             btnPaciente.FlatAppearance.BorderSize = 0;
             btnDentista.FlatAppearance.BorderSize = 0;
@@ -26,6 +27,17 @@ namespace ProjetoOdontoPOO.Views
             btnResponsavel.FlatAppearance.BorderSize = 0;
             btnVisualizar.FlatAppearance.BorderSize = 0;
             btnSair.FlatAppearance.BorderSize = 0;
+        }
+
+        public void AtualizaDataHora()
+        {
+            lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblData.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            AtualizaDataHora();
         }
 
         private void btnPaciente_Click(object sender, EventArgs e)

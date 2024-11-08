@@ -31,10 +31,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvRegistros = new System.Windows.Forms.DataGridView();
             this.btnGerarArquivo = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Parentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,15 +69,24 @@
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvRegistros
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 93);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(835, 321);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvRegistros.AllowUserToAddRows = false;
+            this.dgvRegistros.AllowUserToDeleteRows = false;
+            this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Nome,
+            this.CPF,
+            this.Telefone,
+            this.Parentesco});
+            this.dgvRegistros.Location = new System.Drawing.Point(38, 93);
+            this.dgvRegistros.Name = "dgvRegistros";
+            this.dgvRegistros.RowHeadersVisible = false;
+            this.dgvRegistros.RowHeadersWidth = 51;
+            this.dgvRegistros.RowTemplate.Height = 24;
+            this.dgvRegistros.Size = new System.Drawing.Size(835, 321);
+            this.dgvRegistros.TabIndex = 3;
             // 
             // btnGerarArquivo
             // 
@@ -100,6 +114,46 @@
             this.button2.Text = "Selecionar";
             this.button2.UseVisualStyleBackColor = false;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 125;
+            // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.MinimumWidth = 6;
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 125;
+            // 
+            // CPF
+            // 
+            this.CPF.HeaderText = "CPF";
+            this.CPF.MinimumWidth = 6;
+            this.CPF.Name = "CPF";
+            this.CPF.ReadOnly = true;
+            this.CPF.Width = 125;
+            // 
+            // Telefone
+            // 
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.MinimumWidth = 6;
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            this.Telefone.Width = 125;
+            // 
+            // Parentesco
+            // 
+            this.Parentesco.HeaderText = "Parentesco";
+            this.Parentesco.MinimumWidth = 6;
+            this.Parentesco.Name = "Parentesco";
+            this.Parentesco.ReadOnly = true;
+            this.Parentesco.Width = 125;
+            // 
             // frmSelecionarResponsavel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -108,17 +162,17 @@
             this.ClientSize = new System.Drawing.Size(916, 500);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnGerarArquivo);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvRegistros);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmSelecionarResponsavel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selecionar Responsável";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,8 +183,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvRegistros;
         private System.Windows.Forms.Button btnGerarArquivo;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Parentesco;
     }
 }

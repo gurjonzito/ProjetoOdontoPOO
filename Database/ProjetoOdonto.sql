@@ -103,18 +103,6 @@ CREATE TABLE Endereco(
 );
 GO
 
-CREATE TABLE Agendamento(
-	Age_ID INT NOT NULL IDENTITY(1,1),
-	Age_DataAgendamento DATETIME NOT NULL,
-	Age_Status VARCHAR(20) NOT NULL,
-	Age_ConsultaID_FK INT NOT NULL,
-	CONSTRAINT PK_Agendamento PRIMARY KEY (Age_ID),
-	CONSTRAINT FK_Agendamento_Consulta FOREIGN KEY (Age_ConsultaID_FK)
-	REFERENCES Consulta(Cons_ID),
-	CONSTRAINT CK_Agendamento_Status CHECK(Age_Status IN('Confirmado', 'Cancelado', 'Remarcado'))
-);
-GO
-
 CREATE TABLE Pagamento(
     Pag_ID INT NOT NULL IDENTITY(1,1),
     Pag_DataPagamento DATE NOT NULL,
@@ -123,7 +111,7 @@ CREATE TABLE Pagamento(
     Pag_Status VARCHAR(20) NOT NULL DEFAULT 'Em Aberto',
     Pag_PacienteID_FK INT NOT NULL,
     CONSTRAINT PK_Pagamento PRIMARY KEY (Pag_ID),
-    CONSTRAINT CK_Pagamento_Metodo CHECK(Pag_MetodoPagamento IN ('D bito', 'Cr dito', 'Dinheiro', 'Pix', 'Transfer ncia')),
+    CONSTRAINT CK_Pagamento_Metodo CHECK(Pag_MetodoPagamento IN ('Cartão', 'Dinheiro', 'Pix')),
     CONSTRAINT CK_Pagamento_Status CHECK(Pag_Status IN ('Em Aberto', 'Pendente', 'Pago')),
     CONSTRAINT FK_Pagamento_Paciente FOREIGN KEY (Pag_PacienteID_FK) REFERENCES Paciente(Pac_ID)
 );

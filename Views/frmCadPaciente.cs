@@ -12,6 +12,8 @@ namespace ProjetoOdontoPOO.Views
         private readonly ConvenioController _convenioController;
         private readonly ResponsavelController _responsavelController;
 
+        Convenio convenioPaciente;
+
         public frmCadPaciente()
         {
             InitializeComponent();
@@ -22,16 +24,7 @@ namespace ProjetoOdontoPOO.Views
 
         private void frmCadPaciente_Load(object sender, EventArgs e)
         {
-            ConfigurarComboBoxConvenio();
             ConfigurarComboBoxResponsavel();
-        }
-
-        private void ConfigurarComboBoxConvenio()
-        {
-            cbConvenioPaciente.DataSource = _convenioController.ObterTodosConvenios();
-            cbConvenioPaciente.DisplayMember = "Nome";
-            cbConvenioPaciente.ValueMember = "Id";
-            cbConvenioPaciente.SelectedIndex = -1;
         }
 
         private void ConfigurarComboBoxResponsavel()
@@ -40,6 +33,11 @@ namespace ProjetoOdontoPOO.Views
             cbResponsavelPaciente.DisplayMember = "Nome";
             cbResponsavelPaciente.ValueMember = "Id";
             cbResponsavelPaciente.SelectedIndex = -1;
+        }
+
+        private void btnConvenio_Click(object sender, EventArgs e)
+        {
+            PesquisarConvenio();
         }
 
         private void btnSalvarPaciente_Click(object sender, EventArgs e)
@@ -68,13 +66,7 @@ namespace ProjetoOdontoPOO.Views
                 Sexo = cbSexoPaciente.Text,
                 Telefone = txtTelefonePaciente.Text,
                 Email = txtEmailPaciente.Text,
-                Convenio = cbConvenioPaciente.SelectedValue != null
-                    ? new Convenio
-                    {
-                        Id = (int)cbConvenioPaciente.SelectedValue,
-                        Nome = cbConvenioPaciente.Text
-                    }
-                    : null,
+                Convenio = convenioPaciente,
                 Responsavel = cbResponsavelPaciente.SelectedValue != null
                     ? new Responsavel
                     {
@@ -96,6 +88,19 @@ namespace ProjetoOdontoPOO.Views
                 CEP = txtCEPEndereco.Text.Replace("-", ""),
                 Complemento = txtComplementoEndereco.Text
             };
+        }
+
+        private void PesquisarConvenio()
+        {
+            frmSelecionarConvenio frm = new frmSelecionarConvenio(true);
+            DialogResult dialogResult = frm.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                convenioPaciente = frm.convenioSelecao;
+
+                txtConvenioPaciente.Text = convenioPaciente.Nome;
+            }
         }
 
         private void dtpDataPaciente_Leave(object sender, EventArgs e)
@@ -153,8 +158,8 @@ namespace ProjetoOdontoPOO.Views
             txtCidadeEndereco.Clear();
             txtCEPEndereco.Clear();
             txtComplementoEndereco.Clear();
+            txtConvenioPaciente.Clear();
 
-            cbConvenioPaciente.SelectedIndex = -1;
             cbSexoPaciente.SelectedIndex = -1;
             cbResponsavelPaciente.SelectedIndex = -1;
             cbUFEndereco.SelectedIndex = -1;
