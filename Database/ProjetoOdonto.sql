@@ -120,9 +120,11 @@ CREATE TABLE Pagamento(
     Pag_DataPagamento DATE NOT NULL,
     Pag_ValorPago DECIMAL(10,2) NOT NULL,
     Pag_MetodoPagamento VARCHAR(50) NOT NULL,
-    Pag_Status VARCHAR(20) NOT NULL DEFAULT 'Em Aberto', 
+    Pag_Status VARCHAR(20) NOT NULL DEFAULT 'Em Aberto',
+    Pag_PacienteID_FK INT NOT NULL,
     CONSTRAINT PK_Pagamento PRIMARY KEY (Pag_ID),
     CONSTRAINT CK_Pagamento_Metodo CHECK(Pag_MetodoPagamento IN ('D bito', 'Cr dito', 'Dinheiro', 'Pix', 'Transfer ncia')),
-    CONSTRAINT CK_Pagamento_Status CHECK(Pag_Status IN ('Em Aberto', 'Pendente', 'Pago')) 
+    CONSTRAINT CK_Pagamento_Status CHECK(Pag_Status IN ('Em Aberto', 'Pendente', 'Pago')),
+    CONSTRAINT FK_Pagamento_Paciente FOREIGN KEY (Pag_PacienteID_FK) REFERENCES Paciente(Pac_ID)
 );
 GO
