@@ -13,6 +13,7 @@ namespace ProjetoOdontoPOO.Views
         private readonly ResponsavelController _responsavelController;
 
         Convenio convenioPaciente;
+        Responsavel responsavelPaciente;
 
         public frmCadPaciente()
         {
@@ -22,24 +23,15 @@ namespace ProjetoOdontoPOO.Views
             _responsavelController = new ResponsavelController();
         }
 
-        private void frmCadPaciente_Load(object sender, EventArgs e)
-        {
-            ConfigurarComboBoxResponsavel();
-        }
-
-        private void ConfigurarComboBoxResponsavel()
-        {
-            cbResponsavelPaciente.DataSource = _responsavelController.ObterTodosResponsaveis();
-            cbResponsavelPaciente.DisplayMember = "Nome";
-            cbResponsavelPaciente.ValueMember = "Id";
-            cbResponsavelPaciente.SelectedIndex = -1;
-        }
-
         private void btnConvenio_Click(object sender, EventArgs e)
         {
             PesquisarConvenio();
         }
 
+        private void btnResponsavel_Click(object sender, EventArgs e)
+        {
+            PesquisarResponsavel();
+        }
         private void btnSalvarPaciente_Click(object sender, EventArgs e)
         {
             var paciente = CriarPaciente();
@@ -67,13 +59,7 @@ namespace ProjetoOdontoPOO.Views
                 Telefone = txtTelefonePaciente.Text,
                 Email = txtEmailPaciente.Text,
                 Convenio = convenioPaciente,
-                Responsavel = cbResponsavelPaciente.SelectedValue != null
-                    ? new Responsavel
-                    {
-                        Id = (int)cbResponsavelPaciente.SelectedValue,
-                        Nome = cbResponsavelPaciente.Text
-                    }
-                    : null
+                Responsavel = responsavelPaciente
             };
         }
 
@@ -100,6 +86,19 @@ namespace ProjetoOdontoPOO.Views
                 convenioPaciente = frm.convenioSelecao;
 
                 txtConvenioPaciente.Text = convenioPaciente.Nome;
+            }
+        }
+
+        private void PesquisarResponsavel()
+        {
+            frmSelecionarResponsavel frm = new frmSelecionarResponsavel(true);
+            DialogResult dialogResult = frm.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                responsavelPaciente = frm.responsavelSelecao;
+
+                txtResponsavelPaciente.Text = responsavelPaciente.Nome;
             }
         }
 
@@ -159,9 +158,9 @@ namespace ProjetoOdontoPOO.Views
             txtCEPEndereco.Clear();
             txtComplementoEndereco.Clear();
             txtConvenioPaciente.Clear();
+            txtResponsavelPaciente.Clear();
 
             cbSexoPaciente.SelectedIndex = -1;
-            cbResponsavelPaciente.SelectedIndex = -1;
             cbUFEndereco.SelectedIndex = -1;
 
             dtpDataPaciente.Value = DateTime.Now;
@@ -181,5 +180,6 @@ namespace ProjetoOdontoPOO.Views
         {
             pictureBox1.Image = Properties.Resources.icons8_close_window_32_outro;
         }
+
     }
 }
