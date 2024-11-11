@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnGerarArquivo = new System.Windows.Forms.Button();
+            this.btnSelecionar = new System.Windows.Forms.Button();
+            this.btnVisualizar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,48 +42,48 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnSelecionar
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(36, 427);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 37);
-            this.button2.TabIndex = 66;
-            this.button2.Text = "Selecionar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnSelecionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSelecionar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar.Location = new System.Drawing.Point(27, 347);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(113, 30);
+            this.btnSelecionar.TabIndex = 66;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = false;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
-            // btnGerarArquivo
+            // btnVisualizar
             // 
-            this.btnGerarArquivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnGerarArquivo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGerarArquivo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGerarArquivo.Location = new System.Drawing.Point(720, 427);
-            this.btnGerarArquivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnGerarArquivo.Name = "btnGerarArquivo";
-            this.btnGerarArquivo.Size = new System.Drawing.Size(151, 37);
-            this.btnGerarArquivo.TabIndex = 65;
-            this.btnGerarArquivo.Text = "Visualizar";
-            this.btnGerarArquivo.UseVisualStyleBackColor = false;
+            this.btnVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVisualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizar.Location = new System.Drawing.Point(540, 347);
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.Size = new System.Drawing.Size(113, 30);
+            this.btnVisualizar.TabIndex = 65;
+            this.btnVisualizar.Text = "Visualizar";
+            this.btnVisualizar.UseVisualStyleBackColor = false;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(772, 48);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(579, 39);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 23);
+            this.button1.Size = new System.Drawing.Size(74, 19);
             this.button1.TabIndex = 63;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 49);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Location = new System.Drawing.Point(27, 40);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(729, 22);
+            this.textBox1.Size = new System.Drawing.Size(548, 20);
             this.textBox1.TabIndex = 62;
             // 
             // label1
@@ -91,9 +91,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(33, 30);
+            this.label1.Location = new System.Drawing.Point(25, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 17);
+            this.label1.Size = new System.Drawing.Size(71, 15);
             this.label1.TabIndex = 61;
             this.label1.Text = "Nome/CRM";
             // 
@@ -101,6 +102,8 @@
             // 
             this.dgvRegistros.AllowUserToAddRows = false;
             this.dgvRegistros.AllowUserToDeleteRows = false;
+            this.dgvRegistros.AllowUserToResizeColumns = false;
+            this.dgvRegistros.AllowUserToResizeRows = false;
             this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegistros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -108,13 +111,16 @@
             this.CRM,
             this.Especialidade,
             this.Telefone});
-            this.dgvRegistros.Location = new System.Drawing.Point(36, 92);
+            this.dgvRegistros.Location = new System.Drawing.Point(27, 75);
+            this.dgvRegistros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvRegistros.Name = "dgvRegistros";
             this.dgvRegistros.RowHeadersVisible = false;
             this.dgvRegistros.RowHeadersWidth = 51;
             this.dgvRegistros.RowTemplate.Height = 24;
-            this.dgvRegistros.Size = new System.Drawing.Size(835, 321);
+            this.dgvRegistros.Size = new System.Drawing.Size(626, 261);
             this.dgvRegistros.TabIndex = 68;
+            this.dgvRegistros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellClick);
+            this.dgvRegistros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellDoubleClick);
             // 
             // ID
             // 
@@ -158,18 +164,17 @@
             // 
             // frmSelecionarDentista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(907, 505);
+            this.ClientSize = new System.Drawing.Size(680, 410);
             this.Controls.Add(this.dgvRegistros);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnGerarArquivo);
+            this.Controls.Add(this.btnSelecionar);
+            this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmSelecionarDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Selecionar Dentista";
@@ -181,8 +186,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnGerarArquivo;
+        private System.Windows.Forms.Button btnSelecionar;
+        private System.Windows.Forms.Button btnVisualizar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;

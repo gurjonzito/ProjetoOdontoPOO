@@ -59,6 +59,13 @@ namespace ProjetoOdontoPOO.Views
                     // Associar o objeto Convenio à linha
                     dgvRegistros.Rows[index].Tag = responsavel;
                 }
+
+                if (dgvRegistros.Rows.Count > 0)
+                {
+                    dgvRegistros.Rows[0].Selected = true; // Seleciona a primeira linha
+                                                          // Atribui o objeto responsável à variável responsavelSelecao
+                    responsavelSelecao = dgvRegistros.Rows[0].Tag as Responsavel;
+                }
             }
             catch (Exception ex)
             {
@@ -118,5 +125,38 @@ namespace ProjetoOdontoPOO.Views
                     }
                 }
             }
+
+        private void dgvRegistros_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica se o clique foi em uma linha válida
+            if (e.RowIndex >= 0 && e.RowIndex < dgvRegistros.Rows.Count)
+            {
+                var row = dgvRegistros.Rows[e.RowIndex];
+                if (row.Cells[0].Value != null) // Verifica se a célula contém dados (ID)
+                {
+                    // Se a célula contém dados, seleciona o responsável
+                    responsavelSelecao = row.Tag as Responsavel;
+
+                    // Marca a linha como selecionada visualmente (opcional)
+                    dgvRegistros.Rows[e.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            if (responsavelSelecao != null)
+            {
+                // Cria uma nova instância de frmEditarResponsavel em modo visualização
+                frmEditarResponsavel frmEditar = new frmEditarResponsavel(responsavelSelecao.Id, modoVisualizacao: true);
+
+                // Exibe o formulário de edição
+                frmEditar.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nenhum responsável selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
+}

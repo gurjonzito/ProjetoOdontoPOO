@@ -54,6 +54,13 @@ namespace ProjetoOdontoPOO.Views
                     // Associar o objeto Convenio à linha
                     dgvRegistros.Rows[index].Tag = convenio;
                 }
+
+                // Selecionar o primeiro item, se disponível
+                if (dgvRegistros.Rows.Count > 0)
+                {
+                    dgvRegistros.Rows[0].Selected = true;
+                    convenioSelecao = dgvRegistros.Rows[0].Tag as Convenio;
+                }
             }
             catch (Exception ex)
             {
@@ -109,9 +116,41 @@ namespace ProjetoOdontoPOO.Views
                 else
                 {
                     // Caso o clique tenha sido no "vácuo", não faça nada
-                    // Opcional: mostrar uma mensagem ou apenas ignorar
                     MessageBox.Show("Clique em uma linha com dados válidos.");
                 }
+            }
+        }
+
+        private void dgvRegistros_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica se o clique foi em uma linha válida
+            if (e.RowIndex >= 0 && e.RowIndex < dgvRegistros.Rows.Count)
+            {
+                var row = dgvRegistros.Rows[e.RowIndex];
+                if (row.Cells[0].Value != null) // Verifica se a célula contém dados (ID)
+                {
+                    // Se a célula contém dados, seleciona o convênio
+                    convenioSelecao = row.Tag as Convenio;
+
+                    // Marca a linha como selecionada visualmente (opcional)
+                    dgvRegistros.Rows[e.RowIndex].Selected = true;
+                }
+            }
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            if (convenioSelecao != null)
+            {
+                // Cria uma nova instância de frmEditarConvenio em modo visualização
+                frmEditarConvenio frmEditar = new frmEditarConvenio(convenioSelecao.Id, modoVisualizacao: true);
+
+                // Exibe o formulário de edição
+                frmEditar.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nenhum convênio selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -9,8 +9,8 @@ namespace ProjetoOdontoPOO.Views
     {
         private readonly DentistaController _dentistaController;
         private int _dentistaId;
-
-        public frmEditarDentista(int dentistaId)
+        private bool _modoVisualizacao;
+        public frmEditarDentista(int dentistaId, bool modoVisualizacao = false)
         {
             InitializeComponent();
 
@@ -19,6 +19,11 @@ namespace ProjetoOdontoPOO.Views
             _dentistaController = new DentistaController();
 
             CarregarDadosDentista();
+
+            if (_modoVisualizacao)
+            {
+                DesabilitarCampos();
+            }
         }
 
         private void CarregarDadosDentista()
@@ -37,6 +42,17 @@ namespace ProjetoOdontoPOO.Views
             {
                 MessageBox.Show($"Dentista com ID {_dentistaId} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void DesabilitarCampos()
+        {
+            txtNomeDentista.Enabled = false;
+            txtCRMDentista.Enabled = false;
+            txtEspDentista.Enabled = false;
+            txtTelefoneDentista.Enabled = false;
+            cbEstadoDentista.Enabled = false;
+            btnLimparDentista.Visible = false;
+            btnSalvarDentista.Visible = false;
         }
 
         private void btnSalvarDentista_Click(object sender, EventArgs e)

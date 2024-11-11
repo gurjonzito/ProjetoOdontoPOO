@@ -16,18 +16,26 @@ namespace ProjetoOdontoPOO.Views
     {
         private readonly ResponsavelController _responsavelController;
         private int _responsavelId;
+        private bool _modoVisualizacao;
 
-        public frmEditarResponsavel(int responsavelId)
+        // Modificado para aceitar o parâmetro 'modoVisualizacao'
+        public frmEditarResponsavel(int responsavelId, bool modoVisualizacao = false)
         {
             InitializeComponent();
 
             _responsavelId = responsavelId;
+            _modoVisualizacao = modoVisualizacao; // Armazena o modo
 
             _responsavelController = new ResponsavelController();
 
             CarregarComboBoxes();
             CarregarDadosResponsavel();
 
+            // Se for modo de visualização, desabilitar os campos
+            if (_modoVisualizacao)
+            {
+                DesabilitarCampos();
+            }
         }
 
         private void CarregarComboBoxes()
@@ -36,6 +44,7 @@ namespace ProjetoOdontoPOO.Views
             cbAtivoInativo.Items.Add("Ativo");
             cbAtivoInativo.Items.Add("Inativo");
         }
+
         private void CarregarDadosResponsavel()
         {
             Responsavel responsavel = _responsavelController.ObterResponsavelPorId(_responsavelId);
@@ -50,18 +59,17 @@ namespace ProjetoOdontoPOO.Views
                 txtTelefoneRes.Text = responsavel.Telefone;
                 txtParentescoRes.Text = responsavel.Parentesco;
 
-                // Aqui está a verificação para "Ativo" e "Inativo"
+                // Seleção do status Ativo/Inativo
                 if (responsavel.Ativo_Inativo == 1)
                 {
-                    cbAtivoInativo.SelectedItem = "Ativo";  // Seleciona "Ativo"
+                    cbAtivoInativo.SelectedItem = "Ativo";
                 }
                 else if (responsavel.Ativo_Inativo == 0)
                 {
-                    cbAtivoInativo.SelectedItem = "Inativo"; // Seleciona "Inativo"
+                    cbAtivoInativo.SelectedItem = "Inativo";
                 }
                 else
                 {
-                    // Caso o valor de Ativo_Inativo não seja 0 nem 1, podemos adicionar uma verificação de erro ou atribuir um valor padrão.
                     cbAtivoInativo.SelectedItem = null;
                 }
             }
@@ -69,12 +77,26 @@ namespace ProjetoOdontoPOO.Views
             {
                 MessageBox.Show($"Responsável com ID {_responsavelId} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        // Método para desabilitar os campos no modo de visualização
+        private void DesabilitarCampos()
+        {
+            txtNomeRes.Enabled = false;
+            txtIdadeRes.Enabled = false;
+            txtCPFRes.Enabled = false;
+            txtTelefoneRes.Enabled = false;
+            txtParentescoRes.Enabled = false;
+            cbSexoRes.Enabled = false;
+            cbAtivoInativo.Enabled = false;
+            dtpDataRes.Enabled = false;
+            btnLimparResponsavel.Visible = false;
+            btnSalvarResponsavel.Visible = false;
         }
 
         private void btnSalvarResponsavel_Click(object sender, EventArgs e)
         {
-            // Coleta os dados do paciente
+            // Coleta os dados do responsável
             string nome = txtNomeRes.Text;
             DateTime dataNascimento = dtpDataRes.Value;
             int idade = int.Parse(txtIdadeRes.Text);
@@ -87,8 +109,7 @@ namespace ProjetoOdontoPOO.Views
             string status = cbAtivoInativo.SelectedItem.ToString();
             int ativoInativo = status == "Ativo" ? 1 : 0;
 
-
-            // Cria o objeto de Paciente
+            // Cria o objeto Responsável
             Responsavel responsavel = new Responsavel
             {
                 Nome = nome,
@@ -101,10 +122,9 @@ namespace ProjetoOdontoPOO.Views
                 Ativo_Inativo = ativoInativo
             };
 
-            // Chama o método de atualização com os objetos Paciente e Endereço
+            // Chama o método de atualização
             bool atualizado = _responsavelController.AtualizarResponsavel(_responsavelId, responsavel);
 
-            // Exibe o resultado
             if (atualizado)
             {
                 MessageBox.Show("Responsável atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -123,17 +143,13 @@ namespace ProjetoOdontoPOO.Views
 
         private void LimparCampos()
         {
-            // Limpar campos de texto
             txtNomeRes.Clear();
             txtIdadeRes.Clear();
             txtCPFRes.Clear();
             txtTelefoneRes.Clear();
             txtParentescoRes.Clear();
-
-            // Resetar ComboBoxes
             cbSexoRes.SelectedIndex = -1;
-
-            // Resetar DateTimePicker
+            cbAtivoInativo.SelectedIndex = -1;
             dtpDataRes.Value = DateTime.Now;
         }
 

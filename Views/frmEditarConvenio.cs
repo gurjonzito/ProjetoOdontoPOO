@@ -16,8 +16,8 @@ namespace ProjetoOdontoPOO.Views
     {
         private readonly ConvenioController _convenioController;
         private int _convenioId;
-
-        public frmEditarConvenio(int convenioId)
+        private bool _modoVisualizacao;
+        public frmEditarConvenio(int convenioId, bool modoVisualizacao = false)
         {
             InitializeComponent();
 
@@ -26,6 +26,11 @@ namespace ProjetoOdontoPOO.Views
             _convenioController = new ConvenioController();
 
             CarregarDadosConvenio();
+
+            if (_modoVisualizacao)
+            {
+                DesabilitarCampos();
+            }
         }
 
         private void CarregarDadosConvenio()
@@ -45,6 +50,19 @@ namespace ProjetoOdontoPOO.Views
             {
                 MessageBox.Show($"Convênio com ID {_convenioId} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void DesabilitarCampos()
+        {
+            txtCNPJConvenio.Enabled = false;
+            txtCNPJConvenio.Enabled = false;
+            txtEmailConvenio.Enabled = false;
+            txtEnderecoConvenio.Enabled = false;
+            txtNomeConvenio.Enabled = false;
+            txtTelefoneConvenio.Enabled = false;
+            dtpDataConvenio.Enabled = false;
+            btnLimparConvenio.Visible = false;
+            btnSalvarConvenio.Visible = false;
         }
 
         private void btnSalvarConvenio_Click(object sender, EventArgs e)

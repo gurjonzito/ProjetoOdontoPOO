@@ -57,7 +57,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(28, 39);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(548, 20);
             this.textBox1.TabIndex = 1;
@@ -65,7 +65,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(580, 38);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(74, 21);
             this.button1.TabIndex = 2;
@@ -86,13 +86,14 @@
             this.Telefone,
             this.Parentesco});
             this.dgvRegistros.Location = new System.Drawing.Point(28, 76);
-            this.dgvRegistros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvRegistros.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRegistros.Name = "dgvRegistros";
             this.dgvRegistros.RowHeadersVisible = false;
             this.dgvRegistros.RowHeadersWidth = 51;
             this.dgvRegistros.RowTemplate.Height = 24;
             this.dgvRegistros.Size = new System.Drawing.Size(626, 261);
             this.dgvRegistros.TabIndex = 3;
+            this.dgvRegistros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellClick);
             this.dgvRegistros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellDoubleClick);
             // 
             // ID
@@ -146,6 +147,7 @@
             this.btnVisualizar.TabIndex = 59;
             this.btnVisualizar.Text = "Visualizar";
             this.btnVisualizar.UseVisualStyleBackColor = false;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // btnSelecionar
             // 
