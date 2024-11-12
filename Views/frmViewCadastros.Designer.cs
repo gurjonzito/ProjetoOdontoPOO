@@ -89,23 +89,23 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.dgvConsulta = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dentista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.tpPagamento = new System.Windows.Forms.TabPage();
             this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.dgvPagamento = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.IDPag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCons = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dentista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlVisualizar.SuspendLayout();
             this.tpPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).BeginInit();
@@ -117,9 +117,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDentista)).BeginInit();
             this.tpConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).BeginInit();
-            this.panel1.SuspendLayout();
             this.tpPagamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagamento)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlVisualizar
@@ -130,10 +130,11 @@
             this.tabControlVisualizar.Controls.Add(this.tpDentista);
             this.tabControlVisualizar.Controls.Add(this.tpConsulta);
             this.tabControlVisualizar.Controls.Add(this.tpPagamento);
-            this.tabControlVisualizar.Location = new System.Drawing.Point(1, 52);
+            this.tabControlVisualizar.Location = new System.Drawing.Point(1, 64);
+            this.tabControlVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControlVisualizar.Name = "tabControlVisualizar";
             this.tabControlVisualizar.SelectedIndex = 0;
-            this.tabControlVisualizar.Size = new System.Drawing.Size(991, 544);
+            this.tabControlVisualizar.Size = new System.Drawing.Size(1321, 670);
             this.tabControlVisualizar.TabIndex = 0;
             this.tabControlVisualizar.SelectedIndexChanged += new System.EventHandler(this.tabControlVisualizar_SelectedIndexChanged);
             this.tabControlVisualizar.Click += new System.EventHandler(this.btnBuscarCPFPaciente_Click);
@@ -146,19 +147,21 @@
             this.tpPaciente.Controls.Add(this.btnBuscarCPFPaciente);
             this.tpPaciente.Controls.Add(this.dgvPaciente);
             this.tpPaciente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpPaciente.Location = new System.Drawing.Point(4, 22);
+            this.tpPaciente.Location = new System.Drawing.Point(4, 25);
+            this.tpPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpPaciente.Name = "tpPaciente";
-            this.tpPaciente.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPaciente.Size = new System.Drawing.Size(983, 518);
+            this.tpPaciente.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpPaciente.Size = new System.Drawing.Size(1313, 641);
             this.tpPaciente.TabIndex = 0;
             this.tpPaciente.Text = "Paciente";
             // 
             // txtBuscarCPFPac
             // 
-            this.txtBuscarCPFPac.Location = new System.Drawing.Point(46, 75);
+            this.txtBuscarCPFPac.Location = new System.Drawing.Point(61, 92);
+            this.txtBuscarCPFPac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscarCPFPac.Mask = "999,999,999-99";
             this.txtBuscarCPFPac.Name = "txtBuscarCPFPac";
-            this.txtBuscarCPFPac.Size = new System.Drawing.Size(265, 26);
+            this.txtBuscarCPFPac.Size = new System.Drawing.Size(352, 30);
             this.txtBuscarCPFPac.TabIndex = 4;
             // 
             // label2
@@ -166,17 +169,19 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(42, 38);
+            this.label2.Location = new System.Drawing.Point(56, 47);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 23);
+            this.label2.Size = new System.Drawing.Size(174, 28);
             this.label2.TabIndex = 3;
             this.label2.Text = "Busca por CPF";
             // 
             // btnBuscarCPFPaciente
             // 
-            this.btnBuscarCPFPaciente.Location = new System.Drawing.Point(317, 75);
+            this.btnBuscarCPFPaciente.Location = new System.Drawing.Point(423, 92);
+            this.btnBuscarCPFPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscarCPFPaciente.Name = "btnBuscarCPFPaciente";
-            this.btnBuscarCPFPaciente.Size = new System.Drawing.Size(111, 26);
+            this.btnBuscarCPFPaciente.Size = new System.Drawing.Size(148, 32);
             this.btnBuscarCPFPaciente.TabIndex = 2;
             this.btnBuscarCPFPaciente.Text = "Buscar";
             this.btnBuscarCPFPaciente.UseVisualStyleBackColor = true;
@@ -213,22 +218,27 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPaciente.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPaciente.Location = new System.Drawing.Point(46, 124);
+            this.dgvPaciente.Location = new System.Drawing.Point(61, 153);
+            this.dgvPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPaciente.Name = "dgvPaciente";
             this.dgvPaciente.RowHeadersVisible = false;
-            this.dgvPaciente.Size = new System.Drawing.Size(889, 353);
+            this.dgvPaciente.RowHeadersWidth = 51;
+            this.dgvPaciente.Size = new System.Drawing.Size(1185, 434);
             this.dgvPaciente.TabIndex = 0;
             this.dgvPaciente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaciente_CellDoubleClick);
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Width = 125;
             // 
             // Nome
             // 
             this.Nome.HeaderText = "Nome";
+            this.Nome.MinimumWidth = 6;
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
             this.Nome.Width = 250;
@@ -236,8 +246,10 @@
             // Idade
             // 
             this.Idade.HeaderText = "Idade";
+            this.Idade.MinimumWidth = 6;
             this.Idade.Name = "Idade";
             this.Idade.ReadOnly = true;
+            this.Idade.Width = 125;
             // 
             // CPF
             // 
@@ -245,6 +257,7 @@
             dataGridViewCellStyle2.NullValue = null;
             this.CPF.DefaultCellStyle = dataGridViewCellStyle2;
             this.CPF.HeaderText = "CPF";
+            this.CPF.MinimumWidth = 6;
             this.CPF.Name = "CPF";
             this.CPF.ReadOnly = true;
             this.CPF.Width = 170;
@@ -252,6 +265,7 @@
             // Sexo
             // 
             this.Sexo.HeaderText = "Sexo";
+            this.Sexo.MinimumWidth = 6;
             this.Sexo.Name = "Sexo";
             this.Sexo.ReadOnly = true;
             this.Sexo.Width = 200;
@@ -259,6 +273,7 @@
             // Convênio
             // 
             this.Convênio.HeaderText = "Convênio";
+            this.Convênio.MinimumWidth = 6;
             this.Convênio.Name = "Convênio";
             this.Convênio.ReadOnly = true;
             this.Convênio.Width = 250;
@@ -266,6 +281,7 @@
             // Responsável
             // 
             this.Responsável.HeaderText = "Responsável";
+            this.Responsável.MinimumWidth = 6;
             this.Responsável.Name = "Responsável";
             this.Responsável.ReadOnly = true;
             this.Responsável.Width = 250;
@@ -273,8 +289,10 @@
             // Ativo_Inativo
             // 
             this.Ativo_Inativo.HeaderText = "Ativo_Inativo";
+            this.Ativo_Inativo.MinimumWidth = 6;
             this.Ativo_Inativo.Name = "Ativo_Inativo";
             this.Ativo_Inativo.ReadOnly = true;
+            this.Ativo_Inativo.Width = 125;
             // 
             // tpResponsavel
             // 
@@ -284,20 +302,22 @@
             this.tpResponsavel.Controls.Add(this.btnBuscarCPFResponsavel);
             this.tpResponsavel.Controls.Add(this.dgvResponsavel);
             this.tpResponsavel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpResponsavel.Location = new System.Drawing.Point(4, 22);
+            this.tpResponsavel.Location = new System.Drawing.Point(4, 25);
+            this.tpResponsavel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpResponsavel.Name = "tpResponsavel";
-            this.tpResponsavel.Padding = new System.Windows.Forms.Padding(3);
-            this.tpResponsavel.Size = new System.Drawing.Size(983, 518);
+            this.tpResponsavel.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpResponsavel.Size = new System.Drawing.Size(1313, 641);
             this.tpResponsavel.TabIndex = 1;
             this.tpResponsavel.Text = "Responsável";
             // 
             // txtBuscarCPFRes
             // 
             this.txtBuscarCPFRes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarCPFRes.Location = new System.Drawing.Point(46, 75);
+            this.txtBuscarCPFRes.Location = new System.Drawing.Point(61, 92);
+            this.txtBuscarCPFRes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscarCPFRes.Mask = "000,000,000-00";
             this.txtBuscarCPFRes.Name = "txtBuscarCPFRes";
-            this.txtBuscarCPFRes.Size = new System.Drawing.Size(265, 26);
+            this.txtBuscarCPFRes.Size = new System.Drawing.Size(352, 30);
             this.txtBuscarCPFRes.TabIndex = 7;
             // 
             // label3
@@ -305,17 +325,19 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(42, 38);
+            this.label3.Location = new System.Drawing.Point(56, 47);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 23);
+            this.label3.Size = new System.Drawing.Size(174, 28);
             this.label3.TabIndex = 6;
             this.label3.Text = "Busca por CPF";
             // 
             // btnBuscarCPFResponsavel
             // 
-            this.btnBuscarCPFResponsavel.Location = new System.Drawing.Point(317, 75);
+            this.btnBuscarCPFResponsavel.Location = new System.Drawing.Point(423, 92);
+            this.btnBuscarCPFResponsavel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscarCPFResponsavel.Name = "btnBuscarCPFResponsavel";
-            this.btnBuscarCPFResponsavel.Size = new System.Drawing.Size(111, 26);
+            this.btnBuscarCPFResponsavel.Size = new System.Drawing.Size(148, 32);
             this.btnBuscarCPFResponsavel.TabIndex = 5;
             this.btnBuscarCPFResponsavel.Text = "Buscar";
             this.btnBuscarCPFResponsavel.UseVisualStyleBackColor = true;
@@ -347,22 +369,27 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvResponsavel.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvResponsavel.Location = new System.Drawing.Point(46, 124);
+            this.dgvResponsavel.Location = new System.Drawing.Point(61, 153);
+            this.dgvResponsavel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvResponsavel.Name = "dgvResponsavel";
             this.dgvResponsavel.RowHeadersVisible = false;
-            this.dgvResponsavel.Size = new System.Drawing.Size(889, 355);
+            this.dgvResponsavel.RowHeadersWidth = 51;
+            this.dgvResponsavel.Size = new System.Drawing.Size(1185, 437);
             this.dgvResponsavel.TabIndex = 1;
             this.dgvResponsavel.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavel_CellDoubleClick);
             // 
             // IDRes
             // 
             this.IDRes.HeaderText = "ID";
+            this.IDRes.MinimumWidth = 6;
             this.IDRes.Name = "IDRes";
             this.IDRes.ReadOnly = true;
+            this.IDRes.Width = 125;
             // 
             // NomeRes
             // 
             this.NomeRes.HeaderText = "Nome";
+            this.NomeRes.MinimumWidth = 6;
             this.NomeRes.Name = "NomeRes";
             this.NomeRes.ReadOnly = true;
             this.NomeRes.Width = 250;
@@ -370,12 +397,15 @@
             // IdadeRes
             // 
             this.IdadeRes.HeaderText = "Idade";
+            this.IdadeRes.MinimumWidth = 6;
             this.IdadeRes.Name = "IdadeRes";
             this.IdadeRes.ReadOnly = true;
+            this.IdadeRes.Width = 125;
             // 
             // CPFRes
             // 
             this.CPFRes.HeaderText = "CPF";
+            this.CPFRes.MinimumWidth = 6;
             this.CPFRes.Name = "CPFRes";
             this.CPFRes.ReadOnly = true;
             this.CPFRes.Width = 170;
@@ -383,6 +413,7 @@
             // SexoRes
             // 
             this.SexoRes.HeaderText = "Sexo";
+            this.SexoRes.MinimumWidth = 6;
             this.SexoRes.Name = "SexoRes";
             this.SexoRes.ReadOnly = true;
             this.SexoRes.Width = 200;
@@ -390,8 +421,10 @@
             // Ativo_InativoRes
             // 
             this.Ativo_InativoRes.HeaderText = "Ativo_Inativo";
+            this.Ativo_InativoRes.MinimumWidth = 6;
             this.Ativo_InativoRes.Name = "Ativo_InativoRes";
             this.Ativo_InativoRes.ReadOnly = true;
+            this.Ativo_InativoRes.Width = 125;
             // 
             // tpConvenio
             // 
@@ -401,20 +434,22 @@
             this.tpConvenio.Controls.Add(this.btnBuscarCNPJ);
             this.tpConvenio.Controls.Add(this.dgvConvenio);
             this.tpConvenio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpConvenio.Location = new System.Drawing.Point(4, 22);
+            this.tpConvenio.Location = new System.Drawing.Point(4, 25);
+            this.tpConvenio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpConvenio.Name = "tpConvenio";
-            this.tpConvenio.Padding = new System.Windows.Forms.Padding(3);
-            this.tpConvenio.Size = new System.Drawing.Size(983, 518);
+            this.tpConvenio.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpConvenio.Size = new System.Drawing.Size(1313, 641);
             this.tpConvenio.TabIndex = 2;
             this.tpConvenio.Text = "Convênio";
             // 
             // txtBuscarCNPJ
             // 
             this.txtBuscarCNPJ.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarCNPJ.Location = new System.Drawing.Point(46, 75);
+            this.txtBuscarCNPJ.Location = new System.Drawing.Point(61, 92);
+            this.txtBuscarCNPJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscarCNPJ.Mask = "00,000.,000/0000-00";
             this.txtBuscarCNPJ.Name = "txtBuscarCNPJ";
-            this.txtBuscarCNPJ.Size = new System.Drawing.Size(265, 26);
+            this.txtBuscarCNPJ.Size = new System.Drawing.Size(352, 30);
             this.txtBuscarCNPJ.TabIndex = 11;
             // 
             // label4
@@ -422,17 +457,19 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(42, 38);
+            this.label4.Location = new System.Drawing.Point(56, 47);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 23);
+            this.label4.Size = new System.Drawing.Size(188, 28);
             this.label4.TabIndex = 10;
             this.label4.Text = "Busca por CNPJ";
             // 
             // btnBuscarCNPJ
             // 
-            this.btnBuscarCNPJ.Location = new System.Drawing.Point(317, 75);
+            this.btnBuscarCNPJ.Location = new System.Drawing.Point(423, 92);
+            this.btnBuscarCNPJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscarCNPJ.Name = "btnBuscarCNPJ";
-            this.btnBuscarCNPJ.Size = new System.Drawing.Size(111, 26);
+            this.btnBuscarCNPJ.Size = new System.Drawing.Size(148, 32);
             this.btnBuscarCNPJ.TabIndex = 9;
             this.btnBuscarCNPJ.Text = "Buscar";
             this.btnBuscarCNPJ.UseVisualStyleBackColor = true;
@@ -462,22 +499,27 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConvenio.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvConvenio.Location = new System.Drawing.Point(46, 124);
+            this.dgvConvenio.Location = new System.Drawing.Point(61, 153);
+            this.dgvConvenio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvConvenio.Name = "dgvConvenio";
             this.dgvConvenio.RowHeadersVisible = false;
-            this.dgvConvenio.Size = new System.Drawing.Size(889, 355);
+            this.dgvConvenio.RowHeadersWidth = 51;
+            this.dgvConvenio.Size = new System.Drawing.Size(1185, 437);
             this.dgvConvenio.TabIndex = 8;
             this.dgvConvenio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConvenio_CellDoubleClick);
             // 
             // IDConv
             // 
             this.IDConv.HeaderText = "ID";
+            this.IDConv.MinimumWidth = 6;
             this.IDConv.Name = "IDConv";
             this.IDConv.ReadOnly = true;
+            this.IDConv.Width = 125;
             // 
             // NomeConv
             // 
             this.NomeConv.HeaderText = "Nome";
+            this.NomeConv.MinimumWidth = 6;
             this.NomeConv.Name = "NomeConv";
             this.NomeConv.ReadOnly = true;
             this.NomeConv.Width = 250;
@@ -485,6 +527,7 @@
             // CNPJ
             // 
             this.CNPJ.HeaderText = "CNPJ";
+            this.CNPJ.MinimumWidth = 6;
             this.CNPJ.Name = "CNPJ";
             this.CNPJ.ReadOnly = true;
             this.CNPJ.Width = 170;
@@ -492,8 +535,10 @@
             // Ativo_InativoConv
             // 
             this.Ativo_InativoConv.HeaderText = "Ativo_Inativo";
+            this.Ativo_InativoConv.MinimumWidth = 6;
             this.Ativo_InativoConv.Name = "Ativo_InativoConv";
             this.Ativo_InativoConv.ReadOnly = true;
+            this.Ativo_InativoConv.Width = 125;
             // 
             // tpDentista
             // 
@@ -503,20 +548,22 @@
             this.tpDentista.Controls.Add(this.button1);
             this.tpDentista.Controls.Add(this.dgvDentista);
             this.tpDentista.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpDentista.Location = new System.Drawing.Point(4, 22);
+            this.tpDentista.Location = new System.Drawing.Point(4, 25);
+            this.tpDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpDentista.Name = "tpDentista";
-            this.tpDentista.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDentista.Size = new System.Drawing.Size(983, 518);
+            this.tpDentista.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpDentista.Size = new System.Drawing.Size(1313, 641);
             this.tpDentista.TabIndex = 3;
             this.tpDentista.Text = "Dentista";
             // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(46, 75);
+            this.maskedTextBox1.Location = new System.Drawing.Point(61, 92);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.maskedTextBox1.Mask = "000000";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(265, 26);
+            this.maskedTextBox1.Size = new System.Drawing.Size(352, 30);
             this.maskedTextBox1.TabIndex = 15;
             // 
             // label5
@@ -524,17 +571,19 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(42, 38);
+            this.label5.Location = new System.Drawing.Point(56, 47);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 23);
+            this.label5.Size = new System.Drawing.Size(180, 28);
             this.label5.TabIndex = 14;
             this.label5.Text = "Busca por CRM";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(317, 75);
+            this.button1.Location = new System.Drawing.Point(423, 92);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 26);
+            this.button1.Size = new System.Drawing.Size(148, 32);
             this.button1.TabIndex = 13;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = true;
@@ -563,22 +612,27 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDentista.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvDentista.Location = new System.Drawing.Point(46, 124);
+            this.dgvDentista.Location = new System.Drawing.Point(61, 153);
+            this.dgvDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDentista.Name = "dgvDentista";
             this.dgvDentista.RowHeadersVisible = false;
-            this.dgvDentista.Size = new System.Drawing.Size(889, 355);
+            this.dgvDentista.RowHeadersWidth = 51;
+            this.dgvDentista.Size = new System.Drawing.Size(1185, 437);
             this.dgvDentista.TabIndex = 12;
             this.dgvDentista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDentista_CellDoubleClick);
             // 
             // IDDen
             // 
             this.IDDen.HeaderText = "ID";
+            this.IDDen.MinimumWidth = 6;
             this.IDDen.Name = "IDDen";
             this.IDDen.ReadOnly = true;
+            this.IDDen.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 250;
@@ -586,6 +640,7 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "CRM";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 170;
@@ -593,8 +648,10 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Ativo_Inativo";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // tpConsulta
             // 
@@ -604,20 +661,22 @@
             this.tpConsulta.Controls.Add(this.button2);
             this.tpConsulta.Controls.Add(this.dgvConsulta);
             this.tpConsulta.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpConsulta.Location = new System.Drawing.Point(4, 22);
+            this.tpConsulta.Location = new System.Drawing.Point(4, 25);
+            this.tpConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpConsulta.Name = "tpConsulta";
-            this.tpConsulta.Padding = new System.Windows.Forms.Padding(3);
-            this.tpConsulta.Size = new System.Drawing.Size(983, 518);
+            this.tpConsulta.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpConsulta.Size = new System.Drawing.Size(1313, 641);
             this.tpConsulta.TabIndex = 4;
             this.tpConsulta.Text = "Consulta";
             // 
             // maskedTextBox2
             // 
             this.maskedTextBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox2.Location = new System.Drawing.Point(46, 75);
+            this.maskedTextBox2.Location = new System.Drawing.Point(61, 92);
+            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.maskedTextBox2.Mask = "000,000,000-00";
             this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(265, 26);
+            this.maskedTextBox2.Size = new System.Drawing.Size(352, 30);
             this.maskedTextBox2.TabIndex = 19;
             // 
             // label6
@@ -625,18 +684,20 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(42, 38);
+            this.label6.Location = new System.Drawing.Point(56, 47);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(251, 23);
+            this.label6.Size = new System.Drawing.Size(307, 28);
             this.label6.TabIndex = 18;
             this.label6.Text = "Busca por CPF do Paciente";
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(317, 75);
+            this.button2.Location = new System.Drawing.Point(423, 92);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 26);
+            this.button2.Size = new System.Drawing.Size(148, 32);
             this.button2.TabIndex = 17;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
@@ -653,7 +714,7 @@
             this.dgvConsulta.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
+            this.IDCons,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.Dentista});
@@ -665,58 +726,14 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConsulta.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvConsulta.Location = new System.Drawing.Point(46, 124);
+            this.dgvConsulta.Location = new System.Drawing.Point(61, 153);
+            this.dgvConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvConsulta.Name = "dgvConsulta";
             this.dgvConsulta.RowHeadersVisible = false;
-            this.dgvConsulta.Size = new System.Drawing.Size(889, 355);
+            this.dgvConsulta.RowHeadersWidth = 51;
+            this.dgvConsulta.Size = new System.Drawing.Size(1185, 437);
             this.dgvConsulta.TabIndex = 16;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Data";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 180;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Paciente";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 250;
-            // 
-            // Dentista
-            // 
-            this.Dentista.HeaderText = "Dentista";
-            this.Dentista.Name = "Dentista";
-            this.Dentista.ReadOnly = true;
-            this.Dentista.Width = 250;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(992, 46);
-            this.panel1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(401, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Visualizar Cadastros";
+            this.dgvConsulta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsulta_CellDoubleClick);
             // 
             // tpPagamento
             // 
@@ -726,20 +743,22 @@
             this.tpPagamento.Controls.Add(this.button3);
             this.tpPagamento.Controls.Add(this.dgvPagamento);
             this.tpPagamento.Font = new System.Drawing.Font("Arial", 12F);
-            this.tpPagamento.Location = new System.Drawing.Point(4, 22);
+            this.tpPagamento.Location = new System.Drawing.Point(4, 25);
+            this.tpPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpPagamento.Name = "tpPagamento";
-            this.tpPagamento.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPagamento.Size = new System.Drawing.Size(983, 518);
+            this.tpPagamento.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpPagamento.Size = new System.Drawing.Size(1313, 641);
             this.tpPagamento.TabIndex = 5;
             this.tpPagamento.Text = "Pagamento";
             // 
             // maskedTextBox3
             // 
             this.maskedTextBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox3.Location = new System.Drawing.Point(46, 75);
+            this.maskedTextBox3.Location = new System.Drawing.Point(61, 92);
+            this.maskedTextBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.maskedTextBox3.Mask = "000,000,000-00";
             this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(265, 26);
+            this.maskedTextBox3.Size = new System.Drawing.Size(352, 30);
             this.maskedTextBox3.TabIndex = 23;
             // 
             // label7
@@ -747,18 +766,20 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(42, 38);
+            this.label7.Location = new System.Drawing.Point(56, 47);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(251, 23);
+            this.label7.Size = new System.Drawing.Size(307, 28);
             this.label7.TabIndex = 22;
             this.label7.Text = "Busca por CPF do Paciente";
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(317, 75);
+            this.button3.Location = new System.Drawing.Point(423, 92);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 26);
+            this.button3.Size = new System.Drawing.Size(148, 32);
             this.button3.TabIndex = 21;
             this.button3.Text = "Buscar";
             this.button3.UseVisualStyleBackColor = true;
@@ -775,7 +796,7 @@
             this.dgvPagamento.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvPagamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPagamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.IDPag,
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
@@ -789,21 +810,49 @@
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPagamento.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvPagamento.Location = new System.Drawing.Point(46, 124);
+            this.dgvPagamento.Location = new System.Drawing.Point(61, 153);
+            this.dgvPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPagamento.Name = "dgvPagamento";
             this.dgvPagamento.RowHeadersVisible = false;
-            this.dgvPagamento.Size = new System.Drawing.Size(889, 355);
+            this.dgvPagamento.RowHeadersWidth = 51;
+            this.dgvPagamento.Size = new System.Drawing.Size(1185, 437);
             this.dgvPagamento.TabIndex = 20;
+            this.dgvPagamento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagamento_CellDoubleClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // panel1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1323, 57);
+            this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(535, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(231, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Visualizar Cadastros";
+            // 
+            // IDPag
+            // 
+            this.IDPag.HeaderText = "ID";
+            this.IDPag.MinimumWidth = 6;
+            this.IDPag.Name = "IDPag";
+            this.IDPag.ReadOnly = true;
+            this.IDPag.Width = 125;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.HeaderText = "Data";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Width = 180;
@@ -811,6 +860,7 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.HeaderText = "Paciente";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Width = 250;
@@ -818,28 +868,66 @@
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.HeaderText = "Valor Pago";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 250;
+            this.dataGridViewTextBoxColumn10.Width = 150;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.HeaderText = "Método de Pagamento";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 250;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 200;
+            // 
+            // IDCons
+            // 
+            this.IDCons.HeaderText = "ID";
+            this.IDCons.MinimumWidth = 6;
+            this.IDCons.Name = "IDCons";
+            this.IDCons.ReadOnly = true;
+            this.IDCons.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Data";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Paciente";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 250;
+            // 
+            // Dentista
+            // 
+            this.Dentista.HeaderText = "Dentista";
+            this.Dentista.MinimumWidth = 6;
+            this.Dentista.Name = "Dentista";
+            this.Dentista.ReadOnly = true;
+            this.Dentista.Width = 250;
             // 
             // frmViewCadastros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 595);
+            this.ClientSize = new System.Drawing.Size(1323, 732);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControlVisualizar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmViewCadastros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -860,11 +948,11 @@
             this.tpConsulta.ResumeLayout(false);
             this.tpConsulta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsulta)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tpPagamento.ResumeLayout(false);
             this.tpPagamento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagamento)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -909,10 +997,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgvConsulta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dentista;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDDen;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -930,11 +1014,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dgvPagamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDPag;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDCons;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dentista;
     }
 }

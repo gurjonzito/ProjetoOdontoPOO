@@ -18,6 +18,19 @@ namespace ProjetoOdontoPOO.Controllers
             _consultaService = new ConsultaService();
         }
 
+        public Consulta ObterConsultaPorId(int consultaId)
+        {
+            try
+            {
+                return _consultaService.ObterDadosConsultaPorId(consultaId);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao obter consulta: {ex.Message}");
+                throw;
+            }
+        }
+
         public DataTable ObterTodasConsultas()
         {
             try
@@ -36,6 +49,19 @@ namespace ProjetoOdontoPOO.Controllers
             var resultado = _consultaService.InserirConsulta(consulta);
 
             return resultado.Mensagem;
+        }
+
+        public bool AtualizarConsulta(int consultaId, Consulta consulta)
+        {
+            try
+            {
+                return _consultaService.AtualizarConsulta(consultaId, consulta);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao atualizar consulta: {ex.Message}");
+                throw;
+            }
         }
     }
 }

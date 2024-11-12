@@ -1,12 +1,8 @@
-﻿using ProjetoOdontoPOO.Models;
+﻿using ProjetoOdontoPOO.Controllers;
+using ProjetoOdontoPOO.Models;
 using ProjetoOdontoPOO.Services;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace ProjetoOdontoPOO.Repositories
 {
@@ -37,19 +33,22 @@ namespace ProjetoOdontoPOO.Repositories
                     {
                         if (reader.Read())
                         {
+                            int pacienteId = reader.GetInt32(reader.GetOrdinal("Cons_PacienteID_FK"));
+                            int dentistaId = reader.GetInt32(reader.GetOrdinal("Cons_DentistaID_FK"));
+
+                            PacienteController pacienteController = new PacienteController();
+                            Paciente paciente = pacienteController.ObterPacientePorId(pacienteId);
+
+                            DentistaController dentistaController = new DentistaController();
+                            Dentista dentista = dentistaController.ObterDentistaPorId(dentistaId);
+
                             consulta = new Consulta
                             {
                                 Id = reader.GetInt32(reader.GetOrdinal("Cons_ID")),
                                 DataConsulta = reader.GetDateTime(reader.GetOrdinal("Cons_DataConsulta")),
                                 Observacoes = reader.GetString(reader.GetOrdinal("Cons_Observacoes")),
-                                Paciente = new Paciente
-                                {
-                                    Nome = reader.GetString(reader.GetOrdinal("Pac_Nome")),
-                                },
-                                Dentista = new Dentista
-                                {
-                                    Nome = reader.GetString(reader.GetOrdinal("Den_Nome")),
-                                },
+                                Paciente = paciente,
+                                Dentista = dentista
                             };
                         }
                     }
@@ -101,6 +100,43 @@ namespace ProjetoOdontoPOO.Repositories
                     }
 
                     transacao.Commit();
+                }
+                catch
+                {
+                    transacao.Rollback();
+                    throw;
+                }
+            }
+        }
+
+        public bool AtualizarConsulta(int consultaId, Consulta consulta)
+        {
+            using (SqlConnection conexao = _dbService.CriarConexao())
+            {
+                SqlTransaction transacao = conexao.BeginTransaction();
+
+                try
+                {
+                    string query = @"UPDATE Consulta
+                             SET Cons_DataConsulta = @Data,
+                                 Cons_Observacoes = @Observacoes,
+                                 Cons_PacienteID_FK = @PacienteId,
+                                 Cons_DentistaID_FK = @DentistaId
+                             WHERE Cons_ID = @ID";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conexao, transacao))
+                    {
+                        cmd.Parameters.AddWithValue("@ID", consultaId);
+                        cmd.Parameters.AddWithValue("@Data", consulta.DataConsulta);
+                        cmd.Parameters.AddWithValue("@Observacoes", consulta.Observacoes);
+                        cmd.Parameters.AddWithValue("@PacienteId", consulta.Paciente.Id);
+                        cmd.Parameters.AddWithValue("@DentistaId", consulta.Dentista.Id);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    transacao.Commit();
+                    return true;
                 }
                 catch
                 {

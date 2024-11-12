@@ -90,6 +90,7 @@ namespace ProjetoOdontoPOO.Views
                 dgvResponsavel.Rows.Clear();
                 dgvConvenio.Rows.Clear();
                 dgvDentista.Rows.Clear();
+                dgvConsulta.Rows.Clear();
                 CarregarDadosPagamentos();
             }
         }
@@ -407,6 +408,32 @@ namespace ProjetoOdontoPOO.Views
                 frm.ShowDialog();
 
                 CarregarDadosConvenio();
+            }
+        }
+
+        private void dgvConsulta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int consultaId = Convert.ToInt32(dgvConsulta.Rows[e.RowIndex].Cells["IDCons"].Value);
+
+                frmEditarConsulta frm = new frmEditarConsulta(consultaId);
+                frm.ShowDialog();
+
+                CarregarDadosConsulta();
+            }
+        }
+
+        private void dgvPagamento_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int pagamentoId = Convert.ToInt32(dgvPagamento.Rows[e.RowIndex].Cells["IDPag"].Value);
+
+                frmEditarPagamento frm = new frmEditarPagamento(pagamentoId);
+                frm.ShowDialog();
+
+                CarregarDadosPagamentos();
             }
         }
     }

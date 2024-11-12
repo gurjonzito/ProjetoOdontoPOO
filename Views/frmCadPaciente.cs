@@ -32,6 +32,7 @@ namespace ProjetoOdontoPOO.Views
         {
             PesquisarResponsavel();
         }
+
         private void btnSalvarPaciente_Click(object sender, EventArgs e)
         {
             var paciente = CriarPaciente();

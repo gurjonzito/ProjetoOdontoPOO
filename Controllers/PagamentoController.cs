@@ -57,17 +57,16 @@ public class PagamentoController
     }
 
     // Método para atualizar um pagamento
-    public string AtualizarPagamento(int pagamentoId, Pagamento pagamento)
+    public bool AtualizarPagamento(int pagamentoId, Pagamento pagamento)
     {
         try
         {
-            bool atualizado = _pagamentoService.AtualizarPagamento(pagamentoId, pagamento);
-            return atualizado ? "Pagamento atualizado com sucesso!" : "Erro ao atualizar pagamento.";
+            return _pagamentoService.AtualizarPagamento(pagamentoId, pagamento);
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Erro ao atualizar pagamento: {ex.Message}");
-            return $"Erro ao atualizar pagamento: {ex.Message}";
+            throw;
         }
     }
 }

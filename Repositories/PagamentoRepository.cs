@@ -21,7 +21,7 @@ namespace ProjetoOdontoPOO.Repositories
 
             using (SqlConnection conexao = _dbService.CriarConexao())
             {
-                string query = @"SELECT Pag_ID, Pag_DataPagamento, Pag_ValorPago, Pag_MetodoPagamento, Pag_Status
+                string query = @"SELECT Pag_ID, Pag_DataPagamento, Pag_ValorPago, Pag_MetodoPagamento, Pag_Status, Pag_PacienteID_FK
                                  FROM Pagamento
                                  WHERE Pag_ID = @Id";
 
@@ -33,13 +33,19 @@ namespace ProjetoOdontoPOO.Repositories
                     {
                         if (reader.Read())
                         {
+                            int pacienteId = reader.GetInt32(reader.GetOrdinal("Pag_PacienteID_FK"));
+
+                            PacienteController pacienteController = new PacienteController();
+                            Paciente paciente = pacienteController.ObterPacientePorId(pacienteId);
+
                             pagamento = new Pagamento
                             {
                                 Id = reader.GetInt32(reader.GetOrdinal("Pag_ID")),
                                 DataPagamento = reader.GetDateTime(reader.GetOrdinal("Pag_DataPagamento")),
                                 ValorPago = reader.GetDecimal(reader.GetOrdinal("Pag_ValorPago")),
                                 MetodoPagamento = reader.GetString(reader.GetOrdinal("Pag_MetodoPagamento")),
-                                PagamentoStatus = reader.GetString(reader.GetOrdinal("Pag_Status"))
+                                PagamentoStatus = reader.GetString(reader.GetOrdinal("Pag_Status")),
+                                Paciente = paciente
                             };
                         }
                     }
@@ -56,10 +62,11 @@ namespace ProjetoOdontoPOO.Repositories
             using (SqlConnection conexao = _dbService.CriarConexao())
             {
                 string query = @"SELECT Pag_ID AS ID,
-                                       Pag_DataPagamento AS [Data de Pagamento],
+                                       Pag_DataPagamento AS [Data],
                                        Pag_ValorPago AS [Valor Pago],
                                        Pag_MetodoPagamento AS [Método de Pagamento],
-                                       Pag_Status AS [Status]
+                                       Pag_Status AS [Status],
+                                       Pag_PacienteID_FK AS Paciente
                                  FROM Pagamento";
 
                 SqlDataAdapter adaptador = new SqlDataAdapter(query, conexao);
@@ -77,8 +84,8 @@ namespace ProjetoOdontoPOO.Repositories
 
                 try
                 {
-                    string query = @"INSERT INTO Pagamento (Pag_DataPagamento, Pag_ValorPago, Pag_MetodoPagamento, Pag_Status)
-                                     VALUES (@DataPagamento, @ValorPago, @MetodoPagamento, @Status)";
+                    string query = @"INSERT INTO Pagamento (Pag_DataPagamento, Pag_ValorPago, Pag_MetodoPagamento, Pag_Status, Pag_PacienteID_FK)
+                                     VALUES (@DataPagamento, @ValorPago, @MetodoPagamento, @Status, @PacienteId)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao, transacao))
                     {
@@ -86,8 +93,9 @@ namespace ProjetoOdontoPOO.Repositories
                         cmd.Parameters.AddWithValue("@ValorPago", pagamento.ValorPago);
                         cmd.Parameters.AddWithValue("@MetodoPagamento", pagamento.MetodoPagamento);
                         cmd.Parameters.AddWithValue("@Status", pagamento.PagamentoStatus);
+                        cmd.Parameters.AddWithValue("@PacienteId", pagamento.Paciente.Id);
 
-                        pagamento.Id = (int)cmd.ExecuteScalar();
+                        cmd.ExecuteNonQuery();
                     }
 
                     transacao.Commit();

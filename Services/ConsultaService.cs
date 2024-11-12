@@ -19,9 +19,26 @@ namespace ProjetoOdontoPOO.Services
             _consultaRepository = new ConsultaRepository();
         }
 
+        public Consulta ObterDadosConsultaPorId(int consultaId)
+        {
+            if (consultaId <= 0)
+                throw new ArgumentException("ID da consulta inválido.");
+
+            return _consultaRepository.ObterDadosConsultaPorId(consultaId);
+        }
+
         public DataTable ObterTodasConsultas()
         {
             return _consultaRepository.ObterDadosConsultas();
+        }
+
+        public bool AtualizarConsulta(int consultaId, Consulta consulta)
+        {
+            var resultadoValidacao = ValidarCadastroConsulta(consulta);
+            if (!resultadoValidacao.Sucesso)
+                throw new ArgumentException(resultadoValidacao.Mensagem);
+
+            return _consultaRepository.AtualizarConsulta(consultaId, consulta);
         }
 
         public OperationResult InserirConsulta(Consulta consulta)
@@ -52,10 +69,10 @@ namespace ProjetoOdontoPOO.Services
             if (consulta.DataConsulta < DateTime.Now)
                 return new OperationResult(false, "A data da consulta não pode ser no passado.");
 
-            if (consulta.Paciente == null || consulta.Paciente.Id <= 0)
+            if (consulta.Paciente == null)
                 return new OperationResult(false, "A consulta deve estar associada a um paciente.");
 
-            if (consulta.Dentista == null || consulta.Dentista.Id <= 0)
+            if (consulta.Dentista == null)
                 return new OperationResult(false, "A consulta deve estar associada a um dentista.");
 
             return new OperationResult(true, "Validação bem-sucedida!");

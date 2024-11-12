@@ -49,15 +49,15 @@ public class PagamentoService
         if (pagamento.ValorPago <= 0)
             return new OperationResult(false, "O valor pago deve ser maior que zero.");
 
-        var metodosValidos = new[] { "Débito", "Crédito", "Dinheiro", "Pix", "Transferência" };
+        var metodosValidos = new[] { "Cartão", "Dinheiro", "Pix" };
         if (Array.IndexOf(metodosValidos, pagamento.MetodoPagamento) == -1)
-            return new OperationResult(false, "Método de pagamento inválido. Os métodos válidos são: Débito, Crédito, Dinheiro, Pix, Transferência.");
+            return new OperationResult(false, "Método de pagamento inválido. Os métodos válidos são: Cartão, Dinheiro e Pix.");
 
-        var statusValidos = new[] { "Em Aberto", "Pendente", "Pago" };
+        var statusValidos = new[] { "Em aberto", "Pendente", "Pago" };
         if (Array.IndexOf(statusValidos, pagamento.PagamentoStatus) == -1)
-            return new OperationResult(false, "Status inválido. Os status válidos são: Em Aberto, Pendente, Pago.");
+            return new OperationResult(false, "Status inválido. Os status válidos são: Em aberto, Pendente, Pago.");
 
-        if (pagamento.Paciente == null || pagamento.Paciente.Id <= 0)
+        if (pagamento.Paciente == null)
             return new OperationResult(false, "Paciente inválido.");
 
         return new OperationResult(true, "Validação bem-sucedida!");

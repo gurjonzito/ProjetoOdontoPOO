@@ -1,20 +1,94 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ProjetoOdontoPOO.Models;
+using System;
 using System.Windows.Forms;
 
 namespace ProjetoOdontoPOO.Views
 {
     public partial class frmCadPagamento : Form
     {
+        private readonly PagamentoController _pagamentoController;
+        Paciente pacientePagamento;
+
         public frmCadPagamento()
         {
             InitializeComponent();
+            _pagamentoController = new PagamentoController();
+        }
+
+        private void btnPaciente_Click(object sender, EventArgs e)
+        {
+            PesquisarPaciente();
+        }
+
+        private void PesquisarPaciente()
+        {
+            frmSelecionarPaciente frm = new frmSelecionarPaciente(true);
+            DialogResult dialogResult = frm.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                pacientePagamento = frm.pacienteSelecao;
+
+                txtPacientePag.Text = pacientePagamento.Nome;
+            }
+        }
+
+        private void btnSalvarPagamento_Click(object sender, EventArgs e)
+        {
+            var pagamento = CriarPagamento();
+
+            string mensagem = _pagamentoController.InserirPagamento(pagamento);
+            MessageBox.Show(mensagem);
+
+            if (mensagem.Contains("Pagamento registrado com sucesso!"))
+            {
+                LimparCampos();
+                txtPacientePag.Focus();
+            }
+        }
+
+        private Pagamento CriarPagamento()
+        {
+            decimal valorPago;
+            if (!decimal.TryParse(txtValorPag.Text, out valorPago))
+            {
+                MessageBox.Show("O valor inserido não é válido. Por favor, insira um valor numérico.");
+                return null;
+            }
+
+            return new Pagamento
+            {
+                Paciente = pacientePagamento,
+                DataPagamento = dtpDataPag.Value,
+                ValorPago = valorPago,
+                PagamentoStatus = cbStatusPag.Text,
+                MetodoPagamento = cbMetodoPag.Text,
+            };
+        }
+
+        private void ValidarEntradaNumerica(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita apenas números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void txtValorPag_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarEntradaNumerica(e);
+        }
+
+        private void LimparCampos()
+        {
+            txtPacientePag.Clear();
+            txtValorPag.Clear();
+
+            dtpDataPag.Value = DateTime.Now;
+
+            cbMetodoPag.SelectedIndex = -1;
+            cbStatusPag.SelectedIndex = -1;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

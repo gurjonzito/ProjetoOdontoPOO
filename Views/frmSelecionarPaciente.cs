@@ -105,7 +105,6 @@ namespace ProjetoOdontoPOO.Views
             }
         }
 
-
         private Paciente RecuperarPaciente()
         {
             if (dgvRegistros.SelectedRows.Count == 0)

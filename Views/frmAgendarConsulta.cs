@@ -1,13 +1,6 @@
 ﻿using ProjetoOdontoPOO.Controllers;
 using ProjetoOdontoPOO.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjetoOdontoPOO.Views
@@ -17,6 +10,9 @@ namespace ProjetoOdontoPOO.Views
         private readonly ConsultaController _consultaController;
         private readonly PacienteController _pacienteController;
         private readonly DentistaController _dentistaController;
+
+        Paciente pacienteConsulta;
+        Dentista dentistaConsulta;
 
         public frmAgendarConsulta()
         {
@@ -29,27 +25,7 @@ namespace ProjetoOdontoPOO.Views
 
         private void frmAgendarConsulta_Load(object sender, EventArgs e)
         {
-            ConfigurarComboBoxPaciente();
-            ConfigurarComboBoxDentista();
             DefinirDataHora();
-        }
-
-        private void ConfigurarComboBoxPaciente()
-        {
-            var pacientes = _pacienteController.ObterTodosPacientes(); // Obtenha a lista de pacientes
-            cbPacienteConsulta.DataSource = pacientes; // Defina a fonte de dados como a lista de pacientes
-            cbPacienteConsulta.DisplayMember = "Nome"; // Propriedade a ser exibida
-            cbPacienteConsulta.ValueMember = "Id"; // Propriedade de valor
-            cbPacienteConsulta.SelectedIndex = -1; // Nenhum item selecionado inicialmente
-        }
-
-        private void ConfigurarComboBoxDentista()
-        {
-            var dentistas = _dentistaController.ObterTodosDentistas(); // Obtenha a lista de dentistas
-            cbDentistaConsulta.DataSource = dentistas; // Defina a fonte de dados como a lista de dentistas
-            cbDentistaConsulta.DisplayMember = "Nome"; // Propriedade a ser exibida
-            cbDentistaConsulta.ValueMember = "Id"; // Propriedade de valor
-            cbDentistaConsulta.SelectedIndex = -1; // Nenhum item selecionado inicialmente
         }
 
         private void DefinirDataHora()
@@ -58,20 +34,44 @@ namespace ProjetoOdontoPOO.Views
             dtpDataConsulta.CustomFormat = "dd/MM/yyyy HH:mm";
         }
 
+        private void btnPaciente_Click(object sender, EventArgs e)
+        {
+            PesquisarPaciente();
+        }
+
+        private void btnDentista_Click(object sender, EventArgs e)
+        {
+            PesquisarDentista();
+        }
+
+        private void PesquisarPaciente()
+        {
+            frmSelecionarPaciente frm = new frmSelecionarPaciente(true);
+            DialogResult dialogResult = frm.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                pacienteConsulta = frm.pacienteSelecao;
+
+                txtPaciente.Text = pacienteConsulta.Nome;
+            }
+        }
+
+        private void PesquisarDentista()
+        {
+            frmSelecionarDentista frm = new frmSelecionarDentista(true);
+            DialogResult dialogResult = frm.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                dentistaConsulta = frm.dentistaSelecao;
+
+                txtDentista.Text = dentistaConsulta.Nome;
+            }
+        }
+
         private void btnSalvarConsulta_Click(object sender, EventArgs e)
         {
-            if (cbPacienteConsulta.SelectedIndex == -1)
-            {
-                MessageBox.Show("Selecione um paciente.");
-                return;
-            }
-
-            if (cbDentistaConsulta.SelectedIndex == -1)
-            {
-                MessageBox.Show("Selecione um dentista.");
-                return;
-            }
-
             try
             {
                 var consulta = CriarConsulta();
@@ -98,16 +98,8 @@ namespace ProjetoOdontoPOO.Views
             {
                 DataConsulta = dtpDataConsulta.Value,
                 Observacoes = txtObsConsulta.Text,
-                Paciente = new Paciente
-                {
-                    Id = (int)cbPacienteConsulta.SelectedValue,
-                    Nome = cbPacienteConsulta.Text
-                },
-                Dentista = new Dentista
-                {
-                    Id = (int)cbDentistaConsulta.SelectedValue,
-                    Nome = cbDentistaConsulta.Text
-                }
+                Paciente = pacienteConsulta,
+                Dentista = dentistaConsulta
             };
         }
 
@@ -119,9 +111,8 @@ namespace ProjetoOdontoPOO.Views
         private void LimparCampos()
         {
             txtObsConsulta.Clear();
-
-            cbPacienteConsulta.SelectedIndex = -1;
-            cbDentistaConsulta.SelectedIndex = -1;
+            txtPaciente.Clear();
+            txtDentista.Clear();
 
             dtpDataConsulta.Value = DateTime.Now;
 

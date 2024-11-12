@@ -1,8 +1,6 @@
 ﻿using ProjetoOdontoPOO.Controllers;
 using ProjetoOdontoPOO.Models;
-using ProjetoOdontoPOO.Services;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ProjetoOdontoPOO.Views
@@ -38,17 +36,7 @@ namespace ProjetoOdontoPOO.Views
         }
 
         private void CarregarComboBoxes()
-        {
-            // Carrega os convênios
-            cbConvenioPaciente.DataSource = _convenioController.ObterTodosConvenios();
-            cbConvenioPaciente.DisplayMember = "Nome";
-            cbConvenioPaciente.ValueMember = "Id";
-
-            // Carrega os responsáveis
-            cbResponsavelPaciente.DataSource = _responsavelController.ObterTodosResponsaveis();
-            cbResponsavelPaciente.DisplayMember = "Nome";
-            cbResponsavelPaciente.ValueMember = "Id";
-
+        { 
             cbAtivoInativo.Items.Clear();
             cbAtivoInativo.Items.Add("Ativo");
             cbAtivoInativo.Items.Add("Inativo");
@@ -69,11 +57,10 @@ namespace ProjetoOdontoPOO.Views
                 txtTelefonePaciente.Text = paciente.Telefone;
                 txtEmailPaciente.Text = paciente.Email;
                 cbAtivoInativo.Text = paciente.Ativo_Inativo.ToString();
+                txtConvenioPaciente.Text = paciente.Convenio?.ToString() ?? "Sem Convênio"; // Verifica se Convenio é null
+                txtResponsavelPaciente.Text = paciente.Responsavel?.ToString() ?? "Sem Responsável";
 
-                cbConvenioPaciente.SelectedValue = paciente.Convenio?.Id ?? -1;
-                cbResponsavelPaciente.SelectedValue = paciente.Responsavel?.Id ?? -1;
-
-                // Aqui está a verificação para "Ativo" e "Inativo"
+                // Verificação para "Ativo" e "Inativo"
                 if (paciente.Ativo_Inativo == 1)
                 {
                     cbAtivoInativo.SelectedItem = "Ativo";  // Seleciona "Ativo"
@@ -126,12 +113,13 @@ namespace ProjetoOdontoPOO.Views
             btnLimparPaciente.Visible = false;
             btnSalvarPaciente.Visible = false;
             cbAtivoInativo.Enabled = false;
-            cbConvenioPaciente.Enabled = false;
+            txtConvenioPaciente.Enabled = false;
             cbSexoPaciente.Enabled = false;
             cbUFPaciente.Enabled = false;
-            cbResponsavelPaciente.Enabled = false;
+            txtResponsavelPaciente.Enabled = false;
             dtpDataPaciente.Enabled = false;
         }
+
         private void btnSalvarPaciente_Click(object sender, EventArgs e)
         {
             // Coleta os dados do paciente
@@ -143,9 +131,15 @@ namespace ProjetoOdontoPOO.Views
             string telefone = txtTelefonePaciente.Text;
             string email = txtEmailPaciente.Text;
 
-            // Convênio e responsável podem ser nulos
-            int? convenioId = cbConvenioPaciente.SelectedIndex > -1 ? (int?)cbConvenioPaciente.SelectedValue : null;
-            int? responsavelId = cbResponsavelPaciente.SelectedIndex > -1 ? (int?)cbResponsavelPaciente.SelectedValue : null;
+            int convenioId = Convert.ToInt32(txtConvenioPaciente.Text);
+            Convenio convenio = _convenioController.ObterConvenioPorId(convenioId);
+
+            int responsavelId = Convert.ToInt32(txtResponsavelPaciente.Text);
+            Responsavel responsavel = _responsavelController.ObterResponsavelPorId(responsavelId);
+
+            //// Convênio e responsável podem ser nulos
+            //int? convenioId = cbConvenioPaciente.SelectedIndex > -1 ? (int?)cbConvenioPaciente.SelectedValue : null;
+            //int? responsavelId = cbResponsavelPaciente.SelectedIndex > -1 ? (int?)cbResponsavelPaciente.SelectedValue : null;
 
             // Coleta o status Ativo/Inativo
             string status = cbAtivoInativo.SelectedItem.ToString();
@@ -161,11 +155,12 @@ namespace ProjetoOdontoPOO.Views
                 Sexo = sexo,
                 Telefone = telefone,
                 Email = email,
-                Convenio = convenioId.HasValue ? new Convenio { Id = convenioId.Value } : null,
-                Responsavel = responsavelId.HasValue ? new Responsavel { Id = responsavelId.Value } : null,
+                Convenio = convenio,
+                Responsavel = responsavel,
+                //Convenio = convenioId.HasValue ? new Convenio { Id = convenioId.Value } : null,
+                //Responsavel = responsavelId.HasValue ? new Responsavel { Id = responsavelId.Value } : null,
                 Ativo_Inativo = ativoInativo
             };
-
 
             // Coleta os dados de endereço
             string logradouro = txtLogradouro.Text;
@@ -219,11 +214,11 @@ namespace ProjetoOdontoPOO.Views
             txtCidadeEndereco.Clear();
             txtCEPEndereco.Clear();
             txtComplementoEndereco.Clear();
+            txtConvenioPaciente.Clear();
+            txtResponsavelPaciente.Clear();
 
             // Resetar ComboBoxes
             cbSexoPaciente.SelectedIndex = -1;
-            cbConvenioPaciente.SelectedIndex = -1;
-            cbResponsavelPaciente.SelectedIndex = -1;
             cbUFPaciente.SelectedIndex = -1;
 
             // Resetar DateTimePicker

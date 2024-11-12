@@ -10,6 +10,7 @@ namespace ProjetoOdontoPOO.Views
         private readonly DentistaController _dentistaController;
         private int _dentistaId;
         private bool _modoVisualizacao;
+
         public frmEditarDentista(int dentistaId, bool modoVisualizacao = false)
         {
             InitializeComponent();
@@ -59,14 +60,12 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarDentista_Click(object sender, EventArgs e)
         {
-            // Coleta os dados do paciente
             string nome = txtNomeDentista.Text;
             string crm = txtCRMDentista.Text;
             string estado = cbEstadoDentista.Text;
             string telefone = txtTelefoneDentista.Text;
             string especialidade = txtEspDentista.Text;
 
-            // Cria o objeto de Paciente
             Dentista dentista = new Dentista
             {
                 Nome = nome,
@@ -76,10 +75,8 @@ namespace ProjetoOdontoPOO.Views
                 Especialidade = especialidade,
             };
 
-            // Chama o método de atualização com os objetos Paciente e Endereço
             bool atualizado = _dentistaController.AtualizarDentista(_dentistaId, dentista);
 
-            // Exibe o resultado
             if (atualizado)
             {
                 MessageBox.Show("Dentista atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
