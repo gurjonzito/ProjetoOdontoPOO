@@ -39,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNomeDentista = new System.Windows.Forms.TextBox();
             this.btnSalvarDentista = new System.Windows.Forms.Button();
-            this.btnLimparDentista = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,11 +48,10 @@
             // 
             // txtCRMDentista
             // 
-            this.txtCRMDentista.Location = new System.Drawing.Point(431, 132);
-            this.txtCRMDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCRMDentista.Location = new System.Drawing.Point(323, 107);
             this.txtCRMDentista.Mask = "000000";
             this.txtCRMDentista.Name = "txtCRMDentista";
-            this.txtCRMDentista.Size = new System.Drawing.Size(159, 22);
+            this.txtCRMDentista.Size = new System.Drawing.Size(120, 20);
             this.txtCRMDentista.TabIndex = 88;
             // 
             // cbEstadoDentista
@@ -90,10 +88,9 @@
             "SP",
             "SE",
             "TO"});
-            this.cbEstadoDentista.Location = new System.Drawing.Point(599, 132);
-            this.cbEstadoDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEstadoDentista.Location = new System.Drawing.Point(449, 107);
             this.cbEstadoDentista.Name = "cbEstadoDentista";
-            this.cbEstadoDentista.Size = new System.Drawing.Size(100, 24);
+            this.cbEstadoDentista.Size = new System.Drawing.Size(76, 21);
             this.cbEstadoDentista.TabIndex = 87;
             // 
             // label5
@@ -101,20 +98,18 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(595, 108);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(446, 88);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 19);
+            this.label5.Size = new System.Drawing.Size(48, 16);
             this.label5.TabIndex = 86;
             this.label5.Text = "Estado";
             // 
             // txtTelefoneDentista
             // 
-            this.txtTelefoneDentista.Location = new System.Drawing.Point(452, 191);
-            this.txtTelefoneDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefoneDentista.Location = new System.Drawing.Point(339, 155);
             this.txtTelefoneDentista.Mask = "(00) 00000-0000";
             this.txtTelefoneDentista.Name = "txtTelefoneDentista";
-            this.txtTelefoneDentista.Size = new System.Drawing.Size(247, 22);
+            this.txtTelefoneDentista.Size = new System.Drawing.Size(186, 20);
             this.txtTelefoneDentista.TabIndex = 81;
             // 
             // label4
@@ -122,19 +117,17 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(63, 167);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(47, 136);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 19);
+            this.label4.Size = new System.Drawing.Size(88, 16);
             this.label4.TabIndex = 85;
             this.label4.Text = "Especialidade";
             // 
             // txtEspDentista
             // 
-            this.txtEspDentista.Location = new System.Drawing.Point(63, 191);
-            this.txtEspDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEspDentista.Location = new System.Drawing.Point(47, 155);
             this.txtEspDentista.Name = "txtEspDentista";
-            this.txtEspDentista.Size = new System.Drawing.Size(380, 22);
+            this.txtEspDentista.Size = new System.Drawing.Size(286, 20);
             this.txtEspDentista.TabIndex = 80;
             // 
             // label3
@@ -142,10 +135,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(452, 167);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(339, 136);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 19);
+            this.label3.Size = new System.Drawing.Size(54, 16);
             this.label3.TabIndex = 84;
             this.label3.Text = "Telefone";
             // 
@@ -154,10 +146,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(427, 108);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(320, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 19);
+            this.label2.Size = new System.Drawing.Size(36, 16);
             this.label2.TabIndex = 83;
             this.label2.Text = "CRM";
             // 
@@ -166,19 +157,17 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(63, 108);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(47, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 19);
+            this.label1.Size = new System.Drawing.Size(100, 16);
             this.label1.TabIndex = 82;
             this.label1.Text = "Nome Completo";
             // 
             // txtNomeDentista
             // 
-            this.txtNomeDentista.Location = new System.Drawing.Point(63, 132);
-            this.txtNomeDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomeDentista.Location = new System.Drawing.Point(47, 107);
             this.txtNomeDentista.Name = "txtNomeDentista";
-            this.txtNomeDentista.Size = new System.Drawing.Size(357, 22);
+            this.txtNomeDentista.Size = new System.Drawing.Size(269, 20);
             this.txtNomeDentista.TabIndex = 79;
             // 
             // btnSalvarDentista
@@ -186,28 +175,13 @@
             this.btnSalvarDentista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSalvarDentista.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalvarDentista.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarDentista.Location = new System.Drawing.Point(549, 274);
-            this.btnSalvarDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvarDentista.Location = new System.Drawing.Point(47, 223);
             this.btnSalvarDentista.Name = "btnSalvarDentista";
-            this.btnSalvarDentista.Size = new System.Drawing.Size(151, 43);
+            this.btnSalvarDentista.Size = new System.Drawing.Size(478, 35);
             this.btnSalvarDentista.TabIndex = 77;
             this.btnSalvarDentista.Text = "Salvar";
             this.btnSalvarDentista.UseVisualStyleBackColor = false;
             this.btnSalvarDentista.Click += new System.EventHandler(this.btnSalvarDentista_Click);
-            // 
-            // btnLimparDentista
-            // 
-            this.btnLimparDentista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnLimparDentista.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLimparDentista.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimparDentista.Location = new System.Drawing.Point(63, 274);
-            this.btnLimparDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnLimparDentista.Name = "btnLimparDentista";
-            this.btnLimparDentista.Size = new System.Drawing.Size(151, 43);
-            this.btnLimparDentista.TabIndex = 76;
-            this.btnLimparDentista.Text = "Limpar";
-            this.btnLimparDentista.UseVisualStyleBackColor = false;
-            this.btnLimparDentista.Click += new System.EventHandler(this.btnLimparDentista_Click);
             // 
             // panel1
             // 
@@ -216,9 +190,8 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(768, 58);
+            this.panel1.Size = new System.Drawing.Size(576, 47);
             this.panel1.TabIndex = 78;
             // 
             // pictureBox1
@@ -228,10 +201,9 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(707, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(530, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 89;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -243,19 +215,18 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(242, 16);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(182, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(281, 28);
+            this.label7.Size = new System.Drawing.Size(230, 23);
             this.label7.TabIndex = 0;
             this.label7.Text = "Editar/Visualizar Dentista";
             // 
             // frmEditarDentista
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(110)))));
-            this.ClientSize = new System.Drawing.Size(768, 372);
+            this.ClientSize = new System.Drawing.Size(576, 302);
             this.Controls.Add(this.txtCRMDentista);
             this.Controls.Add(this.cbEstadoDentista);
             this.Controls.Add(this.label5);
@@ -267,10 +238,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNomeDentista);
             this.Controls.Add(this.btnSalvarDentista);
-            this.Controls.Add(this.btnLimparDentista);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmEditarDentista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -296,7 +265,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNomeDentista;
         private System.Windows.Forms.Button btnSalvarDentista;
-        private System.Windows.Forms.Button btnLimparDentista;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;

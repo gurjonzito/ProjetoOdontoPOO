@@ -63,7 +63,6 @@ namespace ProjetoOdontoPOO.Views
             txtNomeConvenio.Enabled = false;
             txtTelefoneConvenio.Enabled = false;
             dtpDataConvenio.Enabled = false;
-            btnLimparConvenio.Visible = false;
             btnSalvarConvenio.Visible = false;
         }
 

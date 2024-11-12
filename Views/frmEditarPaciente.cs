@@ -110,7 +110,6 @@ namespace ProjetoOdontoPOO.Views
             txtLogradouro.Enabled = false;
             btnConvenio.Enabled = false;
             btnResponsavel.Enabled = false;
-            btnLimparPaciente.Visible = false;
             btnSalvarPaciente.Visible = false;
             cbAtivoInativo.Enabled = false;
             txtConvenioPaciente.Enabled = false;

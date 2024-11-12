@@ -83,7 +83,6 @@ namespace ProjetoOdontoPOO.Views
             cbSexoRes.Enabled = false;
             cbAtivoInativo.Enabled = false;
             dtpDataRes.Enabled = false;
-            btnLimparResponsavel.Visible = false;
             btnSalvarResponsavel.Visible = false;
         }
 

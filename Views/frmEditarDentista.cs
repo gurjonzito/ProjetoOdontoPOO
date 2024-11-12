@@ -54,7 +54,6 @@ namespace ProjetoOdontoPOO.Views
             txtEspDentista.Enabled = false;
             txtTelefoneDentista.Enabled = false;
             cbEstadoDentista.Enabled = false;
-            btnLimparDentista.Visible = false;
             btnSalvarDentista.Visible = false;
         }
 
