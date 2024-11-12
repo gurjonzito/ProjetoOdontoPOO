@@ -27,11 +27,26 @@ namespace ProjetoOdontoPOO.Views
             btnSelecionar.Visible = ExibirBotaoSelecionar;
         }
 
-        private void CarregarDadosResponsavel()
+        private void CarregarDadosResponsavel(string termoPesquisa = "")
         {
             try
             {
                 DataTable tabela = _responsavelController.ObterTodosResponsaveis();
+
+                if (!string.IsNullOrEmpty(termoPesquisa))
+                {
+                    DataRow[] rowsFiltrados = tabela.Select($"Nome LIKE '%{termoPesquisa}%' OR CPF LIKE '%{termoPesquisa}%'");
+
+                    if (rowsFiltrados.Length == 0)
+                    {
+                        // Exibe uma mensagem caso não haja responsáveis encontrados
+                        MessageBox.Show("Nenhum responsável encontrado com o nome ou CPF fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    // Atualiza a tabela para conter apenas os registros filtrados
+                    tabela = rowsFiltrados.CopyToDataTable();
+                }
 
                 dgvRegistros.AutoGenerateColumns = false;
 
@@ -156,6 +171,23 @@ namespace ProjetoOdontoPOO.Views
             else
             {
                 MessageBox.Show("Nenhum responsável selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            string termoPesquisa = txtPesquisar.Text.Trim().ToLower(); // Converte para minúsculas para facilitar a busca
+
+            // Carrega os pacientes filtrados com o termo de pesquisa
+            CarregarDadosResponsavel(termoPesquisa);
+        }
+
+        private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Chama o método de pesquisa, ou qualquer ação desejada
+                btnPesquisar.PerformClick(); // Simula um clique no botão de pesquisa
             }
         }
     }

@@ -14,6 +14,9 @@ namespace ProjetoOdontoPOO.Views
         private readonly PacienteController _pacienteController;
         private readonly DentistaController _dentistaController;
 
+        Dentista dentistaPaciente;
+        Paciente pacienteSelecionado;
+
         public frmGerarReceitaAtestado()
         {
             InitializeComponent();
@@ -22,33 +25,11 @@ namespace ProjetoOdontoPOO.Views
             _dentistaController = new DentistaController();
         }
 
-        private void frmGerarReceitaAtestado_Load(object sender, EventArgs e)
-        {
-            ConfigurarComboBoxPaciente();
-            ConfigurarComboBoxDentista();
-        }
-
-        private void ConfigurarComboBoxPaciente()
-        {
-            cbPacienteArquivo.DataSource = _pacienteController.ObterTodosPacientes();
-            cbPacienteArquivo.DisplayMember = "Nome";
-            cbPacienteArquivo.ValueMember = "Id";
-            cbPacienteArquivo.SelectedIndex = -1;
-        }
-
-        private void ConfigurarComboBoxDentista()
-        {
-            cbDentistaArquivo.DataSource = _dentistaController.ObterTodosDentistas();
-            cbDentistaArquivo.DisplayMember = "Nome";
-            cbDentistaArquivo.ValueMember = "Id";
-            cbDentistaArquivo.SelectedIndex = -1;
-        }
-
         private void btnGerarDocumento_Click(object sender, EventArgs e)
         {
             // Verificar se todos os campos estão preenchidos
-            if (string.IsNullOrEmpty(cbSelecionarArquivo.Text) || string.IsNullOrEmpty(cbPacienteArquivo.Text) ||
-                string.IsNullOrEmpty(cbDentistaArquivo.Text) || string.IsNullOrEmpty(txtObsArquivo.Text))
+            if (string.IsNullOrEmpty(cbSelecionarArquivo.Text) || string.IsNullOrEmpty(txtNomePaciente.Text) ||
+                string.IsNullOrEmpty(txtNomeDentista.Text) || string.IsNullOrEmpty(txtObsArquivo.Text))
             {
                 MessageBox.Show("Preencha todos os campos antes de gerar o documento.");
                 return;
@@ -74,8 +55,8 @@ namespace ProjetoOdontoPOO.Views
                     doc.Add(new Paragraph(titulo, FontFactory.GetFont(FontFactory.HELVETICA, 20, iTextSharp.text.Font.BOLD)));
                     doc.Add(new Paragraph("\n"));
 
-                    doc.Add(new Paragraph($"Paciente: {cbPacienteArquivo.Text}"));
-                    doc.Add(new Paragraph($"Médico: {cbDentistaArquivo.Text}"));
+                    doc.Add(new Paragraph($"Paciente: {txtNomePaciente.Text}"));
+                    doc.Add(new Paragraph($"Médico: {txtNomeDentista.Text}"));
                     doc.Add(new Paragraph(txtObsArquivo.Text)); 
                     doc.Add(new Paragraph("\n"));
 
@@ -94,6 +75,11 @@ namespace ProjetoOdontoPOO.Views
                     doc.Close();
 
                     MessageBox.Show("Documento gerado com sucesso!");
+
+                    cbSelecionarArquivo.SelectedIndex = -1;
+                    txtNomePaciente.Clear(); 
+                    txtNomeDentista.Clear(); 
+                    txtObsArquivo.Clear(); 
                 }
                 catch (Exception ex)
                 {
@@ -102,6 +88,40 @@ namespace ProjetoOdontoPOO.Views
             }
         }
 
+        private void PesquisarPaciente()
+        {
+            frmSelecionarPaciente frm = new frmSelecionarPaciente(true);
+            DialogResult dialogResult = frm.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                pacienteSelecionado = frm.pacienteSelecao;
+
+                txtNomePaciente.Text = pacienteSelecionado.Nome;
+            }
+        }
+
+        private void PesquisarDentista()
+        {
+            frmSelecionarDentista frm = new frmSelecionarDentista(true);
+            DialogResult dialogResult = frm.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                dentistaPaciente = frm.dentistaSelecao;
+
+                txtNomeDentista.Text = dentistaPaciente.Nome;
+            }
+        }
+        private void btnPaciente_Click(object sender, EventArgs e)
+        {
+            PesquisarPaciente();
+        }
+
+        private void btnDentista_Click(object sender, EventArgs e)
+        {
+            PesquisarDentista();
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -116,5 +136,7 @@ namespace ProjetoOdontoPOO.Views
         {
             pictureBox1.Image = Properties.Resources.icons8_close_window_32_outro;
         }
+
+
     }
 }

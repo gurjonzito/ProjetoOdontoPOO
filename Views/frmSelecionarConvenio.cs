@@ -22,11 +22,27 @@ namespace ProjetoOdontoPOO.Views
             btnSelecionar.Visible = ExibirBotaoSelecionar;
         }
 
-        private void CarregarDadosConvenio()
+        private void CarregarDadosConvenio(string termoPesquisa = "")
         {
             try
             {
                 DataTable tabela = _convenioController.ObterTodosConvenios();
+
+
+                if (!string.IsNullOrEmpty(termoPesquisa))
+                {
+                    // Filtra a tabela com base no nome ou CNPJ
+                    DataRow[] rowsFiltrados = tabela.Select($"Nome LIKE '%{termoPesquisa}%' OR CNPJ LIKE '%{termoPesquisa}%'");
+
+                    if (rowsFiltrados.Length == 0)
+                    {
+                        // Se não houver resultados, exibe uma mensagem de erro
+                        MessageBox.Show("Nenhum convênio encontrado com o nome ou CNPJ fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    tabela = rowsFiltrados.CopyToDataTable();
+                }
 
                 dgvRegistros.AutoGenerateColumns = false;
 
@@ -151,6 +167,23 @@ namespace ProjetoOdontoPOO.Views
             else
             {
                 MessageBox.Show("Nenhum convênio selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            string termoPesquisa = txtPesquisar.Text.Trim().ToLower(); // Converte para minúsculas para facilitar a busca
+
+            // Carrega os pacientes filtrados com o termo de pesquisa
+            CarregarDadosConvenio(termoPesquisa);
+        }
+
+        private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Chama o método de pesquisa, ou qualquer ação desejada
+                btnPesquisar.PerformClick(); // Simula um clique no botão de pesquisa
             }
         }
     }

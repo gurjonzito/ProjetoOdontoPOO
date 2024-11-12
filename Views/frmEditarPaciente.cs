@@ -14,11 +14,14 @@ namespace ProjetoOdontoPOO.Views
         private readonly ConvenioController _convenioController;
         private readonly ResponsavelController _responsavelController;
         private int _pacienteId;
+        private bool _modoVisualizacao;
 
-        public frmEditarPaciente(int pacienteId)
+        public frmEditarPaciente(int pacienteId, bool modoVisualizacao = false)
         {
             InitializeComponent();
             _pacienteId = pacienteId;
+
+            _modoVisualizacao = modoVisualizacao;
 
             _pacienteController = new PacienteController();
             _enderecoController = new EnderecoController();
@@ -27,6 +30,11 @@ namespace ProjetoOdontoPOO.Views
 
             CarregarComboBoxes();
             CarregarDadosPaciente();
+            
+            if (_modoVisualizacao)
+            {
+                DesabilitarCampos();
+            }
         }
 
         private void CarregarComboBoxes()
@@ -101,6 +109,29 @@ namespace ProjetoOdontoPOO.Views
             }
         }
 
+        private void DesabilitarCampos()
+        {
+            txtNomePaciente.Enabled = false;
+            txtCPFPaciente.Enabled = false;
+            txtEmailPaciente.Enabled = false;
+            txtComplementoEndereco.Enabled = false;
+            txtCidadeEndereco.Enabled = false;
+            txtIdadePaciente.Enabled = false;
+            txtNumeroEndereco.Enabled = false;
+            txtTelefonePaciente.Enabled = false;
+            txtCEPEndereco.Enabled = false;
+            txtLogradouro.Enabled = false;
+            btnConvenio.Enabled = false;
+            btnResponsavel.Enabled = false;
+            btnLimparPaciente.Visible = false;
+            btnSalvarPaciente.Visible = false;
+            cbAtivoInativo.Enabled = false;
+            cbConvenioPaciente.Enabled = false;
+            cbSexoPaciente.Enabled = false;
+            cbUFPaciente.Enabled = false;
+            cbResponsavelPaciente.Enabled = false;
+            dtpDataPaciente.Enabled = false;
+        }
         private void btnSalvarPaciente_Click(object sender, EventArgs e)
         {
             // Coleta os dados do paciente

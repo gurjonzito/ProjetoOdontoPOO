@@ -32,8 +32,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbSelecionarArquivo = new System.Windows.Forms.ComboBox();
-            this.cbPacienteArquivo = new System.Windows.Forms.ComboBox();
-            this.cbDentistaArquivo = new System.Windows.Forms.ComboBox();
             this.txtObsArquivo = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDataArquivo = new System.Windows.Forms.DateTimePicker();
@@ -44,8 +42,10 @@
             this.btnGerarArquivo = new System.Windows.Forms.Button();
             this.btnLimparArquivo = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnResponsavel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPaciente = new System.Windows.Forms.Button();
+            this.btnDentista = new System.Windows.Forms.Button();
+            this.txtNomePaciente = new System.Windows.Forms.TextBox();
+            this.txtNomeDentista = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -97,22 +97,6 @@
             this.cbSelecionarArquivo.Name = "cbSelecionarArquivo";
             this.cbSelecionarArquivo.Size = new System.Drawing.Size(286, 21);
             this.cbSelecionarArquivo.TabIndex = 1;
-            // 
-            // cbPacienteArquivo
-            // 
-            this.cbPacienteArquivo.FormattingEnabled = true;
-            this.cbPacienteArquivo.Location = new System.Drawing.Point(52, 223);
-            this.cbPacienteArquivo.Name = "cbPacienteArquivo";
-            this.cbPacienteArquivo.Size = new System.Drawing.Size(298, 21);
-            this.cbPacienteArquivo.TabIndex = 3;
-            // 
-            // cbDentistaArquivo
-            // 
-            this.cbDentistaArquivo.FormattingEnabled = true;
-            this.cbDentistaArquivo.Location = new System.Drawing.Point(391, 223);
-            this.cbDentistaArquivo.Name = "cbDentistaArquivo";
-            this.cbDentistaArquivo.Size = new System.Drawing.Size(254, 21);
-            this.cbDentistaArquivo.TabIndex = 4;
             // 
             // txtObsArquivo
             // 
@@ -214,23 +198,43 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btnResponsavel
+            // btnPaciente
             // 
-            this.btnResponsavel.Location = new System.Drawing.Point(356, 222);
-            this.btnResponsavel.Name = "btnResponsavel";
-            this.btnResponsavel.Size = new System.Drawing.Size(29, 23);
-            this.btnResponsavel.TabIndex = 59;
-            this.btnResponsavel.Text = "...";
-            this.btnResponsavel.UseVisualStyleBackColor = true;
+            this.btnPaciente.Location = new System.Drawing.Point(356, 222);
+            this.btnPaciente.Name = "btnPaciente";
+            this.btnPaciente.Size = new System.Drawing.Size(29, 23);
+            this.btnPaciente.TabIndex = 59;
+            this.btnPaciente.Text = "...";
+            this.btnPaciente.UseVisualStyleBackColor = true;
+            this.btnPaciente.Click += new System.EventHandler(this.btnPaciente_Click);
             // 
-            // button1
+            // btnDentista
             // 
-            this.button1.Location = new System.Drawing.Point(651, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 23);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDentista.Location = new System.Drawing.Point(651, 222);
+            this.btnDentista.Name = "btnDentista";
+            this.btnDentista.Size = new System.Drawing.Size(29, 23);
+            this.btnDentista.TabIndex = 60;
+            this.btnDentista.Text = "...";
+            this.btnDentista.UseVisualStyleBackColor = true;
+            this.btnDentista.Click += new System.EventHandler(this.btnDentista_Click);
+            // 
+            // txtNomePaciente
+            // 
+            this.txtNomePaciente.Location = new System.Drawing.Point(54, 225);
+            this.txtNomePaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomePaciente.Name = "txtNomePaciente";
+            this.txtNomePaciente.ReadOnly = true;
+            this.txtNomePaciente.Size = new System.Drawing.Size(297, 20);
+            this.txtNomePaciente.TabIndex = 61;
+            // 
+            // txtNomeDentista
+            // 
+            this.txtNomeDentista.Location = new System.Drawing.Point(391, 225);
+            this.txtNomeDentista.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNomeDentista.Name = "txtNomeDentista";
+            this.txtNomeDentista.ReadOnly = true;
+            this.txtNomeDentista.Size = new System.Drawing.Size(255, 20);
+            this.txtNomeDentista.TabIndex = 62;
             // 
             // frmGerarReceitaAtestado
             // 
@@ -238,8 +242,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(739, 574);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnResponsavel);
+            this.Controls.Add(this.txtNomeDentista);
+            this.Controls.Add(this.txtNomePaciente);
+            this.Controls.Add(this.btnDentista);
+            this.Controls.Add(this.btnPaciente);
             this.Controls.Add(this.btnGerarArquivo);
             this.Controls.Add(this.btnLimparArquivo);
             this.Controls.Add(this.label6);
@@ -249,8 +255,6 @@
             this.Controls.Add(this.dtpDataArquivo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtObsArquivo);
-            this.Controls.Add(this.cbDentistaArquivo);
-            this.Controls.Add(this.cbPacienteArquivo);
             this.Controls.Add(this.cbSelecionarArquivo);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -258,7 +262,6 @@
             this.Name = "frmGerarReceitaAtestado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerar Receita ou Atestado";
-            this.Load += new System.EventHandler(this.frmGerarReceitaAtestado_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -271,8 +274,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbSelecionarArquivo;
-        private System.Windows.Forms.ComboBox cbPacienteArquivo;
-        private System.Windows.Forms.ComboBox cbDentistaArquivo;
         private System.Windows.Forms.RichTextBox txtObsArquivo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDataArquivo;
@@ -285,7 +286,9 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnResponsavel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPaciente;
+        private System.Windows.Forms.Button btnDentista;
+        private System.Windows.Forms.TextBox txtNomePaciente;
+        private System.Windows.Forms.TextBox txtNomeDentista;
     }
 }

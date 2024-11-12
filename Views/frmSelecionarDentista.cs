@@ -22,12 +22,27 @@ namespace ProjetoOdontoPOO.Views
             btnSelecionar.Visible = ExibirBotaoSelecionar;
         }
 
-        private void CarregarDadosDentista()
+        private void CarregarDadosDentista(string termoPesquisa = "")
         {
             try
             {
                 // Obter a lista de dentistas do controlador
                 DataTable tabela = _dentistaController.ObterTodosDentistas();
+
+                if (!string.IsNullOrEmpty(termoPesquisa))
+                {
+                    // Filtra a tabela com base no nome ou CRM
+                    DataRow[] rowsFiltrados = tabela.Select($"Nome LIKE '%{termoPesquisa}%' OR CRM LIKE '%{termoPesquisa}%'");
+
+                    if (rowsFiltrados.Length == 0)
+                    {
+                        // Se não houver resultados, exibe uma mensagem de erro
+                        MessageBox.Show("Nenhum dentista encontrado com o nome ou CRM fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    tabela = rowsFiltrados.CopyToDataTable();
+                }
 
                 dgvRegistros.AutoGenerateColumns = false;
 
@@ -152,6 +167,22 @@ namespace ProjetoOdontoPOO.Views
             else
             {
                 MessageBox.Show("Nenhum dentista selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            string termoPesquisa = txtPesquisar.Text.Trim().ToLower();
+
+            CarregarDadosDentista(termoPesquisa);
+        }
+
+        private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Chama o método de pesquisa, ou qualquer ação desejada
+                btnPesquisar.PerformClick(); // Simula um clique no botão de pesquisa
             }
         }
     }

@@ -23,6 +23,8 @@ namespace ProjetoOdontoPOO.Views
 
             _convenioId = convenioId;
 
+            _modoVisualizacao = modoVisualizacao;
+
             _convenioController = new ConvenioController();
 
             CarregarDadosConvenio();

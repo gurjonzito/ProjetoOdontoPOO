@@ -2,6 +2,7 @@
 using ProjetoOdontoPOO.Models;
 using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ProjetoOdontoPOO.Views
@@ -24,43 +25,67 @@ namespace ProjetoOdontoPOO.Views
             btnSelecionar.Visible = ExibirBotaoSelecionar;
         }
 
-        private void CarregarDadosPaciente()
+        private void CarregarDadosPaciente(string termoPesquisa = "")
         {
             try
             {
-                // Obtém a lista de pacientes do controlador
+                // Obtém os dados da tabela através do método atualizado
                 DataTable tabela = _pacienteController.ObterTodosPacientes();
 
+                DataRow[] pacientesAtivos = tabela.Select("ativo_inativo = 1");
+
+                if (pacientesAtivos.Length == 0)
+                {
+                    // Caso não existam pacientes ativos
+                    MessageBox.Show("Nenhum paciente ativo encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Se houver um termo de pesquisa, filtra os pacientes ativos pelo nome ou CPF
+                if (!string.IsNullOrEmpty(termoPesquisa))
+                {
+                    pacientesAtivos = pacientesAtivos.Where(row =>
+                        row["Nome"].ToString().ToLower().Contains(termoPesquisa) ||
+                        row["CPF"].ToString().ToLower().Contains(termoPesquisa)
+                    ).ToArray();
+
+                    if (pacientesAtivos.Length == 0)
+                    {
+                        MessageBox.Show("Nenhum paciente ativo encontrado com o nome ou CPF fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+
+                DataTable tabelaFiltrada = pacientesAtivos.CopyToDataTable();
+
+                // Desativa a geração automática de colunas
                 dgvRegistros.AutoGenerateColumns = false;
 
+                // Limpa as linhas atuais do DataGridView
                 dgvRegistros.Rows.Clear();
 
+                // Adiciona os dados linha por linha no DataGridView
                 foreach (DataRow row in tabela.Rows)
                 {
+                    // Crie um objeto Paciente com os dados dessa linha
                     Paciente paciente = new Paciente
                     {
                         Id = (int)row["ID"],
                         Nome = (string)row["Nome"],
                         CPF = (string)row["CPF"],
                         Telefone = (string)row["Telefone"],
+                        Responsavel = null,  // ou altere para um objeto Responsável, se necessário
+                        Convenio = null       // ou altere para um objeto Convênio, se necessário
                     };
 
-                    int responsavelId = (int)row["Responsavel"];
-                    int convenioId = (int)row["Convenio"];
-
-                    Responsavel responsavel = _responsavelController.ObterResponsavelPorId(responsavelId);
-                    Convenio convenio = _convenioController.ObterConvenioPorId(convenioId);
-
-                    paciente.Responsavel = responsavel;
-                    paciente.Convenio = convenio;
-
+                    // Adicionando as colunas diretamente no DataGridView
                     int index = dgvRegistros.Rows.Add(
-                        paciente.Id,
-                        paciente.Nome,
-                        paciente.CPF,
-                        paciente.Telefone,
-                        paciente.Responsavel?.Nome ?? "Sem Responsável",
-                        paciente.Convenio?.Nome ?? "Sem Convênio"
+                        paciente.Id,               // ID do paciente
+                        paciente.Nome,             // Nome do paciente
+                        paciente.CPF,              // CPF do paciente
+                        paciente.Telefone,        // Telefone do paciente
+                        row["Responsável"],      // Responsável (como string ou objeto)
+                        row["Convênio"]      // Convênio (como string ou objeto)
                     );
 
                     // Associar o objeto Paciente à linha
@@ -79,6 +104,7 @@ namespace ProjetoOdontoPOO.Views
                 MessageBox.Show("Erro ao carregar dados do paciente: " + ex.Message);
             }
         }
+
 
         private Paciente RecuperarPaciente()
         {
@@ -163,6 +189,23 @@ namespace ProjetoOdontoPOO.Views
             else
             {
                 MessageBox.Show("Nenhum paciente selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            string termoPesquisa = txtPesquisar.Text.Trim().ToLower(); // Converte para minúsculas para facilitar a busca
+
+            // Carrega os pacientes filtrados com o termo de pesquisa
+            CarregarDadosPaciente(termoPesquisa);
+        }
+
+        private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Chama o método de pesquisa, ou qualquer ação desejada
+                btnPesquisar.PerformClick(); // Simula um clique no botão de pesquisa
             }
         }
     }

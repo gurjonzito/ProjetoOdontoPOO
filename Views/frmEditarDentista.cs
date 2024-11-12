@@ -16,6 +16,8 @@ namespace ProjetoOdontoPOO.Views
 
             _dentistaId = dentistaId;
 
+            _modoVisualizacao = modoVisualizacao;
+
             _dentistaController = new DentistaController();
 
             CarregarDadosDentista();

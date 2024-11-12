@@ -90,7 +90,7 @@
             this.btnLimparDentista.Location = new System.Drawing.Point(47, 227);
             this.btnLimparDentista.Name = "btnLimparDentista";
             this.btnLimparDentista.Size = new System.Drawing.Size(113, 35);
-            this.btnLimparDentista.TabIndex = 5;
+            this.btnLimparDentista.TabIndex = 6;
             this.btnLimparDentista.Text = "Limpar";
             this.btnLimparDentista.UseVisualStyleBackColor = false;
             this.btnLimparDentista.Click += new System.EventHandler(this.btnLimparDentista_Click);
@@ -103,7 +103,7 @@
             this.btnSalvarDentista.Location = new System.Drawing.Point(412, 227);
             this.btnSalvarDentista.Name = "btnSalvarDentista";
             this.btnSalvarDentista.Size = new System.Drawing.Size(113, 35);
-            this.btnSalvarDentista.TabIndex = 6;
+            this.btnSalvarDentista.TabIndex = 7;
             this.btnSalvarDentista.Text = "Salvar";
             this.btnSalvarDentista.UseVisualStyleBackColor = false;
             this.btnSalvarDentista.Click += new System.EventHandler(this.btnSalvarDentista_Click);
@@ -145,7 +145,7 @@
             this.cbEstadoDentista.Location = new System.Drawing.Point(449, 111);
             this.cbEstadoDentista.Name = "cbEstadoDentista";
             this.cbEstadoDentista.Size = new System.Drawing.Size(76, 21);
-            this.cbEstadoDentista.TabIndex = 74;
+            this.cbEstadoDentista.TabIndex = 3;
             // 
             // label5
             // 
@@ -164,7 +164,7 @@
             this.txtTelefoneDentista.Mask = "(00) 00000-0000";
             this.txtTelefoneDentista.Name = "txtTelefoneDentista";
             this.txtTelefoneDentista.Size = new System.Drawing.Size(186, 20);
-            this.txtTelefoneDentista.TabIndex = 68;
+            this.txtTelefoneDentista.TabIndex = 5;
             this.txtTelefoneDentista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefoneDentista_KeyPress);
             // 
             // label4
@@ -183,7 +183,7 @@
             this.txtEspDentista.Location = new System.Drawing.Point(47, 159);
             this.txtEspDentista.Name = "txtEspDentista";
             this.txtEspDentista.Size = new System.Drawing.Size(286, 20);
-            this.txtEspDentista.TabIndex = 67;
+            this.txtEspDentista.TabIndex = 4;
             // 
             // label3
             // 
@@ -223,7 +223,7 @@
             this.txtNomeDentista.Location = new System.Drawing.Point(47, 111);
             this.txtNomeDentista.Name = "txtNomeDentista";
             this.txtNomeDentista.Size = new System.Drawing.Size(269, 20);
-            this.txtNomeDentista.TabIndex = 65;
+            this.txtNomeDentista.TabIndex = 1;
             // 
             // txtCRMDentista
             // 
@@ -231,7 +231,7 @@
             this.txtCRMDentista.Mask = "000000";
             this.txtCRMDentista.Name = "txtCRMDentista";
             this.txtCRMDentista.Size = new System.Drawing.Size(120, 20);
-            this.txtCRMDentista.TabIndex = 75;
+            this.txtCRMDentista.TabIndex = 2;
             // 
             // frmCadDentista
             // 
