@@ -65,12 +65,14 @@ namespace ProjetoOdontoPOO.Repositories
             using (SqlConnection conexao = _dbService.CriarConexao())
             {
                 string query = @"
-            SELECT Cons_ID AS ID,
-                   Cons_DataConsulta AS Data,
-                   Cons_Observacoes AS [Observações],
-                   Cons_PacienteID_FK AS Paciente,
-                   Cons_DentistaID_FK AS Dentista
-            FROM Consulta";
+            SELECT Cons.Cons_ID AS ID,
+                   Cons.Cons_DataConsulta AS Data,
+                   Cons.Cons_Observacoes AS [Observações],
+                   COALESCE(Pac.Pac_Nome, 'Sem Paciente') AS Paciente,
+                   COALESCE(Den.Den_Nome, 'Sem Dentista') AS Dentista
+            FROM Consulta AS Cons
+            LEFT JOIN Paciente AS Pac ON Cons.Cons_PacienteID_FK = Pac.Pac_ID
+            LEFT JOIN Dentista AS Den ON Cons.Cons_DentistaID_FK = Den.Den_ID";
 
                 SqlDataAdapter adaptador = new SqlDataAdapter(query, conexao);
                 adaptador.Fill(tabela);

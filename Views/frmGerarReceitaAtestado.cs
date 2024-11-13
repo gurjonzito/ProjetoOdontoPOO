@@ -3,7 +3,6 @@ using iTextSharp.text.pdf;
 using ProjetoOdontoPOO.Controllers;
 using ProjetoOdontoPOO.Models;
 using System;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -57,6 +56,7 @@ namespace ProjetoOdontoPOO.Views
 
                     doc.Add(new Paragraph($"Paciente: {txtNomePaciente.Text}"));
                     doc.Add(new Paragraph($"Médico: {txtNomeDentista.Text}"));
+                    doc.Add(new Paragraph("\n"));
                     doc.Add(new Paragraph(txtObsArquivo.Text)); 
                     doc.Add(new Paragraph("\n"));
 
@@ -113,6 +113,7 @@ namespace ProjetoOdontoPOO.Views
                 txtNomeDentista.Text = dentistaPaciente.Nome;
             }
         }
+
         private void btnPaciente_Click(object sender, EventArgs e)
         {
             PesquisarPaciente();
@@ -122,6 +123,7 @@ namespace ProjetoOdontoPOO.Views
         {
             PesquisarDentista();
         }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -136,7 +138,5 @@ namespace ProjetoOdontoPOO.Views
         {
             pictureBox1.Image = Properties.Resources.icons8_close_window_32_outro;
         }
-
-
     }
 }

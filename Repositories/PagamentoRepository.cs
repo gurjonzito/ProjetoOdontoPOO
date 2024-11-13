@@ -61,13 +61,14 @@ namespace ProjetoOdontoPOO.Repositories
 
             using (SqlConnection conexao = _dbService.CriarConexao())
             {
-                string query = @"SELECT Pag_ID AS ID,
-                                       Pag_DataPagamento AS [Data],
-                                       Pag_ValorPago AS [Valor Pago],
-                                       Pag_MetodoPagamento AS [Método de Pagamento],
-                                       Pag_Status AS [Status],
-                                       Pag_PacienteID_FK AS Paciente
-                                 FROM Pagamento";
+                string query = @"SELECT Pag.Pag_ID AS ID,
+                                       Pag.Pag_DataPagamento AS [Data],
+                                       Pag.Pag_ValorPago AS [Valor Pago],
+                                       Pag.Pag_MetodoPagamento AS [Método de Pagamento],
+                                       Pag.Pag_Status AS [Status],
+                                       COALESCE(Pac.Pac_Nome, 'Sem Paciente') AS Paciente
+                                 FROM Pagamento AS Pag
+                                 LEFT JOIN Paciente AS Pac ON Pag.Pag_PacienteID_FK = Pac.Pac_ID";
 
                 SqlDataAdapter adaptador = new SqlDataAdapter(query, conexao);
                 adaptador.Fill(tabela);
@@ -120,7 +121,8 @@ namespace ProjetoOdontoPOO.Repositories
                                      SET Pag_DataPagamento = @DataPagamento,
                                          Pag_ValorPago = @ValorPago,
                                          Pag_MetodoPagamento = @MetodoPagamento,
-                                         Pag_Status = @Status
+                                         Pag_Status = @Status,
+                                         Pag_PacienteID_FK = @PacienteId
                                      WHERE Pag_ID = @ID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao, transacao))
@@ -130,6 +132,7 @@ namespace ProjetoOdontoPOO.Repositories
                         cmd.Parameters.AddWithValue("@ValorPago", pagamento.ValorPago);
                         cmd.Parameters.AddWithValue("@MetodoPagamento", pagamento.MetodoPagamento);
                         cmd.Parameters.AddWithValue("@Status", pagamento.PagamentoStatus);
+                        cmd.Parameters.AddWithValue("@PacienteId", pagamento.Paciente.Id);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         transacao.Commit();

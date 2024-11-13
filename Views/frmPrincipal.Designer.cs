@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblData = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSobre = new System.Windows.Forms.Button();
@@ -47,8 +49,6 @@
             this.btnPaciente = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblHora = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,10 +62,35 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1696, 52);
             this.panel1.TabIndex = 0;
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblData.Location = new System.Drawing.Point(1422, 17);
+            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(110, 24);
+            this.lblData.TabIndex = 12;
+            this.lblData.Text = "00/00/0000";
+            // 
+            // lblHora
+            // 
+            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblHora.Location = new System.Drawing.Point(1540, 12);
+            this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(120, 31);
+            this.lblHora.TabIndex = 11;
+            this.lblHora.Text = "00:00:00";
             // 
             // label1
             // 
@@ -96,7 +121,7 @@
             this.panel2.Controls.Add(this.btnPaciente);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 52);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(335, 870);
             this.panel2.TabIndex = 1;
@@ -109,7 +134,7 @@
             this.btnSobre.Image = ((System.Drawing.Image)(resources.GetObject("btnSobre.Image")));
             this.btnSobre.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSobre.Location = new System.Drawing.Point(16, 677);
-            this.btnSobre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSobre.Margin = new System.Windows.Forms.Padding(4);
             this.btnSobre.Name = "btnSobre";
             this.btnSobre.Size = new System.Drawing.Size(299, 49);
             this.btnSobre.TabIndex = 7;
@@ -150,7 +175,7 @@
             this.btnResponsavel.Image = ((System.Drawing.Image)(resources.GetObject("btnResponsavel.Image")));
             this.btnResponsavel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnResponsavel.Location = new System.Drawing.Point(16, 274);
-            this.btnResponsavel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnResponsavel.Margin = new System.Windows.Forms.Padding(4);
             this.btnResponsavel.Name = "btnResponsavel";
             this.btnResponsavel.Size = new System.Drawing.Size(299, 49);
             this.btnResponsavel.TabIndex = 4;
@@ -167,7 +192,7 @@
             this.btnVisualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnVisualizar.Image")));
             this.btnVisualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVisualizar.Location = new System.Drawing.Point(16, 608);
-            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnVisualizar.Name = "btnVisualizar";
             this.btnVisualizar.Size = new System.Drawing.Size(299, 49);
             this.btnVisualizar.TabIndex = 9;
@@ -185,7 +210,7 @@
             this.btnSair.Image = ((System.Drawing.Image)(resources.GetObject("btnSair.Image")));
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSair.Location = new System.Drawing.Point(16, 806);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(299, 49);
             this.btnSair.TabIndex = 10;
@@ -202,7 +227,7 @@
             this.btnPagamento.Image = ((System.Drawing.Image)(resources.GetObject("btnPagamento.Image")));
             this.btnPagamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPagamento.Location = new System.Drawing.Point(16, 539);
-            this.btnPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPagamento.Margin = new System.Windows.Forms.Padding(4);
             this.btnPagamento.Name = "btnPagamento";
             this.btnPagamento.Size = new System.Drawing.Size(299, 49);
             this.btnPagamento.TabIndex = 8;
@@ -219,7 +244,7 @@
             this.btnReceitaAtestado.Image = ((System.Drawing.Image)(resources.GetObject("btnReceitaAtestado.Image")));
             this.btnReceitaAtestado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReceitaAtestado.Location = new System.Drawing.Point(16, 470);
-            this.btnReceitaAtestado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReceitaAtestado.Margin = new System.Windows.Forms.Padding(4);
             this.btnReceitaAtestado.Name = "btnReceitaAtestado";
             this.btnReceitaAtestado.Size = new System.Drawing.Size(299, 49);
             this.btnReceitaAtestado.TabIndex = 6;
@@ -236,7 +261,7 @@
             this.btnConsulta.Image = ((System.Drawing.Image)(resources.GetObject("btnConsulta.Image")));
             this.btnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsulta.Location = new System.Drawing.Point(16, 402);
-            this.btnConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsulta.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(299, 49);
             this.btnConsulta.TabIndex = 5;
@@ -253,7 +278,7 @@
             this.btnDentista.Image = ((System.Drawing.Image)(resources.GetObject("btnDentista.Image")));
             this.btnDentista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDentista.Location = new System.Drawing.Point(16, 207);
-            this.btnDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDentista.Margin = new System.Windows.Forms.Padding(4);
             this.btnDentista.Name = "btnDentista";
             this.btnDentista.Size = new System.Drawing.Size(299, 49);
             this.btnDentista.TabIndex = 3;
@@ -270,7 +295,7 @@
             this.btnConvenio.Image = ((System.Drawing.Image)(resources.GetObject("btnConvenio.Image")));
             this.btnConvenio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConvenio.Location = new System.Drawing.Point(16, 138);
-            this.btnConvenio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConvenio.Margin = new System.Windows.Forms.Padding(4);
             this.btnConvenio.Name = "btnConvenio";
             this.btnConvenio.Size = new System.Drawing.Size(299, 49);
             this.btnConvenio.TabIndex = 2;
@@ -287,7 +312,7 @@
             this.btnPaciente.Image = ((System.Drawing.Image)(resources.GetObject("btnPaciente.Image")));
             this.btnPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPaciente.Location = new System.Drawing.Point(16, 70);
-            this.btnPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPaciente.Margin = new System.Windows.Forms.Padding(4);
             this.btnPaciente.Name = "btnPaciente";
             this.btnPaciente.Size = new System.Drawing.Size(299, 49);
             this.btnPaciente.TabIndex = 0;
@@ -302,7 +327,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(649, 270);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(725, 470);
             this.pictureBox1.TabIndex = 2;
@@ -314,31 +339,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lblHora
-            // 
-            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblHora.Location = new System.Drawing.Point(1540, 12);
-            this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(120, 31);
-            this.lblHora.TabIndex = 11;
-            this.lblHora.Text = "00:00:00";
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblData.Location = new System.Drawing.Point(1422, 17);
-            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(110, 24);
-            this.lblData.TabIndex = 12;
-            this.lblData.Text = "00/00/0000";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -349,7 +349,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";

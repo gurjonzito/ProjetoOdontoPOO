@@ -59,7 +59,6 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarPagamento_Click(object sender, EventArgs e)
         {
-            string pacienteNome = txtPacientePag.Text;
             DateTime data = dtpDataPag.Value;
             if (!decimal.TryParse(txtValorPag.Text, out decimal valor) || valor <= 0)
             {
@@ -69,11 +68,9 @@ namespace ProjetoOdontoPOO.Views
             string status = cbStatusPag.Text;
             string metodo = cbMetodoPag.Text;
 
-            Paciente paciente = new Paciente { Nome = pacienteNome };
-
             Pagamento pagamento = new Pagamento
             {
-                Paciente = paciente,
+                Paciente = pacientePagamento,
                 DataPagamento = data,
                 ValorPago = valor,
                 PagamentoStatus = status,
@@ -101,6 +98,7 @@ namespace ProjetoOdontoPOO.Views
                 MessageBox.Show("Este campo aceita apenas números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();

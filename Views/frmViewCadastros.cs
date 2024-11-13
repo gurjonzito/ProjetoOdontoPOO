@@ -9,7 +9,6 @@ namespace ProjetoOdontoPOO.Views
 {
     public partial class frmViewCadastros : Form
     {
-        //private readonly DataBaseSqlServerService _dbService;
         private readonly PacienteController _pacienteController;
         private readonly ResponsavelController _responsavelController;
         private readonly ConvenioController _convenioController;
@@ -21,7 +20,6 @@ namespace ProjetoOdontoPOO.Views
         {
             InitializeComponent();
 
-            //_dbService = new DataBaseSqlServerService();
             _pacienteController = new PacienteController();
             _responsavelController = new ResponsavelController();
             _convenioController = new ConvenioController();
@@ -32,6 +30,7 @@ namespace ProjetoOdontoPOO.Views
             CarregarDadosPaciente();
             CarregarDadosResponsavel();
             CarregarDadosConvenio();
+            CarregarDadosDentista();
             CarregarDadosConsulta();
             CarregarDadosPagamentos();
         }
@@ -171,10 +170,8 @@ namespace ProjetoOdontoPOO.Views
                 return;
             }
 
-            // Itera pelas linhas do DataGridView para encontrar o CPF
             foreach (DataGridViewRow row in dgvConvenio.Rows)
             {
-                // Verifica se o valor da célula de CPF corresponde ao CPF procurado
                 if (row.Cells["CNPJ"].Value != null && row.Cells["CNPJ"].Value.ToString() == cnpjProcurado)
                 {
                     row.Selected = true;
@@ -183,8 +180,32 @@ namespace ProjetoOdontoPOO.Views
                 }
             }
 
-            // Exibe mensagem se não encontrar o CPF
             MessageBox.Show("CNPJ não encontrado.", "Resultado da Busca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnBuscarCRM_Click(object sender, EventArgs e)
+        {
+            if (!btnBuscarCRM.Focused) return;
+
+            string crmProcurado = txtBuscarCRM.Text;
+
+            if (string.IsNullOrWhiteSpace(crmProcurado))
+            {
+                MessageBox.Show("Por favor, insira um CRM para buscar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            foreach (DataGridViewRow row in dgvDentista.Rows)
+            {
+                if (row.Cells["CRM"].Value != null && row.Cells["CRM"].Value.ToString() == crmProcurado)
+                {
+                    row.Selected = true;
+                    dgvDentista.FirstDisplayedScrollingRowIndex = row.Index;
+                    return;
+                }
+            }
+
+            MessageBox.Show("CRM não encontrado.", "Resultado da Busca", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void CarregarDadosPaciente()

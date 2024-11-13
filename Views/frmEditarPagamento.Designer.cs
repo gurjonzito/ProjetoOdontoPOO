@@ -52,10 +52,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(38, 138);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(51, 170);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 16);
+            this.label6.Size = new System.Drawing.Size(153, 19);
             this.label6.TabIndex = 62;
             this.label6.Text = "Data de Pagamento";
             // 
@@ -66,19 +65,19 @@
             "Cartão",
             "Dinheiro",
             "Pix"});
-            this.cbMetodoPag.Location = new System.Drawing.Point(248, 205);
-            this.cbMetodoPag.Margin = new System.Windows.Forms.Padding(2);
+            this.cbMetodoPag.Location = new System.Drawing.Point(331, 252);
+            this.cbMetodoPag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMetodoPag.Name = "cbMetodoPag";
-            this.cbMetodoPag.Size = new System.Drawing.Size(188, 21);
+            this.cbMetodoPag.Size = new System.Drawing.Size(249, 24);
             this.cbMetodoPag.TabIndex = 6;
             // 
             // dtpDataPag
             // 
             this.dtpDataPag.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataPag.Location = new System.Drawing.Point(41, 155);
-            this.dtpDataPag.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDataPag.Location = new System.Drawing.Point(55, 191);
+            this.dtpDataPag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDataPag.Name = "dtpDataPag";
-            this.dtpDataPag.Size = new System.Drawing.Size(209, 20);
+            this.dtpDataPag.Size = new System.Drawing.Size(277, 22);
             this.dtpDataPag.TabIndex = 3;
             // 
             // btnSalvarPagamento
@@ -86,11 +85,12 @@
             this.btnSalvarPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSalvarPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalvarPagamento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarPagamento.Location = new System.Drawing.Point(40, 265);
+            this.btnSalvarPagamento.Location = new System.Drawing.Point(53, 326);
+            this.btnSalvarPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalvarPagamento.Name = "btnSalvarPagamento";
-            this.btnSalvarPagamento.Size = new System.Drawing.Size(396, 35);
+            this.btnSalvarPagamento.Size = new System.Drawing.Size(528, 43);
             this.btnSalvarPagamento.TabIndex = 7;
-            this.btnSalvarPagamento.Text = "Confirmar Pagamento";
+            this.btnSalvarPagamento.Text = "Salvar";
             this.btnSalvarPagamento.UseVisualStyleBackColor = false;
             this.btnSalvarPagamento.Click += new System.EventHandler(this.btnSalvarPagamento_Click);
             // 
@@ -99,10 +99,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(245, 188);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(327, 231);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 16);
+            this.label5.Size = new System.Drawing.Size(172, 19);
             this.label5.TabIndex = 58;
             this.label5.Text = "Método de Pagamento";
             // 
@@ -111,10 +110,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(38, 188);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(51, 231);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 16);
+            this.label4.Size = new System.Drawing.Size(54, 19);
             this.label4.TabIndex = 57;
             this.label4.Text = "Status";
             // 
@@ -125,18 +123,18 @@
             "Em aberto",
             "Pendente",
             "Pago"});
-            this.cbStatusPag.Location = new System.Drawing.Point(41, 205);
-            this.cbStatusPag.Margin = new System.Windows.Forms.Padding(2);
+            this.cbStatusPag.Location = new System.Drawing.Point(55, 252);
+            this.cbStatusPag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbStatusPag.Name = "cbStatusPag";
-            this.cbStatusPag.Size = new System.Drawing.Size(204, 21);
+            this.cbStatusPag.Size = new System.Drawing.Size(271, 24);
             this.cbStatusPag.TabIndex = 5;
             // 
             // txtValorPag
             // 
-            this.txtValorPag.Location = new System.Drawing.Point(254, 155);
-            this.txtValorPag.Margin = new System.Windows.Forms.Padding(2);
+            this.txtValorPag.Location = new System.Drawing.Point(339, 191);
+            this.txtValorPag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtValorPag.Name = "txtValorPag";
-            this.txtValorPag.Size = new System.Drawing.Size(183, 20);
+            this.txtValorPag.Size = new System.Drawing.Size(243, 22);
             this.txtValorPag.TabIndex = 4;
             this.txtValorPag.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorPag_KeyPress);
             // 
@@ -145,18 +143,18 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(250, 138);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(333, 170);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 16);
+            this.label3.Size = new System.Drawing.Size(46, 19);
             this.label3.TabIndex = 54;
             this.label3.Text = "Valor";
             // 
             // btnPaciente
             // 
-            this.btnPaciente.Location = new System.Drawing.Point(406, 101);
+            this.btnPaciente.Location = new System.Drawing.Point(541, 124);
+            this.btnPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPaciente.Name = "btnPaciente";
-            this.btnPaciente.Size = new System.Drawing.Size(29, 23);
+            this.btnPaciente.Size = new System.Drawing.Size(39, 28);
             this.btnPaciente.TabIndex = 2;
             this.btnPaciente.Text = "...";
             this.btnPaciente.UseVisualStyleBackColor = true;
@@ -164,10 +162,10 @@
             // 
             // txtPacientePag
             // 
-            this.txtPacientePag.Location = new System.Drawing.Point(41, 104);
-            this.txtPacientePag.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPacientePag.Location = new System.Drawing.Point(55, 128);
+            this.txtPacientePag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPacientePag.Name = "txtPacientePag";
-            this.txtPacientePag.Size = new System.Drawing.Size(361, 20);
+            this.txtPacientePag.Size = new System.Drawing.Size(480, 22);
             this.txtPacientePag.TabIndex = 1;
             // 
             // label2
@@ -175,10 +173,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(37, 86);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(49, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
+            this.label2.Size = new System.Drawing.Size(73, 19);
             this.label2.TabIndex = 51;
             this.label2.Text = "Paciente";
             // 
@@ -188,9 +185,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, -2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(806, 50);
+            this.panel1.Size = new System.Drawing.Size(1075, 62);
             this.panel1.TabIndex = 50;
             // 
             // pictureBox1
@@ -200,9 +197,10 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(430, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(573, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
             this.pictureBox1.TabIndex = 104;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -213,18 +211,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(160, 15);
+            this.label1.Location = new System.Drawing.Point(213, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 23);
+            this.label1.Size = new System.Drawing.Size(203, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Editar Pagamento";
             // 
             // frmEditarPagamento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(110)))));
-            this.ClientSize = new System.Drawing.Size(477, 345);
+            this.ClientSize = new System.Drawing.Size(636, 425);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbMetodoPag);
             this.Controls.Add(this.dtpDataPag);
@@ -239,7 +238,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmEditarPagamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

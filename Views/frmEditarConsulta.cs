@@ -87,18 +87,13 @@ namespace ProjetoOdontoPOO.Views
         {
             DateTime data = dtpDataConsulta.Value;
             string obs = txtObsConsulta.Text;
-            string pacienteNome = txtPaciente.Text;
-            string dentistaNome = txtDentista.Text;
-
-            Paciente paciente = new Paciente { Nome = pacienteNome };
-            Dentista dentista = new Dentista { Nome = dentistaNome };
 
             Consulta consulta = new Consulta
             {
                 DataConsulta = data,
                 Observacoes = obs,
-                Paciente = paciente,
-                Dentista = dentista,
+                Paciente = pacienteConsulta,
+                Dentista = dentistaConsulta,
             };
 
             bool atualizado = _consultaController.AtualizarConsulta(_consultaId, consulta);
@@ -113,6 +108,7 @@ namespace ProjetoOdontoPOO.Views
                 MessageBox.Show("Erro ao atualizar a consulta.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
