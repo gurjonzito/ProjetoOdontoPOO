@@ -61,7 +61,7 @@ namespace ProjetoOdontoPOO.Views
         {
             string pacienteNome = txtPacientePag.Text;
             DateTime data = dtpDataPag.Value;
-            if (!decimal.TryParse(txtValorPag.Text, out decimal valor))
+            if (!decimal.TryParse(txtValorPag.Text, out decimal valor) || valor <= 0)
             {
                 MessageBox.Show("Valor inválido. Por favor, insira um número válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -91,6 +91,34 @@ namespace ProjetoOdontoPOO.Views
             {
                 MessageBox.Show("Erro ao atualizar o pagamento.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ValidarEntradaNumerica(KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != 8)
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo aceita apenas números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.icons8_fechar_janela_32;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.icons8_close_window_32_outro;
+        }
+
+        private void txtValorPag_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarEntradaNumerica(e);
         }
     }
 }

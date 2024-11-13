@@ -14,6 +14,9 @@ namespace ProjetoOdontoPOO.Views
         private int _pacienteId;
         private bool _modoVisualizacao;
 
+        Convenio convenioPaciente;
+        Responsavel responsavelPaciente;
+
         public frmEditarPaciente(int pacienteId, bool modoVisualizacao = false)
         {
             InitializeComponent();
@@ -28,7 +31,7 @@ namespace ProjetoOdontoPOO.Views
 
             CarregarComboBoxes();
             CarregarDadosPaciente();
-            
+
             if (_modoVisualizacao)
             {
                 DesabilitarCampos();
@@ -36,7 +39,7 @@ namespace ProjetoOdontoPOO.Views
         }
 
         private void CarregarComboBoxes()
-        { 
+        {
             cbAtivoInativo.Items.Clear();
             cbAtivoInativo.Items.Add("Ativo");
             cbAtivoInativo.Items.Add("Inativo");
@@ -44,11 +47,13 @@ namespace ProjetoOdontoPOO.Views
 
         private void CarregarDadosPaciente()
         {
+            // Recupera os dados do paciente
             Paciente paciente = _pacienteController.ObterPacientePorId(_pacienteId);
             Endereco endereco = _enderecoController.ObterDadosEnderecoPorId(_pacienteId);
 
             if (paciente != null)
             {
+                // Preencher os campos de texto do paciente
                 txtNomePaciente.Text = paciente.Nome;
                 dtpDataPaciente.Value = paciente.DataNascimento;
                 txtIdadePaciente.Text = paciente.Idade.ToString();
@@ -56,26 +61,54 @@ namespace ProjetoOdontoPOO.Views
                 cbSexoPaciente.Text = paciente.Sexo;
                 txtTelefonePaciente.Text = paciente.Telefone;
                 txtEmailPaciente.Text = paciente.Email;
-                cbAtivoInativo.Text = paciente.Ativo_Inativo.ToString();
-                txtConvenioPaciente.Text = paciente.Convenio?.ToString() ?? "Sem Convênio"; // Verifica se Convenio é null
-                txtResponsavelPaciente.Text = paciente.Responsavel?.ToString() ?? "Sem Responsável";
 
-                // Verificação para "Ativo" e "Inativo"
-                if (paciente.Ativo_Inativo == 1)
+                // Carregar nome do Convênio a partir do ID
+                if (paciente.Convenio != null && paciente.Convenio.Id > 0)
                 {
-                    cbAtivoInativo.SelectedItem = "Ativo";  // Seleciona "Ativo"
-                }
-                else if (paciente.Ativo_Inativo == 0)
-                {
-                    cbAtivoInativo.SelectedItem = "Inativo"; // Seleciona "Inativo"
+                    // Verifica se o convênio existe e carrega o nome
+                    Convenio convenio = _convenioController.ObterConvenioPorId(paciente.Convenio.Id);
+                    if (convenio != null)
+                    {
+                        txtConvenioPaciente.Text = convenio.Nome;
+                        convenioPaciente = convenio; // Armazena o convênio selecionado
+                    }
+                    else
+                    {
+                        txtConvenioPaciente.Text = "Sem Convênio";
+                        convenioPaciente = null; // Caso o convênio não exista, mantém como null
+                    }
                 }
                 else
                 {
-                    // Caso o valor de Ativo_Inativo não seja 0 nem 1, podemos adicionar uma verificação de erro ou atribuir um valor padrão.
-                    cbAtivoInativo.SelectedItem = null;
+                    txtConvenioPaciente.Text = "Sem Convênio";
+                    convenioPaciente = null; // Sem convênio
                 }
 
-                // Verificação se o endereço foi encontrado
+                // Carregar nome do Responsável a partir do ID
+                if (paciente.Responsavel != null && paciente.Responsavel.Id > 0)
+                {
+                    // Verifica se o responsável existe e carrega o nome
+                    Responsavel responsavel = _responsavelController.ObterResponsavelPorId(paciente.Responsavel.Id);
+                    if (responsavel != null)
+                    {
+                        txtResponsavelPaciente.Text = responsavel.Nome;
+                        responsavelPaciente = responsavel; // Armazena o responsável selecionado
+                    }
+                    else
+                    {
+                        txtResponsavelPaciente.Text = "Sem Responsável";
+                        responsavelPaciente = null; // Caso o responsável não exista, mantém como null
+                    }
+                }
+                else
+                {
+                    txtResponsavelPaciente.Text = "Sem Responsável";
+                    responsavelPaciente = null; // Sem responsável
+                }
+
+                cbAtivoInativo.Text = paciente.Ativo_Inativo == 1 ? "Ativo" : "Inativo";
+
+                // Preencher os campos de endereço
                 if (endereco != null)
                 {
                     txtLogradouro.Text = endereco.Logradouro;
@@ -95,6 +128,7 @@ namespace ProjetoOdontoPOO.Views
                 MessageBox.Show($"Paciente com ID {_pacienteId} não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void DesabilitarCampos()
         {
@@ -130,21 +164,11 @@ namespace ProjetoOdontoPOO.Views
             string telefone = txtTelefonePaciente.Text;
             string email = txtEmailPaciente.Text;
 
-            int convenioId = Convert.ToInt32(txtConvenioPaciente.Text);
-            Convenio convenio = _convenioController.ObterConvenioPorId(convenioId);
-
-            int responsavelId = Convert.ToInt32(txtResponsavelPaciente.Text);
-            Responsavel responsavel = _responsavelController.ObterResponsavelPorId(responsavelId);
-
-            //// Convênio e responsável podem ser nulos
-            //int? convenioId = cbConvenioPaciente.SelectedIndex > -1 ? (int?)cbConvenioPaciente.SelectedValue : null;
-            //int? responsavelId = cbResponsavelPaciente.SelectedIndex > -1 ? (int?)cbResponsavelPaciente.SelectedValue : null;
-
             // Coleta o status Ativo/Inativo
             string status = cbAtivoInativo.SelectedItem.ToString();
             int ativoInativo = status == "Ativo" ? 1 : 0;
 
-            // Cria o objeto de Paciente
+            // Cria o objeto Paciente
             Paciente paciente = new Paciente
             {
                 Nome = nome,
@@ -154,12 +178,28 @@ namespace ProjetoOdontoPOO.Views
                 Sexo = sexo,
                 Telefone = telefone,
                 Email = email,
-                Convenio = convenio,
-                Responsavel = responsavel,
-                //Convenio = convenioId.HasValue ? new Convenio { Id = convenioId.Value } : null,
-                //Responsavel = responsavelId.HasValue ? new Responsavel { Id = responsavelId.Value } : null,
                 Ativo_Inativo = ativoInativo
             };
+
+            // Preserva o Convênio existente se não for alterado
+            if (convenioPaciente != null)
+            {
+                paciente.Convenio = convenioPaciente; // Atualiza com o novo Convênio
+            }
+            else if (paciente.Convenio == null)
+            {
+                paciente.Convenio = null; // Mantém como null se não selecionar nenhum novo Convênio
+            }
+
+            // Preserva o Responsável existente se não for alterado
+            if (responsavelPaciente != null)
+            {
+                paciente.Responsavel = responsavelPaciente; // Atualiza com o novo Responsável
+            }
+            else if (paciente.Responsavel == null)
+            {
+                paciente.Responsavel = null; // Mantém como null se não selecionar nenhum novo Responsável
+            }
 
             // Coleta os dados de endereço
             string logradouro = txtLogradouro.Text;
@@ -169,7 +209,7 @@ namespace ProjetoOdontoPOO.Views
             string cep = txtCEPEndereco.Text.Replace("-", "");
             string complemento = txtComplementoEndereco.Text;
 
-            // Cria o objeto de Endereço
+            // Cria o objeto Endereço
             Endereco endereco = new Endereco
             {
                 Logradouro = logradouro,
@@ -194,6 +234,8 @@ namespace ProjetoOdontoPOO.Views
                 MessageBox.Show("Erro ao atualizar o paciente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void btnLimparPaciente_Click(object sender, EventArgs e)
         {
@@ -224,6 +266,32 @@ namespace ProjetoOdontoPOO.Views
             dtpDataPaciente.Value = DateTime.Now;
         }
 
+        private void PesquisarConvenio()
+        {
+            frmSelecionarConvenio frm = new frmSelecionarConvenio(true);
+            DialogResult dialogResult = frm.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                convenioPaciente = frm.convenioSelecao;
+
+                txtConvenioPaciente.Text = convenioPaciente.Nome;
+            }
+        }
+
+        private void PesquisarResponsavel()
+        {
+            frmSelecionarResponsavel frm = new frmSelecionarResponsavel(true);
+            DialogResult dialogResult = frm.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+                responsavelPaciente = frm.responsavelSelecao;
+
+                txtResponsavelPaciente.Text = responsavelPaciente.Nome;
+            }
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -237,6 +305,16 @@ namespace ProjetoOdontoPOO.Views
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             pictureBox1.Image = Properties.Resources.icons8_close_window_32_outro;
+        }
+
+        private void btnConvenio_Click(object sender, EventArgs e)
+        {
+            PesquisarConvenio();
+        }
+
+        private void btnResponsavel_Click(object sender, EventArgs e)
+        {
+            PesquisarResponsavel();
         }
     }
 }

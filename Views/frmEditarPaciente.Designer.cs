@@ -454,6 +454,7 @@
             this.btnConvenio.TabIndex = 80;
             this.btnConvenio.Text = "...";
             this.btnConvenio.UseVisualStyleBackColor = true;
+            this.btnConvenio.Click += new System.EventHandler(this.btnConvenio_Click);
             // 
             // btnResponsavel
             // 
@@ -463,11 +464,12 @@
             this.btnResponsavel.TabIndex = 79;
             this.btnResponsavel.Text = "...";
             this.btnResponsavel.UseVisualStyleBackColor = true;
+            this.btnResponsavel.Click += new System.EventHandler(this.btnResponsavel_Click);
             // 
             // txtConvenioPaciente
             // 
             this.txtConvenioPaciente.Location = new System.Drawing.Point(44, 288);
-            this.txtConvenioPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConvenioPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.txtConvenioPaciente.Name = "txtConvenioPaciente";
             this.txtConvenioPaciente.Size = new System.Drawing.Size(204, 20);
             this.txtConvenioPaciente.TabIndex = 81;
@@ -475,7 +477,7 @@
             // txtResponsavelPaciente
             // 
             this.txtResponsavelPaciente.Location = new System.Drawing.Point(286, 288);
-            this.txtResponsavelPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtResponsavelPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.txtResponsavelPaciente.Name = "txtResponsavelPaciente";
             this.txtResponsavelPaciente.Size = new System.Drawing.Size(203, 20);
             this.txtResponsavelPaciente.TabIndex = 82;

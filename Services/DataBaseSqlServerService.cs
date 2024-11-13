@@ -14,7 +14,7 @@ namespace ProjetoOdontoPOO.Services
 
             // Dados para conectar ao banco
             conexao.ConnectionString = "Data Source=localhost;" + // Servidor
-                                       "Initial Catalog=ProjetoOdonto;" + // Nome do banco
+                                       "Initial Catalog=ProjetoOdontov2;" + // Nome do banco
                                        "Integrated Security=SSPI;" + // Autenticação do Windows (usuário logado)
                                        "User Instance=false;"; // Usar o usuário da máquina
 
