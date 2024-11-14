@@ -57,7 +57,7 @@ namespace ProjetoOdontoPOO.Views
                     doc.Add(new Paragraph($"Paciente: {txtNomePaciente.Text}"));
                     doc.Add(new Paragraph($"Médico: {txtNomeDentista.Text}"));
                     doc.Add(new Paragraph("\n"));
-                    doc.Add(new Paragraph(txtObsArquivo.Text)); 
+                    doc.Add(new Paragraph(txtObsArquivo.Text));
                     doc.Add(new Paragraph("\n"));
 
                     doc.Add(new Paragraph("\n"));
@@ -77,9 +77,9 @@ namespace ProjetoOdontoPOO.Views
                     MessageBox.Show("Documento gerado com sucesso!");
 
                     cbSelecionarArquivo.SelectedIndex = -1;
-                    txtNomePaciente.Clear(); 
-                    txtNomeDentista.Clear(); 
-                    txtObsArquivo.Clear(); 
+                    txtNomePaciente.Clear();
+                    txtNomeDentista.Clear();
+                    txtObsArquivo.Clear();
                 }
                 catch (Exception ex)
                 {

@@ -24,8 +24,7 @@ namespace ProjetoOdontoPOO.Views
 
         public void AtualizaDataHora()
         {
-            lblHora.Text = DateTime.Now.ToLongTimeString();
-            lblData.Text = DateTime.Now.ToLongDateString();
+            lblData.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
 
         private void timer1_Tick(object sender, EventArgs e)

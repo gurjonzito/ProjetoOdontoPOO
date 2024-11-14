@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPaciente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -484,7 +485,7 @@
             // txtConvenioPaciente
             // 
             this.txtConvenioPaciente.Location = new System.Drawing.Point(44, 291);
-            this.txtConvenioPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConvenioPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.txtConvenioPaciente.Name = "txtConvenioPaciente";
             this.txtConvenioPaciente.ReadOnly = true;
             this.txtConvenioPaciente.Size = new System.Drawing.Size(202, 20);
@@ -543,6 +544,7 @@
             this.Controls.Add(this.txtNomePaciente);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar Paciente";

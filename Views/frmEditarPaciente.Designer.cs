@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarPaciente));
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtIdadePaciente = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtNomePaciente = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.cbUFPaciente = new System.Windows.Forms.ComboBox();
@@ -69,6 +69,7 @@
             this.btnResponsavel = new System.Windows.Forms.Button();
             this.txtConvenioPaciente = new System.Windows.Forms.TextBox();
             this.txtResponsavelPaciente = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -365,22 +366,6 @@
             this.panel1.Size = new System.Drawing.Size(570, 47);
             this.panel1.TabIndex = 36;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(525, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.TabIndex = 77;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -469,7 +454,7 @@
             // txtConvenioPaciente
             // 
             this.txtConvenioPaciente.Location = new System.Drawing.Point(44, 288);
-            this.txtConvenioPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConvenioPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.txtConvenioPaciente.Name = "txtConvenioPaciente";
             this.txtConvenioPaciente.ReadOnly = true;
             this.txtConvenioPaciente.Size = new System.Drawing.Size(204, 20);
@@ -478,11 +463,27 @@
             // txtResponsavelPaciente
             // 
             this.txtResponsavelPaciente.Location = new System.Drawing.Point(286, 288);
-            this.txtResponsavelPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtResponsavelPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.txtResponsavelPaciente.Name = "txtResponsavelPaciente";
             this.txtResponsavelPaciente.ReadOnly = true;
             this.txtResponsavelPaciente.Size = new System.Drawing.Size(203, 20);
             this.txtResponsavelPaciente.TabIndex = 82;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(525, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 77;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // frmEditarPaciente
             // 
@@ -530,6 +531,7 @@
             this.Controls.Add(this.txtNomePaciente);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmEditarPaciente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

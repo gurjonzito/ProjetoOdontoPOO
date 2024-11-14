@@ -46,7 +46,7 @@ namespace ProjetoOdontoPOO.Views
 
                         if (!nome.Contains(termoPesquisa.ToLower()) && !crm.Contains(termoPesquisa.ToLower()))
                         {
-                            MessageBox.Show("Nenhum paciente encontrado com o nome ou CPF fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Nenhum dentista encontrado com o nome ou CRM fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                     }

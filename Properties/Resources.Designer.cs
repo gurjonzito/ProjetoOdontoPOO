@@ -73,36 +73,6 @@ namespace ProjetoOdontoPOO.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_fechar_janela_16 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-fechar-janela-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_fechar_janela_16__1_ {
-            get {
-                object obj = ResourceManager.GetObject("icons8-fechar-janela-16 (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_fechar_janela_16_outro {
-            get {
-                object obj = ResourceManager.GetObject("icons8-fechar-janela-16-outro", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap icons8_fechar_janela_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-fechar-janela-32", resourceCulture);

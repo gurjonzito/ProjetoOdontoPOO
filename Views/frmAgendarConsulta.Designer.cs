@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgendarConsulta));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,9 +55,8 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(689, 48);
+            this.panel1.Size = new System.Drawing.Size(517, 39);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -66,10 +66,9 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(633, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(475, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -81,20 +80,18 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(220, 11);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(165, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(202, 28);
+            this.label7.Size = new System.Drawing.Size(167, 23);
             this.label7.TabIndex = 60;
             this.label7.Text = "Agendar Consulta";
             // 
             // dtpDataConsulta
             // 
             this.dtpDataConsulta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDataConsulta.Location = new System.Drawing.Point(76, 121);
-            this.dtpDataConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDataConsulta.Location = new System.Drawing.Point(57, 98);
             this.dtpDataConsulta.Name = "dtpDataConsulta";
-            this.dtpDataConsulta.Size = new System.Drawing.Size(537, 22);
+            this.dtpDataConsulta.Size = new System.Drawing.Size(404, 20);
             this.dtpDataConsulta.TabIndex = 1;
             // 
             // label1
@@ -102,19 +99,17 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(72, 97);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(54, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 19);
+            this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Data";
             // 
             // txtObsConsulta
             // 
-            this.txtObsConsulta.Location = new System.Drawing.Point(76, 186);
-            this.txtObsConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtObsConsulta.Location = new System.Drawing.Point(57, 151);
             this.txtObsConsulta.Name = "txtObsConsulta";
-            this.txtObsConsulta.Size = new System.Drawing.Size(537, 117);
+            this.txtObsConsulta.Size = new System.Drawing.Size(404, 96);
             this.txtObsConsulta.TabIndex = 3;
             this.txtObsConsulta.Text = "";
             // 
@@ -123,10 +118,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(72, 162);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(54, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 19);
+            this.label2.Size = new System.Drawing.Size(82, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Observações";
             // 
@@ -135,10 +129,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(72, 324);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(54, 263);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 19);
+            this.label3.Size = new System.Drawing.Size(58, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Paciente";
             // 
@@ -147,10 +140,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(345, 324);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(259, 263);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 19);
+            this.label4.Size = new System.Drawing.Size(55, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Dentista";
             // 
@@ -159,10 +151,9 @@
             this.btnSalvarConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnSalvarConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalvarConsulta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvarConsulta.Location = new System.Drawing.Point(464, 433);
-            this.btnSalvarConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvarConsulta.Location = new System.Drawing.Point(348, 352);
             this.btnSalvarConsulta.Name = "btnSalvarConsulta";
-            this.btnSalvarConsulta.Size = new System.Drawing.Size(151, 43);
+            this.btnSalvarConsulta.Size = new System.Drawing.Size(113, 35);
             this.btnSalvarConsulta.TabIndex = 10;
             this.btnSalvarConsulta.Text = "Salvar";
             this.btnSalvarConsulta.UseVisualStyleBackColor = false;
@@ -173,10 +164,9 @@
             this.btnLimparConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnLimparConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLimparConsulta.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimparConsulta.Location = new System.Drawing.Point(76, 433);
-            this.btnLimparConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimparConsulta.Location = new System.Drawing.Point(57, 352);
             this.btnLimparConsulta.Name = "btnLimparConsulta";
-            this.btnLimparConsulta.Size = new System.Drawing.Size(151, 43);
+            this.btnLimparConsulta.Size = new System.Drawing.Size(113, 35);
             this.btnLimparConsulta.TabIndex = 9;
             this.btnLimparConsulta.Text = "Limpar";
             this.btnLimparConsulta.UseVisualStyleBackColor = false;
@@ -184,10 +174,9 @@
             // 
             // btnPaciente
             // 
-            this.btnPaciente.Location = new System.Drawing.Point(303, 345);
-            this.btnPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPaciente.Location = new System.Drawing.Point(227, 280);
             this.btnPaciente.Name = "btnPaciente";
-            this.btnPaciente.Size = new System.Drawing.Size(39, 28);
+            this.btnPaciente.Size = new System.Drawing.Size(29, 23);
             this.btnPaciente.TabIndex = 38;
             this.btnPaciente.Text = "...";
             this.btnPaciente.UseVisualStyleBackColor = true;
@@ -195,10 +184,9 @@
             // 
             // btnDentista
             // 
-            this.btnDentista.Location = new System.Drawing.Point(576, 345);
-            this.btnDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDentista.Location = new System.Drawing.Point(432, 280);
             this.btnDentista.Name = "btnDentista";
-            this.btnDentista.Size = new System.Drawing.Size(39, 28);
+            this.btnDentista.Size = new System.Drawing.Size(29, 23);
             this.btnDentista.TabIndex = 39;
             this.btnDentista.Text = "...";
             this.btnDentista.UseVisualStyleBackColor = true;
@@ -206,24 +194,26 @@
             // 
             // txtPaciente
             // 
-            this.txtPaciente.Location = new System.Drawing.Point(76, 348);
+            this.txtPaciente.Location = new System.Drawing.Point(57, 283);
+            this.txtPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPaciente.Name = "txtPaciente";
-            this.txtPaciente.Size = new System.Drawing.Size(220, 22);
+            this.txtPaciente.Size = new System.Drawing.Size(166, 20);
             this.txtPaciente.TabIndex = 40;
             // 
             // txtDentista
             // 
-            this.txtDentista.Location = new System.Drawing.Point(349, 348);
+            this.txtDentista.Location = new System.Drawing.Point(262, 283);
+            this.txtDentista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDentista.Name = "txtDentista";
-            this.txtDentista.Size = new System.Drawing.Size(220, 22);
+            this.txtDentista.Size = new System.Drawing.Size(166, 20);
             this.txtDentista.TabIndex = 41;
             // 
             // frmAgendarConsulta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(689, 530);
+            this.ClientSize = new System.Drawing.Size(517, 431);
             this.Controls.Add(this.txtDentista);
             this.Controls.Add(this.txtPaciente);
             this.Controls.Add(this.btnDentista);
@@ -238,7 +228,7 @@
             this.Controls.Add(this.dtpDataConsulta);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAgendarConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agendar Consulta";
