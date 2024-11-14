@@ -64,7 +64,7 @@
             this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(395, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(43, 39);
             this.pictureBox1.TabIndex = 103;
@@ -93,8 +93,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(266, 133);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Desenvolvido por:\r\n\r\nAlan Miguel Gurjon Elias\r\nEduardo da Mata Panzeri\r\nPedro Luc" +
-    "ena\r\n\r\nSistemas de Informação - 2° ano B\r\n";
+            this.label2.Text = "Desenvolvido por:\r\n\r\nAlan Miguel Gurjon Elias\r\nEduardo da Mata Panzeri\r\nPedro Hen" +
+    "rique Lucena de Freitas\r\n\r\nSistemas de Informação - 2° ano B\r\n";
             // 
             // groupBox1
             // 
@@ -176,7 +176,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSobre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sobre";

@@ -1,9 +1,7 @@
-﻿using ProjetoOdontoPOO.Services;
-using System.Data.SqlClient;
-using System.Data;
+﻿using ProjetoOdontoPOO.Controllers;
 using System;
+using System.Data;
 using System.Windows.Forms;
-using ProjetoOdontoPOO.Controllers;
 
 namespace ProjetoOdontoPOO.Views
 {

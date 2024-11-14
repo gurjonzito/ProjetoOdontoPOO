@@ -21,12 +21,20 @@ namespace ProjetoOdontoPOO.Views
 
             _dentistaController = new DentistaController();
 
+            CarregarComboBoxes();
             CarregarDadosDentista();
 
             if (_modoVisualizacao)
             {
                 DesabilitarCampos();
             }
+        }
+
+        private void CarregarComboBoxes()
+        {
+            cbAtivoInativo.Items.Clear();
+            cbAtivoInativo.Items.Add("Ativo");
+            cbAtivoInativo.Items.Add("Inativo");
         }
 
         private void CarregarDadosDentista()
@@ -40,6 +48,7 @@ namespace ProjetoOdontoPOO.Views
                 cbEstadoDentista.Text = dentista.Estado;
                 txtEspDentista.Text = dentista.Especialidade;
                 txtTelefoneDentista.Text = dentista.Telefone;
+                cbAtivoInativo.Text = dentista.Ativo_Inativo == 1 ? "Ativo" : "Inativo";
             }
             else
             {
@@ -55,6 +64,7 @@ namespace ProjetoOdontoPOO.Views
             txtTelefoneDentista.Enabled = false;
             cbEstadoDentista.Enabled = false;
             btnSalvarDentista.Visible = false;
+            cbAtivoInativo.Enabled = false;
         }
 
         private void btnSalvarDentista_Click(object sender, EventArgs e)
@@ -67,6 +77,9 @@ namespace ProjetoOdontoPOO.Views
                 string telefone = txtTelefoneDentista.Text;
                 string especialidade = txtEspDentista.Text;
 
+                string status = cbAtivoInativo.SelectedItem.ToString();
+                int ativoInativo = status == "Ativo" ? 1 : 0;
+
                 Dentista dentista = new Dentista
                 {
                     Nome = nome,
@@ -74,6 +87,7 @@ namespace ProjetoOdontoPOO.Views
                     Estado = estado,
                     Telefone = telefone,
                     Especialidade = especialidade,
+                    Ativo_Inativo = ativoInativo
                 };
 
                 bool atualizado = _dentistaController.AtualizarDentista(_dentistaId, dentista);

@@ -40,7 +40,8 @@ namespace ProjetoOdontoPOO.Repositories
                                 CRM = reader.GetString(reader.GetOrdinal("Den_CRM")),
                                 Estado = reader.GetString(reader.GetOrdinal("Den_Estado")),
                                 Especialidade = reader.GetString(reader.GetOrdinal("Den_Especialidade")),
-                                Telefone = reader.GetString(reader.GetOrdinal("Den_Telefone"))
+                                Telefone = reader.GetString(reader.GetOrdinal("Den_Telefone")),
+                                Ativo_Inativo = reader.GetInt32(reader.GetOrdinal("Ativo_Inativo"))
                             };
                         }
                     }
@@ -119,7 +120,8 @@ namespace ProjetoOdontoPOO.Repositories
                                  Den_CRM = @CRM,
                                  Den_Estado = @Estado,
                                  Den_Especialidade = @Especialidade,
-                                 Den_Telefone = @Telefone
+                                 Den_Telefone = @Telefone,
+                                 Ativo_Inativo = @AtivoInativo
                              WHERE Den_ID = @ID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao, transacao))
@@ -132,6 +134,7 @@ namespace ProjetoOdontoPOO.Repositories
                         cmd.Parameters.AddWithValue("@Estado", dentista.Estado);
                         cmd.Parameters.AddWithValue("@Especialidade", dentista.Especialidade);
                         cmd.Parameters.AddWithValue("@Telefone", telefoneLimpo);
+                        cmd.Parameters.AddWithValue("@AtivoInativo", dentista.Ativo_Inativo);
 
                         cmd.ExecuteNonQuery();
                     }

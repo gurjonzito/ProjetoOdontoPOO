@@ -13,7 +13,7 @@ namespace ProjetoOdontoPOO.Services
             SqlConnection conexao = new SqlConnection();
 
             // Dados para conectar ao banco
-            conexao.ConnectionString = "Data Source=localhost;" + // Servidor
+            conexao.ConnectionString = "Data Source=MTZNOTFS061604\\SQLEXPRESS;" + // Servidor
                                        "Initial Catalog=ProjetoOdontov2;" + // Nome do banco
                                        "Integrated Security=SSPI;" + // Autenticação do Windows (usuário logado)
                                        "User Instance=false;"; // Usar o usuário da máquina

@@ -62,7 +62,7 @@
             "Feminino",
             "Outro"});
             this.cbSexoRes.Location = new System.Drawing.Point(397, 199);
-            this.cbSexoRes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSexoRes.Margin = new System.Windows.Forms.Padding(4);
             this.cbSexoRes.Name = "cbSexoRes";
             this.cbSexoRes.Size = new System.Drawing.Size(300, 24);
             this.cbSexoRes.TabIndex = 88;
@@ -94,7 +94,7 @@
             // txtIdadeRes
             // 
             this.txtIdadeRes.Location = new System.Drawing.Point(61, 199);
-            this.txtIdadeRes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIdadeRes.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdadeRes.Name = "txtIdadeRes";
             this.txtIdadeRes.ReadOnly = true;
             this.txtIdadeRes.Size = new System.Drawing.Size(71, 22);
@@ -103,7 +103,7 @@
             // txtCPFRes
             // 
             this.txtCPFRes.Location = new System.Drawing.Point(141, 199);
-            this.txtCPFRes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCPFRes.Margin = new System.Windows.Forms.Padding(4);
             this.txtCPFRes.Mask = "999.999.999-99";
             this.txtCPFRes.Name = "txtCPFRes";
             this.txtCPFRes.Size = new System.Drawing.Size(247, 22);
@@ -124,7 +124,7 @@
             // txtTelefoneRes
             // 
             this.txtTelefoneRes.Location = new System.Drawing.Point(61, 257);
-            this.txtTelefoneRes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefoneRes.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefoneRes.Mask = "(00) 00000-0000";
             this.txtTelefoneRes.Name = "txtTelefoneRes";
             this.txtTelefoneRes.Size = new System.Drawing.Size(247, 22);
@@ -145,7 +145,7 @@
             // txtParentescoRes
             // 
             this.txtParentescoRes.Location = new System.Drawing.Point(317, 257);
-            this.txtParentescoRes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtParentescoRes.Margin = new System.Windows.Forms.Padding(4);
             this.txtParentescoRes.Name = "txtParentescoRes";
             this.txtParentescoRes.Size = new System.Drawing.Size(380, 22);
             this.txtParentescoRes.TabIndex = 91;
@@ -178,7 +178,7 @@
             // 
             this.dtpDataRes.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataRes.Location = new System.Drawing.Point(488, 140);
-            this.dtpDataRes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDataRes.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDataRes.Name = "dtpDataRes";
             this.dtpDataRes.Size = new System.Drawing.Size(209, 22);
             this.dtpDataRes.TabIndex = 83;
@@ -198,7 +198,7 @@
             // txtNomeRes
             // 
             this.txtNomeRes.Location = new System.Drawing.Point(61, 140);
-            this.txtNomeRes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomeRes.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeRes.Name = "txtNomeRes";
             this.txtNomeRes.Size = new System.Drawing.Size(416, 22);
             this.txtNomeRes.TabIndex = 82;
@@ -209,7 +209,7 @@
             this.btnSalvarResponsavel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalvarResponsavel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarResponsavel.Location = new System.Drawing.Point(61, 470);
-            this.btnSalvarResponsavel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvarResponsavel.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalvarResponsavel.Name = "btnSalvarResponsavel";
             this.btnSalvarResponsavel.Size = new System.Drawing.Size(637, 43);
             this.btnSalvarResponsavel.TabIndex = 80;
@@ -224,7 +224,7 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(764, 58);
             this.panel1.TabIndex = 81;
@@ -237,7 +237,7 @@
             this.pictureBox1.Image = global::ProjetoOdontoPOO.Properties.Resources.icons8_close_window_32_outro;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(707, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(43, 39);
             this.pictureBox1.TabIndex = 99;
@@ -265,8 +265,8 @@
             this.cbAtivoInativo.Items.AddRange(new object[] {
             "Ativo",
             "Inativo"});
-            this.cbAtivoInativo.Location = new System.Drawing.Point(61, 401);
-            this.cbAtivoInativo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbAtivoInativo.Location = new System.Drawing.Point(61, 400);
+            this.cbAtivoInativo.Margin = new System.Windows.Forms.Padding(4);
             this.cbAtivoInativo.Name = "cbAtivoInativo";
             this.cbAtivoInativo.Size = new System.Drawing.Size(351, 24);
             this.cbAtivoInativo.TabIndex = 98;
@@ -276,7 +276,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.Window;
-            this.label20.Location = new System.Drawing.Point(61, 378);
+            this.label20.Location = new System.Drawing.Point(61, 377);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(139, 19);
@@ -288,7 +288,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.Window;
-            this.label19.Location = new System.Drawing.Point(60, 316);
+            this.label19.Location = new System.Drawing.Point(58, 319);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(158, 28);
@@ -321,7 +321,7 @@
             this.Controls.Add(this.btnSalvarResponsavel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmEditarResponsavel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -129,7 +129,6 @@ namespace ProjetoOdontoPOO.Views
             }
         }
 
-
         private void DesabilitarCampos()
         {
             txtNomePaciente.Enabled = false;
@@ -245,6 +244,7 @@ namespace ProjetoOdontoPOO.Views
                 MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void PesquisarConvenio()
         {
             frmSelecionarConvenio frm = new frmSelecionarConvenio(true);

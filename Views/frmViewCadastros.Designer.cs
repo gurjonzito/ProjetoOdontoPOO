@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewCadastros));
             this.tabControlVisualizar = new System.Windows.Forms.TabControl();
             this.tpPaciente = new System.Windows.Forms.TabPage();
             this.txtBuscarCPFPac = new System.Windows.Forms.MaskedTextBox();
@@ -85,27 +86,27 @@
             this.CRM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpConsulta = new System.Windows.Forms.TabPage();
+            this.txtBuscarConsulta = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBuscarConsulta = new System.Windows.Forms.Button();
             this.dgvConsulta = new System.Windows.Forms.DataGridView();
-            this.tpPagamento = new System.Windows.Forms.TabPage();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnBuscarPagamento = new System.Windows.Forms.Button();
-            this.dgvPagamento = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBuscarConsulta = new System.Windows.Forms.TextBox();
             this.IDCons = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PacienteCons = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dentista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tpPagamento = new System.Windows.Forms.TabPage();
+            this.txtBuscarPagamento = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnBuscarPagamento = new System.Windows.Forms.Button();
+            this.dgvPagamento = new System.Windows.Forms.DataGridView();
             this.IDPag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PacientePag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtBuscarPagamento = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControlVisualizar.SuspendLayout();
             this.tpPaciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaciente)).BeginInit();
@@ -130,10 +131,11 @@
             this.tabControlVisualizar.Controls.Add(this.tpDentista);
             this.tabControlVisualizar.Controls.Add(this.tpConsulta);
             this.tabControlVisualizar.Controls.Add(this.tpPagamento);
-            this.tabControlVisualizar.Location = new System.Drawing.Point(1, 52);
+            this.tabControlVisualizar.Location = new System.Drawing.Point(1, 64);
+            this.tabControlVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControlVisualizar.Name = "tabControlVisualizar";
             this.tabControlVisualizar.SelectedIndex = 0;
-            this.tabControlVisualizar.Size = new System.Drawing.Size(991, 544);
+            this.tabControlVisualizar.Size = new System.Drawing.Size(1321, 670);
             this.tabControlVisualizar.TabIndex = 0;
             this.tabControlVisualizar.SelectedIndexChanged += new System.EventHandler(this.tabControlVisualizar_SelectedIndexChanged);
             this.tabControlVisualizar.Click += new System.EventHandler(this.btnBuscarCPFPaciente_Click);
@@ -146,19 +148,21 @@
             this.tpPaciente.Controls.Add(this.btnBuscarCPFPaciente);
             this.tpPaciente.Controls.Add(this.dgvPaciente);
             this.tpPaciente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpPaciente.Location = new System.Drawing.Point(4, 22);
+            this.tpPaciente.Location = new System.Drawing.Point(4, 25);
+            this.tpPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpPaciente.Name = "tpPaciente";
-            this.tpPaciente.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tpPaciente.Size = new System.Drawing.Size(983, 518);
+            this.tpPaciente.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpPaciente.Size = new System.Drawing.Size(1313, 641);
             this.tpPaciente.TabIndex = 0;
             this.tpPaciente.Text = "Paciente";
             // 
             // txtBuscarCPFPac
             // 
-            this.txtBuscarCPFPac.Location = new System.Drawing.Point(46, 75);
+            this.txtBuscarCPFPac.Location = new System.Drawing.Point(61, 92);
+            this.txtBuscarCPFPac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscarCPFPac.Mask = "999,999,999-99";
             this.txtBuscarCPFPac.Name = "txtBuscarCPFPac";
-            this.txtBuscarCPFPac.Size = new System.Drawing.Size(265, 26);
+            this.txtBuscarCPFPac.Size = new System.Drawing.Size(352, 30);
             this.txtBuscarCPFPac.TabIndex = 1;
             // 
             // label2
@@ -166,17 +170,19 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(42, 38);
+            this.label2.Location = new System.Drawing.Point(56, 47);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 23);
+            this.label2.Size = new System.Drawing.Size(174, 28);
             this.label2.TabIndex = 3;
             this.label2.Text = "Busca por CPF";
             // 
             // btnBuscarCPFPaciente
             // 
-            this.btnBuscarCPFPaciente.Location = new System.Drawing.Point(317, 75);
+            this.btnBuscarCPFPaciente.Location = new System.Drawing.Point(423, 92);
+            this.btnBuscarCPFPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscarCPFPaciente.Name = "btnBuscarCPFPaciente";
-            this.btnBuscarCPFPaciente.Size = new System.Drawing.Size(111, 26);
+            this.btnBuscarCPFPaciente.Size = new System.Drawing.Size(148, 32);
             this.btnBuscarCPFPaciente.TabIndex = 2;
             this.btnBuscarCPFPaciente.Text = "Buscar";
             this.btnBuscarCPFPaciente.UseVisualStyleBackColor = true;
@@ -188,12 +194,12 @@
             this.dgvPaciente.AllowUserToDeleteRows = false;
             this.dgvPaciente.AllowUserToResizeColumns = false;
             this.dgvPaciente.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvPaciente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvPaciente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPaciente.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPaciente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -205,20 +211,21 @@
             this.Convênio,
             this.Responsável,
             this.Ativo_Inativo});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaciente.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPaciente.Location = new System.Drawing.Point(46, 124);
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaciente.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvPaciente.Location = new System.Drawing.Point(61, 153);
+            this.dgvPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvPaciente.Name = "dgvPaciente";
             this.dgvPaciente.RowHeadersVisible = false;
             this.dgvPaciente.RowHeadersWidth = 51;
             this.dgvPaciente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPaciente.Size = new System.Drawing.Size(889, 353);
+            this.dgvPaciente.Size = new System.Drawing.Size(1185, 434);
             this.dgvPaciente.TabIndex = 3;
             this.dgvPaciente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaciente_CellDoubleClick);
             // 
@@ -248,9 +255,9 @@
             // 
             // CPF
             // 
-            dataGridViewCellStyle2.Format = "###.###.###-##";
-            dataGridViewCellStyle2.NullValue = null;
-            this.CPF.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle15.Format = "###.###.###-##";
+            dataGridViewCellStyle15.NullValue = null;
+            this.CPF.DefaultCellStyle = dataGridViewCellStyle15;
             this.CPF.HeaderText = "CPF";
             this.CPF.MinimumWidth = 6;
             this.CPF.Name = "CPF";
@@ -297,20 +304,22 @@
             this.tpResponsavel.Controls.Add(this.btnBuscarCPFResponsavel);
             this.tpResponsavel.Controls.Add(this.dgvResponsavel);
             this.tpResponsavel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpResponsavel.Location = new System.Drawing.Point(4, 22);
+            this.tpResponsavel.Location = new System.Drawing.Point(4, 25);
+            this.tpResponsavel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpResponsavel.Name = "tpResponsavel";
-            this.tpResponsavel.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tpResponsavel.Size = new System.Drawing.Size(983, 518);
+            this.tpResponsavel.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpResponsavel.Size = new System.Drawing.Size(1313, 641);
             this.tpResponsavel.TabIndex = 1;
             this.tpResponsavel.Text = "Responsável";
             // 
             // txtBuscarCPFRes
             // 
             this.txtBuscarCPFRes.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarCPFRes.Location = new System.Drawing.Point(46, 75);
+            this.txtBuscarCPFRes.Location = new System.Drawing.Point(61, 92);
+            this.txtBuscarCPFRes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscarCPFRes.Mask = "000,000,000-00";
             this.txtBuscarCPFRes.Name = "txtBuscarCPFRes";
-            this.txtBuscarCPFRes.Size = new System.Drawing.Size(265, 26);
+            this.txtBuscarCPFRes.Size = new System.Drawing.Size(352, 30);
             this.txtBuscarCPFRes.TabIndex = 1;
             // 
             // label3
@@ -318,17 +327,19 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(42, 38);
+            this.label3.Location = new System.Drawing.Point(56, 47);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 23);
+            this.label3.Size = new System.Drawing.Size(174, 28);
             this.label3.TabIndex = 6;
             this.label3.Text = "Busca por CPF";
             // 
             // btnBuscarCPFResponsavel
             // 
-            this.btnBuscarCPFResponsavel.Location = new System.Drawing.Point(317, 75);
+            this.btnBuscarCPFResponsavel.Location = new System.Drawing.Point(423, 92);
+            this.btnBuscarCPFResponsavel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscarCPFResponsavel.Name = "btnBuscarCPFResponsavel";
-            this.btnBuscarCPFResponsavel.Size = new System.Drawing.Size(111, 26);
+            this.btnBuscarCPFResponsavel.Size = new System.Drawing.Size(148, 32);
             this.btnBuscarCPFResponsavel.TabIndex = 2;
             this.btnBuscarCPFResponsavel.Text = "Buscar";
             this.btnBuscarCPFResponsavel.UseVisualStyleBackColor = true;
@@ -340,11 +351,11 @@
             this.dgvResponsavel.AllowUserToDeleteRows = false;
             this.dgvResponsavel.AllowUserToResizeColumns = false;
             this.dgvResponsavel.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvResponsavel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvResponsavel.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvResponsavel.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvResponsavel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResponsavel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -354,20 +365,21 @@
             this.CPFRes,
             this.SexoRes,
             this.Ativo_InativoRes});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvResponsavel.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvResponsavel.Location = new System.Drawing.Point(46, 124);
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResponsavel.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvResponsavel.Location = new System.Drawing.Point(61, 153);
+            this.dgvResponsavel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvResponsavel.Name = "dgvResponsavel";
             this.dgvResponsavel.RowHeadersVisible = false;
             this.dgvResponsavel.RowHeadersWidth = 51;
             this.dgvResponsavel.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvResponsavel.Size = new System.Drawing.Size(889, 355);
+            this.dgvResponsavel.Size = new System.Drawing.Size(1185, 437);
             this.dgvResponsavel.TabIndex = 3;
             this.dgvResponsavel.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResponsavel_CellDoubleClick);
             // 
@@ -427,20 +439,22 @@
             this.tpConvenio.Controls.Add(this.btnBuscarCNPJ);
             this.tpConvenio.Controls.Add(this.dgvConvenio);
             this.tpConvenio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpConvenio.Location = new System.Drawing.Point(4, 22);
+            this.tpConvenio.Location = new System.Drawing.Point(4, 25);
+            this.tpConvenio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpConvenio.Name = "tpConvenio";
-            this.tpConvenio.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tpConvenio.Size = new System.Drawing.Size(983, 518);
+            this.tpConvenio.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpConvenio.Size = new System.Drawing.Size(1313, 641);
             this.tpConvenio.TabIndex = 2;
             this.tpConvenio.Text = "Convênio";
             // 
             // txtBuscarCNPJ
             // 
             this.txtBuscarCNPJ.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarCNPJ.Location = new System.Drawing.Point(46, 75);
-            this.txtBuscarCNPJ.Mask = "00,000.,000/0000-00";
+            this.txtBuscarCNPJ.Location = new System.Drawing.Point(61, 92);
+            this.txtBuscarCNPJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarCNPJ.Mask = "00,000,000/0000-00";
             this.txtBuscarCNPJ.Name = "txtBuscarCNPJ";
-            this.txtBuscarCNPJ.Size = new System.Drawing.Size(265, 26);
+            this.txtBuscarCNPJ.Size = new System.Drawing.Size(352, 30);
             this.txtBuscarCNPJ.TabIndex = 1;
             // 
             // label4
@@ -448,17 +462,19 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(42, 38);
+            this.label4.Location = new System.Drawing.Point(56, 47);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 23);
+            this.label4.Size = new System.Drawing.Size(188, 28);
             this.label4.TabIndex = 10;
             this.label4.Text = "Busca por CNPJ";
             // 
             // btnBuscarCNPJ
             // 
-            this.btnBuscarCNPJ.Location = new System.Drawing.Point(317, 75);
+            this.btnBuscarCNPJ.Location = new System.Drawing.Point(423, 92);
+            this.btnBuscarCNPJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscarCNPJ.Name = "btnBuscarCNPJ";
-            this.btnBuscarCNPJ.Size = new System.Drawing.Size(111, 26);
+            this.btnBuscarCNPJ.Size = new System.Drawing.Size(148, 32);
             this.btnBuscarCNPJ.TabIndex = 2;
             this.btnBuscarCNPJ.Text = "Buscar";
             this.btnBuscarCNPJ.UseVisualStyleBackColor = true;
@@ -470,11 +486,11 @@
             this.dgvConvenio.AllowUserToDeleteRows = false;
             this.dgvConvenio.AllowUserToResizeColumns = false;
             this.dgvConvenio.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvConvenio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvConvenio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvConvenio.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvConvenio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConvenio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -482,20 +498,21 @@
             this.NomeConv,
             this.CNPJ,
             this.Ativo_InativoConv});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvConvenio.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvConvenio.Location = new System.Drawing.Point(46, 124);
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvConvenio.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvConvenio.Location = new System.Drawing.Point(61, 153);
+            this.dgvConvenio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvConvenio.Name = "dgvConvenio";
             this.dgvConvenio.RowHeadersVisible = false;
             this.dgvConvenio.RowHeadersWidth = 51;
             this.dgvConvenio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvConvenio.Size = new System.Drawing.Size(889, 355);
+            this.dgvConvenio.Size = new System.Drawing.Size(1185, 437);
             this.dgvConvenio.TabIndex = 3;
             this.dgvConvenio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConvenio_CellDoubleClick);
             // 
@@ -539,20 +556,22 @@
             this.tpDentista.Controls.Add(this.btnBuscarCRM);
             this.tpDentista.Controls.Add(this.dgvDentista);
             this.tpDentista.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpDentista.Location = new System.Drawing.Point(4, 22);
+            this.tpDentista.Location = new System.Drawing.Point(4, 25);
+            this.tpDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpDentista.Name = "tpDentista";
-            this.tpDentista.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tpDentista.Size = new System.Drawing.Size(983, 518);
+            this.tpDentista.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpDentista.Size = new System.Drawing.Size(1313, 641);
             this.tpDentista.TabIndex = 3;
             this.tpDentista.Text = "Dentista";
             // 
             // txtBuscarCRM
             // 
             this.txtBuscarCRM.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarCRM.Location = new System.Drawing.Point(46, 75);
+            this.txtBuscarCRM.Location = new System.Drawing.Point(61, 92);
+            this.txtBuscarCRM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscarCRM.Mask = "000000";
             this.txtBuscarCRM.Name = "txtBuscarCRM";
-            this.txtBuscarCRM.Size = new System.Drawing.Size(265, 26);
+            this.txtBuscarCRM.Size = new System.Drawing.Size(352, 30);
             this.txtBuscarCRM.TabIndex = 1;
             // 
             // label5
@@ -560,17 +579,19 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(42, 38);
+            this.label5.Location = new System.Drawing.Point(56, 47);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 23);
+            this.label5.Size = new System.Drawing.Size(180, 28);
             this.label5.TabIndex = 14;
             this.label5.Text = "Busca por CRM";
             // 
             // btnBuscarCRM
             // 
-            this.btnBuscarCRM.Location = new System.Drawing.Point(317, 75);
+            this.btnBuscarCRM.Location = new System.Drawing.Point(423, 92);
+            this.btnBuscarCRM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscarCRM.Name = "btnBuscarCRM";
-            this.btnBuscarCRM.Size = new System.Drawing.Size(111, 26);
+            this.btnBuscarCRM.Size = new System.Drawing.Size(148, 32);
             this.btnBuscarCRM.TabIndex = 2;
             this.btnBuscarCRM.Text = "Buscar";
             this.btnBuscarCRM.UseVisualStyleBackColor = true;
@@ -582,11 +603,11 @@
             this.dgvDentista.AllowUserToDeleteRows = false;
             this.dgvDentista.AllowUserToResizeColumns = false;
             this.dgvDentista.AllowUserToResizeRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvDentista.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvDentista.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvDentista.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvDentista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDentista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -594,20 +615,21 @@
             this.dataGridViewTextBoxColumn2,
             this.CRM,
             this.dataGridViewTextBoxColumn4});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDentista.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvDentista.Location = new System.Drawing.Point(46, 124);
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDentista.DefaultCellStyle = dataGridViewCellStyle22;
+            this.dgvDentista.Location = new System.Drawing.Point(61, 153);
+            this.dgvDentista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDentista.Name = "dgvDentista";
             this.dgvDentista.RowHeadersVisible = false;
             this.dgvDentista.RowHeadersWidth = 51;
             this.dgvDentista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDentista.Size = new System.Drawing.Size(889, 355);
+            this.dgvDentista.Size = new System.Drawing.Size(1185, 437);
             this.dgvDentista.TabIndex = 3;
             this.dgvDentista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDentista_CellDoubleClick);
             // 
@@ -651,30 +673,42 @@
             this.tpConsulta.Controls.Add(this.btnBuscarConsulta);
             this.tpConsulta.Controls.Add(this.dgvConsulta);
             this.tpConsulta.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpConsulta.Location = new System.Drawing.Point(4, 22);
+            this.tpConsulta.Location = new System.Drawing.Point(4, 25);
+            this.tpConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpConsulta.Name = "tpConsulta";
-            this.tpConsulta.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tpConsulta.Size = new System.Drawing.Size(983, 518);
+            this.tpConsulta.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpConsulta.Size = new System.Drawing.Size(1313, 641);
             this.tpConsulta.TabIndex = 4;
             this.tpConsulta.Text = "Consulta";
+            // 
+            // txtBuscarConsulta
+            // 
+            this.txtBuscarConsulta.Location = new System.Drawing.Point(61, 92);
+            this.txtBuscarConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarConsulta.MaxLength = 100;
+            this.txtBuscarConsulta.Name = "txtBuscarConsulta";
+            this.txtBuscarConsulta.Size = new System.Drawing.Size(352, 30);
+            this.txtBuscarConsulta.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(42, 38);
+            this.label6.Location = new System.Drawing.Point(56, 47);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(265, 23);
+            this.label6.Size = new System.Drawing.Size(322, 28);
             this.label6.TabIndex = 18;
             this.label6.Text = "Busca por Nome do Paciente";
             // 
             // btnBuscarConsulta
             // 
             this.btnBuscarConsulta.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarConsulta.Location = new System.Drawing.Point(317, 75);
+            this.btnBuscarConsulta.Location = new System.Drawing.Point(423, 92);
+            this.btnBuscarConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscarConsulta.Name = "btnBuscarConsulta";
-            this.btnBuscarConsulta.Size = new System.Drawing.Size(111, 26);
+            this.btnBuscarConsulta.Size = new System.Drawing.Size(148, 32);
             this.btnBuscarConsulta.TabIndex = 2;
             this.btnBuscarConsulta.Text = "Buscar";
             this.btnBuscarConsulta.UseVisualStyleBackColor = true;
@@ -686,11 +720,11 @@
             this.dgvConsulta.AllowUserToDeleteRows = false;
             this.dgvConsulta.AllowUserToResizeColumns = false;
             this.dgvConsulta.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvConsulta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvConsulta.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle23;
             this.dgvConsulta.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dgvConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -698,124 +732,23 @@
             this.dataGridViewTextBoxColumn6,
             this.PacienteCons,
             this.Dentista});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvConsulta.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvConsulta.Location = new System.Drawing.Point(46, 124);
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvConsulta.DefaultCellStyle = dataGridViewCellStyle24;
+            this.dgvConsulta.Location = new System.Drawing.Point(61, 153);
+            this.dgvConsulta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvConsulta.Name = "dgvConsulta";
             this.dgvConsulta.RowHeadersVisible = false;
             this.dgvConsulta.RowHeadersWidth = 51;
             this.dgvConsulta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvConsulta.Size = new System.Drawing.Size(889, 355);
+            this.dgvConsulta.Size = new System.Drawing.Size(1185, 437);
             this.dgvConsulta.TabIndex = 3;
             this.dgvConsulta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsulta_CellDoubleClick);
-            // 
-            // tpPagamento
-            // 
-            this.tpPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
-            this.tpPagamento.Controls.Add(this.txtBuscarPagamento);
-            this.tpPagamento.Controls.Add(this.label7);
-            this.tpPagamento.Controls.Add(this.btnBuscarPagamento);
-            this.tpPagamento.Controls.Add(this.dgvPagamento);
-            this.tpPagamento.Font = new System.Drawing.Font("Arial", 12F);
-            this.tpPagamento.Location = new System.Drawing.Point(4, 22);
-            this.tpPagamento.Name = "tpPagamento";
-            this.tpPagamento.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tpPagamento.Size = new System.Drawing.Size(983, 518);
-            this.tpPagamento.TabIndex = 5;
-            this.tpPagamento.Text = "Pagamento";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(42, 38);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(265, 23);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Busca por Nome do Paciente";
-            // 
-            // btnBuscarPagamento
-            // 
-            this.btnBuscarPagamento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarPagamento.Location = new System.Drawing.Point(317, 75);
-            this.btnBuscarPagamento.Name = "btnBuscarPagamento";
-            this.btnBuscarPagamento.Size = new System.Drawing.Size(111, 26);
-            this.btnBuscarPagamento.TabIndex = 2;
-            this.btnBuscarPagamento.Text = "Buscar";
-            this.btnBuscarPagamento.UseVisualStyleBackColor = true;
-            this.btnBuscarPagamento.Click += new System.EventHandler(this.btnBuscarPagamento_Click);
-            // 
-            // dgvPagamento
-            // 
-            this.dgvPagamento.AllowUserToAddRows = false;
-            this.dgvPagamento.AllowUserToDeleteRows = false;
-            this.dgvPagamento.AllowUserToResizeColumns = false;
-            this.dgvPagamento.AllowUserToResizeRows = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvPagamento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvPagamento.BackgroundColor = System.Drawing.Color.LightSteelBlue;
-            this.dgvPagamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDPag,
-            this.dataGridViewTextBoxColumn8,
-            this.PacientePag,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 12F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Indigo;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPagamento.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvPagamento.Location = new System.Drawing.Point(46, 124);
-            this.dgvPagamento.Name = "dgvPagamento";
-            this.dgvPagamento.RowHeadersVisible = false;
-            this.dgvPagamento.RowHeadersWidth = 51;
-            this.dgvPagamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPagamento.Size = new System.Drawing.Size(889, 355);
-            this.dgvPagamento.TabIndex = 3;
-            this.dgvPagamento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagamento_CellDoubleClick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(992, 46);
-            this.panel1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(401, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Visualizar Cadastros";
-            // 
-            // txtBuscarConsulta
-            // 
-            this.txtBuscarConsulta.Location = new System.Drawing.Point(46, 75);
-            this.txtBuscarConsulta.MaxLength = 100;
-            this.txtBuscarConsulta.Name = "txtBuscarConsulta";
-            this.txtBuscarConsulta.Size = new System.Drawing.Size(265, 26);
-            this.txtBuscarConsulta.TabIndex = 1;
             // 
             // IDCons
             // 
@@ -848,6 +781,93 @@
             this.Dentista.Name = "Dentista";
             this.Dentista.ReadOnly = true;
             this.Dentista.Width = 250;
+            // 
+            // tpPagamento
+            // 
+            this.tpPagamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.tpPagamento.Controls.Add(this.txtBuscarPagamento);
+            this.tpPagamento.Controls.Add(this.label7);
+            this.tpPagamento.Controls.Add(this.btnBuscarPagamento);
+            this.tpPagamento.Controls.Add(this.dgvPagamento);
+            this.tpPagamento.Font = new System.Drawing.Font("Arial", 12F);
+            this.tpPagamento.Location = new System.Drawing.Point(4, 25);
+            this.tpPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpPagamento.Name = "tpPagamento";
+            this.tpPagamento.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpPagamento.Size = new System.Drawing.Size(1313, 641);
+            this.tpPagamento.TabIndex = 5;
+            this.tpPagamento.Text = "Pagamento";
+            // 
+            // txtBuscarPagamento
+            // 
+            this.txtBuscarPagamento.Location = new System.Drawing.Point(61, 92);
+            this.txtBuscarPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscarPagamento.MaxLength = 100;
+            this.txtBuscarPagamento.Name = "txtBuscarPagamento";
+            this.txtBuscarPagamento.Size = new System.Drawing.Size(352, 30);
+            this.txtBuscarPagamento.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Window;
+            this.label7.Location = new System.Drawing.Point(56, 47);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(322, 28);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Busca por Nome do Paciente";
+            // 
+            // btnBuscarPagamento
+            // 
+            this.btnBuscarPagamento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarPagamento.Location = new System.Drawing.Point(423, 92);
+            this.btnBuscarPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarPagamento.Name = "btnBuscarPagamento";
+            this.btnBuscarPagamento.Size = new System.Drawing.Size(148, 32);
+            this.btnBuscarPagamento.TabIndex = 2;
+            this.btnBuscarPagamento.Text = "Buscar";
+            this.btnBuscarPagamento.UseVisualStyleBackColor = true;
+            this.btnBuscarPagamento.Click += new System.EventHandler(this.btnBuscarPagamento_Click);
+            // 
+            // dgvPagamento
+            // 
+            this.dgvPagamento.AllowUserToAddRows = false;
+            this.dgvPagamento.AllowUserToDeleteRows = false;
+            this.dgvPagamento.AllowUserToResizeColumns = false;
+            this.dgvPagamento.AllowUserToResizeRows = false;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvPagamento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            this.dgvPagamento.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.dgvPagamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPagamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDPag,
+            this.dataGridViewTextBoxColumn8,
+            this.PacientePag,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPagamento.DefaultCellStyle = dataGridViewCellStyle26;
+            this.dgvPagamento.Location = new System.Drawing.Point(61, 153);
+            this.dgvPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPagamento.Name = "dgvPagamento";
+            this.dgvPagamento.RowHeadersVisible = false;
+            this.dgvPagamento.RowHeadersWidth = 51;
+            this.dgvPagamento.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPagamento.Size = new System.Drawing.Size(1185, 437);
+            this.dgvPagamento.TabIndex = 3;
+            this.dgvPagamento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagamento_CellDoubleClick);
             // 
             // IDPag
             // 
@@ -895,22 +915,38 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.Width = 200;
             // 
-            // txtBuscarPagamento
+            // panel1
             // 
-            this.txtBuscarPagamento.Location = new System.Drawing.Point(46, 75);
-            this.txtBuscarPagamento.MaxLength = 100;
-            this.txtBuscarPagamento.Name = "txtBuscarPagamento";
-            this.txtBuscarPagamento.Size = new System.Drawing.Size(265, 26);
-            this.txtBuscarPagamento.TabIndex = 1;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1323, 57);
+            this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(535, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(231, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Visualizar Cadastros";
             // 
             // frmViewCadastros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 595);
+            this.ClientSize = new System.Drawing.Size(1323, 732);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControlVisualizar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmViewCadastros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

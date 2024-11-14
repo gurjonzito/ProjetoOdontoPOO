@@ -1,12 +1,7 @@
 ﻿using ProjetoOdontoPOO.Models;
 using ProjetoOdontoPOO.Services;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace ProjetoOdontoPOO.Repositories
 {
@@ -25,7 +20,7 @@ namespace ProjetoOdontoPOO.Repositories
 
             using (SqlConnection conexao = _dbService.CriarConexao())
             {
-                string query = @"SELECT Conv_ID, Conv_Nome, Conv_CNPJ, Conv_Telefone, Conv_Endereco, Conv_Email, Conv_DataCriacao
+                string query = @"SELECT Conv_ID, Conv_Nome, Conv_CNPJ, Conv_Telefone, Conv_Endereco, Conv_Email, Conv_DataCriacao, Ativo_Inativo
                                  FROM Convenio
                                  WHERE Conv_ID = @Id";
 
@@ -45,7 +40,8 @@ namespace ProjetoOdontoPOO.Repositories
                                 Telefone = reader.GetString(reader.GetOrdinal("Conv_Telefone")),
                                 Endereco = reader.GetString(reader.GetOrdinal("Conv_Endereco")),
                                 Email = reader.GetString(reader.GetOrdinal("Conv_Email")),
-                                DataCriacao = reader.GetDateTime(reader.GetOrdinal("Conv_DataCriacao"))
+                                DataCriacao = reader.GetDateTime(reader.GetOrdinal("Conv_DataCriacao")),
+                                Ativo_Inativo = reader.GetInt32(reader.GetOrdinal("Ativo_Inativo"))
                             };
                         }
                     }
@@ -128,7 +124,8 @@ namespace ProjetoOdontoPOO.Repositories
                                  Conv_Telefone = @Telefone,
                                  Conv_Endereco = @Endereco,
                                  Conv_Email = @Email,
-                                 Conv_DataCriacao = @DataCriacao
+                                 Conv_DataCriacao = @DataCriacao,
+                                 Ativo_Inativo = @AtivoInativo
                              WHERE Conv_ID = @ID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conexao, transacao))
@@ -143,6 +140,7 @@ namespace ProjetoOdontoPOO.Repositories
                         cmd.Parameters.AddWithValue("@Endereco", convenio.Endereco);
                         cmd.Parameters.AddWithValue("@Email", convenio.Email);
                         cmd.Parameters.AddWithValue("@DataCriacao", convenio.DataCriacao);
+                        cmd.Parameters.AddWithValue("@AtivoInativo", convenio.Ativo_Inativo);
 
                         cmd.ExecuteNonQuery();
                     }

@@ -27,12 +27,20 @@ namespace ProjetoOdontoPOO.Views
 
             _convenioController = new ConvenioController();
 
+            CarregarComboBoxes();
             CarregarDadosConvenio();
 
             if (_modoVisualizacao)
             {
                 DesabilitarCampos();
             }
+        }
+
+        private void CarregarComboBoxes()
+        {
+            cbAtivoInativo.Items.Clear();
+            cbAtivoInativo.Items.Add("Ativo");
+            cbAtivoInativo.Items.Add("Inativo");
         }
 
         private void CarregarDadosConvenio()
@@ -47,6 +55,7 @@ namespace ProjetoOdontoPOO.Views
                 txtEmailConvenio.Text = convenio.Email;
                 txtEnderecoConvenio.Text = convenio.Endereco;
                 dtpDataConvenio.Value = convenio.DataCriacao;
+                cbAtivoInativo.Text = convenio.Ativo_Inativo == 1 ? "Ativo" : "Inativo";
             }
             else
             {
@@ -64,6 +73,7 @@ namespace ProjetoOdontoPOO.Views
             txtTelefoneConvenio.Enabled = false;
             dtpDataConvenio.Enabled = false;
             btnSalvarConvenio.Visible = false;
+            cbAtivoInativo.Enabled = false;
         }
 
         private void btnSalvarConvenio_Click(object sender, EventArgs e)
@@ -77,6 +87,9 @@ namespace ProjetoOdontoPOO.Views
                 string endereco = txtEnderecoConvenio.Text;
                 DateTime dataCriacao = dtpDataConvenio.Value;
 
+                string status = cbAtivoInativo.SelectedItem.ToString();
+                int ativoInativo = status == "Ativo" ? 1 : 0;
+
                 Convenio convenio = new Convenio
                 {
                     Nome = nome,
@@ -85,6 +98,7 @@ namespace ProjetoOdontoPOO.Views
                     Email = email,
                     Endereco = endereco,
                     DataCriacao = dataCriacao,
+                    Ativo_Inativo = ativoInativo
                 };
 
                 bool atualizado = _convenioController.AtualizarConvenio(_convenioId, convenio);
