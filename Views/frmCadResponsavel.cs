@@ -25,17 +25,25 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarResponsavel_Click(object sender, EventArgs e)
         {
-            var responsavel = CriarResponsavel();
-
-            string mensagem = _responsavelController.InserirResponsavel(responsavel);
-            MessageBox.Show(mensagem);
-
-            if (mensagem.Contains("Responsável cadastrado com sucesso!"))
+            try
             {
-                LimparCampos();
-                txtNomeRes.Focus();
+                var responsavel = CriarResponsavel();
+
+                string mensagem = _responsavelController.InserirResponsavel(responsavel);
+                MessageBox.Show(mensagem);
+
+                if (mensagem.Contains("Responsável cadastrado com sucesso!"))
+                {
+                    LimparCampos();
+                    txtNomeRes.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private Responsavel CriarResponsavel()
         {

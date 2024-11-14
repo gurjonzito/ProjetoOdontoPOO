@@ -32,42 +32,33 @@ namespace ProjetoOdontoPOO.Views
                 // Obtém os dados da tabela através do método atualizado
                 DataTable tabela = _pacienteController.ObterTodosPacientes();
 
-                DataRow[] pacientesAtivos = tabela.Select("ativo_inativo = 1");
-
-                if (pacientesAtivos.Length == 0)
-                {
-                    // Caso não existam pacientes ativos
-                    MessageBox.Show("Nenhum paciente ativo encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                // Se houver um termo de pesquisa, filtra os pacientes ativos pelo nome ou CPF
-                if (!string.IsNullOrEmpty(termoPesquisa))
-                {
-                    pacientesAtivos = pacientesAtivos.Where(row =>
-                        row["Nome"].ToString().ToLower().Contains(termoPesquisa) ||
-                        row["CPF"].ToString().ToLower().Contains(termoPesquisa)
-                    ).ToArray();
-
-                    if (pacientesAtivos.Length == 0)
-                    {
-                        MessageBox.Show("Nenhum paciente ativo encontrado com o nome ou CPF fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-                }
-
-                DataTable tabelaFiltrada = pacientesAtivos.CopyToDataTable();
-
-                // Desativa a geração automática de colunas
-                dgvRegistros.AutoGenerateColumns = false;
-
                 // Limpa as linhas atuais do DataGridView
                 dgvRegistros.Rows.Clear();
 
                 // Adiciona os dados linha por linha no DataGridView
                 foreach (DataRow row in tabela.Rows)
                 {
-                    // Crie um objeto Paciente com os dados dessa linha
+                    // Verifica se o paciente está ativo (Ativo_Inativo == 1)
+                    if ((int)row["Ativo_Inativo"] != 1)
+                    {
+                        continue;  // Se o paciente não estiver ativo, pula para o próximo
+                    }
+
+                    // Se houver um termo de pesquisa, verifica se está no nome ou CPF
+                    if (!string.IsNullOrEmpty(termoPesquisa))
+                    {
+                        string nome = row["Nome"].ToString().ToLower();
+                        string cpf = row["CPF"].ToString().ToLower();
+
+                        // Se o termo não for encontrado no nome ou CPF, ignora esse paciente
+                        if (!nome.Contains(termoPesquisa.ToLower()) && !cpf.Contains(termoPesquisa.ToLower()))
+                        {
+                            MessageBox.Show("Nenhum paciente encontrado com o nome ou CPF fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                    }
+
+                    // Cria um objeto Paciente com os dados dessa linha
                     Paciente paciente = new Paciente
                     {
                         Id = (int)row["ID"],
@@ -75,17 +66,19 @@ namespace ProjetoOdontoPOO.Views
                         CPF = (string)row["CPF"],
                         Telefone = (string)row["Telefone"],
                         Responsavel = null,  // ou altere para um objeto Responsável, se necessário
-                        Convenio = null       // ou altere para um objeto Convênio, se necessário
+                        Convenio = null,      // ou altere para um objeto Convênio, se necessário
+                        Ativo_Inativo = (int)row["Ativo_Inativo"]
                     };
 
-                    // Adicionando as colunas diretamente no DataGridView
+                    // Adiciona os dados no DataGridView
                     int index = dgvRegistros.Rows.Add(
                         paciente.Id,               // ID do paciente
                         paciente.Nome,             // Nome do paciente
                         paciente.CPF,              // CPF do paciente
-                        paciente.Telefone,        // Telefone do paciente
-                        row["Responsável"],      // Responsável (como string ou objeto)
-                        row["Convênio"]      // Convênio (como string ou objeto)
+                        paciente.Telefone,         // Telefone do paciente
+                        row["Responsável"],        // Responsável (como string ou objeto)
+                        row["Convênio"],           // Convênio (como string ou objeto)
+                        paciente.Ativo_Inativo
                     );
 
                     // Associar o objeto Paciente à linha
@@ -104,6 +97,7 @@ namespace ProjetoOdontoPOO.Views
                 MessageBox.Show("Erro ao carregar dados do paciente: " + ex.Message);
             }
         }
+
 
         private Paciente RecuperarPaciente()
         {

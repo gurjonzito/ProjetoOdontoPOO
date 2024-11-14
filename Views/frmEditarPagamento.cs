@@ -45,11 +45,17 @@ namespace ProjetoOdontoPOO.Views
 
             if (pagamento != null)
             {
-                txtPacientePag.Text = pagamento.Paciente.Nome;
+                // Atribuindo os dados do pagamento nos controles da tela
                 dtpDataPag.Value = pagamento.DataPagamento;
                 txtValorPag.Text = pagamento.ValorPago.ToString();
                 cbStatusPag.Text = pagamento.PagamentoStatus;
                 cbMetodoPag.Text = pagamento.MetodoPagamento;
+
+                // Garantindo que o paciente e o método de pagamento sejam atribuídos corretamente
+                pacientePagamento = pagamento.Paciente;  // Garantindo que o paciente seja atribuído
+
+                // Atualizando os campos com o nome do paciente
+                txtPacientePag.Text = pacientePagamento.Nome;
             }
             else
             {
@@ -57,38 +63,48 @@ namespace ProjetoOdontoPOO.Views
             }
         }
 
+
         private void btnSalvarPagamento_Click(object sender, EventArgs e)
         {
-            DateTime data = dtpDataPag.Value;
-            if (!decimal.TryParse(txtValorPag.Text, out decimal valor) || valor <= 0)
+            try
             {
-                MessageBox.Show("Valor inválido. Por favor, insira um número válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                DateTime data = dtpDataPag.Value;
+                if (!decimal.TryParse(txtValorPag.Text, out decimal valor) || valor <= 0)
+                {
+                    MessageBox.Show("Valor inválido. Por favor, insira um número válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string status = cbStatusPag.Text;
+                string metodo = cbMetodoPag.Text;
+
+                Pagamento pagamento = new Pagamento
+                {
+                    Paciente = pacientePagamento,
+                    DataPagamento = data,
+                    ValorPago = valor,
+                    PagamentoStatus = status,
+                    MetodoPagamento = metodo,
+                };
+
+                bool atualizado = _pagamentoController.AtualizarPagamento(_pagamentoId, pagamento);
+
+                if (atualizado)
+                {
+                    MessageBox.Show("Pagamento atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao atualizar o pagamento.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            string status = cbStatusPag.Text;
-            string metodo = cbMetodoPag.Text;
-
-            Pagamento pagamento = new Pagamento
+            catch (Exception ex)
             {
-                Paciente = pacientePagamento,
-                DataPagamento = data,
-                ValorPago = valor,
-                PagamentoStatus = status,
-                MetodoPagamento = metodo,
-            };
-
-            bool atualizado = _pagamentoController.AtualizarPagamento(_pagamentoId, pagamento);
-
-            if (atualizado)
-            {
-                MessageBox.Show("Pagamento atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Erro ao atualizar o pagamento.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void ValidarEntradaNumerica(KeyPressEventArgs e)
         {

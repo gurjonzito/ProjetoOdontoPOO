@@ -60,10 +60,6 @@ namespace ProjetoOdontoPOO.Services
 
         private OperationResult ValidarConsulta(Consulta consulta)
         {
-
-            if (consulta.DataConsulta < DateTime.Now)
-                return new OperationResult(false, "A data da consulta não pode ser no passado.");
-
             if (consulta.Paciente == null)
                 return new OperationResult(false, "A consulta deve estar associada a um paciente.");
 

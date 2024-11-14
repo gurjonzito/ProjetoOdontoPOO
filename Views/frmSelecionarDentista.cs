@@ -26,23 +26,7 @@ namespace ProjetoOdontoPOO.Views
         {
             try
             {
-                // Obter a lista de dentistas do controlador
                 DataTable tabela = _dentistaController.ObterTodosDentistas();
-
-                if (!string.IsNullOrEmpty(termoPesquisa))
-                {
-                    // Filtra a tabela com base no nome ou CRM
-                    DataRow[] rowsFiltrados = tabela.Select($"Nome LIKE '%{termoPesquisa}%' OR CRM LIKE '%{termoPesquisa}%'");
-
-                    if (rowsFiltrados.Length == 0)
-                    {
-                        // Se não houver resultados, exibe uma mensagem de erro
-                        MessageBox.Show("Nenhum dentista encontrado com o nome ou CRM fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-
-                    tabela = rowsFiltrados.CopyToDataTable();
-                }
 
                 dgvRegistros.AutoGenerateColumns = false;
 
@@ -50,13 +34,31 @@ namespace ProjetoOdontoPOO.Views
 
                 foreach (DataRow row in tabela.Rows)
                 {
+                    if ((int)row["Ativo_Inativo"] != 1)
+                    {
+                        continue; 
+                    }
+
+                    if (!string.IsNullOrEmpty(termoPesquisa))
+                    {
+                        string nome = row["Nome"].ToString().ToLower();
+                        string crm = row["CRM"].ToString().ToLower();
+
+                        if (!nome.Contains(termoPesquisa.ToLower()) && !crm.Contains(termoPesquisa.ToLower()))
+                        {
+                            MessageBox.Show("Nenhum paciente encontrado com o nome ou CPF fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                    }
+
                     Dentista dentista = new Dentista
                     {
                         Id = (int)row["ID"],
                         Nome = (string)row["Nome"],
                         CRM = (string)row["CRM"],
                         Especialidade = (string)row["Especialidade"],
-                        Telefone = (string)row["Telefone"]
+                        Telefone = (string)row["Telefone"],
+                        Ativo_Inativo = (int)row["Ativo_Inativo"]
                     };
 
                     int index = dgvRegistros.Rows.Add(
@@ -64,14 +66,13 @@ namespace ProjetoOdontoPOO.Views
                         dentista.Nome,
                         dentista.CRM,
                         dentista.Especialidade,
-                        dentista.Telefone
+                        dentista.Telefone,
+                        dentista.Ativo_Inativo
                     );
 
-                    // Associar o objeto Dentista à linha
                     dgvRegistros.Rows[index].Tag = dentista;
                 }
 
-                // Seleciona a primeira linha automaticamente, se houver registros
                 if (dgvRegistros.Rows.Count > 0)
                 {
                     dgvRegistros.Rows[0].Selected = true;

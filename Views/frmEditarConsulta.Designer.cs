@@ -49,16 +49,18 @@
             // txtDentista
             // 
             this.txtDentista.Location = new System.Drawing.Point(250, 270);
-            this.txtDentista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDentista.Margin = new System.Windows.Forms.Padding(2);
             this.txtDentista.Name = "txtDentista";
+            this.txtDentista.ReadOnly = true;
             this.txtDentista.Size = new System.Drawing.Size(166, 20);
             this.txtDentista.TabIndex = 54;
             // 
             // txtPaciente
             // 
             this.txtPaciente.Location = new System.Drawing.Point(46, 270);
-            this.txtPaciente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPaciente.Margin = new System.Windows.Forms.Padding(2);
             this.txtPaciente.Name = "txtPaciente";
+            this.txtPaciente.ReadOnly = true;
             this.txtPaciente.Size = new System.Drawing.Size(166, 20);
             this.txtPaciente.TabIndex = 53;
             // 
@@ -212,7 +214,7 @@
             this.Controls.Add(this.dtpDataConsulta);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmEditarConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

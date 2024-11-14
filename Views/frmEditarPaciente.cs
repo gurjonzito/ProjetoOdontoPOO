@@ -155,117 +155,96 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarPaciente_Click(object sender, EventArgs e)
         {
-            // Coleta os dados do paciente
-            string nome = txtNomePaciente.Text;
-            DateTime dataNascimento = dtpDataPaciente.Value;
-            int idade = int.Parse(txtIdadePaciente.Text);
-            string cpf = txtCPFPaciente.Text.Replace(".", "").Replace("-", "").Replace(",", "");
-            string sexo = cbSexoPaciente.Text;
-            string telefone = txtTelefonePaciente.Text;
-            string email = txtEmailPaciente.Text;
-
-            // Coleta o status Ativo/Inativo
-            string status = cbAtivoInativo.SelectedItem.ToString();
-            int ativoInativo = status == "Ativo" ? 1 : 0;
-
-            // Cria o objeto Paciente
-            Paciente paciente = new Paciente
+            try
             {
-                Nome = nome,
-                DataNascimento = dataNascimento,
-                Idade = idade,
-                CPF = cpf,
-                Sexo = sexo,
-                Telefone = telefone,
-                Email = email,
-                Ativo_Inativo = ativoInativo
-            };
+                // Coleta os dados do paciente
+                string nome = txtNomePaciente.Text;
+                DateTime dataNascimento = dtpDataPaciente.Value;
+                int idade = int.Parse(txtIdadePaciente.Text);
+                string cpf = txtCPFPaciente.Text.Replace(".", "").Replace("-", "").Replace(",", "");
+                string sexo = cbSexoPaciente.Text;
+                string telefone = txtTelefonePaciente.Text;
+                string email = txtEmailPaciente.Text;
 
-            // Preserva o Convênio existente se não for alterado
-            if (convenioPaciente != null)
-            {
-                paciente.Convenio = convenioPaciente; // Atualiza com o novo Convênio
+                // Coleta o status Ativo/Inativo
+                string status = cbAtivoInativo.SelectedItem.ToString();
+                int ativoInativo = status == "Ativo" ? 1 : 0;
+
+                // Cria o objeto Paciente
+                Paciente paciente = new Paciente
+                {
+                    Nome = nome,
+                    DataNascimento = dataNascimento,
+                    Idade = idade,
+                    CPF = cpf,
+                    Sexo = sexo,
+                    Telefone = telefone,
+                    Email = email,
+                    Ativo_Inativo = ativoInativo
+                };
+
+                // Preserva o Convênio existente se não for alterado
+                if (convenioPaciente != null)
+                {
+                    paciente.Convenio = convenioPaciente; // Atualiza com o novo Convênio
+                }
+                else if (paciente.Convenio == null)
+                {
+                    paciente.Convenio = null; // Mantém como null se não selecionar nenhum novo Convênio
+                }
+
+                // Preserva o Responsável existente se não for alterado
+                if (responsavelPaciente != null)
+                {
+                    paciente.Responsavel = responsavelPaciente; // Atualiza com o novo Responsável
+                }
+                else if (paciente.Responsavel == null)
+                {
+                    paciente.Responsavel = null; // Mantém como null se não selecionar nenhum novo Responsável
+                }
+
+                // Coleta os dados de endereço
+                string logradouro = txtLogradouro.Text;
+                string numero = txtNumeroEndereco.Text;
+                string cidade = txtCidadeEndereco.Text;
+                string estado = cbUFPaciente.Text;
+                string cep = txtCEPEndereco.Text.Replace("-", "");
+                string complemento = txtComplementoEndereco.Text;
+
+                // Cria o objeto Endereço
+                Endereco endereco = new Endereco
+                {
+                    Logradouro = logradouro,
+                    Numero = numero,
+                    Cidade = cidade,
+                    Estado = estado,
+                    CEP = cep,
+                    Complemento = complemento
+                };
+
+                // Chama o método de atualização com os objetos Paciente e Endereço
+                bool atualizado = _pacienteController.AtualizarPacienteComEndereco(_pacienteId, paciente, endereco);
+
+                // Exibe o resultado
+                if (atualizado)
+                {
+                    MessageBox.Show("Paciente atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao atualizar o paciente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else if (paciente.Convenio == null)
+            catch (FormatException ex)
             {
-                paciente.Convenio = null; // Mantém como null se não selecionar nenhum novo Convênio
+                MessageBox.Show($"Ocorreu um erro de formatação: {ex.Message}", "Erro de Formatação", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // Preserva o Responsável existente se não for alterado
-            if (responsavelPaciente != null)
+            catch (Exception ex)
             {
-                paciente.Responsavel = responsavelPaciente; // Atualiza com o novo Responsável
-            }
-            else if (paciente.Responsavel == null)
-            {
-                paciente.Responsavel = null; // Mantém como null se não selecionar nenhum novo Responsável
-            }
-
-            // Coleta os dados de endereço
-            string logradouro = txtLogradouro.Text;
-            string numero = txtNumeroEndereco.Text;
-            string cidade = txtCidadeEndereco.Text;
-            string estado = cbUFPaciente.Text;
-            string cep = txtCEPEndereco.Text.Replace("-", "");
-            string complemento = txtComplementoEndereco.Text;
-
-            // Cria o objeto Endereço
-            Endereco endereco = new Endereco
-            {
-                Logradouro = logradouro,
-                Numero = numero,
-                Cidade = cidade,
-                Estado = estado,
-                CEP = cep,
-                Complemento = complemento
-            };
-
-            // Chama o método de atualização com os objetos Paciente e Endereço
-            bool atualizado = _pacienteController.AtualizarPacienteComEndereco(_pacienteId, paciente, endereco);
-
-            // Exibe o resultado
-            if (atualizado)
-            {
-                MessageBox.Show("Paciente atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Erro ao atualizar o paciente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-        private void btnLimparPaciente_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
-        private void LimparCampos()
-        {
-            // Limpar campos de texto
-            txtNomePaciente.Clear();
-            txtIdadePaciente.Clear();
-            txtCPFPaciente.Clear();
-            txtTelefonePaciente.Clear();
-            txtEmailPaciente.Clear();
-            txtLogradouro.Clear();
-            txtNumeroEndereco.Clear();
-            txtCidadeEndereco.Clear();
-            txtCEPEndereco.Clear();
-            txtComplementoEndereco.Clear();
-            txtConvenioPaciente.Clear();
-            txtResponsavelPaciente.Clear();
-
-            // Resetar ComboBoxes
-            cbSexoPaciente.SelectedIndex = -1;
-            cbUFPaciente.SelectedIndex = -1;
-
-            // Resetar DateTimePicker
-            dtpDataPaciente.Value = DateTime.Now;
-        }
-
         private void PesquisarConvenio()
         {
             frmSelecionarConvenio frm = new frmSelecionarConvenio(true);

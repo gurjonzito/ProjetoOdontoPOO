@@ -88,61 +88,56 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarResponsavel_Click(object sender, EventArgs e)
         {
-            // Coleta os dados do responsável
-            string nome = txtNomeRes.Text;
-            DateTime dataNascimento = dtpDataRes.Value;
-            int idade = int.Parse(txtIdadeRes.Text);
-            string cpf = txtCPFRes.Text.Replace(".", "").Replace("-", "").Replace(",", "");
-            string sexo = cbSexoRes.Text;
-            string telefone = txtTelefoneRes.Text;
-            string parentesco = txtParentescoRes.Text;
-
-            // Coleta o status Ativo/Inativo
-            string status = cbAtivoInativo.SelectedItem.ToString();
-            int ativoInativo = status == "Ativo" ? 1 : 0;
-
-            // Cria o objeto Responsável
-            Responsavel responsavel = new Responsavel
+            try
             {
-                Nome = nome,
-                DataNascimento = dataNascimento,
-                Idade = idade,
-                CPF = cpf,
-                Sexo = sexo,
-                Telefone = telefone,
-                Parentesco = parentesco,
-                Ativo_Inativo = ativoInativo
-            };
+                // Coleta os dados do responsável
+                string nome = txtNomeRes.Text;
+                DateTime dataNascimento = dtpDataRes.Value;
+                int idade = int.Parse(txtIdadeRes.Text);  // Possível exceção: formato inválido de número
+                string cpf = txtCPFRes.Text.Replace(".", "").Replace("-", "").Replace(",", "");
+                string sexo = cbSexoRes.Text;
+                string telefone = txtTelefoneRes.Text;
+                string parentesco = txtParentescoRes.Text;
 
-            // Chama o método de atualização
-            bool atualizado = _responsavelController.AtualizarResponsavel(_responsavelId, responsavel);
+                // Coleta o status Ativo/Inativo
+                string status = cbAtivoInativo.SelectedItem.ToString();
+                int ativoInativo = status == "Ativo" ? 1 : 0;
 
-            if (atualizado)
-            {
-                MessageBox.Show("Responsável atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                // Cria o objeto Responsável
+                Responsavel responsavel = new Responsavel
+                {
+                    Nome = nome,
+                    DataNascimento = dataNascimento,
+                    Idade = idade,
+                    CPF = cpf,
+                    Sexo = sexo,
+                    Telefone = telefone,
+                    Parentesco = parentesco,
+                    Ativo_Inativo = ativoInativo
+                };
+
+                // Chama o método de atualização
+                bool atualizado = _responsavelController.AtualizarResponsavel(_responsavelId, responsavel);
+
+                if (atualizado)
+                {
+                    MessageBox.Show("Responsável atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao atualizar o responsável.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (FormatException ex)
             {
-                MessageBox.Show("Erro ao atualizar o responsável.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocorreu um erro de formatação: {ex.Message}", "Erro de Formatação", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnLimparResponsavel_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
-        private void LimparCampos()
-        {
-            txtNomeRes.Clear();
-            txtIdadeRes.Clear();
-            txtCPFRes.Clear();
-            txtTelefoneRes.Clear();
-            txtParentescoRes.Clear();
-            cbSexoRes.SelectedIndex = -1;
-            cbAtivoInativo.SelectedIndex = -1;
-            dtpDataRes.Value = DateTime.Now;
+            catch (Exception ex)
+            {
+                // Captura qualquer outra exceção não esperada
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

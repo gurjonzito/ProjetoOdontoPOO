@@ -40,6 +40,7 @@
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Responsavel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Convenio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo_Inativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +115,8 @@
             this.CPF,
             this.Telefone,
             this.Responsavel,
-            this.Convenio});
+            this.Convenio,
+            this.Ativo_Inativo});
             this.dgvRegistros.Location = new System.Drawing.Point(29, 76);
             this.dgvRegistros.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRegistros.Name = "dgvRegistros";
@@ -175,6 +177,11 @@
             this.Convenio.ReadOnly = true;
             this.Convenio.Width = 125;
             // 
+            // Ativo_Inativo
+            // 
+            this.Ativo_Inativo.HeaderText = "Ativo_Inativo";
+            this.Ativo_Inativo.Name = "Ativo_Inativo";
+            // 
             // frmSelecionarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,5 +219,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Responsavel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Convenio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ativo_Inativo;
     }
 }

@@ -39,6 +39,7 @@
             this.CRM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Especialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo_Inativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +113,8 @@
             this.Nome,
             this.CRM,
             this.Especialidade,
-            this.Telefone});
+            this.Telefone,
+            this.Ativo_Inativo});
             this.dgvRegistros.Location = new System.Drawing.Point(27, 75);
             this.dgvRegistros.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRegistros.Name = "dgvRegistros";
@@ -165,6 +167,11 @@
             this.Telefone.ReadOnly = true;
             this.Telefone.Width = 125;
             // 
+            // Ativo_Inativo
+            // 
+            this.Ativo_Inativo.HeaderText = "Ativo_Inativo";
+            this.Ativo_Inativo.Name = "Ativo_Inativo";
+            // 
             // frmSelecionarDentista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,5 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CRM;
         private System.Windows.Forms.DataGridViewTextBoxColumn Especialidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ativo_Inativo;
     }
 }

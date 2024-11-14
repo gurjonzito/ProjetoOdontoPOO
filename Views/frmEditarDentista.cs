@@ -59,49 +59,39 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarDentista_Click(object sender, EventArgs e)
         {
-            string nome = txtNomeDentista.Text;
-            string crm = txtCRMDentista.Text;
-            string estado = cbEstadoDentista.Text;
-            string telefone = txtTelefoneDentista.Text;
-            string especialidade = txtEspDentista.Text;
-
-            Dentista dentista = new Dentista
+            try
             {
-                Nome = nome,
-                CRM = crm,
-                Estado = estado,
-                Telefone = telefone,
-                Especialidade = especialidade,
-            };
+                string nome = txtNomeDentista.Text;
+                string crm = txtCRMDentista.Text;
+                string estado = cbEstadoDentista.Text;
+                string telefone = txtTelefoneDentista.Text;
+                string especialidade = txtEspDentista.Text;
 
-            bool atualizado = _dentistaController.AtualizarDentista(_dentistaId, dentista);
+                Dentista dentista = new Dentista
+                {
+                    Nome = nome,
+                    CRM = crm,
+                    Estado = estado,
+                    Telefone = telefone,
+                    Especialidade = especialidade,
+                };
 
-            if (atualizado)
-            {
-                MessageBox.Show("Dentista atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                bool atualizado = _dentistaController.AtualizarDentista(_dentistaId, dentista);
+
+                if (atualizado)
+                {
+                    MessageBox.Show("Dentista atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao atualizar o dentista.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao atualizar o dentista.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnLimparDentista_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
-        private void LimparCampos()
-        {
-            // Limpar campos de texto
-            txtNomeDentista.Clear();
-            txtCRMDentista.Clear();
-            txtEspDentista.Clear();
-            txtTelefoneDentista.Clear();
-
-            // Resetar ComboBoxes
-            cbEstadoDentista.SelectedIndex = -1;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

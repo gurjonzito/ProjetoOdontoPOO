@@ -32,13 +32,14 @@
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.dgvRegistros = new System.Windows.Forms.DataGridView();
+            this.btnVisualizar = new System.Windows.Forms.Button();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Parentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVisualizar = new System.Windows.Forms.Button();
-            this.btnSelecionar = new System.Windows.Forms.Button();
+            this.Ativo_Inativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +87,8 @@
             this.Nome,
             this.CPF,
             this.Telefone,
-            this.Parentesco});
+            this.Parentesco,
+            this.Ativo_Inativo});
             this.dgvRegistros.Location = new System.Drawing.Point(28, 76);
             this.dgvRegistros.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRegistros.Name = "dgvRegistros";
@@ -98,6 +100,32 @@
             this.dgvRegistros.TabIndex = 3;
             this.dgvRegistros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellClick);
             this.dgvRegistros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellDoubleClick);
+            // 
+            // btnVisualizar
+            // 
+            this.btnVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVisualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizar.Location = new System.Drawing.Point(542, 346);
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.Size = new System.Drawing.Size(113, 30);
+            this.btnVisualizar.TabIndex = 5;
+            this.btnVisualizar.Text = "Visualizar";
+            this.btnVisualizar.UseVisualStyleBackColor = false;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
+            // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSelecionar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar.Location = new System.Drawing.Point(28, 346);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(113, 30);
+            this.btnSelecionar.TabIndex = 4;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = false;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // ID
             // 
@@ -139,31 +167,10 @@
             this.Parentesco.ReadOnly = true;
             this.Parentesco.Width = 125;
             // 
-            // btnVisualizar
+            // Ativo_Inativo
             // 
-            this.btnVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVisualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisualizar.Location = new System.Drawing.Point(542, 346);
-            this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.Size = new System.Drawing.Size(113, 30);
-            this.btnVisualizar.TabIndex = 5;
-            this.btnVisualizar.Text = "Visualizar";
-            this.btnVisualizar.UseVisualStyleBackColor = false;
-            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
-            // 
-            // btnSelecionar
-            // 
-            this.btnSelecionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSelecionar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecionar.Location = new System.Drawing.Point(28, 346);
-            this.btnSelecionar.Name = "btnSelecionar";
-            this.btnSelecionar.Size = new System.Drawing.Size(113, 30);
-            this.btnSelecionar.TabIndex = 4;
-            this.btnSelecionar.Text = "Selecionar";
-            this.btnSelecionar.UseVisualStyleBackColor = false;
-            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            this.Ativo_Inativo.HeaderText = "Ativo_Inativo";
+            this.Ativo_Inativo.Name = "Ativo_Inativo";
             // 
             // frmSelecionarResponsavel
             // 
@@ -201,5 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Parentesco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ativo_Inativo;
     }
 }

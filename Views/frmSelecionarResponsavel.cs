@@ -33,34 +33,37 @@ namespace ProjetoOdontoPOO.Views
             {
                 DataTable tabela = _responsavelController.ObterTodosResponsaveis();
 
-                if (!string.IsNullOrEmpty(termoPesquisa))
-                {
-                    DataRow[] rowsFiltrados = tabela.Select($"Nome LIKE '%{termoPesquisa}%' OR CPF LIKE '%{termoPesquisa}%'");
-
-                    if (rowsFiltrados.Length == 0)
-                    {
-                        // Exibe uma mensagem caso não haja responsáveis encontrados
-                        MessageBox.Show("Nenhum responsável encontrado com o nome ou CPF fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-
-                    // Atualiza a tabela para conter apenas os registros filtrados
-                    tabela = rowsFiltrados.CopyToDataTable();
-                }
-
                 dgvRegistros.AutoGenerateColumns = false;
 
                 dgvRegistros.Rows.Clear();
 
                 foreach (DataRow row in tabela.Rows)
                 {
+                    if ((int)row["Ativo_Inativo"] != 1)
+                    {
+                        continue; 
+                    }
+
+                    if (!string.IsNullOrEmpty(termoPesquisa))
+                    {
+                        string nome = row["Nome"].ToString().ToLower();
+                        string cpf = row["CPF"].ToString().ToLower();
+
+                        if (!nome.Contains(termoPesquisa.ToLower()) && !cpf.Contains(termoPesquisa.ToLower()))
+                        {
+                            MessageBox.Show("Nenhum responsável encontrado com o nome ou CPF fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                    }
+
                     Responsavel responsavel = new Responsavel
                     {
                         Id = (int)row["ID"],
                         Nome = (string)row["Nome"],
                         CPF = (string)row["CPF"],
                         Telefone = (string)row["Telefone"],
-                        Parentesco = (string)row["Parentesco"]
+                        Parentesco = (string)row["Parentesco"],
+                        Ativo_Inativo = (int)row["Ativo_Inativo"]
                     };
 
                     int index = dgvRegistros.Rows.Add(
@@ -68,17 +71,17 @@ namespace ProjetoOdontoPOO.Views
                         responsavel.Nome,
                         responsavel.CPF,
                         responsavel.Telefone,
-                        responsavel.Parentesco
+                        responsavel.Parentesco,
+                        responsavel.Ativo_Inativo
                     );
 
-                    // Associar o objeto Convenio à linha
                     dgvRegistros.Rows[index].Tag = responsavel;
                 }
 
                 if (dgvRegistros.Rows.Count > 0)
                 {
-                    dgvRegistros.Rows[0].Selected = true; // Seleciona a primeira linha
-                                                          // Atribui o objeto responsável à variável responsavelSelecao
+                    dgvRegistros.Rows[0].Selected = true; 
+                                                          
                     responsavelSelecao = dgvRegistros.Rows[0].Tag as Responsavel;
                 }
             }

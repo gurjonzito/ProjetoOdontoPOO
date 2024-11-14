@@ -35,17 +35,25 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarPagamento_Click(object sender, EventArgs e)
         {
-            var pagamento = CriarPagamento();
-
-            string mensagem = _pagamentoController.InserirPagamento(pagamento);
-            MessageBox.Show(mensagem);
-
-            if (mensagem.Contains("Pagamento registrado com sucesso!"))
+            try
             {
-                LimparCampos();
-                txtPacientePag.Focus();
+                var pagamento = CriarPagamento();
+
+                string mensagem = _pagamentoController.InserirPagamento(pagamento);
+                MessageBox.Show(mensagem);
+
+                if (mensagem.Contains("Pagamento registrado com sucesso!"))
+                {
+                    LimparCampos();
+                    txtPacientePag.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private Pagamento CriarPagamento()
         {

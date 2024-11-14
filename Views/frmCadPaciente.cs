@@ -35,18 +35,26 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarPaciente_Click(object sender, EventArgs e)
         {
-            var paciente = CriarPaciente();
-            var endereco = CriarEndereco();
-
-            string mensagem = _pacienteController.InserirPacienteComEndereco(paciente, endereco);
-            MessageBox.Show(mensagem);
-
-            if (mensagem.Contains("Paciente cadastrado com sucesso!"))
+            try
             {
-                LimparCampos();
-                txtNomePaciente.Focus();
+                var paciente = CriarPaciente();
+                var endereco = CriarEndereco();
+
+                string mensagem = _pacienteController.InserirPacienteComEndereco(paciente, endereco);
+                MessageBox.Show(mensagem);
+
+                if (mensagem.Contains("Paciente cadastrado com sucesso!"))
+                {
+                    LimparCampos();
+                    txtNomePaciente.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private Paciente CriarPaciente()
         {

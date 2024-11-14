@@ -68,52 +68,41 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarConvenio_Click(object sender, EventArgs e)
         {
-            string nome = txtNomeConvenio.Text;
-            string cnpj = txtCNPJConvenio.Text.Replace(".", "").Replace("-", "").Replace(",", "").Replace("/", "");
-            string telefone = txtTelefoneConvenio.Text;
-            string email = txtEmailConvenio.Text;
-            string endereco = txtEnderecoConvenio.Text;
-            DateTime dataCriacao = dtpDataConvenio.Value;
-
-            Convenio convenio = new Convenio
+            try
             {
-                Nome = nome,
-                CNPJ = cnpj,
-                Telefone = telefone,
-                Email = email,
-                Endereco = endereco,
-                DataCriacao = dataCriacao,
-            };
+                string nome = txtNomeConvenio.Text;
+                string cnpj = txtCNPJConvenio.Text.Replace(".", "").Replace("-", "").Replace(",", "").Replace("/", "");
+                string telefone = txtTelefoneConvenio.Text;
+                string email = txtEmailConvenio.Text;
+                string endereco = txtEnderecoConvenio.Text;
+                DateTime dataCriacao = dtpDataConvenio.Value;
 
-            bool atualizado = _convenioController.AtualizarConvenio(_convenioId, convenio);
+                Convenio convenio = new Convenio
+                {
+                    Nome = nome,
+                    CNPJ = cnpj,
+                    Telefone = telefone,
+                    Email = email,
+                    Endereco = endereco,
+                    DataCriacao = dataCriacao,
+                };
 
-            if (atualizado)
-            {
-                MessageBox.Show("Convênio atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                bool atualizado = _convenioController.AtualizarConvenio(_convenioId, convenio);
+
+                if (atualizado)
+                {
+                    MessageBox.Show("Convênio atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao atualizar o convênio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao atualizar o convênio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnLimparConvenio_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
-        private void LimparCampos()
-        {
-            // Limpar campos de texto
-            txtNomeConvenio.Clear();
-            txtCNPJConvenio.Clear();
-            txtTelefoneConvenio.Clear();
-            txtEmailConvenio.Clear();
-            txtEnderecoConvenio.Clear();
-
-            // Resetar DateTimePicker
-            dtpDataConvenio.Value = DateTime.Now;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

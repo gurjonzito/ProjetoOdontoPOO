@@ -25,17 +25,25 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarDentista_Click(object sender, EventArgs e)
         {
-            var dentista = CriarDentista();
-
-            string mensagem = _dentistaController.InserirDentista(dentista);
-            MessageBox.Show(mensagem);
-
-            if (mensagem.Contains("Dentista cadastrado com sucesso!"))
+            try
             {
-                LimparCampos();
-                txtNomeDentista.Focus();
+                var dentista = CriarDentista();
+
+                string mensagem = _dentistaController.InserirDentista(dentista);
+                MessageBox.Show(mensagem);
+
+                if (mensagem.Contains("Dentista cadastrado com sucesso!"))
+                {
+                    LimparCampos();
+                    txtNomeDentista.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private Dentista CriarDentista()
         {

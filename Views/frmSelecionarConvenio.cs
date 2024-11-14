@@ -28,35 +28,37 @@ namespace ProjetoOdontoPOO.Views
             {
                 DataTable tabela = _convenioController.ObterTodosConvenios();
 
-
-                if (!string.IsNullOrEmpty(termoPesquisa))
-                {
-                    // Filtra a tabela com base no nome ou CNPJ
-                    DataRow[] rowsFiltrados = tabela.Select($"Nome LIKE '%{termoPesquisa}%' OR CNPJ LIKE '%{termoPesquisa}%'");
-
-                    if (rowsFiltrados.Length == 0)
-                    {
-                        // Se não houver resultados, exibe uma mensagem de erro
-                        MessageBox.Show("Nenhum convênio encontrado com o nome ou CNPJ fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        return;
-                    }
-
-                    tabela = rowsFiltrados.CopyToDataTable();
-                }
-
                 dgvRegistros.AutoGenerateColumns = false;
 
                 dgvRegistros.Rows.Clear();
 
                 foreach (DataRow row in tabela.Rows)
                 {
+                    if ((int)row["Ativo_Inativo"] != 1)
+                    {
+                        continue;
+                    }
+
+                    if (!string.IsNullOrEmpty(termoPesquisa))
+                    {
+                        string nome = row["Nome"].ToString().ToLower();
+                        string cnpj = row["CNPJ"].ToString().ToLower();
+
+                        if (!nome.Contains(termoPesquisa.ToLower()) && !cnpj.Contains(termoPesquisa.ToLower()))
+                        {
+                            MessageBox.Show("Nenhum convênio encontrado com o nome ou CNPJ fornecido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+                    }
+
                     Convenio convenio = new Convenio
                     {
                         Id = (int)row["ID"],
                         Nome = (string)row["Nome"],
                         CNPJ = (string)row["CNPJ"],
                         Telefone = (string)row["Telefone"],
-                        Email = (string)row["E-mail"]
+                        Email = (string)row["E-mail"],
+                        Ativo_Inativo = (int)row["Ativo_Inativo"]
                     };
 
                     int index = dgvRegistros.Rows.Add(
@@ -64,7 +66,8 @@ namespace ProjetoOdontoPOO.Views
                         convenio.Nome,
                         convenio.CNPJ,
                         convenio.Telefone,
-                        convenio.Email
+                        convenio.Email,
+                        convenio.Ativo_Inativo
                     );
 
                     // Associar o objeto Convenio à linha

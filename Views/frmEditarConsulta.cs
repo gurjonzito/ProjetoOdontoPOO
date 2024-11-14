@@ -74,8 +74,12 @@ namespace ProjetoOdontoPOO.Views
             {
                 dtpDataConsulta.Value = consulta.DataConsulta;
                 txtObsConsulta.Text = consulta.Observacoes;
-                txtPaciente.Text = consulta.Paciente.Nome;
-                txtDentista.Text = consulta.Dentista.Nome;
+
+                pacienteConsulta = consulta.Paciente;  // Garantindo que o paciente seja atribuído
+                dentistaConsulta = consulta.Dentista;  // Garantindo que o dentista seja atribuído
+
+                txtPaciente.Text = pacienteConsulta.Nome;
+                txtDentista.Text = dentistaConsulta.Nome;
             }
             else
             {
@@ -85,29 +89,39 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarConsulta_Click(object sender, EventArgs e)
         {
-            DateTime data = dtpDataConsulta.Value;
-            string obs = txtObsConsulta.Text;
-
-            Consulta consulta = new Consulta
+            try
             {
-                DataConsulta = data,
-                Observacoes = obs,
-                Paciente = pacienteConsulta,
-                Dentista = dentistaConsulta,
-            };
+                DateTime data = dtpDataConsulta.Value;
+                string obs = txtObsConsulta.Text;
 
-            bool atualizado = _consultaController.AtualizarConsulta(_consultaId, consulta);
+                // Criação do objeto consulta com os dados
+                Consulta consulta = new Consulta
+                {
+                    DataConsulta = data,
+                    Observacoes = obs,
+                    Paciente = pacienteConsulta,
+                    Dentista = dentistaConsulta,
+                };
 
-            if (atualizado)
-            {
-                MessageBox.Show("Consulta atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                // Chamada para atualizar a consulta
+                bool atualizado = _consultaController.AtualizarConsulta(_consultaId, consulta);
+
+                if (atualizado)
+                {
+                    MessageBox.Show("Consulta atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao atualizar a consulta.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao atualizar a consulta.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

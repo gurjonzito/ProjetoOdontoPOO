@@ -107,6 +107,8 @@ namespace ProjetoOdontoPOO.Views
                 return;
             }
 
+            dgvPaciente.ClearSelection();
+
             // Itera pelas linhas do DataGridView para encontrar o CPF
             foreach (DataGridViewRow row in dgvPaciente.Rows)
             {
@@ -140,11 +142,13 @@ namespace ProjetoOdontoPOO.Views
                 return;
             }
 
+            dgvPaciente.ClearSelection();
+
             foreach (DataGridViewRow row in dgvResponsavel.Rows)
             {
-                if (row.Cells["CPF"].Value != null)
+                if (row.Cells["CPFRes"].Value != null)
                 {
-                    string cpfDataGrid = row.Cells["CPF"].Value.ToString().Replace(".", "").Replace("-", "").Replace(" ", "").Replace(",", "");
+                    string cpfDataGrid = row.Cells["CPFRes"].Value.ToString().Replace(".", "").Replace("-", "").Replace(" ", "").Replace(",", "");
 
                     if (cpfDataGrid == cpfProcurado)
                     {
@@ -169,6 +173,8 @@ namespace ProjetoOdontoPOO.Views
                 MessageBox.Show("Por favor, insira um CNPJ para buscar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            dgvConvenio.ClearSelection();
 
             foreach (DataGridViewRow row in dgvConvenio.Rows)
             {
@@ -195,6 +201,8 @@ namespace ProjetoOdontoPOO.Views
                 return;
             }
 
+            dgvDentista.ClearSelection();
+
             foreach (DataGridViewRow row in dgvDentista.Rows)
             {
                 if (row.Cells["CRM"].Value != null && row.Cells["CRM"].Value.ToString() == crmProcurado)
@@ -208,6 +216,59 @@ namespace ProjetoOdontoPOO.Views
             MessageBox.Show("CRM não encontrado.", "Resultado da Busca", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void btnBuscarConsulta_Click(object sender, EventArgs e)
+        {
+            if (!btnBuscarConsulta.Focused) return;
+
+            string consultaProcurada = txtBuscarConsulta.Text;
+
+            if (string.IsNullOrWhiteSpace(consultaProcurada))
+            {
+                MessageBox.Show("Por favor, insira um paciente para buscar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            dgvConsulta.ClearSelection();
+
+            foreach (DataGridViewRow row in dgvConsulta.Rows)
+            {
+                if (row.Cells["PacienteCons"].Value != null && row.Cells["PacienteCons"].Value.ToString() == consultaProcurada)
+                {
+                    row.Selected = true;
+                    dgvConsulta.FirstDisplayedScrollingRowIndex = row.Index;
+                    return;
+                }
+            }
+
+            MessageBox.Show("Consulta não encontrada.", "Resultado da Busca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnBuscarPagamento_Click(object sender, EventArgs e)
+        {
+            if (!btnBuscarPagamento.Focused) return;
+
+            string pagamentoProcurado = txtBuscarPagamento.Text;
+
+            if (string.IsNullOrWhiteSpace(pagamentoProcurado))
+            {
+                MessageBox.Show("Por favor, insira um paciente para buscar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            dgvPagamento.ClearSelection();
+
+            foreach (DataGridViewRow row in dgvPagamento.Rows)
+            {
+                if (row.Cells["PacientePag"].Value != null && row.Cells["PacientePag"].Value.ToString() == pagamentoProcurado)
+                {
+                    row.Selected = true;
+                    dgvPagamento.FirstDisplayedScrollingRowIndex = row.Index;
+                    return;
+                }
+            }
+
+            MessageBox.Show("Pagamento não encontrado.", "Resultado da Busca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
         private void CarregarDadosPaciente()
         {
             try

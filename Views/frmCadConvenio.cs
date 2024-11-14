@@ -19,17 +19,25 @@ namespace ProjetoOdontoPOO.Views
 
         private void btnSalvarConvenio_Click(object sender, EventArgs e)
         {
-            var convenio = CriarConvenio();
-
-            string mensagem = _convenioController.InserirConvenio(convenio);
-            MessageBox.Show(mensagem);
-
-            if (mensagem.Contains("Convênio cadastrado com sucesso!"))
+            try
             {
-                LimparCampos();
-                txtNomeConvenio.Focus();
+                var convenio = CriarConvenio();
+
+                string mensagem = _convenioController.InserirConvenio(convenio);
+                MessageBox.Show(mensagem);
+
+                if (mensagem.Contains("Convênio cadastrado com sucesso!"))
+                {
+                    LimparCampos();
+                    txtNomeConvenio.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private Convenio CriarConvenio()
         {
