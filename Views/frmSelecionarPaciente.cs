@@ -10,8 +10,6 @@ namespace ProjetoOdontoPOO.Views
     public partial class frmSelecionarPaciente : Form
     {
         private readonly PacienteController _pacienteController;
-        private readonly ResponsavelController _responsavelController;
-        private readonly ConvenioController _convenioController;
         public Paciente pacienteSelecao;
 
         public frmSelecionarPaciente(bool ExibirBotaoSelecionar = false)
