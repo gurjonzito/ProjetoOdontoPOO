@@ -42,7 +42,6 @@ This is a project made for the Object-Oriented Programming class based on a dent
 <img alt="Home" title="#Home" src="https://i.imgur.com/ZKCMkh3.png"/>
 <img alt="Register" title="#Register" src="https://i.imgur.com/6nsX3Yl.png"/>
 <img alt="Select" title="#Select" src="https://i.imgur.com/OPhUaO2.png"/>
-<img alt="View" title="#View" src="https://i.imgur.com/OPhUaO2.png"/>
 
 ## Development
 ```bash
